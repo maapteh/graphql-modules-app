@@ -26,6 +26,7 @@ services:
       environment:
         - PORT=4001
         - LOG_LEVEL=debug
+        - GRAPHQL_ENDPOINT=http://localhost:3000/graphql
       ports:
         - 4001:4001
       volumes:
