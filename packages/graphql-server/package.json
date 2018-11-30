@@ -13,7 +13,7 @@
     "node": ">= 10.13.0"
   },
   "scripts": {
-    "prepare": "yarn run lint && yarn run build",
+    "prepare": "yarn run build",
     "precommit": "lint-staged",
     "clean": "rm -rf coverage/* && rm -rf dist/*",
     "dev": "gql-gen -w && NODE_ENV=development nodemon -e ts -x ts-node ./src/index.ts",
@@ -24,7 +24,7 @@
     "build": "yarn generate-types && tsc && yarn copy:schema",
     "start": "node dist/index.js",
     "prettier": "prettier --write \"src/**/*.ts\"",
-    "lint": "tslint --fix -c \"../../config/tslint.json\" -p tsconfig.json \"src/**/*.ts\" -e \"**/_generated-types.ts\"",
+    "lint": "tslint -c \"../../config/tslint.json\" -p tsconfig.json \"src/**/*.ts\" -e \"**/_generated-types.ts\"",
     "------------------": "COPY AND AUTO GENERATE STUFF",
     "copy:schema": "cd src && find . -name '*.graphql' | xargs tar cvf - | (cd ../dist ; tar xfp -)",
     "generate-types": "gql-gen"

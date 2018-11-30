@@ -2,6 +2,9 @@
   "name": "graphql-modules-typescript-sample-app",
   "private": false,
   "license": "MIT",
+  "engines": {
+    "node": "10.13.0"
+  },
   "scripts": {
     "postinstall": "lerna exec -- yarn install && lerna run prepare",
     "build": "lerna run build",
@@ -12,9 +15,6 @@
     "lint": "lerna run lint",
     "lint:fix": "prettier --ignore-path \"./config/prettierignore\" --trailing-comma all --single-quote --write \"packages/*/{src,tests,test}/**/*.{j,t}s*\"",
     "lint-staged": "lint-staged"
-  },
-  "jest": {
-
   },
   "lint-staged": {
     "*.ts*": [

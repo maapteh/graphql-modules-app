@@ -3,8 +3,11 @@
   "version": "0.0.1",
   "author": "",
   "license": "MIT",
+  "engines": {
+    "node": ">= 10.13.0"
+  },
   "scripts": {
-    "prepare": "yarn run lint && yarn run build",
+    "prepare": "yarn run build",
     "dev": "next -p 4001",
     "build": "next build",
     "start": "next start -p 4001",
