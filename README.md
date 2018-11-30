@@ -2,12 +2,15 @@
 Demonstration application for showcase utilizing [https://graphql-modules.com/](https://graphql-modules.com/) which is using data from Schiphol open-api.
 
 ## Pre-requisites
-Get free api key from [developer.schiphol.nl/apis/flight-api](https://developer.schiphol.nl/apis/flight-api/overview?version=v3). Create .env file inside './packages/graphql-server' with the following:
+Get your free API key from [developer.schiphol.nl/apis/flight-api](https://developer.schiphol.nl/apis/flight-api/overview?version=v3). Create an '.env' file inside './packages/graphql-server' with the following:
 
 ```
 SCHIPHOL_API_ID=***
 SCHIPHOL_API_KEY=***
 ```
+
+## Online demonstration
+[graphql-schiphol.herokuapp.com/](https://graphql-schiphol.herokuapp.com/) which points to the graphql endpoint at [graphql-server-schiphol.herokuapp.com/graphql](https://graphql-server-schiphol.herokuapp.com/graphql).
 
 ## Structure
 ```
