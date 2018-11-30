@@ -13,10 +13,9 @@ export class FlightsProvider {
     private checkStatus(res: any) {
         if (res.ok) { // res.status >= 200 && res.status < 300
             return res;
-        } else {
-            // TODO: throw error?
-            return null;
         }
+        // TODO: throw error?
+        return null;
     }
 
     constructor() {

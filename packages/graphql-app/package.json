@@ -7,7 +7,7 @@
     "node": ">= 10.13.0"
   },
   "scripts": {
-    "prepare": "yarn run build",
+    "prepare": "yarn build",
     "dev": "next -p 4001",
     "build": "next build",
     "start": "next start -p $PORT",
