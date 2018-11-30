@@ -6,9 +6,8 @@ if (process.env.NODE_ENV === 'development') {
     dotenv.load();
 }
 
-console.log(process.env.API_KEY);
-
 import { appModule } from './app';
+// Option to see how Engine with metrics works: './_server'
 import { bootstrap } from './server';
 
 bootstrap(appModule);

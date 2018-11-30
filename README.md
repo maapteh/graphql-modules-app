@@ -2,12 +2,7 @@
 Demonstration application for showcase utilizing [https://graphql-modules.com/](https://graphql-modules.com/) which is using data from Schiphol open-api.
 
 ## Pre-requisites
-Get your free API key from [developer.schiphol.nl/apis/flight-api](https://developer.schiphol.nl/apis/flight-api/overview?version=v3). Create an '.env' file inside './packages/graphql-server' with the following:
-
-```
-SCHIPHOL_API_ID=***
-SCHIPHOL_API_KEY=***
-```
+Get your free API key from [developer.schiphol.nl/apis/flight-api](https://developer.schiphol.nl/apis/flight-api/overview?version=v3).
 
 ## Online demonstration
 [graphql-schiphol.herokuapp.com/](https://graphql-schiphol.herokuapp.com/) which points to the graphql endpoint at [graphql-server-schiphol.herokuapp.com/graphql](https://graphql-server-schiphol.herokuapp.com/graphql).
@@ -28,13 +23,30 @@ SCHIPHOL_API_KEY=***
 Now we can start the two applications:
 
 ### 1. GRAPHQL-SERVER
-Goto './packages/graphql-server'
-Run `yarn dev`
+- Goto './packages/graphql-server'
+- Run `yarn dev`
+- See [README](./packages/graphql-server/README.md) for option to run server with cacheControl and metrics
 
 ### 2. GRAPQL-APP
-Goto './packages/graphql-app'
-Run `yarn dev`
+- Goto './packages/graphql-app'
+- Run `yarn dev`
 
+## PRODUCTION
+
+### Setting vars for production locally or in your CI
+Create an '.env' file inside './packages/graphql-server' with the following:
+```
+SCHIPHOL_API_ID=***
+SCHIPHOL_API_KEY=***
+ENGINE_KEY=apollo-engine-key-overhere-for-metrics-option-which-is-optional
+ALLOWED_ORIGIN=endpoint-your-app-will-run
+```
+Create an '.env' file inside './packages/graphql-app' with the following:
+```
+GRAPHQL_ENDPOINT=endpoint-your-graphql-server-will-run
+```
+### Build
+By default after install the build will take place and the start command is running this build.
 
 ## Open api SCHIPHOL
 The Schiphol flight information is managed by the airlines and airline handlers in the Central Information System Schiphol ( CISS ). Part of this flight information is made available via the Rest API Flight Information (API) to developers.

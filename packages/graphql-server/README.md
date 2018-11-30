@@ -16,8 +16,6 @@
 - `yarn start`
 - open: [http://localhost:4000/graphql](http://localhost:4000/graphql)
 
-
-
 ## Apollo engine
 In `./src/index` you will find the option to run this application with Apollo Engine ('_server') and without ('./server'). By default we test this application using Apollo Engine.
 

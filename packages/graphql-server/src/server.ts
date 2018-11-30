@@ -21,7 +21,7 @@ export async function bootstrap(appModule: GraphQLModule) {
     const allowedOrigins = [
         'http://localhost:4000',
         'http://localhost:4001',
-        'https://graphql-schiphol.herokuapp.com'
+        process.env.ALLOWED_ORIGIN,
     ];
 
     // BUG: Apollo doesn't set allow-origin correctly ('*' instead of real allowed origin)
