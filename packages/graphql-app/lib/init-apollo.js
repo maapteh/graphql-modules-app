@@ -9,7 +9,9 @@ import { toIdValue } from 'apollo-utilities';
 
 let apolloClient = null;
 
-const uri = 'http://localhost:4000/graphql';
+const uri = process.env.NODE_ENV === 'development' ?
+  'http://localhost:3000/graphql'
+  : 'http://localhost:4000/graphql';
 
 // link to use if batching (default)
 const batchHttpLink = new BatchHttpLink({ uri, headers: { batch: 'true ' } });
