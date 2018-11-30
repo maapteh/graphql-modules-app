@@ -1,0 +1,23 @@
+"""
+Free delivery lane
+"""
+type ContentComponentFreedelivery implements ContentComponent {
+    id: String!
+    type: String!
+    billboard: ContentComponentFreedeliveryBillboard
+    productGroups: [ContentComponentFreedeliveryProducts]
+}
+
+type ContentComponentFreedeliveryBillboard {
+    title: String
+    subtitle: String
+}
+
+type ContentComponentFreedeliveryProducts {
+    title: String
+    subtitle: String
+    link: String
+    label: String
+    # TODO: what images do we really use here?
+    imageSet: ContentImageSetSmallLarge
+}

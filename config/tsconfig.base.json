@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "noUnusedParameters": false,
+    "noUnusedLocals": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "removeComments": true,
+    "sourceMap": false,
+    "declaration": true,
+    "declarationMap": false,
+    "target": "es5",
+    "module": "es2015",
+    "esModuleInterop": true
+  }
+}

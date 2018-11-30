@@ -1,0 +1,10 @@
+
+"""
+Standard text with image
+"""
+type ContentComponentArticle implements ContentComponent {
+    id: String!
+    type: String!
+    title: String
+    body: String
+}

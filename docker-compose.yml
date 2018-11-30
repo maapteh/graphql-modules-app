@@ -1,0 +1,47 @@
+version: "2"
+services:
+    graphql:
+      image: maapteh.com:443/graphql-server
+      build:
+        context: ./packages/graphql-server
+        dockerfile: Dockerfile
+        args:
+          node_env: development
+      environment:
+        - PORT=4000
+      ports:
+        - 4000:4000
+      volumes:
+        - ./packages/graphql-server:/usr/app
+        - /usr/app/node_modules
+      command: yarn dev
+
+    web:
+      image: maapteh.com:443/graphql-app
+      build:
+        context: ./packages/graphql-app
+        dockerfile: Dockerfile
+        args:
+          node_env: development
+      environment:
+        - PORT=4001
+        - LOG_LEVEL=debug
+      ports:
+        - 4001:4001
+      volumes:
+        - ./packages/graphql-app:/usr/app
+        - /usr/app/node_modules
+      command: yarn dev
+
+    nginx:
+      image: maapteh.com:443/graphql-nginx
+      build:
+        context: ./config/nginx
+      volumes:
+        - ./config/nginx:/etc/app
+      links:
+        - graphql
+        - web
+      ports:
+        - 3000:80
+      command: /bin/bash -c "cp /etc/app/nginx.development.conf /etc/nginx/nginx.conf && nginx -g 'daemon off;'"

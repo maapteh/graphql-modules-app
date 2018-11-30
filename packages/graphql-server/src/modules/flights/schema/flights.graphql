@@ -1,0 +1,108 @@
+directive @cacheControl(
+  maxAge: Int,
+  scope: CacheControlScope
+) on OBJECT | FIELD_DEFINITION | INTERFACE
+
+enum CacheControlScope {
+  PUBLIC
+  PRIVATE
+}
+
+"""
+Flights
+"""
+type Flights @cacheControl(maxAge: 240) {
+  flights: [Flight]
+  schemaVersion: String
+}
+
+"""
+Flight
+"""
+type Flight {
+  title: String
+  description: String
+  canonical: String!
+}
+
+type Flight {
+  actualLandingTime: String
+  actualOffBlockTime: String
+  aircraftRegistration: String
+  aircraftType: AircraftTypeType
+  baggageClaim: BaggageClaimType
+  checkinAllocations: CheckinAllocationsType
+  codeshares: CodesharesType
+  estimatedLandingTime: String
+  expectedTimeBoarding: String
+  expectedTimeGateClosing: String
+  expectedTimeGateOpen: String
+  expectedTimeOnBelt: String
+  flightDirection: String
+  flightName: String
+  flightNumber: Int
+  gate: String
+  id: String
+  mainFlight: String
+  prefixIATA: String
+  prefixICAO: String
+  publicEstimatedOffBlockTime: String
+  publicFlightState: PublicFlightStateType
+  route: RouteType
+  scheduleDate: String
+  scheduleTime: String
+  schemaVersion: String
+  serviceType: String
+  terminal: Int
+  transferPositions: TransferPositionsType
+}
+
+type AircraftTypeType {
+  iatamain: String
+  iatasub: String
+}
+type BaggageClaimType {
+  belts: [String]
+}
+type CheckinAllocationsType {
+  checkinAllocations: [CheckinAllocationType]
+  remarks: RemarksType
+}
+type CodesharesType {
+  codeshares: [String]
+}
+type PublicFlightStateType {
+  flightStates: [String]
+}
+type RouteType {
+  destinations: [String]
+}
+type TransferPositionsType {
+  transferPositions: [Int]
+}
+type CheckinAllocationType {
+  endTime: String
+  rows: RowsType
+  startTime: String
+}
+type RemarksType {
+  remarks: [String]
+}
+type RowsType {
+  rows: [RowType]
+}
+type RowType {
+  desks: DesksType
+  position: String
+}
+type DesksType {
+  desks: [DeskType]
+}
+type DeskType {
+  checkinClass: CheckinClassType
+  position: Int
+}
+type CheckinClassType {
+  code: String
+  description: String
+}

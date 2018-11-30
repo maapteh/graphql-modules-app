@@ -1,0 +1,16 @@
+
+"""
+Promolane
+"""
+type ContentComponentPromo implements ContentComponent {
+    id: String!
+    type: String!
+    items: [ContentComponentPromoItems]
+}
+
+type ContentComponentPromoItems {
+    title: String
+    buttonText: String
+    link: String
+    imageSet: ContentImageSetSmallLarge
+}

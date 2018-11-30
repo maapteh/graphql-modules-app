@@ -1,0 +1,14 @@
+# fs
+.DS_Store
+.vscode
+
+coverage
+node_modules
+.npm
+dist
+
+yarn.lock
+yarn-error.log
+.yarnclean
+
+.next

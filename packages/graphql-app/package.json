@@ -1,0 +1,65 @@
+{
+  "name": "graphql-app",
+  "version": "0.0.1",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "yarn run lint && yarn run build",
+    "dev": "next -p 4001",
+    "build": "next build",
+    "start": "next start -p 4001",
+    "test": "jest --verbose",
+    "test:coverageNOTESTSYET": "jest --verbose --coverage",
+    "test:ci": "yarn run coverage -- --ci --maxWorkers=2 --reporters=default --reporters=jest-junit",
+    "lint": "tslint -c \"../../config/tslint.json\" -p tsconfig.json src/*.ts",
+    "lint-staged": "lint-staged",
+    "clean": "find . -name \"node_modules\" -exec rm -rf '{}' + && find . -name \"dist\" -exec rm -rf '{}' +",
+    "generate-types": "gql-gen"
+  },
+  "dependencies": {
+    "@types/next": "^7.0.5",
+    "@types/react": "^16.4.14",
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
+    "@zeit/next-typescript": "^1.1.1",
+    "apollo-cache-inmemory": "^1.2.10",
+    "apollo-client": "^2.4.2",
+    "apollo-link": "^1.2.3",
+    "apollo-link-batch-http": "^1.2.4",
+    "apollo-link-error": "^1.1.1",
+    "apollo-link-http": "^1.5.5",
+    "graphql": "^14.0.2",
+    "graphql-tag": "^2.9.2",
+    "isomorphic-unfetch": "^3.0.0",
+    "lint-staged": "^7.3.0",
+    "next": "^7.0.0",
+    "node-sass": "^4.9.3",
+    "prettier": "^1.14.3",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.2",
+    "react-apollo": "^2.2.2",
+    "react-dom": "^16.5.2",
+    "typescript": "^3.1.1"
+  },
+  "devDependencies": {
+    "graphql-code-generator": "0.14.1",
+    "graphql-codegen-add": "0.14.5",
+    "graphql-codegen-time": "0.14.5",
+    "graphql-codegen-typescript-react-apollo": "0.14.5",
+    "tslint": "^5.11.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-config-prettier": "^1.15.0",
+    "webpack": "^4.26.1"
+  },
+  "lint-staged": {
+    "**/{components,pages}/**/*.{ts,tsx,graphql}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "bracketSpacing": false,
+    "singleQuote": true,
+    "trailingComma": "all"
+  }
+}

@@ -1,0 +1,16 @@
+schema:
+  - '../graphql-server/src/schema.ts'
+overwrite: true
+documents: ['src/**/*.graphql']
+config: {}
+generates:
+  src/_generated-components.tsx:
+    config:
+      noNamespaces: true
+    plugins:
+      - add: "/* auto generated do not edit */"
+      - typescript-common
+      - typescript-client
+      - typescript-react-apollo
+require:
+  - "ts-node/register/transpile-only"

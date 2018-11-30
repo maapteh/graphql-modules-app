@@ -1,0 +1,31 @@
+{
+  //"extends": "../../config/tsconfig.base.json",
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "es2017",
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "lib": ["es2017", "esnext.asynciterable", "dom"],
+    "suppressImplicitAnyIndexErrors": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "sourceMap": true,
+    "declaration": true,
+    "baseUrl": "./",
+    "outDir": "./dist/",
+    "rootDir": "./src",
+    "skipLibCheck": true,
+    "types": ["reflect-metadata"],
+    "jsx": "react",
+    "strict": true,
+    "noImplicitAny": true
+  },
+  "include": ["src/**/*.ts"],
+  "files": ["src/index.ts"],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "src/**/__tests__/**/*",
+    "src/**/__mocks__/**/*"
+  ]
+}

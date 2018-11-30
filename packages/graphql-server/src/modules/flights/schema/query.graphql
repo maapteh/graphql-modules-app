@@ -1,0 +1,9 @@
+type Query {
+  """
+  Get all flights
+  """
+  getFlights(id: String): Flights
+
+  getFlight(id: String!): Flight
+
+}

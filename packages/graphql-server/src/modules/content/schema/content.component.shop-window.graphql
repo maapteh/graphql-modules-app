@@ -1,0 +1,13 @@
+
+"""
+Sop Window (etalage)
+"""
+type ContentComponentShopWindow implements ContentComponent {
+    id: String!
+    type: String!
+    title: String
+    subtitle: String
+    titleTag: Int
+    imageSet: ContentImageSetSmallLarge
+    link: String
+}

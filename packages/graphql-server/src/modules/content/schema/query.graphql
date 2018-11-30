@@ -1,0 +1,6 @@
+type Query {
+  """
+  Content Facade for retrieving a page by it's ID
+  """
+  getContentPage(id: String!): Content
+}

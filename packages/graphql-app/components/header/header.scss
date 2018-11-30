@@ -1,0 +1,38 @@
+.header {
+    padding: 0 0 0 124px;
+    margin-bottom: 24px;
+    position: relative;
+    color: #0d0a52;
+    height: 70px;
+
+    &:after {
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        content: "";
+        display: block;
+        background-color: #cdcdcd;
+        opacity: .5;
+        bottom: 0;
+    }
+
+    &__logo {
+        position: absolute;
+        left: 24px;
+        top: 24px;
+        width: 84px;
+    }
+
+    &__link {
+        display: inline-block;
+        padding: 0 10px;
+        font-size: 14px;
+        height: 70px;
+        line-height: 70px;
+        margin-right: 15px;
+        text-decoration: none;
+    }
+
+}

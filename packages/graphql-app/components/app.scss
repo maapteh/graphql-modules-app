@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  font-size: 16px;
+}
+
+body, button {
+  font-family: Menlo, Monaco, 'Lucida Console', 'Liberation Mono',
+      'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New',
+      monospace, serif;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+a {
+  color: #0d0a52;
+  &:hover {
+    color: #22bad9;
+  }
+}
+
+p {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.content__section {
+  padding: 0 40px;
+}

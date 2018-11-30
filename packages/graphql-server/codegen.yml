@@ -1,0 +1,16 @@
+schema:
+  - 'src/schema.ts'
+overwrite: true
+documents: []
+config: {}
+generates:
+  src/_generated-types.ts:
+    config: {}
+    plugins:
+      - add: "/* tslint:disable */"
+      - time
+      - typescript-common
+      - typescript-client
+      - typescript-server
+require:
+  - "ts-node/register/transpile-only"

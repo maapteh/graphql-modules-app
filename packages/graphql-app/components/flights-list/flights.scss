@@ -1,0 +1,45 @@
+.product-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &__item {
+        margin: 0;
+        padding: 10px;
+        display: inline-block;
+        max-width: 240px;
+    }
+}
+
+.product {
+    &__link {
+        text-decoration: none;
+    }
+
+    &__visual {
+        position: relative;
+        width: 200px;
+        height: 200px;
+
+        &__image {
+            max-width: 200px;
+        }
+
+        .price {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+    }
+
+    &__title {
+        display: block;
+        color: #303030
+    }
+
+    &__unit-size {
+        color: #bbb4af;
+        display: inline-block;
+        font-size: 14px;
+    }
+}
