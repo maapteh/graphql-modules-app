@@ -10,7 +10,7 @@
     "prepare": "yarn run build",
     "dev": "next -p 4001",
     "build": "next build",
-    "start": "next start -p 4001",
+    "start": "next start -p $PORT",
     "test": "jest --verbose",
     "test:coverageNOTESTSYET": "jest --verbose --coverage",
     "test:ci": "yarn run coverage -- --ci --maxWorkers=2 --reporters=default --reporters=jest-junit",
