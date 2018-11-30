@@ -1,4 +1,5 @@
 import { Injectable } from '@graphql-modules/core';
+// import { ApolloError } from 'apollo-server-express';
 import { Flights, Flight } from '../../../_generated-types';
 import { ApolloClientContext } from '../../../app';
 import nodeFetch, { Response, RequestInit } from 'node-fetch';
@@ -7,6 +8,16 @@ import nodeFetch, { Response, RequestInit } from 'node-fetch';
 export class FlightsProvider {
     private baseUrl: string;
     private credentials: string;
+
+    // TODO: move to generic helper
+    private checkStatus(res: any) {
+        if (res.ok) { // res.status >= 200 && res.status < 300
+            return res;
+        } else {
+            // TODO: throw error?
+            return null;
+        }
+    }
 
     constructor() {
         // TODO: move to config
@@ -19,9 +30,15 @@ export class FlightsProvider {
         { context }: ApolloClientContext,
     ): Promise<Flights> {
 
-        return nodeFetch(`${this.baseUrl}?${this.credentials}&includedelays=false&page=0&sort=%2Bscheduletime`, {headers: { ResourceVersion: 'v3'}}).then((res: any) => {
-            return res.json();
-        });
+        const url = `${this.baseUrl}?${this.credentials}&includedelays=false&page=0&sort=%2Bscheduletime`;
+
+        return nodeFetch(url, {headers: { ResourceVersion: 'v3'}})
+            .then(this.checkStatus)
+            .then((res: Response) => {
+                if (res) {
+                    return res.json();
+                }
+            });
     }
 
     public async getFlight(
