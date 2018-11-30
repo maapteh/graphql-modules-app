@@ -9,7 +9,9 @@ import { toIdValue } from 'apollo-utilities';
 
 let apolloClient = null;
 
-const uri = process.env.GRAPHQL_ENDPOINT ? process.env.GRAPHQL_ENDPOINT : 'http://localhost:4000/graphql';
+// for client its build as string with webpack, for server its set by CI
+const uri = process.env.GRAPHQL_ENDPOINT ? process.env.GRAPHQL_ENDPOINT
+  : 'http://localhost:4000/graphql';
 
 // link to use if batching (default)
 const batchHttpLink = new BatchHttpLink({ uri, headers: { batch: 'true ' } });

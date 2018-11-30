@@ -6,6 +6,7 @@ module.exports = withSass({
         localIdentName: "[local]___[hash:base64:5]",
     }
 }); */
+const webpack = require('webpack');
 const withTypescript = require('@zeit/next-typescript');
 const withSass = require('@zeit/next-sass');
 
@@ -14,5 +15,14 @@ module.exports = withTypescript(withSass({
     cssLoaderOptions: {
       importLoaders: 1,
       localIdentName: "[local]___[hash:base64:5]",
-    }
+    },
+    webpack: (config) => {
+        config.plugins.push(
+          new webpack.DefinePlugin({
+            'process.env.GRAPHQL_ENDPOINT': JSON.stringify(process.env.GRAPHQL_ENDPOINT),
+          })
+        );
+
+        return config;
+      },
 }));
