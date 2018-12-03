@@ -7,6 +7,8 @@ import { HttpLink } from 'apollo-link-http';
 import { BatchHttpLink } from 'apollo-link-batch-http';
 import { toIdValue } from 'apollo-utilities';
 
+import { fragmentMatcher } from './fragment-matcher';
+
 let apolloClient = null;
 
 // for client its build as string with webpack, for server its set by CI
@@ -27,6 +29,7 @@ if (!process.browser) {
 }
 
 const cache = new InMemoryCache({
+    fragmentMatcher,
   cacheRedirects: {
     Query: {
       // Here we map the data we get in product list view with the one for detail view
