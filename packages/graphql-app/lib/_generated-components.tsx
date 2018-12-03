@@ -73,6 +73,30 @@ export type GetFlightsAircraftType = {
     iatamain: string | null;
 };
 
+export type GetProductsVariables = {
+    id: string;
+};
+
+export type GetProductsQuery = {
+    __typename?: 'Query';
+
+    getProducts: GetProductsGetProducts | null;
+};
+
+export type GetProductsGetProducts = {
+    __typename?: 'Products';
+
+    products: GetProductsProducts[] | null;
+};
+
+export type GetProductsProducts = {
+    __typename?: 'Product';
+
+    id: string | null;
+
+    title: string | null;
+};
+
 import * as ReactApollo from 'react-apollo';
 import * as React from 'react';
 
@@ -175,4 +199,47 @@ export function GetFlightsHOC<TProps, TChildProps = any>(
         GetFlightsVariables,
         GetFlightsProps<TChildProps>
     >(GetFlightsDocument, operationOptions);
+}
+export const GetProductsDocument = gql`
+    query getProducts($id: String!) {
+        getProducts(id: $id) {
+            products {
+                id
+                title
+            }
+        }
+    }
+`;
+export class GetProductsComponent extends React.Component<
+    Partial<ReactApollo.QueryProps<GetProductsQuery, GetProductsVariables>>
+> {
+    render() {
+        return (
+            <ReactApollo.Query<GetProductsQuery, GetProductsVariables>
+                query={GetProductsDocument}
+                {...(this as any)['props'] as any}
+            />
+        );
+    }
+}
+export type GetProductsProps<TChildProps = any> = Partial<
+    ReactApollo.DataProps<GetProductsQuery, GetProductsVariables>
+> &
+    TChildProps;
+export function GetProductsHOC<TProps, TChildProps = any>(
+    operationOptions:
+        | ReactApollo.OperationOption<
+              TProps,
+              GetProductsQuery,
+              GetProductsVariables,
+              GetProductsProps<TChildProps>
+          >
+        | undefined,
+) {
+    return ReactApollo.graphql<
+        TProps,
+        GetProductsQuery,
+        GetProductsVariables,
+        GetProductsProps<TChildProps>
+    >(GetProductsDocument, operationOptions);
 }

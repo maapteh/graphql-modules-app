@@ -6,13 +6,19 @@ import './header.scss';
 export const Header = () => {
   return (
     <header className="header">
-      <img
-        src="/static/schiphol.svg"
-        alt="Schiphol"
-        className="header__logo"
-      />
+
       <Link prefetch href="/">
-        <a className="header__link">Home</a>
+        <a><img
+        src="/static/logo.svg"
+        alt="Apollo GraphQL"
+        className="header__logo"
+      /></a>
+      </Link>
+      <Link prefetch href="/flights">
+        <a className="header__link">Flights</a>
+      </Link>
+      <Link prefetch href="/products">
+        <a className="header__link">Products</a>
       </Link>
       <Link prefetch href="/about">
         <a className="header__link">About</a>

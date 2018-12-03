@@ -1,0 +1,7 @@
+type Query {
+  """
+  Get all products for a specific list
+  """
+  getProducts(id: String!): Products
+
+}
