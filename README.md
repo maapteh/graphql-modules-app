@@ -53,6 +53,7 @@ The Schiphol flight information is managed by the airlines and airline handlers 
 
 ## TODO
 1) Fix autogenerating react components
-2) Add sample for development docker setup, running `docker-compose up graphql web nginx`. This runs the graphql server and the application on the same instance.
+2) Add two graphql endpoints, internal and external for SSR and client
+3) Add sample for development docker setup, running `docker-compose up graphql web nginx`. This runs the graphql server and the application on the same instance.
 
 [![Codeship Status for maapteh/graphql-modules-app](https://app.codeship.com/projects/3bf47d90-d61c-0136-0edf-1a5c0fb66462/status?branch=master)](https://graphql-schiphol.herokuapp.com)
