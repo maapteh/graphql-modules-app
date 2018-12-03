@@ -52,6 +52,7 @@ By default after install the build will take place and the start command is runn
 The Schiphol flight information is managed by the airlines and airline handlers in the Central Information System Schiphol ( CISS ). Part of this flight information is made available via the Rest API Flight Information (API) to developers.
 
 ## TODO
+0) Generating types components and introspection with argument for graphql endpoint
 1) Fix autogenerating react components
 2) Add two graphql endpoints, internal and external for SSR and client
 3) Add sample for development docker setup, running `docker-compose up graphql web nginx`. This runs the graphql server and the application on the same instance.

@@ -7,7 +7,7 @@
     "node": ">= 10.13.0"
   },
   "scripts": {
-    "prepare": "yarn build-introspection && yarn build",
+    "prepare": "yarn build",
     "dev": "next -p 4001",
     "build": "next build",
     "start": "next start -p $PORT",
@@ -17,7 +17,7 @@
     "lint": "tslint -c \"../../config/tslint.json\" -p tsconfig.json src/*.ts",
     "lint-staged": "lint-staged",
     "clean": "find . -name \"node_modules\" -exec rm -rf '{}' + && find . -name \"dist\" -exec rm -rf '{}' +",
-    "generate-types": "gql-gen",
+    "generate-components": "gql-gen",
     "build-introspection": "node internals/introspection.js"
   },
   "dependencies": {
@@ -33,6 +33,7 @@
     "apollo-link-error": "^1.1.1",
     "apollo-link-http": "^1.5.5",
     "graphql": "^14.0.2",
+    "graphql-codegen-typescript-client": "^0.14.5",
     "graphql-tag": "^2.9.2",
     "isomorphic-unfetch": "^3.0.0",
     "lint-staged": "^7.3.0",

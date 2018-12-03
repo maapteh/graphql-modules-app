@@ -30,7 +30,7 @@ fetch(`http://localhost:4000/graphql`, {
     );
     result.data.__schema.types = filteredData;
 
-    fs.writeFile('./lib/_generatedFragmentTypes.json', JSON.stringify(result.data), { flag: 'wx' }, err => {
+    fs.writeFile('./lib/_generated-fragment-types.json', JSON.stringify(result.data), { flag: 'wx' }, err => {
         if (err) {
         console.error('Error writing fragmentTypes file', err);
         } else {

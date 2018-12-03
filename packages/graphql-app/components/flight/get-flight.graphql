@@ -1,0 +1,6 @@
+query getFlight($id: String!) {
+    getFlight(id: $id) {
+        id
+        title
+    }
+}

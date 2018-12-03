@@ -1,10 +1,10 @@
 schema:
-  - '../graphql-server/src/schema.ts'
+  - 'http://localhost:4000/graphql'
 overwrite: true
-documents: ['../graphql-server/src/**/*.graphql']
+documents: ['./components/**/*.graphql']
 config: {}
 generates:
-  src/_generated-components.tsx:
+  lib/_generated-components.tsx:
     config:
       noNamespaces: true
     plugins:
