@@ -1,6 +1,5 @@
-import { Query } from 'react-apollo';
 import { ErrorMessage } from '../ErrorMessage';
-import { FLIGHT_QUERY } from './graphql.flight';
+import { GetFlightComponent } from '../../lib/_generated-components';
 
 export const Flight = ({id}: any) => {
 
@@ -9,18 +8,18 @@ export const Flight = ({id}: any) => {
   };
 
   return (
-    <Query query={FLIGHT_QUERY} variables={queryVars}>
-        {({loading, error, data}) => {
-        if (error) { <ErrorMessage message="Error loading flight." /> }
-        if (loading) { <div>Loading</div> }
+    <GetFlightComponent variables={queryVars}>
+    {({ loading, error, data: { getFlight } }) => {
+        if (error) { <ErrorMessage message="Error loading flights." />; }
+        if (loading) { <div>Loading</div>; }
 
-        return (
+        return(
             <section>
-                <h1>Selected Flight {data.getFLight}</h1>
+                <h1>Selected Flight {getFlight}</h1>
             </section>
         );
-        }}
-    </Query>
+    }}
+    </GetFlightComponent>
   );
 
 };

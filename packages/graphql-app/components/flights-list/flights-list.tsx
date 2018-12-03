@@ -1,4 +1,3 @@
-import { Query } from 'react-apollo';
 import Link from 'next/link';
 import { ErrorMessage } from '../ErrorMessage';
 import { GetFlightsComponent, GetFlightsFlights } from '../../lib/_generated-components';
