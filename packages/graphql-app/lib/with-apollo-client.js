@@ -5,7 +5,7 @@ import { getDataFromTree } from 'react-apollo'
 
 export default (App) => {
   return class Apollo extends React.Component {
-    static displayName = 'workshop Ahold'
+    static displayName = 'Apollo GraphQL'
     static async getInitialProps (ctx) {
       const { Component, router } = ctx
 

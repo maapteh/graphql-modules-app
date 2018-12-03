@@ -13,7 +13,6 @@ export default class extends React.Component {
       <App>
         <Header />
         <div className="content__section">
-          123
           <Flight id={this.props.id} />
         </div>
       </App>

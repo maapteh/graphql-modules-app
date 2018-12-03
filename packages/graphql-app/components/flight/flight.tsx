@@ -8,17 +8,19 @@ export const Flight = ({id}: any) => {
     id: id.toString(),
   };
 
-  <Query query={FLIGHT_QUERY} variables={queryVars}>
-    {({loading, error, data}) => {
-      if (error) <ErrorMessage message="Error loading flight details." />;
-      if (loading) <div>Loading</div>;
+  return (
+    <Query query={FLIGHT_QUERY} variables={queryVars}>
+        {({loading, error, data}) => {
+        if (error) { <ErrorMessage message="Error loading flight." /> }
+        if (loading) { <div>Loading</div> }
 
-      return (
-        <section>Not working yet
-          {JSON.stringify(data)}
-        </section>
-      );
-    }}
-  </Query>
+        return (
+            <section>
+                <h1>Selected Flight {data.getFLight}</h1>
+            </section>
+        );
+        }}
+    </Query>
+  );
 
 };

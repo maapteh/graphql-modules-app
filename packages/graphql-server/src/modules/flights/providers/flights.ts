@@ -46,9 +46,12 @@ export class FlightsProvider {
     ): Promise<Flight> {
 
         // NOT WORKING: REQUEST SENT TO SCHIPHOL GROUP
-        return nodeFetch(`${this.baseUrl}/${id}?${this.credentials}`, {headers: { ResourceVersion: 'v3'}}).then((res: any) => {
-            console.log(res);
-            return res.json();
-        });
+        return nodeFetch(`${this.baseUrl}/${id}?${this.credentials}`, {headers: { ResourceVersion: 'v3'}})
+            .then(this.checkStatus)
+            .then((res: Response) => {
+                if (res) {
+                    return res.json();
+                }
+            });
     }
 }
