@@ -2,11 +2,11 @@ import { GraphQLModule } from '@graphql-modules/core';
 import { mergeGraphQLSchemas, mergeResolvers } from '@graphql-modules/epoxy';
 import { loadResolversFiles, loadSchemaFiles } from '@graphql-modules/sonar';
 
-import { ProductsProvider } from './providers/products';
+import { ProductProvider } from './providers/product';
 
-export const productsModule = new GraphQLModule({
+export const productModule = new GraphQLModule({
     name: 'products',
-    providers: [ProductsProvider],
+    providers: [ProductProvider],
     resolvers: mergeResolvers(loadResolversFiles(`${__dirname}/resolvers/`)),
     typeDefs: mergeGraphQLSchemas(loadSchemaFiles(`${__dirname}/schema/`)),
 });

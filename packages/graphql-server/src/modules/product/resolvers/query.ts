@@ -1,7 +1,7 @@
 import { ModuleContext } from '@graphql-modules/core';
 // import {  } from '../../../_generated-types';
 import { ApolloClientContext } from '../../../app';
-import { ProductsProvider } from '../providers/products';
+import { ProductProvider } from '../providers/product';
 
 export default {
     Query: {
@@ -11,7 +11,7 @@ export default {
             context: ModuleContext<ApolloClientContext>,
         ) => {
             return context.injector
-                .get<ProductsProvider>(ProductsProvider)
+                .get<ProductProvider>(ProductProvider)
                 .getProducts(id, context);
         },
     },
