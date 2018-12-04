@@ -18,12 +18,16 @@ app.prepare()
         return app.render(req, res, '/products', { id: req.params.id })
     });
 
-    server.get('/flight/:id', (req, res) => {
+    server.get('/flights', (req, res) => {
+        return app.render(req, res, '/products', req.query)
+    });
+
+    server.get('/flights/:id', (req, res) => {
       return app.render(req, res, '/flights', { id: req.params.id })
     });
 
     server.get('*', (req, res) => {
-      return handle(req, res)
+        return app.render(req, res, '/index', req.query)
     });
 
     server.listen(port, (err) => {
