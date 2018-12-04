@@ -8,7 +8,7 @@
   },
   "scripts": {
     "prepare": "yarn build",
-    "dev": "next -p 4001",
+    "dev": "PORT=4001 node server.js",
     "build": "next build",
     "start": "PORT=$PORT NODE_ENV=production node server.js",
     "start:local": "PORT=4001 NODE_ENV=production node server.js",

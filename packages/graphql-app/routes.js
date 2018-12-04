@@ -4,5 +4,4 @@ routes
     .add('about')
     .add('products', '/products/:id')
     .add('flights', '/flights/:id')
-    .add('*', '/', 'index')
     .add({name: 'v1', pattern: '/v1', page: 'index'})

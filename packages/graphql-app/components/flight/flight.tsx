@@ -9,13 +9,13 @@ export const Flight = ({id}: any) => {
 
   return (
     <GetFlightComponent variables={queryVars}>
-    {({ loading, error, data: { getFlight } }) => {
-        if (error) { <ErrorMessage message="Error loading flights." />; }
-        if (loading) { <div>Loading</div>; }
+    {({ loading, error, data }) => {
+        if (error) <ErrorMessage message="Error loading flights." />;
+        if (loading) <div>Loading</div>;
 
         return(
             <section>
-                <h1>Selected Flight {getFlight}</h1>
+                <h1>Selected Flight </h1>
             </section>
         );
     }}
