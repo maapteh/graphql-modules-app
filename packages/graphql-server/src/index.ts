@@ -8,6 +8,6 @@ if (process.env.NODE_ENV === 'development') {
 
 import { appModule } from './app';
 // Option to see how Engine with metrics works: './_server'
-import { bootstrap } from './server';
+import { bootstrap } from './_server';
 
 bootstrap(appModule);

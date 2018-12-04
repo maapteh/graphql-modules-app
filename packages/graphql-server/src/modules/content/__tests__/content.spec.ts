@@ -1,5 +1,6 @@
 import 'reflect-metadata';
-import { GraphQLModule, Injectable } from '@graphql-modules/core';
+import { GraphQLModule } from '@graphql-modules/core';
+// import { Injectable } from '@graphql-modules/di';
 import {
     execute,
     GraphQLSchema,
