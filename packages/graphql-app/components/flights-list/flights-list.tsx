@@ -20,7 +20,7 @@ export const FlightsList = () => (
                     return (
                         <div key={`${flight.id}-${index}`}>
                         {flight.flightName} {flight.terminal} {flight.gate}
-                        <Link href={`/flight?id=${flight.id}`}><a>nwy</a></Link>
+                        {/* <Link href={`/flight?id=${flight.id}`}><a>nwy</a></Link> */}
                         </div>
                     );
                     })}
