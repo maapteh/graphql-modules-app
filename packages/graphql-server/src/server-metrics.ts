@@ -77,9 +77,7 @@ export async function bootstrapMetrics(appModule: GraphQLModule) {
         stores: [
             {
                 name: 'inMemory',
-                memcache: {
-                    // url: ['localhost:4567'],
-                },
+                // memcache: { url: ['localhost:4567'] },
                 inMemory: {
                     cacheSize: 104857600, // 100 MB; defaults to 50MB.
                 },
