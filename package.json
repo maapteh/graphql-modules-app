@@ -13,7 +13,7 @@
     "test:ci": "yarn run coverage -- --ci --maxWorkers=2 --reporters=default --reporters=jest-junit",
     "test:coverage": "lerna run test:coverage",
     "lint": "lerna run lint",
-    "lint:fix": "prettier --config ./config/.prettierrc.json --ignore-path \"./config/prettierignore\" --write \"packages/*/{src,tests,test,lib,components,pages}/**/*.{j,t}s*\"",
+    "lint:fix": "prettier --config ./config/.prettierrc --no-editorconfig --ignore-path \"./config/prettierignore\" --write \"packages/*/{src,tests,test,lib,components,pages}/**/*.{j,t}s*\"",
     "lint-staged": "lint-staged"
   },
   "lint-staged": {
