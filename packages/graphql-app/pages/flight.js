@@ -1,10 +1,10 @@
 import * as React from 'react';
 import App from '../components/App';
-import {Flight} from '../components/flight/flight';
+import { Flight } from '../components/flight/flight';
 
 export default class extends React.Component {
-    static getInitialProps({query: {id}}) {
-        return {id};
+    static getInitialProps({ query: { id } }) {
+        return { id };
     }
 
     render() {

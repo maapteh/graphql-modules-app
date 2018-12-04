@@ -27,13 +27,13 @@ export async function bootstrap(appModule: GraphQLModule) {
 
     // BUG: Apollo doesn't set allow-origin correctly ('*' instead of real allowed origin)
     app.use((req, res, next) => {
-
         const origin = req.get('origin');
 
         if (origin) {
             const index = allowedOrigins.indexOf(origin);
             if (index === -1) {
-                const msg = 'The CORS policy does not allow access from the specified Origin.';
+                const msg =
+                    'The CORS policy does not allow access from the specified Origin.';
                 return next(new Error(msg));
             }
 
@@ -42,15 +42,14 @@ export async function bootstrap(appModule: GraphQLModule) {
         }
 
         next();
-
     });
 
     server.applyMiddleware({
         app,
         path,
         cors: {
-            origin: allowedOrigins
-        }
+            origin: allowedOrigins,
+        },
     });
 
     app.listen(

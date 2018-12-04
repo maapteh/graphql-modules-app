@@ -1,5 +1,5 @@
 import App from '../components/App';
-import {ProductsList} from '../components/products/products-list';
+import { ProductsList } from '../components/products/products-list';
 
 export default () => (
     <App title="Products">

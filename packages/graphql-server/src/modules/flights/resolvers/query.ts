@@ -1,5 +1,10 @@
 import { GraphQLModule, ModuleContext } from '@graphql-modules/core';
-import { Flight, Flights, GetFlightsQueryArgs, GetFlightQueryArgs } from '../../../_generated-types';
+import {
+    Flight,
+    Flights,
+    GetFlightsQueryArgs,
+    GetFlightQueryArgs,
+} from '../../../_generated-types';
 import { ApolloClientContext } from '../../../app';
 import { FlightsProvider } from '../providers/flights';
 

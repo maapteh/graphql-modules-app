@@ -11,7 +11,8 @@ export class FlightsProvider {
 
     // TODO: move to generic helper
     private checkStatus(res: any) {
-        if (res.ok) { // res.status >= 200 && res.status < 300
+        if (res.ok) {
+            // res.status >= 200 && res.status < 300
             return res;
         }
         // TODO: throw error?
@@ -21,17 +22,20 @@ export class FlightsProvider {
     constructor() {
         // TODO: move to config
         this.baseUrl = 'https://api.schiphol.nl/public-flights/flights';
-        this.credentials = `app_id=${process.env.SCHIPHOL_API_ID}&app_key=${process.env.SCHIPHOL_API_KEY}`;
+        this.credentials = `app_id=${process.env.SCHIPHOL_API_ID}&app_key=${
+            process.env.SCHIPHOL_API_KEY
+        }`;
     }
 
     public async getFlights(
         id: string | null | undefined,
         { context }: ApolloClientContext,
     ): Promise<Flights> {
+        const url = `${this.baseUrl}?${
+            this.credentials
+        }&includedelays=false&page=0&sort=%2Bscheduletime`;
 
-        const url = `${this.baseUrl}?${this.credentials}&includedelays=false&page=0&sort=%2Bscheduletime`;
-
-        return nodeFetch(url, {headers: { ResourceVersion: 'v3'}})
+        return nodeFetch(url, { headers: { ResourceVersion: 'v3' } })
             .then(this.checkStatus)
             .then((res: Response) => {
                 if (res) {
@@ -44,9 +48,10 @@ export class FlightsProvider {
         id: string,
         { context }: ApolloClientContext,
     ): Promise<Flight> {
-
         // NOT WORKING: REQUEST SENT TO SCHIPHOL GROUP
-        return nodeFetch(`${this.baseUrl}/${id}?${this.credentials}`, {headers: { ResourceVersion: 'v3'}})
+        return nodeFetch(`${this.baseUrl}/${id}?${this.credentials}`, {
+            headers: { ResourceVersion: 'v3' },
+        })
             .then(this.checkStatus)
             .then((res: Response) => {
                 if (res) {

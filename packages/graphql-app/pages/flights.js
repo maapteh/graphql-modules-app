@@ -1,5 +1,5 @@
 import App from '../components/App';
-import {FlightsList} from '../components/flights-list/flights-list';
+import { FlightsList } from '../components/flights-list/flights-list';
 
 export default () => (
     <App title="Flights">

@@ -29,20 +29,20 @@ export async function bootstrapMetrics(appModule: GraphQLModule) {
 
     // TODO: move allowed origin to own middleware
     const allowedOrigins = [
-      'http://localhost:4000',
-      'http://localhost:4001',
-      process.env.ALLOWED_ORIGIN,
+        'http://localhost:4000',
+        'http://localhost:4001',
+        process.env.ALLOWED_ORIGIN,
     ];
 
     // BUG: Apollo doesn't set allow-origin correctly ('*' instead of real allowed origin)
     app.use((req, res, next) => {
-
         const origin = req.get('origin');
 
         if (origin) {
             const index = allowedOrigins.indexOf(origin);
             if (index === -1) {
-                const msg = 'The CORS policy does not allow access from the specified Origin.';
+                const msg =
+                    'The CORS policy does not allow access from the specified Origin.';
                 return next(new Error(msg));
             }
 
@@ -51,15 +51,14 @@ export async function bootstrapMetrics(appModule: GraphQLModule) {
         }
 
         next();
-
     });
 
     server.applyMiddleware({
         app,
         path,
         cors: {
-          origin: allowedOrigins
-        }
+            origin: allowedOrigins,
+        },
     });
 
     const engine = new ApolloEngine({
