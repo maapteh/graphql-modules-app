@@ -5,7 +5,7 @@ import { ApolloServer } from 'apollo-server-express';
 import * as express from 'express';
 import * as depthLimit from 'graphql-depth-limit';
 
-export async function bootstrap(appModule: GraphQLModule) {
+export async function bootstrapMetrics(appModule: GraphQLModule) {
     const { schema, context } = appModule;
 
     const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 4000;
@@ -26,6 +26,8 @@ export async function bootstrap(appModule: GraphQLModule) {
     });
 
     const app = express();
+
+    // TODO: move allowed origin to own middleware
     const allowedOrigins = [
       'http://localhost:4000',
       'http://localhost:4001',

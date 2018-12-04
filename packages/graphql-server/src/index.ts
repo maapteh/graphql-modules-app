@@ -6,8 +6,13 @@ if (process.env.NODE_ENV === 'development') {
     dotenv.load();
 }
 
+import { bootstrap } from './server';
+import { bootstrapMetrics } from './server-metrics';
 import { appModule } from './app';
-// Option to see how Engine with metrics works: './_server'
-import { bootstrap } from './_server';
 
-bootstrap(appModule);
+// Test application with Apollo Engine and Metrics
+if (process.env.METRICS && process.env.METRICS === 'on') {
+    bootstrapMetrics(appModule);
+} else {
+    bootstrap(appModule);
+}

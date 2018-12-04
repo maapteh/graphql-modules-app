@@ -18,6 +18,7 @@ export async function bootstrap(appModule: GraphQLModule) {
 
     const app = express();
 
+    // TODO: move allowed origin to own middleware
     const allowedOrigins = [
         'http://localhost:4000',
         'http://localhost:4001',
