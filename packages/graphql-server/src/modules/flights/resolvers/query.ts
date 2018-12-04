@@ -1,16 +1,16 @@
-import { ModuleContext } from '@graphql-modules/core';
+import { GraphQLModule, ModuleContext } from '@graphql-modules/core';
 import { Flight, Flights, GetFlightsQueryArgs, GetFlightQueryArgs } from '../../../_generated-types';
 import { ApolloClientContext } from '../../../app';
 import { FlightsProvider } from '../providers/flights';
 
-export default {
+export default ({ injector }: GraphQLModule) => ({
     Query: {
         getFlights: (
             _: Flights,
             { id }: GetFlightsQueryArgs,
             context: ModuleContext<ApolloClientContext>,
         ) => {
-            return context.injector
+            return injector
                 .get<FlightsProvider>(FlightsProvider)
                 .getFlights(id, context);
         },
@@ -19,9 +19,9 @@ export default {
             { id }: GetFlightQueryArgs,
             context: ModuleContext<ApolloClientContext>,
         ) => {
-            return context.injector
+            return injector
                 .get<FlightsProvider>(FlightsProvider)
                 .getFlight(id, context);
         },
     },
-};
+});

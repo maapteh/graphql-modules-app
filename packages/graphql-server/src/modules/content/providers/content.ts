@@ -1,4 +1,4 @@
-import { Injectable } from '@graphql-modules/core';
+import { Injectable } from '@graphql-modules/di';
 import { Content } from '../../../_generated-types';
 import { ApolloClientContext } from '../../../app';
 

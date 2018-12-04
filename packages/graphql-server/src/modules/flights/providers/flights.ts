@@ -1,4 +1,4 @@
-import { Injectable } from '@graphql-modules/core';
+import { Injectable } from '@graphql-modules/di';
 // import { ApolloError } from 'apollo-server-express';
 import { Flights, Flight } from '../../../_generated-types';
 import { ApolloClientContext } from '../../../app';

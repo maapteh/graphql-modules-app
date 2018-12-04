@@ -11,17 +11,14 @@ export interface ApolloClientContext {
     context: string;
 }
 
-export const appModule = new GraphQLModule({
+export const appModule = new GraphQLModule<{}, {}, ApolloClientContext>({
     /** a list of `GraphQLModule` you wish to load to your app */
     imports: [contentModule, flightsModule, productModule],
     /** Object map between `Type.field` to a function(s) that will wrap the resolver of the field */
     resolversComposition: {},
     /** List of external providers to load into the injector */
     providers: [],
-    contextBuilder: (
-        networkRequest: any,
-        currentContext: object,
-    ): ApolloClientContext => {
+    context: (): ApolloClientContext => {
         return {
             context: 'foo',
             tokenType: '123',
