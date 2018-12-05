@@ -4,4 +4,10 @@ type Query {
   """
   getProducts(id: String!): Products
 
+
+  """
+  Get single product
+  """
+  getProduct(id: String!): Product
+
 }

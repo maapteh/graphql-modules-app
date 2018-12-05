@@ -12,7 +12,17 @@ export default ({ injector }: GraphQLModule) => ({
         ) => {
             return injector
                 .get<ProductProvider>(ProductProvider)
-                .getProducts(id, context);
+                .getProducts(id);
+        },
+
+        getProduct: (
+            _: any,
+            { id }: any,
+            context: ModuleContext<ApolloClientContext>,
+        ) => {
+            return injector
+                .get<ProductProvider>(ProductProvider)
+                .getProduct(id);
         },
     },
 });

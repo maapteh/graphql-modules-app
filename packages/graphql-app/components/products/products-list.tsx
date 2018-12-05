@@ -3,9 +3,10 @@ import {
     GetProductsComponent,
     GetProductsProducts,
 } from '../../lib/_generated-components';
+import Link from 'next/link';
 
 export const ProductsList = () => (
-    <GetProductsComponent variables={{ id: '1430' }}>
+    <GetProductsComponent variables={{ id: '38904' }}>
         {({ loading, error, data: { getProducts } }) => {
             if (error) {
                 <div>error</div>;
@@ -25,7 +26,13 @@ export const ProductsList = () => (
                                 (product: GetProductsProducts) => {
                                     return (
                                         <li key={`${product.id}`}>
-                                            {product.title}
+                                            <Link
+                                                href={`/product?id=${
+                                                    product.id
+                                                }`}
+                                            >
+                                                <a> {product.title}</a>
+                                            </Link>
                                         </li>
                                     );
                                 },

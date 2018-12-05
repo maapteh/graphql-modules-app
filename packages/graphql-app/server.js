@@ -10,7 +10,7 @@ app.prepare()
         const server = express()
 
         server.get('/products/:id', (req, res) => {
-            const actualPage = '/flight';
+            const actualPage = '/product';
             const queryParams = { id: req.params.id };
             app.render(req, res, actualPage, queryParams);
         });

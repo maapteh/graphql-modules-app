@@ -7,12 +7,6 @@ export default () => (
             <h1>GraphQL modules example</h1>
 
             <p>
-                <Link prefetch href="/flights">
-                    <a>flights</a>
-                </Link>
-                : schiphol.com open api data
-            </p>
-            <p>
                 <Link prefetch href="/products">
                     <a>products</a>
                 </Link>

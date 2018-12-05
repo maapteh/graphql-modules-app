@@ -15,9 +15,6 @@ export const Header = () => {
                     />
                 </a>
             </Link>
-            <Link prefetch href="/flights">
-                <a className="header__link">Flights</a>
-            </Link>
             <Link prefetch href="/products">
                 <a className="header__link">Products</a>
             </Link>

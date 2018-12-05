@@ -73,6 +73,36 @@ export type GetFlightsAircraftType = {
     iatamain: string | null;
 };
 
+export type GetProductVariables = {
+    id: string;
+};
+
+export type GetProductQuery = {
+    __typename?: 'Query';
+
+    getProduct: GetProductGetProduct | null;
+};
+
+export type GetProductGetProduct = {
+    __typename?: 'Product';
+
+    title: string | null;
+
+    rating: number | null;
+
+    shortDescription: string | null;
+
+    images: GetProductImages[] | null;
+};
+
+export type GetProductImages = {
+    __typename?: 'ProductImages';
+
+    key: string | null;
+
+    url: string | null;
+};
+
 export type GetProductsVariables = {
     id: string;
 };
@@ -199,6 +229,52 @@ export function GetFlightsHOC<TProps, TChildProps = any>(
         GetFlightsVariables,
         GetFlightsProps<TChildProps>
     >(GetFlightsDocument, operationOptions);
+}
+export const GetProductDocument = gql`
+    query getProduct($id: String!) {
+        getProduct(id: $id) {
+            title
+            rating
+            shortDescription
+            images {
+                key
+                url
+            }
+        }
+    }
+`;
+export class GetProductComponent extends React.Component<
+    Partial<ReactApollo.QueryProps<GetProductQuery, GetProductVariables>>
+> {
+    render() {
+        return (
+            <ReactApollo.Query<GetProductQuery, GetProductVariables>
+                query={GetProductDocument}
+                {...(this as any)['props'] as any}
+            />
+        );
+    }
+}
+export type GetProductProps<TChildProps = any> = Partial<
+    ReactApollo.DataProps<GetProductQuery, GetProductVariables>
+> &
+    TChildProps;
+export function GetProductHOC<TProps, TChildProps = any>(
+    operationOptions:
+        | ReactApollo.OperationOption<
+              TProps,
+              GetProductQuery,
+              GetProductVariables,
+              GetProductProps<TChildProps>
+          >
+        | undefined,
+) {
+    return ReactApollo.graphql<
+        TProps,
+        GetProductQuery,
+        GetProductVariables,
+        GetProductProps<TChildProps>
+    >(GetProductDocument, operationOptions);
 }
 export const GetProductsDocument = gql`
     query getProducts($id: String!) {
