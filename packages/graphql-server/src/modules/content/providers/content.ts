@@ -10,6 +10,7 @@ export class ContentProvider {
         id: string,
         { context }: ApolloClientContext,
     ): Promise<Content> {
+        console.log(context);
         return {};
     }
 }

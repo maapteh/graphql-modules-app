@@ -24,8 +24,8 @@ Now we can start the two applications:
 
 ### 1. GRAPHQL-SERVER
 - Goto './packages/graphql-server'
-- Run `yarn dev`
-- See [README](./packages/graphql-server/README.md) for option to run server with cacheControl and metrics
+- Run `yarn dev`, or `METRICS=on yarn dev` when you want metrics to be reported
+*[README](./packages/graphql-server/README.md)*
 
 ### 2. GRAPQL-APP
 - Goto './packages/graphql-app'
