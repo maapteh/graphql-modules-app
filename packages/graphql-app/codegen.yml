@@ -8,7 +8,7 @@ generates:
     config:
       noNamespaces: true
     plugins:
-      - add: "/* auto generated do not edit */"
+      - add: "/* tslint:disable */\n/* auto generated do not edit */"
       - typescript-common
       - typescript-client
       - typescript-react-apollo

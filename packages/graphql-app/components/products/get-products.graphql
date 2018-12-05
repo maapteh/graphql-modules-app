@@ -3,6 +3,15 @@ query getProducts($id: String!) {
         products {
             id
             title
+            shortDescription
+            images {
+                key
+                url
+            }
+            urls {
+                key
+                value
+            }
         }
     }
 }
