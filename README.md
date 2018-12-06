@@ -5,7 +5,7 @@ Demonstration application for showcase utilizing [https://graphql-modules.com/](
 Get your free API key from [developer.schiphol.nl/apis/flight-api](https://developer.schiphol.nl/apis/flight-api/overview?version=v3).
 
 ## Online demonstration
-[graphql-schiphol.herokuapp.com/](https://graphql-schiphol.herokuapp.com/) which points to the graphql endpoint at [graphql-server-schiphol.herokuapp.com/graphql](https://graphql-server-schiphol.herokuapp.com/graphql).
+[graphql-schiphol.herokuapp.com/](https://graphql-schiphol.herokuapp.com/) which points to the graphql endpoint at [graphql-server-schiphol.herokuapp.com/graphql](https://graphql-server-schiphol.herokuapp.com/graphql). *Both containers spin down when no activity, please be patient.*
 
 ## Structure
 ```
