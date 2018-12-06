@@ -32,7 +32,8 @@ export default () => (
         <a href="https://graphql-modules.com/">graphql-modules.com</a>
       </p>
 
-      <Product id="9200000100377941" context="{{important: true}}" />
+      {/* debatch non ssr test */}
+      <Product id="9200000100377941" ssr={false} context={{important: true}} />
     </div>
   </App>
 );

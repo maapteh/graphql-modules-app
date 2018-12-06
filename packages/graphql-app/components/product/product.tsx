@@ -3,13 +3,17 @@ import {ErrorMessage} from '../ErrorMessage';
 import {GetProductComponent} from '../../lib/_generated-components';
 import './product.scss';
 
-export const Product = ({id}: any) => {
+export interface ProductProps extends React.HTMLAttributes<HTMLElement> {
+  id: any;
+}
+
+export const Product = ({id, ...restProps}: ProductProps) => {
   const queryVars = {
     id: id.toString(),
   };
 
   return (
-    <GetProductComponent variables={queryVars}>
+    <GetProductComponent variables={queryVars} {...restProps as any}>
       {({loading, error, data: {getProduct}}) => {
         if (error) return <ErrorMessage message="Error loading product." />;
         if (loading) return <div>Loading</div>;
