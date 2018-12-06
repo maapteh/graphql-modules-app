@@ -8,12 +8,8 @@ import Link from 'next/link';
 export const ProductsList = () => (
   <GetProductsComponent variables={{id: '38904'}}>
     {({loading, error, data: {getProducts}}) => {
-      if (error) {
-        <div>error</div>;
-      }
-      if (loading) {
-        <div>Loading</div>;
-      }
+      if (error) return <div>error</div>;
+      if (loading) return <div>Loading</div>;
 
       return (
         <section>

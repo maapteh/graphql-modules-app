@@ -10,12 +10,8 @@ import './flights.scss';
 export const FlightsList = () => (
     <GetFlightsComponent>
         {({ loading, error, data: { getFlights } }) => {
-            if (error) {
-                <ErrorMessage message="Error loading flights." />;
-            }
-            if (loading) {
-                <div>Loading</div>;
-            }
+            if (error) return <ErrorMessage message="Error loading flights." />;
+            if (loading) return <div>Loading</div>;
 
             return (
                 <section>

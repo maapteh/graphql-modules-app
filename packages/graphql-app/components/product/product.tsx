@@ -11,8 +11,8 @@ export const Product = ({id}: any) => {
   return (
     <GetProductComponent variables={queryVars}>
       {({loading, error, data: {getProduct}}) => {
-        if (error) <ErrorMessage message="Error loading product." />;
-        if (loading) <div>Loading</div>;
+        if (error) return <ErrorMessage message="Error loading product." />;
+        if (loading) return <div>Loading</div>;
 
         const image =
           getProduct &&
