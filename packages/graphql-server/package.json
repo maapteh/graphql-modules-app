@@ -16,7 +16,7 @@
     "prepare": "yarn run build",
     "precommit": "lint-staged",
     "clean": "rm -rf coverage/* && rm -rf dist/*",
-    "dev": "gql-gen -w && NODE_ENV=development nodemon -e ts -x ts-node ./src/index.ts",
+    "dev": "NODE_ENV=development nodemon -e ts -x ts-node ./src/index.ts",
     "dev:monitoring": "yarn build && pm2-runtime dist/index.js",
     "dev:debug": "nodemon --exec ts-node --inspect --debug-brk src/index.ts",
     "test": "jest --config=jest.config.js",
