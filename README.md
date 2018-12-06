@@ -20,7 +20,7 @@ Get your free API key from [developer.schiphol.nl/apis/flight-api](https://devel
 ## DEVELOPMENT
 - `yarn` (builds all packages)
 
-Now we can start the two applications:
+Now we can start the two applications running `bash dev.sh` or individually:
 
 ### 1. GRAPHQL-SERVER
 - Goto './packages/graphql-server'
@@ -52,9 +52,9 @@ By default after install the build will take place and the start command is runn
 The Schiphol flight information is managed by the airlines and airline handlers in the Central Information System Schiphol ( CISS ). Part of this flight information is made available via the Rest API Flight Information (API) to developers.
 
 ## TODO
-0) Generating types components and introspection with argument for graphql endpoint
-1) Fix autogenerating react components
-2) Add two graphql endpoints, internal and external for SSR and client
-3) Add sample for development docker setup, running `docker-compose up graphql web nginx`. This runs the graphql server and the application on the same instance.
+1) Add two graphql endpoints, internal and external for SSR and client
+2) Add more tooling, so no copy task of graphql schema's needed anymore (also things like storybook etc etc)
+3) Add watcher correctly
+4) (Add sample for development docker setup, running `docker-compose up graphql web nginx`. This runs the graphql server and the application on the same instance).
 
 [![Codeship Status for maapteh/graphql-modules-app](https://app.codeship.com/projects/3bf47d90-d61c-0136-0edf-1a5c0fb66462/status?branch=master)](https://graphql-schiphol.herokuapp.com)

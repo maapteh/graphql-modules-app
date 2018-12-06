@@ -58,7 +58,7 @@ export async function bootstrap(appModule: GraphQLModule) {
         },
         () => {
             console.log(
-                `🚀 Server ready at http://localhost:${port}${
+                `🚀 APOLLO GRAPHQL at http://localhost:${port}${
                     server.graphqlPath
                 }`,
             );

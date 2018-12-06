@@ -39,6 +39,7 @@
     "@types/node": "10.12.10",
     "@types/react": "16.7.7",
     "@types/react-dom": "16.0.10",
+    "concurrently": "^4.1.0",
     "graphql": "0.13.2",
     "graphql-tag": "2.10.0",
     "isomorphic-fetch": "2.2.1",
