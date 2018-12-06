@@ -1,13 +1,11 @@
 type Query {
-  """
-  Get all products for a specific list
-  """
-  getProducts(id: String!): Products
+    """
+    Get all products for a specific list
+    """
+    getProducts(id: String!): Products
 
-
-  """
-  Get single product
-  """
-  getProduct(id: String!): Product
-
+    """
+    Get single product
+    """
+    getProduct(id: String!): Product
 }

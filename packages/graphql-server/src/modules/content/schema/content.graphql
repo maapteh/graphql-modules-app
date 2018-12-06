@@ -1,26 +1,26 @@
 # TODO: PUT IN GENERIC PLACE
 directive @cacheControl(
-  maxAge: Int,
-  scope: CacheControlScope
+    maxAge: Int
+    scope: CacheControlScope
 ) on OBJECT | FIELD_DEFINITION | INTERFACE
 
 enum CacheControlScope {
-  PUBLIC
-  PRIVATE
+    PUBLIC
+    PRIVATE
 }
 
 type Content @cacheControl(maxAge: 240) {
-  meta: ContentMeta
-  components: [ContentComponent]
+    meta: ContentMeta
+    components: [ContentComponent]
 }
 
 """
 Meta information about the page
 """
 type ContentMeta {
-  title: String
-  description: String
-  canonical: String!
+    title: String
+    description: String
+    canonical: String!
 }
 
 """
@@ -32,7 +32,6 @@ interface ContentComponent {
 }
 
 # TODO: what type of products do we have and how does their interface look like?
-
 
 # UNKNOWN COMPONENT DEFAULT
 type ContentComponentUnknown implements ContentComponent {

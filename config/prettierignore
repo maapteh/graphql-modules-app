@@ -1,2 +1,4 @@
 *.json
 *.snap
+_*.ts
+_*.tsx

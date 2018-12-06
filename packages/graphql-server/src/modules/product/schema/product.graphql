@@ -1,21 +1,21 @@
 directive @cacheControl(
-  maxAge: Int,
-  scope: CacheControlScope
+    maxAge: Int
+    scope: CacheControlScope
 ) on OBJECT | FIELD_DEFINITION | INTERFACE
 
 enum CacheControlScope {
-  PUBLIC
-  PRIVATE
+    PUBLIC
+    PRIVATE
 }
 
 """
 Products for a specific category, model is taken as is from bol.com
 """
 type Products @cacheControl(maxAge: 240) {
-  products: [Product]
-  schemaVersion: String
-  totalResultSize: Int
-  originalRequest: ProductsOriginalRequest
+    products: [Product]
+    schemaVersion: String
+    totalResultSize: Int
+    originalRequest: ProductsOriginalRequest
 }
 
 type Product @cacheControl(maxAge: 240) {
@@ -28,7 +28,8 @@ type Product @cacheControl(maxAge: 240) {
     shortDescription: String
     urls: [ProductUrls]
     images: [ProductImages]
-    """"
+    """
+    "
     weird, media is same as images
     """
     media: [ProductImages]
@@ -77,7 +78,7 @@ type ProductSeller {
 }
 
 type ProductParentCategoryPaths {
-   parentCategories: ProductParentCategory
+    parentCategories: ProductParentCategory
 }
 
 type ProductParentCategory {
@@ -86,11 +87,11 @@ type ProductParentCategory {
 }
 
 type ProductsOriginalRequest {
-  category: [ProductsOriginalRequestCategory]
+    category: [ProductsOriginalRequestCategory]
 }
 
 type ProductsOriginalRequestCategory {
-  id: Int
-  name: String
-  productCount: Int
+    id: Int
+    name: String
+    productCount: Int
 }

@@ -1,4 +1,3 @@
-
 """
 Main underlined title
 """
@@ -7,4 +6,3 @@ type ContentComponentHeader implements ContentComponent {
     type: String!
     title: String
 }
-

@@ -1,108 +1,108 @@
 directive @cacheControl(
-  maxAge: Int,
-  scope: CacheControlScope
+    maxAge: Int
+    scope: CacheControlScope
 ) on OBJECT | FIELD_DEFINITION | INTERFACE
 
 enum CacheControlScope {
-  PUBLIC
-  PRIVATE
+    PUBLIC
+    PRIVATE
 }
 
 """
 Flights
 """
 type Flights @cacheControl(maxAge: 240) {
-  flights: [Flight]
-  schemaVersion: String
+    flights: [Flight]
+    schemaVersion: String
 }
 
 """
 Flight
 """
 type Flight {
-  title: String
-  description: String
-  canonical: String!
+    title: String
+    description: String
+    canonical: String!
 }
 
 type Flight {
-  actualLandingTime: String
-  actualOffBlockTime: String
-  aircraftRegistration: String
-  aircraftType: AircraftTypeType
-  baggageClaim: BaggageClaimType
-  checkinAllocations: CheckinAllocationsType
-  codeshares: CodesharesType
-  estimatedLandingTime: String
-  expectedTimeBoarding: String
-  expectedTimeGateClosing: String
-  expectedTimeGateOpen: String
-  expectedTimeOnBelt: String
-  flightDirection: String
-  flightName: String
-  flightNumber: Int
-  gate: String
-  id: String
-  mainFlight: String
-  prefixIATA: String
-  prefixICAO: String
-  publicEstimatedOffBlockTime: String
-  publicFlightState: PublicFlightStateType
-  route: RouteType
-  scheduleDate: String
-  scheduleTime: String
-  schemaVersion: String
-  serviceType: String
-  terminal: Int
-  transferPositions: TransferPositionsType
+    actualLandingTime: String
+    actualOffBlockTime: String
+    aircraftRegistration: String
+    aircraftType: AircraftTypeType
+    baggageClaim: BaggageClaimType
+    checkinAllocations: CheckinAllocationsType
+    codeshares: CodesharesType
+    estimatedLandingTime: String
+    expectedTimeBoarding: String
+    expectedTimeGateClosing: String
+    expectedTimeGateOpen: String
+    expectedTimeOnBelt: String
+    flightDirection: String
+    flightName: String
+    flightNumber: Int
+    gate: String
+    id: String
+    mainFlight: String
+    prefixIATA: String
+    prefixICAO: String
+    publicEstimatedOffBlockTime: String
+    publicFlightState: PublicFlightStateType
+    route: RouteType
+    scheduleDate: String
+    scheduleTime: String
+    schemaVersion: String
+    serviceType: String
+    terminal: Int
+    transferPositions: TransferPositionsType
 }
 
 type AircraftTypeType {
-  iatamain: String
-  iatasub: String
+    iatamain: String
+    iatasub: String
 }
 type BaggageClaimType {
-  belts: [String]
+    belts: [String]
 }
 type CheckinAllocationsType {
-  checkinAllocations: [CheckinAllocationType]
-  remarks: RemarksType
+    checkinAllocations: [CheckinAllocationType]
+    remarks: RemarksType
 }
 type CodesharesType {
-  codeshares: [String]
+    codeshares: [String]
 }
 type PublicFlightStateType {
-  flightStates: [String]
+    flightStates: [String]
 }
 type RouteType {
-  destinations: [String]
+    destinations: [String]
 }
 type TransferPositionsType {
-  transferPositions: [Int]
+    transferPositions: [Int]
 }
 type CheckinAllocationType {
-  endTime: String
-  rows: RowsType
-  startTime: String
+    endTime: String
+    rows: RowsType
+    startTime: String
 }
 type RemarksType {
-  remarks: [String]
+    remarks: [String]
 }
 type RowsType {
-  rows: [RowType]
+    rows: [RowType]
 }
 type RowType {
-  desks: DesksType
-  position: String
+    desks: DesksType
+    position: String
 }
 type DesksType {
-  desks: [DeskType]
+    desks: [DeskType]
 }
 type DeskType {
-  checkinClass: CheckinClassType
-  position: Int
+    checkinClass: CheckinClassType
+    position: Int
 }
 type CheckinClassType {
-  code: String
-  description: String
+    code: String
+    description: String
 }
