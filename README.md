@@ -11,7 +11,7 @@ Get your free API key from [developer.schiphol.nl/apis/flight-api](https://devel
 ```
 .
 ├── /config/                    # some configuration for build scripts
-├── /packages/                  #
+├── /packages/                  # 2 applications
 │   ├── /graphql-app/           # React NextJS isomorphic application
 │   └── /graphql-server/        # Apollo GraphQL server created with graphql-modules
 ├── /test/                      # end-to-end tests
@@ -20,16 +20,16 @@ Get your free API key from [developer.schiphol.nl/apis/flight-api](https://devel
 ## DEVELOPMENT
 - `yarn` (builds all packages)
 
-Now we can start the two applications running `bash dev.sh` or individually:
+*Now we can start the two applications running **`bash dev.sh`** / `METRICS=on dev.sh` or you can run them individually:*
 
 ### 1. GRAPHQL-SERVER
 - Goto './packages/graphql-server'
-- Run `yarn dev`, or `METRICS=on yarn dev` when you want metrics to be reported
+- Run **`yarn dev`**, or `METRICS=on yarn dev` when you want metrics to be reported
 *[README](./packages/graphql-server/README.md)*
 
 ### 2. GRAPQL-APP
 - Goto './packages/graphql-app'
-- Run `yarn dev`
+- Run **`yarn dev`**
 
 ## PRODUCTION
 
@@ -40,6 +40,7 @@ SCHIPHOL_API_ID=***
 SCHIPHOL_API_KEY=***
 ENGINE_KEY=apollo-engine-key-overhere-for-metrics-option-which-is-optional
 ALLOWED_ORIGIN=endpoint-your-app-will-run
+METRICS=on|off
 ```
 Create an '.env' file inside './packages/graphql-app' with the following:
 ```
