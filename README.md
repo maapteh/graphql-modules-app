@@ -1,5 +1,5 @@
 # GraphQL-Modules TypeScript server & NextJS application
-Demonstration application for showcase utilizing [https://graphql-modules.com/](https://graphql-modules.com/) which is using data from Schiphol open-api.
+Demonstration application for showcase utilizing [https://graphql-modules.com/](https://graphql-modules.com/) which is using data from BOL.com Open Api.
 
 ## Pre-requisites
 Get your free API key from [developer.schiphol.nl/apis/flight-api](https://developer.schiphol.nl/apis/flight-api/overview?version=v3).
