@@ -1,13 +1,13 @@
 # GraphQL-Modules TypeScript server & NextJS application
 Demonstration application for showcase utilizing [https://graphql-modules.com/](https://graphql-modules.com/) which is using data from BOL.com Open Api.
 
-## Pre-requisites
+## PRE-REQUISITES
 Get your free API key from [bol.com/documentatie/open-api](https://partnerblog.bol.com/documentatie/open-api). This is for the 'products' part, working on another part too where no key is needed.
 
-## Online demonstration
+## ONLINE DEMO
 [graphql-schiphol.herokuapp.com/](https://graphql-schiphol.herokuapp.com/) which points to the graphql endpoint at [graphql-server-schiphol.herokuapp.com/graphql](https://graphql-server-schiphol.herokuapp.com/graphql). *Both containers spin down when no activity, please be patient.*
 
-## Structure
+## STRUCTURE
 ```
 .
 ├── /config/                    # some configuration for build scripts
@@ -20,6 +20,21 @@ Get your free API key from [bol.com/documentatie/open-api](https://partnerblog.b
 ## DEVELOPMENT
 - `yarn` (builds all packages)
 
+### Configuration
+Environment vars for development (set them in CI for production).
+Create an '.env' file inside './packages/graphql-server' with the following:
+```
+BOL_API_KEY=***
+ENGINE_KEY=apollo-engine-key-overhere-for-metrics-option-which-is-optional
+ALLOWED_ORIGIN=endpoint-your-app-will-run
+METRICS=on|off
+```
+Create an '.env' file inside './packages/graphql-app' with the following:
+```
+GRAPHQL_ENDPOINT=endpoint-your-graphql-server-will-run
+```
+
+### Start
 *Now we can start the two applications running **`bash dev.sh`** / `METRICS=on dev.sh` or you can run them individually:*
 
 ### 1. GRAPHQL-SERVER
@@ -32,20 +47,6 @@ Get your free API key from [bol.com/documentatie/open-api](https://partnerblog.b
 - Run **`yarn dev`**
 
 ## PRODUCTION
-
-### Setting vars for production locally or in your CI
-Create an '.env' file inside './packages/graphql-server' with the following:
-```
-BOL_API_KEY=***
-ENGINE_KEY=apollo-engine-key-overhere-for-metrics-option-which-is-optional
-ALLOWED_ORIGIN=endpoint-your-app-will-run
-METRICS=on|off
-```
-Create an '.env' file inside './packages/graphql-app' with the following:
-```
-GRAPHQL_ENDPOINT=endpoint-your-graphql-server-will-run
-```
-### Build
 By default after install the build will take place and the start command is running this build.
 
 ## TODO
