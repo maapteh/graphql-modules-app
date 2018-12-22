@@ -14,6 +14,7 @@ export async function bootstrap(appModule: GraphQLModule) {
         introspection: true,
         cacheControl: true,
         tracing: true,
+        playground: true, // WE SHOW THE GRAPHQL PLAYGROUND ALSO IN PRODUCTION, REMOVE THIS LINE WHEN YOU ONLY WANT IT IN DEVELOPMENT
     });
 
     const app = express();

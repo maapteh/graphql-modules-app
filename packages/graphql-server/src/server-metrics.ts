@@ -23,6 +23,7 @@ export async function bootstrapMetrics(appModule: GraphQLModule) {
         engine: false,
         // TODO: find best strategy for limiting usage
         validationRules: [depthLimit(11)],
+        playground: true, // WE SHOW THE GRAPHQL PLAYGROUND ALSO IN PRODUCTION, REMOVE THIS LINE WHEN YOU ONLY WANT IT IN DEVELOPMENT
     });
 
     const app = express();
