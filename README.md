@@ -50,9 +50,7 @@ GRAPHQL_ENDPOINT=endpoint-your-graphql-server-will-run
 By default after install the build will take place and the start command is running this build.
 
 ## TODO
-1) Add two graphql endpoints, internal and external for SSR and client
-2) Add more tooling, so no copy task of graphql schema's needed anymore (also things like storybook etc etc)
-3) Add watcher correctly
-4) (Add sample for development docker setup, running `docker-compose up graphql web nginx`. This runs the graphql server and the application on the same instance).
+1) Add more tooling, so no copy task of graphql schema's needed anymore (also things like storybook etc etc)
+2) (Add sample for development docker setup, running `docker-compose up graphql web nginx`. This runs the graphql server and the application on the same instance).
 
 [![Codeship Status for maapteh/graphql-modules-app](https://app.codeship.com/projects/3bf47d90-d61c-0136-0edf-1a5c0fb66462/status?branch=master)](https://graphql-schiphol.herokuapp.com)
