@@ -1,11 +1,11 @@
 {
   "name": "graphql",
+  "version": "0.0.2",
   "description": "Our awesome Apollo server",
-  "version": "0.0.1",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "maapteh/graphql-modules-app"
+    "url": "maapteh/graphql-modules-app/packages/graphql-server"
   },
   "pre-commit": "lint-staged",
   "license": "MIT",

@@ -1,5 +1,6 @@
 {
   "name": "graphql-modules-typescript-sample-app",
+  "version": "0.0.2",
   "private": false,
   "license": "MIT",
   "engines": {

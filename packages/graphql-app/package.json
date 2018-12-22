@@ -1,8 +1,12 @@
 {
   "name": "graphql-app",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "maapteh/graphql-modules-app/packages/graphql-app"
+  },
   "engines": {
     "node": ">= 10.13.0"
   },
