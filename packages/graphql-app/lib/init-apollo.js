@@ -6,7 +6,7 @@ import { onError } from 'apollo-link-error';
 import { HttpLink } from 'apollo-link-http';
 import { BatchHttpLink } from 'apollo-link-batch-http';
 import { toIdValue } from 'apollo-utilities';
-
+import { version } from '../package.json';
 import { fragmentMatcher } from './fragment-matcher';
 
 let apolloClient = null;
@@ -70,6 +70,8 @@ function create(initialState) {
             ),
         ]),
         cache: cache.restore(initialState || {}),
+        name: 'GRAPQL APP',
+        version: version,
     });
 }
 

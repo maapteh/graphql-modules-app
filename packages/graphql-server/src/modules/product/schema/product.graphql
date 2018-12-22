@@ -11,14 +11,14 @@ enum CacheControlScope {
 """
 Products for a specific category, model is taken as is from bol.com
 """
-type Products @cacheControl(maxAge: 240) {
+type Products @cacheControl(maxAge: 2400) {
     products: [Product]
     schemaVersion: String
     totalResultSize: Int
     originalRequest: ProductsOriginalRequest
 }
 
-type Product @cacheControl(maxAge: 240) {
+type Product @cacheControl(maxAge: 2400) {
     id: String
     ean: String
     title: String
