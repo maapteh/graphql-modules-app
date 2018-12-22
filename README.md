@@ -2,7 +2,9 @@
 Demonstration application for showcase utilizing [https://graphql-modules.com/](https://graphql-modules.com/) which is using data from BOL.com Open Api.
 
 ## PRE-REQUISITES
-Get your free API key from [bol.com/documentatie/open-api](https://partnerblog.bol.com/documentatie/open-api). This is for the 'products' part, working on another part too where no key is needed.
+- Node dubnium
+- Facebook watchman (only for development) [optional]
+- Get your free API key from [bol.com/documentatie/open-api](https://partnerblog.bol.com/documentatie/open-api). This is for the 'products' part, working on another part too where no key is needed. [optional]
 
 ## ONLINE DEMO
 [graphql-schiphol.herokuapp.com/](https://graphql-schiphol.herokuapp.com/) which points to the graphql endpoint at [graphql-server-schiphol.herokuapp.com/graphql](https://graphql-server-schiphol.herokuapp.com/graphql). *Both containers spin down when no activity, please be patient.*
@@ -19,6 +21,7 @@ Get your free API key from [bol.com/documentatie/open-api](https://partnerblog.b
 
 ## DEVELOPMENT
 - `yarn` (builds all packages)
+- `bash dev.sh`
 
 ### Configuration
 Environment vars for development (set them in CI for production).

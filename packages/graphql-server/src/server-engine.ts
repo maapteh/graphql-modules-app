@@ -21,9 +21,9 @@ export async function bootstrapEngine(appModule: GraphQLModule) {
         // integrated metric reporting and fall-back to using the Apollo
         // Engine Proxy (running separately) for metric collection.
         engine: false,
+        playground: true, // ALERT: WE SHOW THE GRAPHQL PLAYGROUND ALSO IN PRODUCTION FOR THIS SAMPLE APP, REMOVE THIS LINE WHEN YOU ONLY WANT IT IN DEVELOPMENT
         // TODO: find best strategy for limiting usage
         validationRules: [depthLimit(11)],
-        playground: true, // WE SHOW THE GRAPHQL PLAYGROUND ALSO IN PRODUCTION, REMOVE THIS LINE WHEN YOU ONLY WANT IT IN DEVELOPMENT
     });
 
     const app = express();
