@@ -6,39 +6,84 @@ export default () => (
         <div className="content__section">
             <h1>Showcase GraphQL</h1>
 
+            <h2>React client</h2>
             <p>
-                NextJS is used because it gives a setup in which we can easily
+                NextJS is used because it gives a setup in which it's esy to
                 have an isomorphic application without too much code. This way
-                we are able to focus on the GraphQL part.
+                there is more focus on the GraphQL part.
+            </p>
+            <p>
+                We only need to provide an{' '}
+                <a href="https://github.com/maapteh/graphql-modules-app/blob/master/packages/graphql-app/lib/init-apollo.js">
+                    Apollo client
+                </a>{' '}
+                with the{' '}
+                <a href="https://github.com/maapteh/graphql-modules-app/blob/master/packages/graphql-app/lib/with-apollo-client.js#L61">
+                    React application
+                </a>
+                . Now we are able to have control if component needs to be
+                rendered server or client side and also we can debatch the
+                component (mostly on components where the data can be utterly
+                slow, for example reservation airline).
             </p>
 
-            <h2>GraphQL</h2>
+            <h2>GraphQL server</h2>
+            <p>
+                This is why this sample has been setup. It's a showcase for
+                having real modules in your graphql server.
+            </p>
+
             <ul>
                 <li>
-                    TODO: example with Batched/non-batched queries (code is
-                    allready provided (by using context important) but no demo
-                    is created for it)
+                    TODO: example with Batched/non-batched queries and non SSR
+                    option (code is allready provided (by using context
+                    important) but no demo is created for it)
                 </li>
-                <li>SSR/client side rendering</li>
+                <li>
+                    TODO: add a non open api example so its easier to run the
+                    whole application locally without first registering for an
+                    open api key.
+                </li>
             </ul>
 
-            <h3>Open api</h3>
-            <p>
-                This application is using the open api of schiphol.nl and
-                bol.com at the moment.
-            </p>
+            <h3>Links</h3>
 
-            <h2>graphql-modules.com</h2>
-            <p>
-                <a href="https://graphql-modules.com/">graphql-modules.com</a>
-            </p>
+            <ul>
+                <li>
+                    <a href="https://github.com/maapteh/graphql-modules-app">
+                        github repo with all code for this application
+                    </a>
+                </li>
+                <li>
+                    <a href="https://graphql-server-schiphol.herokuapp.com/graphql">
+                        graphql playground is activated for demonstration
+                        purpose
+                    </a>
+                </li>
+                <li>
+                    <a href="https://graphql-modules.com/">
+                        server runs with graphql-modules.com
+                    </a>
+                </li>
+            </ul>
 
-            {/* debatch non ssr test */}
+            <h1>Example component</h1>
+            <p>See the options on the component below</p>
+            {/* debatch non ssr test, by default everything is SSR and batched */}
             <Product
                 id="9200000100377941"
                 ssr={false}
                 context={{ important: true }}
             />
+
+            <p>
+                <i>
+                    This application is using the free open api of{' '}
+                    <a href="https://bol.com">bol.com</a> at the moment for the
+                    products part. Some other parts will have mocked data so
+                    without a key you can still play arround.
+                </i>
+            </p>
         </div>
     </App>
 );

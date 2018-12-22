@@ -1,12 +1,15 @@
 import App from '../components/App';
 import { ProductsList } from '../components/products/products-list';
-import { Product } from '../components/product/product';
 
 export default () => (
     <App title="Products from BOL.com">
         <div className="content__section">
+            <p>
+                Example below is using the open API data from bol.com We use a
+                trick to retrieve all data in list view for a product detail
+                main page so the main part comes from the cache.
+            </p>
             <ProductsList />
-            <Product id="9200000094361918" ssr={true} />
         </div>
     </App>
 );

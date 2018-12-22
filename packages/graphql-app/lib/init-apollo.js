@@ -17,7 +17,11 @@ const uri = process.env.GRAPHQL_ENDPOINT
     : 'http://localhost:4000/graphql';
 
 // link to use if batching (default)
-const batchHttpLink = new BatchHttpLink({ uri, headers: { batch: 'true ' } });
+const batchHttpLink = new BatchHttpLink({
+    uri,
+    credentials: 'include', //'same-origin'
+    headers: { batch: 'true ' },
+});
 // link to use if not batching
 const httpLink = new HttpLink({
     uri,

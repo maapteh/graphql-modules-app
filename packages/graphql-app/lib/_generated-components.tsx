@@ -75,6 +75,8 @@ export type GetProductsProducts = {
 
     title: string | null;
 
+    rating: number | null;
+
     shortDescription: string | null;
 
     images: GetProductsImages[] | null;
@@ -164,6 +166,7 @@ export const GetProductsDocument = gql`
             products {
                 id
                 title
+                rating
                 shortDescription
                 images {
                     key
