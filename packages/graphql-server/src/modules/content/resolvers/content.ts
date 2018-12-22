@@ -18,18 +18,12 @@ export default {
         __resolveType(obj: ContentComponent) {
             // Same definitions as in mapComponents
             switch (obj.type) {
-                case 'Header':
-                    return 'ContentComponentHeader';
                 case 'Article':
                     return 'ContentComponentArticle';
-                case 'Freedeliverylane':
-                    return 'ContentComponentFreedelivery';
                 case 'GlobalNotification':
                     return 'ContentComponentGlobalNotification';
-                case 'Promolane':
-                    return 'ContentComponentPromo';
-                case 'ShopWindow':
-                    return 'ContentComponentShopWindow';
+                case 'Header':
+                    return 'ContentComponentHeader';
                 default:
                     return 'ContentComponentUnknown';
             }

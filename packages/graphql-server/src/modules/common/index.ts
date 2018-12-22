@@ -12,8 +12,6 @@ export const commonModule = new GraphQLModule<{}, {}, ApolloClientContext>({
         networkRequest: any,
         currentContext: object,
     ): ApolloClientContext => {
-        console.log(networkRequest);
-
         // get user and put on main context
         return {
             accesToken: 'foo',

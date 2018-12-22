@@ -27,8 +27,16 @@ export const ProductsList = () => (
                                                     product.id
                                                 }`}
                                             >
-                                                <a> {product.title}</a>
+                                                <a>{product.title}</a>
                                             </Link>
+                                            {product.id ===
+                                                '9200000094361918' && (
+                                                <span>
+                                                    {' '}
+                                                    [item should not create
+                                                    GRAPHQL request]
+                                                </span>
+                                            )}
                                         </li>
                                     );
                                 },
@@ -38,6 +46,7 @@ export const ProductsList = () => (
                         src="/static/bol.svg"
                         alt="BOL.com"
                         className="products__logo"
+                        width="120"
                     />
                 </section>
             );
