@@ -73,7 +73,7 @@ function create(initialState) {
             ),
         ]),
         cache: cache.restore(initialState || {}),
-        name: 'GRAPQL APP',
+        name: 'Sample application',
         version: version,
     });
 }
