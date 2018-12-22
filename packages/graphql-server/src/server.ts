@@ -1,6 +1,7 @@
 import { GraphQLModule } from '@graphql-modules/core';
 import { ApolloServer } from 'apollo-server-express';
 import * as express from 'express';
+import { allowedOrigins } from './allowed-origins';
 
 export async function bootstrap(appModule: GraphQLModule) {
     const { schema, context } = appModule;
@@ -18,13 +19,6 @@ export async function bootstrap(appModule: GraphQLModule) {
     });
 
     const app = express();
-
-    // TODO: move allowed origin to own middleware
-    const allowedOrigins = [
-        'http://localhost:4000',
-        'http://localhost:4001',
-        process.env.ALLOWED_ORIGIN,
-    ];
 
     // BUG: Apollo doesn't set allow-origin correctly ('*' instead of real allowed origin)
     app.use((req, res, next) => {
