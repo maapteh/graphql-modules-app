@@ -1,7 +1,7 @@
 import { GraphQLModule } from '@graphql-modules/core';
 
 export interface ApolloClientContext {
-    token: string;
+    accesToken: string;
     res: any; // todo: express response
 }
 
@@ -16,7 +16,7 @@ export const commonModule = new GraphQLModule<{}, {}, ApolloClientContext>({
 
         // get user and put on main context
         return {
-            token: 'foo',
+            accesToken: 'foo',
             res: networkRequest.res,
         };
     },

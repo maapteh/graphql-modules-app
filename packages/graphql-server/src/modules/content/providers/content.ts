@@ -8,10 +8,10 @@ export class ContentProvider {
 
     public async getContentPage(
         id: string,
-        { res, token }: ApolloClientContext,
+        { res, accesToken }: ApolloClientContext,
     ): Promise<Content> {
         // FAKE THIS IS REGISTRATION OF USER
-        console.log(`WE HAVE A SERVICE TOKEN ${token}`);
+        console.log(`WE HAVE A SERVICE TOKEN ${accesToken}`);
 
         // AWAIT USER
 
