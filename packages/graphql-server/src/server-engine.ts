@@ -79,17 +79,6 @@ export async function bootstrapEngine(appModule: GraphQLModule) {
         queryCache: {
             publicFullQueryStore: 'inMemory',
         },
-        generateClientInfo: ({ request }: any) => {
-            const headers = request.headers;
-            return {
-                clientName:
-                    (headers && headers['apollographql-client-name']) ||
-                    'Unknown Client',
-                clientVersion:
-                    (headers && headers['apollographql-client-version']) ||
-                    'Unversioned',
-            };
-        },
     });
 
     engine.listen(
