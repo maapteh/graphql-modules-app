@@ -37,12 +37,12 @@ type Product @cacheControl(maxAge: 2400) {
     parentCategoryPaths: ProductParentCategoryPaths
 }
 
-type ProductUrls {
+type ProductUrls @cacheControl(maxAge: 2400) {
     key: String
     value: String
 }
 
-type ProductImages {
+type ProductImages @cacheControl(maxAge: 2400) {
     type: String
     key: String
     url: String
