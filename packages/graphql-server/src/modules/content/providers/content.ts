@@ -1,6 +1,6 @@
 import { Injectable } from '@graphql-modules/di';
 import { Content } from '../../../_generated-types';
-import { ApolloClientContext } from '../../../app';
+import { ApolloClientContext } from '../../common';
 
 @Injectable()
 export class ContentProvider {
@@ -8,9 +8,22 @@ export class ContentProvider {
 
     public async getContentPage(
         id: string,
-        { context }: ApolloClientContext,
+        { res, token }: ApolloClientContext,
     ): Promise<Content> {
-        console.log(context);
+        // FAKE THIS IS REGISTRATION OF USER
+        console.log(`WE HAVE A SERVICE TOKEN ${token}`);
+
+        // AWAIT USER
+
+        // SET COOKIE
+        res.cookie('id', 'bar', {
+            httpOnly: true,
+            // @ts-ignore find out later
+            secure: process.env.NODE_ENV === 'production',
+            maxAge: 1000 * 60 * 60 * 24 * 7,
+        });
+
+        // MOCKED: get user from service
         return {};
     }
 }

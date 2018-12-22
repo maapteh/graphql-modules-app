@@ -1,6 +1,6 @@
 import { GraphQLModule, ModuleContext } from '@graphql-modules/core';
 // import {  } from '../../../_generated-types';
-import { ApolloClientContext } from '../../../app';
+import { ApolloClientContext } from '../../common';
 import { ProductProvider } from '../providers/product';
 
 export default ({ injector }: GraphQLModule) => ({

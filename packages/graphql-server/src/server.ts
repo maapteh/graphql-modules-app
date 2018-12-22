@@ -48,6 +48,7 @@ export async function bootstrap(appModule: GraphQLModule) {
         app,
         path,
         cors: {
+            credentials: true,
             origin: allowedOrigins,
         },
     });

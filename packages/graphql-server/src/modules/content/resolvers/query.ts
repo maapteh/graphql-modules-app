@@ -1,6 +1,6 @@
 import { GraphQLModule, ModuleContext } from '@graphql-modules/core';
 import { GetContentPageQueryArgs } from '../../../_generated-types';
-import { ApolloClientContext } from '../../../app';
+import { ApolloClientContext } from '../../common';
 import { ContentProvider } from '../providers/content';
 
 export default ({ injector }: GraphQLModule) => ({
