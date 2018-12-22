@@ -23,7 +23,22 @@ export class ContentProvider {
             maxAge: 1000 * 60 * 60 * 24 * 7,
         });
 
-        // MOCKED: get user from service
-        return {};
+        // MOCK A SIMPLE CONTENT PAGE
+        return {
+            meta: {
+                title: 'title',
+                canonical: 'https://maapteh',
+                description: 'foo bar',
+            },
+            components: [
+                {
+                    id: 'r1_01',
+                    type: 'Article',
+                    // @ts-ignore
+                    title: 'Shizzle',
+                    body: 'My article overhere',
+                },
+            ],
+        };
     }
 }
