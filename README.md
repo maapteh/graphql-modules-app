@@ -35,11 +35,11 @@ GRAPHQL_ENDPOINT=endpoint-your-graphql-server-will-run
 ```
 
 ### Start
-*Now we can start the two applications running **`bash dev.sh`** / `METRICS=on dev.sh` or you can run them individually:*
+*Now we can start the two applications running **`bash dev.sh`** / `ENGINE=on dev.sh` or you can run them individually:*
 
 ### 1. GRAPHQL-SERVER
 - Goto './packages/graphql-server'
-- Run **`yarn dev`**, or `METRICS=on yarn dev` when you want metrics to be reported
+- Run **`yarn dev`**, or `ENGINE=on yarn dev` when you also want engine
 *[README](./packages/graphql-server/README.md)*
 
 ### 2. GRAPQL-APP
