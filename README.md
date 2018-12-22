@@ -27,7 +27,7 @@ Create an '.env' file inside './packages/graphql-server' with the following:
 BOL_API_KEY=***
 ENGINE_KEY=apollo-engine-key-overhere-for-metrics-option-which-is-optional
 ALLOWED_ORIGIN=endpoint-your-app-will-run
-METRICS=on|off
+ENGINE=on|off
 ```
 Create an '.env' file inside './packages/graphql-app' with the following:
 ```

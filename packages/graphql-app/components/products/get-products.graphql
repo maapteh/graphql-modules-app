@@ -1,4 +1,3 @@
-
 # using same data for main part of product so it comes from cache for detail page
 query getProducts($id: String!) {
     getProducts(id: $id) {

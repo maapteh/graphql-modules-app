@@ -7,7 +7,7 @@
 ### Development
 - `yarn install` (once)
 - `yarn generate-types` (when you update something in schema) TODO: automate
-- `yarn dev` (also a debug version is avalailable running `yarn dev-debug`, and metrics version with `METRICS=on yarn dev`)
+- `yarn dev` (also a debug version is avalailable running `yarn dev-debug`, and engine version with `ENGINE=on yarn dev`)
 - open: [http://localhost:4000/graphql](http://localhost:4000/graphql)
 
 ### Production

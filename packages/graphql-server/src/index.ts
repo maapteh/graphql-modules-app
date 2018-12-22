@@ -7,12 +7,12 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 import { bootstrap } from './server';
-import { bootstrapMetrics } from './server-metrics';
+import { bootstrapEngine } from './server-engine';
 import { appModule } from './app';
 
-// Test application with Apollo Engine and Metrics
-if (process.env.METRICS && process.env.METRICS === 'on') {
-    bootstrapMetrics(appModule);
+// Test application with Apollo Engine
+if (process.env.ENGINE && process.env.ENGINE === 'on') {
+    bootstrapEngine(appModule);
 } else {
     bootstrap(appModule);
 }

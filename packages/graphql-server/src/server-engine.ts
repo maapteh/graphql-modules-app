@@ -1,12 +1,11 @@
+import * as express from 'express';
+import * as depthLimit from 'graphql-depth-limit';
 import { GraphQLModule } from '@graphql-modules/core';
 import { ApolloEngine } from 'apollo-engine';
 import { ApolloServer } from 'apollo-server-express';
-import * as express from 'express';
-import * as depthLimit from 'graphql-depth-limit';
-
 import { allowedOrigins } from './allowed-origins';
 
-export async function bootstrapMetrics(appModule: GraphQLModule) {
+export async function bootstrapEngine(appModule: GraphQLModule) {
     const { schema, context } = appModule;
 
     const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 4000;

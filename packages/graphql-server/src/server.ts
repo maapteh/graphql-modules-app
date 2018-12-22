@@ -1,6 +1,8 @@
+import * as express from 'express';
+import * as depthLimit from 'graphql-depth-limit';
 import { GraphQLModule } from '@graphql-modules/core';
 import { ApolloServer } from 'apollo-server-express';
-import * as express from 'express';
+
 import { allowedOrigins } from './allowed-origins';
 
 export async function bootstrap(appModule: GraphQLModule) {
@@ -15,7 +17,12 @@ export async function bootstrap(appModule: GraphQLModule) {
         introspection: true,
         cacheControl: true,
         tracing: true,
-        playground: true, // WE SHOW THE GRAPHQL PLAYGROUND ALSO IN PRODUCTION, REMOVE THIS LINE WHEN YOU ONLY WANT IT IN DEVELOPMENT
+        playground: true, // WE SHOW THE GRAPHQL PLAYGROUND ALSO IN PRODUCTION, REMOVE THIS LINE WHEN YOU ONLY WANT IT IN DEVELOPMENT,
+        engine: {
+            apiKey: process.env.ENGINE_KEY,
+        },
+        // TODO: find best strategy for limiting usage
+        validationRules: [depthLimit(11)],
     });
 
     const app = express();
