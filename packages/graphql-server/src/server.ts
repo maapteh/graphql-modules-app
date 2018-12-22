@@ -16,7 +16,7 @@ export async function bootstrap(appModule: GraphQLModule) {
         context,
         introspection: true,
         cacheControl: true,
-        tracing: true,
+        tracing: process.env.NODE_ENV === 'development', // tracing while in development
         playground: true, // WE SHOW THE GRAPHQL PLAYGROUND ALSO IN PRODUCTION, REMOVE THIS LINE WHEN YOU ONLY WANT IT IN DEVELOPMENT,
         engine: {
             apiKey: process.env.ENGINE_KEY,
