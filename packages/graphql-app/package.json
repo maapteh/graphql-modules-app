@@ -22,8 +22,7 @@
     "lint": "tslint -c \"../../config/tslint.json\" -p tsconfig.json src/*.ts",
     "lint-staged": "lint-staged",
     "clean": "find . -name \"node_modules\" -exec rm -rf '{}' + && find . -name \"dist\" -exec rm -rf '{}' +",
-    "generate-components": "gql-gen",
-    "build-introspection": "node internals/introspection.js"
+    "generate-components": "gql-gen"
   },
   "dependencies": {
     "@types/next": "^7.0.5",
@@ -52,11 +51,12 @@
     "typescript": "^3.2.1"
   },
   "devDependencies": {
-    "graphql-code-generator": "^0.14.5",
-    "graphql-codegen-add": "0.14.5",
-    "graphql-codegen-time": "0.14.5",
-    "graphql-codegen-typescript-client": "^0.14.5",
-    "graphql-codegen-typescript-react-apollo": "0.14.5",
+    "graphql-code-generator": "^0.15.2",
+    "graphql-codegen-add": "0.15.2",
+    "graphql-codegen-fragment-matcher": "^0.15.2",
+    "graphql-codegen-time": "0.15.2",
+    "graphql-codegen-typescript-client": "0.15.2",
+    "graphql-codegen-typescript-react-apollo": "0.15.2",
     "tslint": "^5.11.0",
     "tslint-config-airbnb": "^5.11.1",
     "tslint-config-prettier": "^1.15.0",

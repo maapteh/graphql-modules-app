@@ -9,8 +9,11 @@ generates:
       noNamespaces: true
     plugins:
       - add: "/* tslint:disable */\n/* auto generated do not edit */"
-      - typescript-common
-      - typescript-client
-      - typescript-react-apollo
+      - "typescript-common"
+      - "typescript-client"
+      - "typescript-react-apollo"
+  lib/_generated-fragment-types.ts:
+    plugins:
+      - "fragment-matcher"
 require:
   - "ts-node/register/transpile-only"

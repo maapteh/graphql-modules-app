@@ -1,5 +1,6 @@
 /* tslint:disable */
 /* auto generated do not edit */
+export type Maybe<T> = T | null;
 
 export enum CacheControlScope {
     Public = 'PUBLIC',
@@ -17,39 +18,39 @@ export type GetProductVariables = {
 export type GetProductQuery = {
     __typename?: 'Query';
 
-    getProduct: GetProductGetProduct | null;
+    getProduct: Maybe<GetProductGetProduct>;
 };
 
 export type GetProductGetProduct = {
     __typename?: 'Product';
 
-    id: string | null;
+    id: Maybe<string>;
 
-    title: string | null;
+    title: Maybe<string>;
 
-    rating: number | null;
+    rating: Maybe<number>;
 
-    shortDescription: string | null;
+    shortDescription: Maybe<string>;
 
-    images: GetProductImages[] | null;
+    images: Maybe<GetProductImages[]>;
 
-    urls: GetProductUrls[] | null;
+    urls: Maybe<GetProductUrls[]>;
 };
 
 export type GetProductImages = {
     __typename?: 'ProductImages';
 
-    key: string | null;
+    key: Maybe<string>;
 
-    url: string | null;
+    url: Maybe<string>;
 };
 
 export type GetProductUrls = {
     __typename?: 'ProductUrls';
 
-    key: string | null;
+    key: Maybe<string>;
 
-    value: string | null;
+    value: Maybe<string>;
 };
 
 export type GetProductsVariables = {
@@ -59,45 +60,45 @@ export type GetProductsVariables = {
 export type GetProductsQuery = {
     __typename?: 'Query';
 
-    getProducts: GetProductsGetProducts | null;
+    getProducts: Maybe<GetProductsGetProducts>;
 };
 
 export type GetProductsGetProducts = {
     __typename?: 'Products';
 
-    products: GetProductsProducts[] | null;
+    products: Maybe<GetProductsProducts[]>;
 };
 
 export type GetProductsProducts = {
     __typename?: 'Product';
 
-    id: string | null;
+    id: Maybe<string>;
 
-    title: string | null;
+    title: Maybe<string>;
 
-    rating: number | null;
+    rating: Maybe<number>;
 
-    shortDescription: string | null;
+    shortDescription: Maybe<string>;
 
-    images: GetProductsImages[] | null;
+    images: Maybe<GetProductsImages[]>;
 
-    urls: GetProductsUrls[] | null;
+    urls: Maybe<GetProductsUrls[]>;
 };
 
 export type GetProductsImages = {
     __typename?: 'ProductImages';
 
-    key: string | null;
+    key: Maybe<string>;
 
-    url: string | null;
+    url: Maybe<string>;
 };
 
 export type GetProductsUrls = {
     __typename?: 'ProductUrls';
 
-    key: string | null;
+    key: Maybe<string>;
 
-    value: string | null;
+    value: Maybe<string>;
 };
 
 import * as ReactApollo from 'react-apollo';
