@@ -35,11 +35,6 @@ export default () => (
 
             <ul>
                 <li>
-                    TODO: example with Batched/non-batched queries and non SSR
-                    option (code is allready provided (by using context
-                    important) but no demo is created for it)
-                </li>
-                <li>
                     TODO: add a non open api example so its easier to run the
                     whole application locally without first registering for an
                     open api key.
@@ -66,15 +61,6 @@ export default () => (
                     </a>
                 </li>
             </ul>
-
-            <h1>Example component</h1>
-            <p>See the options on the component below</p>
-            {/* debatch non ssr test, by default everything is SSR and batched */}
-            <Product
-                id="9200000100377941"
-                ssr={false}
-                context={{ important: true }}
-            />
 
             <p>
                 <i>

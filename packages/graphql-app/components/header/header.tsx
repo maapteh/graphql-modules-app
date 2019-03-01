@@ -18,6 +18,9 @@ export const Header = () => {
             <Link prefetch href="/products">
                 <a className="header__link">Products</a>
             </Link>
+            <Link prefetch href="/example">
+                <a className="header__link">Example</a>
+            </Link>
             <Link prefetch href="/about">
                 <a className="header__link">About</a>
             </Link>

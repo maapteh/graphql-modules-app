@@ -6,7 +6,7 @@ import {
 import Link from 'next/link';
 
 export const ProductsList = () => (
-    <GetProductsComponent variables={{ id: '38904' }}>
+    <GetProductsComponent variables={{ id: '38904' }} ssr={false}>
         {({ loading, error, data: { getProducts } }) => {
             if (error) return <div>error</div>;
             if (loading) return <div>Loading</div>;
