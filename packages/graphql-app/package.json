@@ -51,12 +51,12 @@
     "typescript": "^3.2.1"
   },
   "devDependencies": {
-    "graphql-code-generator": "^0.18.0",
-    "graphql-codegen-add": "^0.18.0",
-    "graphql-codegen-fragment-matcher": "^0.18.0",
-    "graphql-codegen-time": "^0.18.0",
-    "graphql-codegen-typescript-client": "^0.18.0",
-    "graphql-codegen-typescript-react-apollo": "^0.18.0",
+    "graphql-code-generator": "^0.17.0",
+    "graphql-codegen-add": "^0.17.0",
+    "graphql-codegen-fragment-matcher": "^0.17.0",
+    "graphql-codegen-time": "^0.17.0",
+    "graphql-codegen-typescript-client": "^0.17.0",
+    "graphql-codegen-typescript-react-apollo": "^0.17.0",
     "tslint": "^5.13.1",
     "tslint-config-airbnb": "^5.11.1",
     "tslint-config-prettier": "^1.18.0",

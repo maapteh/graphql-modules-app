@@ -9,6 +9,7 @@ export default () => (
                 trick to retrieve all data in list view for a product detail
                 main page so the main part comes from the cache.
             </p>
+            <h1>Products list</h1>
             <ProductsList />
         </div>
     </App>

@@ -13,8 +13,6 @@ export const ProductsList = () => (
 
             return (
                 <section>
-                    <h1>Products list</h1>
-
                     <ul>
                         {getProducts &&
                             getProducts.products &&
