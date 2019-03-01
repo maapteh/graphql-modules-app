@@ -30,7 +30,7 @@ const app = express();
 
 // Our application: API
 app.use(
-    `${SERVICE_CONTEXT}/graphql`,
+    '/graphql',
     proxy({
         target: `http://${API}:4000`,
     }),
@@ -38,7 +38,7 @@ app.use(
 
 // Our application: WEB
 app.use(
-    ['/__webpack_hmr', SERVICE_CONTEXT, '/'],
+    ['/__webpack_hmr', '/'],
     proxy({
         target: `http://${WEB}:4001`,
     }),
