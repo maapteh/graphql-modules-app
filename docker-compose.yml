@@ -38,11 +38,16 @@ services:
       image: maapteh.com:443/graphql-nginx
       build:
         context: ./config/nginx
+        dockerfile: Dockerfile
+        args:
+          node_env: development
+          IS_DOCKER: "true"
       volumes:
         - ./config/nginx:/etc/app
+        - /usr/app/node_modules
       links:
         - graphql
         - web
       ports:
         - 3000:80
-      command: /bin/bash -c "cp /etc/app/nginx.development.conf /etc/nginx/nginx.conf && nginx -g 'daemon off;'"
+      command: yarn start
