@@ -6,6 +6,7 @@ import {
 import Link from 'next/link';
 
 export const ProductsList = () => (
+    // Example generated component, you can also use Query from 'react-apollo' and use generated types only for autocomplete
     <GetProductsComponent variables={{ id: '38904' }} ssr={false}>
         {({ loading, error, data: { getProducts } }) => {
             if (error) return <div>error</div>;

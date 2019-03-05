@@ -55,4 +55,11 @@ By default after install the build will take place and the start command is runn
 1) Add more tooling, so no copy task of graphql schema's needed anymore (also things like storybook etc etc)
 2) Use https://github.com/kamilkisiela/graphql-inspector (edited)  in pipeline
 
+## Interesting reads
+- [WhatsApp-Clone-server](https://github.com/Urigo/WhatsApp-Clone-server), [WhatsApp-Clone-Client-React](https://github.com/Urigo/WhatsApp-Clone-Client-React) and [tutorial](https://tortilla.academy/tutorial/whatsapp-react/step/1)
+- [Paypal Graphql](https://medium.com/paypal-engineering/graphql-a-success-story-for-paypal-checkout-3482f724fb53)
+- [Airbnb luxery homes](https://medium.com/airbnb-engineering/how-airbnb-is-moving-10x-faster-at-scale-with-graphql-and-apollo-aa4ec92d69e2)
+
+
+
 [![Codeship Status for maapteh/graphql-modules-app](https://app.codeship.com/projects/3bf47d90-d61c-0136-0edf-1a5c0fb66462/status?branch=master)](https://graphql-schiphol.herokuapp.com)

@@ -13,12 +13,14 @@ export const Product = ({ id, ...restProps }: ProductProps) => {
     };
 
     return (
+        // Example generated component, you can also use Query from 'react-apollo' and use generated types only for autocomplete
         <GetProductComponent variables={queryVars} {...restProps as any}>
             {({ loading, error, data: { getProduct } }) => {
                 if (error)
                     return <ErrorMessage message="Error loading product." />;
                 if (loading) return <div>Loading</div>;
 
+                // TODO: add getpath helper
                 const image =
                     getProduct &&
                     getProduct.images &&
