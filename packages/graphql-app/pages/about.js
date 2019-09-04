@@ -1,5 +1,4 @@
-import App from '../components/App';
-import { Product } from '../components/product/product';
+import { App } from '../components/App';
 
 export default () => (
     <App>

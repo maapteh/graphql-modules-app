@@ -7,10 +7,9 @@ module.exports = withSass({
     }
 }); */
 const webpack = require('webpack');
-const withTypescript = require('@zeit/next-typescript');
 const withSass = require('@zeit/next-sass');
 
-module.exports = withTypescript(withSass({
+module.exports = withSass({
     cssModules: false,
     cssLoaderOptions: {
       importLoaders: 1,
@@ -25,4 +24,4 @@ module.exports = withTypescript(withSass({
 
         return config;
       },
-}));
+});

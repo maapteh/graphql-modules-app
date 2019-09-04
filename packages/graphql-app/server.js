@@ -8,9 +8,10 @@ const handler = app.getRequestHandler();
 app.prepare().then(() => {
   const server = express();
 
-  server.get('/products/:id', (req, res) => {
+  server.get('/product/:id', (req, res) => {
     const actualPage = '/product';
     const queryParams = {id: req.params.id};
+    console.log('REQUEST')
     app.render(req, res, actualPage, queryParams);
   });
 
@@ -23,3 +24,4 @@ app.prepare().then(() => {
     console.log(`🚀 REACT at http://localhost:${port}`);
   });
 });
+

@@ -1,19 +1,23 @@
 schema:
   - 'http://localhost:4000/graphql'
 overwrite: true
-documents: ['./components/**/*.graphql']
+documents: ['./components/**/*.graphql.ts']
 config: {}
 generates:
-  lib/_generated-components.tsx:
-    config:
-      noNamespaces: true
-    plugins:
-      - add: "/* tslint:disable */\n/* auto generated do not edit */"
-      - "typescript-common"
-      - "typescript-client"
-      - "typescript-react-apollo"
   lib/_generated-fragment-types.ts:
     plugins:
       - "fragment-matcher"
+  lib/_generated-types.tsx:
+    plugins:
+      - add: "/* tslint:disable */\n/* auto generated do not edit */"
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      reactApolloVersion: 3
+      reactApolloImportFrom: '@apollo/react-hooks'
+      withComponent: false
+      withHOC: false
+      withHooks: true
 require:
   - "ts-node/register/transpile-only"

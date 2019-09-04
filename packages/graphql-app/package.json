@@ -25,13 +25,13 @@
     "generate-components": "gql-gen"
   },
   "dependencies": {
-    "@types/next": "^7.0.5",
+    "@apollo/react-hooks": "^3.0.1",
+    "@apollo/react-ssr": "^3.0.1",
     "@types/react": "^16.8.6",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
-    "@zeit/next-typescript": "^1.1.1",
     "apollo-cache-inmemory": "^1.5.1",
-    "apollo-client": "^2.5.1",
+    "apollo-client": "^2.6.4",
     "apollo-link": "^1.2.8",
     "apollo-link-batch-http": "^1.2.8",
     "apollo-link-error": "^1.1.7",
@@ -41,29 +41,30 @@
     "graphql-tag": "^2.10.1",
     "isomorphic-unfetch": "^3.0.0",
     "lint-staged": "^8.1.4",
-    "next": "^7.0.0",
+    "next": "9.0.5",
     "node-sass": "^4.9.3",
     "prettier": "^1.16.4",
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-apollo": "^2.5.1",
     "react-dom": "^16.8.3",
+    "ts-node": "^8.3.0",
     "typescript": "^3.2.1"
   },
   "devDependencies": {
-    "graphql-code-generator": "^0.17.0",
-    "graphql-codegen-add": "^0.17.0",
-    "graphql-codegen-fragment-matcher": "^0.17.0",
-    "graphql-codegen-time": "^0.17.0",
-    "graphql-codegen-typescript-client": "^0.17.0",
-    "graphql-codegen-typescript-react-apollo": "^0.17.0",
+    "@graphql-codegen/add": "^1.7.0",
+    "@graphql-codegen/cli": "^1.7.0",
+    "@graphql-codegen/fragment-matcher": "^1.7.0",
+    "@graphql-codegen/time": "^1.7.0",
+    "@graphql-codegen/typescript-operations": "^1.7.0",
+    "@graphql-codegen/typescript-react-apollo": "^1.7.0",
     "tslint": "^5.13.1",
     "tslint-config-airbnb": "^5.11.1",
     "tslint-config-prettier": "^1.18.0",
     "webpack": "^4.29.6"
   },
   "lint-staged": {
-    "**/{components,pages}/**/*.{ts,tsx,graphql}": [
+    "**/{components,pages}/**/*.{ts,tsx}": [
       "prettier --write",
       "git add"
     ]

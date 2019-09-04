@@ -1,7 +1,8 @@
-# using same data for main part of product so it comes from cache for detail page
-query getProducts($id: String!) {
-    getProducts(id: $id) {
-        products {
+import gql from 'graphql-tag'
+
+export const GET_PRODUCT = gql`
+    query getProduct($id: String!) {
+        getProduct(id: $id) {
             id
             title
             rating
@@ -16,4 +17,4 @@ query getProducts($id: String!) {
             }
         }
     }
-}
+`

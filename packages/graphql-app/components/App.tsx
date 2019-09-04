@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { Header } from './header/header';
 import './app.scss';
 
-export default ({ children, title = 'GraphQL modules example' }) => (
+export const App = ({ children, title = 'GraphQL modules example' }: any) => (
     <div>
         <Head>
             <title>APOLLO GRAPHQL - {title}</title>
