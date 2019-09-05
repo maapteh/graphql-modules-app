@@ -1,9 +1,0 @@
-"""
-Temporary global notification
-"""
-type ContentComponentGlobalNotification implements ContentComponent {
-    id: String!
-    type: String!
-    message: String
-    link: String
-}

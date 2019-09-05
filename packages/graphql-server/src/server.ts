@@ -1,19 +1,19 @@
-import * as express from 'express';
-import * as depthLimit from 'graphql-depth-limit';
+import express from 'express';
+import depthLimit from 'graphql-depth-limit';
 import { GraphQLModule } from '@graphql-modules/core';
 import { ApolloServer } from 'apollo-server-express';
 
 import { allowedOrigins } from './allowed-origins';
 
 export async function bootstrap(appModule: GraphQLModule) {
-    const { schema, context } = appModule;
+    const { schema } = appModule;
 
     const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 4000;
     const path = '/graphql';
 
     const server = new ApolloServer({
         schema,
-        context,
+        context: session => session,
         introspection: true,
         cacheControl: true,
         tracing: process.env.NODE_ENV === 'development', // tracing while in development

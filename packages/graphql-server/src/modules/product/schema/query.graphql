@@ -8,4 +8,5 @@ type Query {
     Get single product
     """
     getProduct(id: String!): Product
+
 }

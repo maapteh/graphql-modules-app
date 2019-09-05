@@ -1,8 +1,0 @@
-"""
-Main underlined title
-"""
-type ContentComponentHeader implements ContentComponent {
-    id: String!
-    type: String!
-    title: String
-}
