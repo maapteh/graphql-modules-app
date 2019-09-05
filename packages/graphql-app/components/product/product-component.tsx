@@ -6,9 +6,15 @@ export interface ProductProps extends React.HTMLAttributes<HTMLElement> {
     id: any;
     ssr: boolean;
     context: any;
+    short?: boolean;
 }
 
-export const ProductComponent = ({ id, ssr, context = {} }: ProductProps) => {
+export const ProductComponent = ({
+    id,
+    ssr,
+    context = {},
+    short = false,
+}: ProductProps) => {
     const { data, loading } = useGetProductQuery({
         variables: { id: id.toString() },
         ssr: ssr,
@@ -18,7 +24,7 @@ export const ProductComponent = ({ id, ssr, context = {} }: ProductProps) => {
     return (
         <React.Fragment>
             {loading && <div>loading product...</div>}
-            {data ? <ProductDetails data={data} /> : null}
+            {data ? <ProductDetails data={data} short={short} /> : null}
         </React.Fragment>
     );
 };
