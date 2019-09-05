@@ -3,7 +3,10 @@ import { useGetProductsQuery, Product } from '../../lib/_generated-types';
 
 export const ProductsList = () => {
     const { data, loading } = useGetProductsQuery({
-        variables: { id: '38904' },
+        variables: {
+            // fixed category: PS4 games
+            id: '38904',
+        },
     });
 
     return (
