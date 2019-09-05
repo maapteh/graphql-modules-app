@@ -1,8 +1,8 @@
 import { App } from '../components/App';
-import { ProductsList } from '../components/products/products-list';
-// import { withApollo } from '../lib/apollo'
+import { ProductsList } from '../components/products-list/products-list';
+import { withApollo } from '../lib/apollo';
 
-const Page = () => (
+const Products = () => (
     <App title="Products from BOL.com">
         <div className="content__section">
             <p>
@@ -16,5 +16,4 @@ const Page = () => (
     </App>
 );
 
-
-export default Page
+export default withApollo(Products);

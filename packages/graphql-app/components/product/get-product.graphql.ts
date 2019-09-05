@@ -1,4 +1,4 @@
-import gql from 'graphql-tag'
+import gql from 'graphql-tag';
 
 export const GET_PRODUCT = gql`
     query getProduct($id: String!) {
@@ -17,4 +17,4 @@ export const GET_PRODUCT = gql`
             }
         }
     }
-`
+`;

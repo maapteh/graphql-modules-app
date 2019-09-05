@@ -21,6 +21,6 @@ const IndexPage = () => (
             </ul>
         </div>
     </App>
-)
+);
 
 export default IndexPage;
