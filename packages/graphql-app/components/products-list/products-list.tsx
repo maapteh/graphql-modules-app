@@ -7,6 +7,7 @@ export const ProductsList = () => {
             // fixed category: PS4 games
             id: '38904',
         },
+        ssr: false,
     });
 
     return (

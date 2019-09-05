@@ -12,9 +12,10 @@
   },
   "scripts": {
     "prepare": "yarn build",
-    "dev": "next -p 4001",
+    "dev": "PORT=4001 node server.js",
+    "dev:local": "next -p 4001",
     "build": "next build",
-    "start": "NODE_ENV=production next start -p $PORT",
+    "start": "PORT=$PORT NODE_ENV=production node server.js",
     "start:local": "NODE_ENV=production next start -p 4001",
     "test": "jest --verbose",
     "test:coverageNOTESTSYET": "jest --verbose --coverage",
