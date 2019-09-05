@@ -12,16 +12,9 @@ export default () => (
                 there is more focus on the GraphQL part.
             </p>
             <p>
-                We only need to provide an{' '}
-                <a href="https://github.com/maapteh/graphql-modules-app/blob/master/packages/graphql-app/lib/init-apollo.js">
-                    Apollo client
-                </a>{' '}
-                with the{' '}
-                <a href="https://github.com/maapteh/graphql-modules-app/blob/master/packages/graphql-app/lib/with-apollo-client.js#L61">
-                    React application
-                </a>
-                . Now we are able to have control if component needs to be
-                rendered server or client side and also we can debatch the
+                We only need to provide an Apollo client with the React
+                application . Now we are able to have control if component needs
+                to be rendered server or client side and also we can debatch the
                 component (mostly on components where the data can be utterly
                 slow, for example reservation airline).
             </p>

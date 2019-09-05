@@ -15,7 +15,9 @@ export const ProductDetails = ({ data }: Props) => {
 
     return data && data.getProduct ? (
         <section>
-            <img src={image} className="product__image" />
+            <div className="product__image">
+                <img src={image} />
+            </div>
             <h1>
                 {data.getProduct.title} ({data.getProduct.rating})
             </h1>
