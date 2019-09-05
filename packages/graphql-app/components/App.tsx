@@ -13,6 +13,6 @@ export const App = ({ children, title = 'GraphQL modules example' }: any) => (
             <link rel="shortcut icon" href="/static/favicon.png" />
         </Head>
         <Header />
-        <main>{children}</main>
+        <main className="content__section">{children}</main>
     </div>
 );
