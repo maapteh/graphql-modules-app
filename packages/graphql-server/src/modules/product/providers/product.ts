@@ -24,9 +24,8 @@ export class ProductProvider {
     }
 
     public async getProducts(id: number): Promise<Products> {
-        const url = `${this.baseUrl}/lists/?ids=${id}&limit=12&format=json&${
-            this.credentials
-        }`;
+        console.log('GETPRODUCTS');
+        const url = `${this.baseUrl}/lists/?ids=${id}&limit=12&format=json&${this.credentials}`;
 
         return nodeFetch(url, { headers: { ResourceVersion: 'v3' } })
             .then(this.checkStatus)
@@ -38,11 +37,7 @@ export class ProductProvider {
     }
 
     public async getProduct(id: number): Promise<Product> {
-        const url = `${
-            this.baseUrl
-        }/products/${id}?offers=cheapest&includeAttributes=false&format=json&${
-            this.credentials
-        }`;
+        const url = `${this.baseUrl}/products/${id}?offers=cheapest&includeAttributes=false&format=json&${this.credentials}`;
 
         return nodeFetch(url, { headers: { ResourceVersion: 'v3' } })
             .then(this.checkStatus)
@@ -53,6 +48,10 @@ export class ProductProvider {
             })
             .then((res: any) => {
                 if (res) {
+                    console.log(
+                        'GETPRODUCT',
+                        JSON.stringify(res.products[0]).substring(0, 40),
+                    );
                     return res.products[0];
                 }
                 return null;

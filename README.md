@@ -1,5 +1,6 @@
 # GraphQL-Modules TypeScript server & NextJS application
-Demonstration application for showcase utilizing [https://graphql-modules.com/](https://graphql-modules.com/) which is using data from BOL.com Open Api.
+Demonstration application for showcase utilizing [https://graphql-modules.com/](https://graphql-modules.com/) which is using data from BOL.com Open Api for the server.
+The React web application is using NextJS 9, [codegen by Dotan](https://graphql-code-generator.com) and [apollo hooks](https://www.apollographql.com/docs/react/api/react-hooks/).
 
 ## PRE-REQUISITES
 - Node dubnium

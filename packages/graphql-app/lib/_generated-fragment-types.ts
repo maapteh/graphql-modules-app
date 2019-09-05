@@ -1,38 +1,21 @@
-export interface IntrospectionResultData {
-    __schema: {
-        types: {
+
+      export interface IntrospectionResultData {
+        __schema: {
+          types: {
             kind: string;
             name: string;
             possibleTypes: {
-                name: string;
+              name: string;
             }[];
-        }[];
-    };
-}
+          }[];
+        };
+      }
 
-const result: IntrospectionResultData = {
-    __schema: {
-        types: [
-            {
-                kind: 'INTERFACE',
-                name: 'ContentComponent',
-                possibleTypes: [
-                    {
-                        name: 'ContentComponentArticle',
-                    },
-                    {
-                        name: 'ContentComponentGlobalNotification',
-                    },
-                    {
-                        name: 'ContentComponentHeader',
-                    },
-                    {
-                        name: 'ContentComponentUnknown',
-                    },
-                ],
-            },
-        ],
-    },
+      const result: IntrospectionResultData = {
+  "__schema": {
+    "types": []
+  }
 };
 
-export default result;
+      export default result;
+    

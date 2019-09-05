@@ -7,7 +7,7 @@
     "moduleResolution": "node",
     "removeComments": true,
     "sourceMap": false,
-    "declaration": true,
+    "declaration": false,
     "declarationMap": false,
     "target": "es5",
     "module": "es2015",

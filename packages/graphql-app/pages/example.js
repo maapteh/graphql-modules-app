@@ -1,7 +1,8 @@
-import App from '../components/App';
-import { Product } from '../components/product/product';
+import { App } from '../components/App';
+import { withApollo } from '../lib/apollo';
+import { ProductComponent } from '../components/product/product-component';
 
-export default () => (
+const Example = () => (
     <App>
         <div className="content__section">
             <h1>Example GraphQL</h1>
@@ -19,12 +20,12 @@ export default () => (
                 effect just reload this page.
             </p>
 
-            <Product id="9200000100377941" ssr={true} />
+            <ProductComponent id="9200000100377941" ssr={true} />
 
-            <Product id="9200000097694517" ssr={false} />
+            <ProductComponent id="9200000097694517" ssr={false} />
 
             {/* debatch non ssr test, by default everything is batched but easy to debatch when you expect the server to be slow */}
-            <Product
+            <ProductComponent
                 id="9200000095214306"
                 ssr={false}
                 context={{ important: true }}
@@ -41,3 +42,5 @@ export default () => (
         </div>
     </App>
 );
+
+export default withApollo(Example);

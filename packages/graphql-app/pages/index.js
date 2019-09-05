@@ -1,7 +1,7 @@
-import App from '../components/App';
 import Link from 'next/link';
+import { App } from '../components/App';
 
-export default () => (
+const IndexPage = () => (
     <App>
         <div className="content__section">
             <h1>GraphQL modules example</h1>
@@ -9,7 +9,7 @@ export default () => (
             <p>Bol.com open api samples</p>
             <ul>
                 <li>
-                    <Link prefetch href="/products">
+                    <Link href="/products">
                         <a>products</a>
                     </Link>
                 </li>
@@ -22,3 +22,5 @@ export default () => (
         </div>
     </App>
 );
+
+export default IndexPage;

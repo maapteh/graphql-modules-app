@@ -6,7 +6,7 @@ import './header.scss';
 export const Header = () => {
     return (
         <header className="header">
-            <Link prefetch href="/">
+            <Link href="/">
                 <a>
                     <img
                         src="/static/logo.svg"
@@ -15,13 +15,13 @@ export const Header = () => {
                     />
                 </a>
             </Link>
-            <Link prefetch href="/products">
+            <Link href="/products">
                 <a className="header__link">Products</a>
             </Link>
-            <Link prefetch href="/example">
+            <Link href="/example">
                 <a className="header__link">Example</a>
             </Link>
-            <Link prefetch href="/about">
+            <Link href="/about">
                 <a className="header__link">About</a>
             </Link>
         </header>
