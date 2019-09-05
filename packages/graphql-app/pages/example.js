@@ -19,15 +19,16 @@ const Example = () => (
             reload this page.
         </p>
 
-        <ProductComponent id="9200000100377941" ssr={true} />
+        <ProductComponent id="9200000100377941" ssr={true} short />
 
-        <ProductComponent id="9200000097694517" ssr={false} />
+        <ProductComponent id="9200000097694517" ssr={false} short />
 
         {/* debatch non ssr test, by default everything is batched but easy to debatch when you expect the server to be slow */}
         <ProductComponent
             id="9200000095214306"
             ssr={false}
             context={{ important: true }}
+            short
         />
 
         <p>
