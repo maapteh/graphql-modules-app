@@ -40,6 +40,7 @@
     "apollo-server-express": "2.9.3",
     "core-js": "2.6.5",
     "dataloader": "1.4.0",
+    "dotenv": "8.1.0",
     "express": "4.16.4",
     "graphql": "14.5.4",
     "graphql-depth-limit": "1.1.0",
