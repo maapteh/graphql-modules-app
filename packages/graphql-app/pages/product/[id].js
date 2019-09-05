@@ -10,9 +10,7 @@ const ProductPage = () => {
 
     return (
         <App>
-            <div className="content__section">
-                <Product id={id} />
-            </div>
+            <Product id={id} />
         </App>
     );
 };
