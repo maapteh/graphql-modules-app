@@ -115,7 +115,6 @@ export function withApollo(PageComponent, { ssr = true } = {}) {
                             }}
                         />,
                     );
-                    console.log('getDataFromTree is fetched');
                 } catch (error) {
                     // Prevent Apollo Client GraphQL errors from crashing SSR.
                     // Handle them in components via the data.error prop:

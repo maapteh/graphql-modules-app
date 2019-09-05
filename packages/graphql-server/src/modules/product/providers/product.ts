@@ -1,12 +1,16 @@
-import { Injectable } from '@graphql-modules/di';
-// import { ApolloError } from 'apollo-server-express';
+import { Injectable, ProviderScope } from '@graphql-modules/di';
+import DataLoader from 'dataloader';
 import { Products, Product } from '../../../_generated-types';
-import nodeFetch, { Response, RequestInit } from 'node-fetch';
+import nodeFetch, { Response } from 'node-fetch';
+import { productDataLoader } from './product-data-loader';
 
-@Injectable()
+@Injectable({
+    scope: ProviderScope.Session,
+})
 export class ProductProvider {
     private baseUrl: string;
     private credentials: string;
+    private dataLoader: any;
 
     // TODO: move to generic helper
     private checkStatus(res: any) {
@@ -21,12 +25,13 @@ export class ProductProvider {
     constructor() {
         this.baseUrl = 'https://api.bol.com/catalog/v4';
         this.credentials = `apikey=${process.env.BOL_API_KEY}`;
+        this.dataLoader = new DataLoader<number, number[]>(keys =>
+            productDataLoader(keys),
+        );
     }
 
     public async getProducts(id: number): Promise<Products> {
-        console.log('GETPRODUCTS');
         const url = `${this.baseUrl}/lists/?ids=${id}&limit=12&format=json&${this.credentials}`;
-
         return nodeFetch(url, { headers: { ResourceVersion: 'v3' } })
             .then(this.checkStatus)
             .then((res: Response) => {
@@ -37,24 +42,6 @@ export class ProductProvider {
     }
 
     public async getProduct(id: number): Promise<Product> {
-        const url = `${this.baseUrl}/products/${id}?offers=cheapest&includeAttributes=false&format=json&${this.credentials}`;
-
-        return nodeFetch(url, { headers: { ResourceVersion: 'v3' } })
-            .then(this.checkStatus)
-            .then((res: Response) => {
-                if (res) {
-                    return res.json();
-                }
-            })
-            .then((res: any) => {
-                if (res) {
-                    console.log(
-                        'GETPRODUCT',
-                        JSON.stringify(res.products[0]).substring(0, 40),
-                    );
-                    return res.products[0];
-                }
-                return null;
-            });
+        return this.dataLoader.load(id);
     }
 }

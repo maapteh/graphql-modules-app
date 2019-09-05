@@ -9,8 +9,6 @@ generates:
     plugins:
       - add: "/* tslint:disable */"
       - time
-      - typescript-common
-      - typescript-client
-      - typescript-server
+      - typescript
 require:
   - "ts-node/register/transpile-only"

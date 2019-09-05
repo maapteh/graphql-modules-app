@@ -5,7 +5,7 @@ export interface ApolloClientContext {
     res: any; // todo: express response
 }
 
-export const commonModule = new GraphQLModule<{}, {}, ApolloClientContext>({
+export const commonModule = new GraphQLModule({
     typeDefs: '',
     resolvers: {},
     context: (

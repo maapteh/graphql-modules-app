@@ -1,14 +1,13 @@
-import { GraphQLModule, ModuleContext } from '@graphql-modules/core';
-// import {  } from '../../../_generated-types';
+import { ModuleContext } from '@graphql-modules/core';
 import { ApolloClientContext } from '../../common';
 import { ProductProvider } from '../providers/product';
 
-export default ({ injector }: GraphQLModule) => ({
+export default {
     Query: {
         getProducts: (
             _: any,
             { id }: any,
-            context: ModuleContext<ApolloClientContext>,
+            { injector }: ModuleContext<ApolloClientContext>,
         ) => {
             return injector
                 .get<ProductProvider>(ProductProvider)
@@ -18,11 +17,11 @@ export default ({ injector }: GraphQLModule) => ({
         getProduct: (
             _: any,
             { id }: any,
-            context: ModuleContext<ApolloClientContext>,
+            { injector }: ModuleContext<ApolloClientContext>,
         ) => {
             return injector
                 .get<ProductProvider>(ProductProvider)
                 .getProduct(id);
         },
     },
-});
+};
