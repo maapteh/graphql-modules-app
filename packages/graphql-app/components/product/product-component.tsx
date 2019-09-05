@@ -9,11 +9,16 @@ export interface ProductProps extends React.HTMLAttributes<HTMLElement> {
 }
 
 export const ProductComponent = ({ id, ssr, context = {} }: ProductProps) => {
-    const { data } = useGetProductQuery({
+    const { data, loading } = useGetProductQuery({
         variables: { id: id.toString() },
         ssr: ssr,
         context: context,
     });
 
-    return data ? <ProductDetails data={data} /> : null;
+    return (
+        <React.Fragment>
+            {loading && <div>loading product...</div>}
+            {data ? <ProductDetails data={data} /> : null}
+        </React.Fragment>
+    );
 };

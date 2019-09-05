@@ -2,12 +2,13 @@ import Link from 'next/link';
 import { useGetProductsQuery, Product } from '../../lib/_generated-types';
 
 export const ProductsList = () => {
-    const { data } = useGetProductsQuery({
+    const { data, loading } = useGetProductsQuery({
         variables: { id: '38904' },
     });
 
     return (
         <section>
+            {loading && <div>loading products...</div>}
             <ul>
                 {data.getProducts &&
                     data.getProducts.products &&
