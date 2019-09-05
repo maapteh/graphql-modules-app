@@ -8,7 +8,7 @@ const handler = app.getRequestHandler();
 app.prepare().then(() => {
     const server = express();
 
-    server.get('/products/:id', (req, res) => {
+    server.get('/product/:id', (req, res) => {
         const actualPage = '/product';
         const queryParams = { id: req.params.id };
         app.render(req, res, actualPage, queryParams);
