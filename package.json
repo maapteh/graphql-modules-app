@@ -10,8 +10,7 @@
     "postinstall": "lerna exec -- yarn install && lerna run prepare",
     "build": "lerna run build",
     "clean": "find . -name \"node_modules\" -exec rm -rf '{}' + && find . -name \"dist\" -exec rm -rf '{}' +",
-    "test": "jest --verbose",
-    "test:ci": "yarn run coverage -- --ci --maxWorkers=2 --reporters=default --reporters=jest-junit",
+    "test": "lerna run test",
     "test:coverage": "lerna run test:coverage",
     "lint": "lerna run lint",
     "lint:fix": "prettier --config .prettierrc --no-editorconfig --ignore-path \"./config/prettierignore\" --write \"packages/*/{src,tests,test,lib,components,pages}/**/*.{js,ts,tsx,graphql}\"",
@@ -34,13 +33,10 @@
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
-    "jest": "23.6.0",
-    "jest-junit": "5.2.0",
     "lerna": "^3.13.1",
     "lint-staged": "7.3.0",
     "pre-commit": "1.2.2",
     "prettier": "^1.16.4",
-    "ts-jest": "23.1.4",
     "tslint": "^5.13.1",
     "typescript": "3.1.6"
   }
