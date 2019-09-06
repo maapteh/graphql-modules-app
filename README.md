@@ -1,6 +1,6 @@
-# GraphQL-Modules TypeScript server & NextJS application
-Demonstration application for showcase utilizing [https://graphql-modules.com/](https://graphql-modules.com/) which is using data from BOL.com Open Api for the server.
-The React web application is using NextJS 9, [codegen by Dotan](https://graphql-code-generator.com) and [apollo hooks](https://www.apollographql.com/docs/react/api/react-hooks/).
+# GraphQL-Modules TypeScript Server & NextJS React application
+Demonstration application for showcase utilizing [graphql-modules](https://graphql-modules.com/) which is using data from BOL.com Open Api for the server. You will find a sample with products and dataloader.
+The React web application is using [NextJS](https://nextjs.org/), [GraphQL Codegen by Dotan](https://graphql-code-generator.com) and [Apollo hooks](https://www.apollographql.com/docs/react/api/react-hooks/).
 
 ## PRE-REQUISITES
 - Node dubnium
@@ -8,7 +8,7 @@ The React web application is using NextJS 9, [codegen by Dotan](https://graphql-
 - Get your free API key from [bol.com/documentatie/open-api](https://partnerblog.bol.com/documentatie/open-api). This is for the 'products' part, working on another part too where no key is needed. [optional]
 
 ## ONLINE DEMO
-[graphql-schiphol.herokuapp.com/](https://graphql-schiphol.herokuapp.com/) which points to the graphql endpoint at [graphql-server-schiphol.herokuapp.com/graphql](https://graphql-server-schiphol.herokuapp.com/graphql). *Both containers spin down when no activity, please be patient.*
+[graphql-schiphol.herokuapp.com/](https://graphql-schiphol.herokuapp.com/product/9200000059381023) which points to the graphql endpoint at [graphql-server-schiphol.herokuapp.com/graphql](https://graphql-server-schiphol.herokuapp.com/graphql). *Both containers spin down when no activity, please be patient.*
 
 ## STRUCTURE
 ```
