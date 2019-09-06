@@ -17,7 +17,7 @@
     "build": "next build",
     "start": "PORT=$PORT NODE_ENV=production node server.js",
     "start:local": "NODE_ENV=production next start -p 4001",
-    "test": "jest --verbose",
+    "test": "echo \"No tests yet\" && exit 0",
     "test:coverageNOTESTSYET": "jest --verbose --coverage",
     "test:ci": "yarn run coverage -- --ci --maxWorkers=2 --reporters=default --reporters=jest-junit",
     "lint": "tslint -c \"../../config/tslint.json\" -p tsconfig.json src/*.ts",
