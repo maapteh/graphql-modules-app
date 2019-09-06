@@ -1,14 +1,15 @@
 schema:
-  - 'src/schema.ts'
+  - './src/modules/*/schema/*.graphql'
 overwrite: true
 documents: []
 config: {}
 generates:
-  src/_generated-types.ts:
+  src/_graphql.d.ts:
     config: {}
     plugins:
-      - add: "/* tslint:disable */"
+      - add: "/* @ts-ignore */\n/* tslint:disable */"
       - time
       - typescript
+      - typescript-resolvers
 require:
   - "ts-node/register/transpile-only"

@@ -20,10 +20,7 @@ export const ProductsList = () => {
                         return (
                             <li key={`${product.id}`}>
                                 <Link
-                                    href={{
-                                        pathname: '/product',
-                                        query: { id: product.id },
-                                    }}
+                                    href={`/product?id=${product.id}`}
                                     as={`/product/${product.id}`}
                                 >
                                     <a>{product.title}</a>

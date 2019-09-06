@@ -5,10 +5,10 @@ import { useGetProductQuery } from '../lib/_generated-types';
 import { App } from '../components/App';
 import { ProductDetails } from '../elements/product-details/product-details';
 
-const Product = () => {
+const ProductPage = () => {
     const router = useRouter();
     const { id } = router.query;
-
+    console.log(id);
     const { data } = useGetProductQuery({
         variables: { id: id.toString() },
     });
@@ -20,4 +20,4 @@ const Product = () => {
     );
 };
 
-export default withApollo(Product);
+export default withApollo(ProductPage);

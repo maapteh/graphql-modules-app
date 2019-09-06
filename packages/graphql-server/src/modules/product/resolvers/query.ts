@@ -1,27 +1,32 @@
 import { ModuleContext } from '@graphql-modules/core';
+import { Resolvers } from '../../../_graphql';
 import { ApolloClientContext } from '../../common';
 import { ProductProvider } from '../providers/product';
 
-export default {
+const resolvers: Resolvers = {
     Query: {
         getProducts: (
-            _: any,
-            { id }: any,
+            _,
+            { id },
             { injector }: ModuleContext<ApolloClientContext>,
         ) => {
+            const productId = parseInt(id);
             return injector
                 .get<ProductProvider>(ProductProvider)
-                .getProducts(id);
+                .getProducts(productId);
         },
 
         getProduct: (
-            _: any,
-            { id }: any,
+            _,
+            { id },
             { injector }: ModuleContext<ApolloClientContext>,
         ) => {
+            const productId = parseInt(id);
             return injector
                 .get<ProductProvider>(ProductProvider)
-                .getProduct(id);
+                .getProduct(productId);
         },
     },
 };
+
+export default resolvers;
