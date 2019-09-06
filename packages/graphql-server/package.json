@@ -24,7 +24,7 @@
     "SKIPbuild": "yarn generate-types && tsc && yarn copy:schema",
     "SKIPstart": "node dist/index.js",
     "build": "echo \"Skip because of broken package for now\" && exit 0",
-    "start": "ts-node-dev src/index.ts",
+    "start": "ts-node src/index.ts",
     "prettier": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -c \"../../config/tslint.json\" -p tsconfig.json \"src/**/*.ts\" -e \"**/_generated-types.ts\"",
     "------------------": "COPY AND AUTO GENERATE STUFF",
@@ -52,7 +52,6 @@
     "node-fetch": "2.3.0",
     "reflect-metadata": "0.1.13",
     "ts-node": "8.0.2",
-    "ts-node-dev": "1.0.0-pre.42",
     "tslint-config-airbnb": "5.11.1",
     "typescript": "3.2.1"
   },
@@ -81,6 +80,7 @@
     "pm2": "3.3.1",
     "prettier": "1.16.4",
     "ts-jest": "24.0.0",
+    "ts-node-dev": "1.0.0-pre.42",
     "tslint": "5.13.1",
     "tslint-config-prettier": "1.18.0"
   }
