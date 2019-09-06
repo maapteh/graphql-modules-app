@@ -1,5 +1,4 @@
 import express from 'express';
-import * as depthLimit from 'graphql-depth-limit';
 import { GraphQLModule } from '@graphql-modules/core';
 import { ApolloServer } from 'apollo-server-express';
 
@@ -21,8 +20,6 @@ export async function bootstrap(appModule: GraphQLModule) {
         engine: {
             apiKey: process.env.ENGINE_KEY,
         },
-        // TODO: find best strategy for limiting usage
-        validationRules: [depthLimit(11)],
     });
 
     const app = express();
