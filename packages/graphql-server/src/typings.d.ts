@@ -4,3 +4,5 @@ declare module '*.graphql' {
     const value: DocumentNode;
     export = value;
 }
+
+declare module 'graphql-depth-limit';

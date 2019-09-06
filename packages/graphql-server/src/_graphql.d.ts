@@ -3,7 +3,7 @@
 import { GraphQLResolveInfo } from 'graphql';
 export type Maybe<T> = T | null;
 export type RequireFields<T, K extends keyof T> = { [X in Exclude<keyof T, K>]?: T[X] } & { [P in K]-?: NonNullable<T[P]> };
-// Generated in 2019-09-06T14:39:26+02:00
+// Generated in 2019-09-06T18:32:15+02:00
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string,
