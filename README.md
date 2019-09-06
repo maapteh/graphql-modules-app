@@ -9,7 +9,7 @@ The React web application is using [NextJS](https://nextjs.org/), [GraphQL Codeg
 
 
 ## Sample query 
-Here you will see detaloader taking care of eventually requesting two products from the API.
+Here you will see detaloader taking care of eventually requesting two products from the API in one single call.
 ```
 {
   foo: getProduct(id:"9200000059381023") {
