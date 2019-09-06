@@ -8,7 +8,6 @@ generates:
     config: {}
     plugins:
       - add: "/* @ts-ignore */\n/* tslint:disable */"
-      - time
       - typescript
       - typescript-resolvers
 require:
