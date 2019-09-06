@@ -8,7 +8,7 @@ export const productDataLoader = async (ids: number[]) => {
     )}?offers=cheapest&includeAttributes=false&format=json&${credentials}`;
 
     const products = await nodeFetch(url, {
-        headers: { ResourceVersion: 'v3' },
+        headers: { ResourceVersion: 'v4' },
     })
         .then((res: Response) => {
             if (res) {
@@ -21,5 +21,7 @@ export const productDataLoader = async (ids: number[]) => {
             }
             return null;
         });
-    return products;
+
+    // TODO: when one/more products are not retrieved correctly give it back as null
+    return products ? products : [null];
 };

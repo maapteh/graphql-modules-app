@@ -1,6 +1,6 @@
 import { Injectable, ProviderScope } from '@graphql-modules/di';
 import DataLoader from 'dataloader';
-import { Products, Product } from '../../../_generated-types';
+import { Products, Product } from '../../../_graphql';
 import nodeFetch, { Response } from 'node-fetch';
 import { productDataLoader } from './product-data-loader';
 
@@ -10,7 +10,7 @@ import { productDataLoader } from './product-data-loader';
 export class ProductProvider {
     private baseUrl: string;
     private credentials: string;
-    private dataLoader: any;
+    private dataLoaderProducts: any;
 
     // TODO: move to generic helper
     private checkStatus(res: any) {
@@ -25,14 +25,14 @@ export class ProductProvider {
     constructor() {
         this.baseUrl = 'https://api.bol.com/catalog/v4';
         this.credentials = `apikey=${process.env.BOL_API_KEY}`;
-        this.dataLoader = new DataLoader<number, number[]>(keys =>
+        this.dataLoaderProducts = new DataLoader<number, number[]>(keys =>
             productDataLoader(keys),
         );
     }
 
     public async getProducts(id: number): Promise<Products> {
         const url = `${this.baseUrl}/lists/?ids=${id}&limit=12&format=json&${this.credentials}`;
-        return nodeFetch(url, { headers: { ResourceVersion: 'v3' } })
+        return nodeFetch(url, { headers: { ResourceVersion: 'v4' } })
             .then(this.checkStatus)
             .then((res: Response) => {
                 if (res) {
@@ -42,6 +42,6 @@ export class ProductProvider {
     }
 
     public async getProduct(id: number): Promise<Product> {
-        return this.dataLoader.load(id);
+        return this.dataLoaderProducts.load(id);
     }
 }
