@@ -8,7 +8,28 @@ The React web application is using [NextJS](https://nextjs.org/), [GraphQL Codeg
 - Get your free API key from [bol.com/documentatie/open-api](https://partnerblog.bol.com/documentatie/open-api). This is for the 'products' part, working on another part too where no key is needed. [optional]
 
 ## ONLINE DEMO
-[graphql-schiphol.herokuapp.com/](https://graphql-schiphol.herokuapp.com/product/9200000059381023) which points to the graphql endpoint at [graphql-server-schiphol.herokuapp.com/graphql](https://graphql-server-schiphol.herokuapp.com/graphql). *Both containers spin down when no activity, please be patient.*
+[graphql-schiphol.herokuapp.com/](https://graphql-schiphol.herokuapp.com/product/9200000059381023) which points to the graphql endpoint at [graphql-server](https://graphql-server-schiphol.herokuapp.com/graphql). *Both containers spin down when no activity, please be patient.*
+
+### Sample query for [graphql-server](https://graphql-server-schiphol.herokuapp.com/graphql)
+Here you will see detaloader taking care of eventually requesting two products from the API.
+```
+{
+  foo: getProduct(id:"9200000059381023") {
+    id
+    title
+  }
+  bar:getProduct(id:"9200000059381023") {
+    id
+    title
+    rating
+  }
+  shizzle:getProduct(id:"9200000113944705") {
+    title
+    rating
+    shortDescription
+  }
+}
+```
 
 ## STRUCTURE
 ```
