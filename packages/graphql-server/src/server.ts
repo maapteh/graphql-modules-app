@@ -1,5 +1,5 @@
 import express from 'express';
-import depthLimit from 'graphql-depth-limit';
+import * as depthLimit from 'graphql-depth-limit';
 import { GraphQLModule } from '@graphql-modules/core';
 import { ApolloServer } from 'apollo-server-express';
 
