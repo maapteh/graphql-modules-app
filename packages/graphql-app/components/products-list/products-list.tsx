@@ -14,7 +14,7 @@ export const ProductsList = () => {
         <section>
             {loading && <div>loading products...</div>}
             <ul>
-                {data.getProducts &&
+                {data && data.getProducts &&
                     data.getProducts.products &&
                     data.getProducts.products.map((product: Product) => {
                         return (
