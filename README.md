@@ -35,11 +35,11 @@ The React web application is using [NextJS](https://nextjs.org/), [GraphQL Codeg
 ## STRUCTURE
 ```
 .
-├── /config/                    # some configuration for build scripts
-├── /packages/                  # 2 applications
-│   ├── /graphql-app/           # React NextJS isomorphic application
-│   └── /graphql-server/        # Apollo GraphQL server created with graphql-modules
-├── /test/                      # end-to-end tests
+├── /config/            # some configuration for build scripts
+├── /packages/          # 2 applications
+│   ├── /app/           # React NextJS isomorphic application
+│   └── /server/        # Apollo GraphQL server created with graphql-modules
+├── /test/              # end-to-end tests
 ```
 
 ## DEVELOPMENT
