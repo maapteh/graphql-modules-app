@@ -28,8 +28,8 @@
   },
   "pre-commit": "lint-staged",
   "dependencies": {
-    "graphql-app": "file:packages/graphql-app",
-    "graphql-server": "file:packages/graphql-server"
+    "graphql-app": "file:packages/app",
+    "graphql-server": "file:packages/server"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",

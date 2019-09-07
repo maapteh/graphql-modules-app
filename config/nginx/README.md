@@ -8,6 +8,6 @@ The certificates are created using [mkcert](https://github.com/FiloSottile/mkcer
 - `brew install mkcert` (on Guest network)
 - `mkcert -install`
 - Create them: `mkcert local.foo.test "*.foo.test" localhost` (in this folder)
-- Put certificate in keychain access (file is in 'User/**/mkcert*.cer')
+- Put certificate in keychain access (cli points where it put cert file)
 - *Make sure the name of the certificates are the same as in .gitignore (default names of mkcert). The proxy will take precedence when these files exist.*
 - *local.foo.test will only work if you add this to your local Host file.*

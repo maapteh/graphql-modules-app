@@ -15,16 +15,16 @@ The React web application is using [NextJS](https://nextjs.org/), [GraphQL Codeg
 [Here](https://graphql-server-schiphol.herokuapp.com/graphql) you will see detaloader taking care of eventually requesting two products from the API in one single call.
 ```
 {
-  foo: getProduct(id:"9200000059381023") {
+  foo: getProduct(id:"9200000111963040") {
     id
     title
   }
-  bar:getProduct(id:"9200000059381023") {
+  bar:getProduct(id:"9200000111963040") {
     id
     title
     rating
   }
-  shizzle:getProduct(id:"9200000113944705") {
+  shizzle:getProduct(id:"9200000108695538") {
     title
     rating
     shortDescription
