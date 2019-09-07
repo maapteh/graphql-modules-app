@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { App } from '../components/App';
+import { withApollo } from '../lib/apollo';
 
 const IndexPage = () => (
     <App>
@@ -21,4 +22,4 @@ const IndexPage = () => (
     </App>
 );
 
-export default IndexPage;
+export default withApollo(IndexPage);

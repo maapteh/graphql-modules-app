@@ -1,8 +1,8 @@
 import * as React from 'react';
+import { useRouter } from 'next/router';
+import { withApollo } from '../../lib/apollo';
 import { App } from '../../components/App';
 import { Product } from '../../components/product/product';
-import { withApollo } from '../../lib/apollo';
-import { useRouter } from 'next/router';
 
 const ProductPage = () => {
     const router = useRouter();

@@ -1,6 +1,7 @@
 import { App } from '../components/App';
+import { withApollo } from '../lib/apollo';
 
-export default () => (
+const About = () => (
     <App>
         <h1>Showcase GraphQL</h1>
 
@@ -62,3 +63,5 @@ export default () => (
         </p>
     </App>
 );
+
+export default withApollo(About);
