@@ -12,7 +12,7 @@ The React web application is using [NextJS](https://nextjs.org/), [GraphQL Codeg
 [graphql-schiphol.herokuapp.com/](https://graphql-schiphol.herokuapp.com/products) which points to the graphql endpoint at [graphql-server](https://graphql-server-schiphol.herokuapp.com/graphql).
 
 ## Sample query 
-[Here](https://graphql-server-schiphol.herokuapp.com/graphql) you will see detaloader taking care of eventually requesting two products from the API in one single call.
+[Here](https://graphql-server-schiphol.herokuapp.com/graphql) you will see [dataloader](./packages/server/src/modules/product/providers/product-data-loader.ts) taking care of eventually requesting two products from the API in one single call.
 ```
 {
   foo: getProduct(id:"9200000111963040") {
