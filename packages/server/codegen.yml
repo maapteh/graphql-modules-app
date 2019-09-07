@@ -10,5 +10,9 @@ generates:
       - add: "/* @ts-ignore */\n/* tslint:disable */"
       - typescript
       - typescript-resolvers
+  src/_schema.graphql:
+    plugins:
+      - add: "\"\"\" auto generated \"\"\""
+      - schema-ast
 require:
   - "ts-node/register/transpile-only"
