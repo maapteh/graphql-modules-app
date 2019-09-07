@@ -13,10 +13,7 @@ module.exports = withSass({
     cssModules: true,
     cssLoaderOptions: {
         importLoaders: 1,
-        localIdentName:
-            config.mode === 'production'
-                ? '__[hash:base64:5]'
-                : '[local]__[hash:base64:5]',
+        localIdentName: '__[hash:base64:5]', // '[local]__[hash:base64:5]'
     },
     webpack: config => {
         config.module.rules.map(item => {
