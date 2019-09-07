@@ -70,6 +70,7 @@
     "@babel/core": "7.3.4",
     "@graphql-codegen/add": "^1.7.0",
     "@graphql-codegen/cli": "^1.7.0",
+    "@graphql-codegen/schema-ast": "1.7.0",
     "@graphql-codegen/time": "^1.7.0",
     "@graphql-codegen/typescript-resolvers": "1.7.0",
     "@types/graphql": "14.0.7",

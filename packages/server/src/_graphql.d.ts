@@ -29,10 +29,7 @@ export type Product = {
   shortDescription?: Maybe<Scalars['String']>,
   urls?: Maybe<Array<Maybe<ProductUrls>>>,
   images?: Maybe<Array<Maybe<ProductImages>>>,
-  /** 
- * "
-   * weird, media is same as images
- **/
+  /** weird, media is same as images */
   media?: Maybe<Array<Maybe<ProductImages>>>,
   offerData?: Maybe<ProductOfferData>,
   parentCategoryPaths?: Maybe<ProductParentCategoryPaths>,
