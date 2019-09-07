@@ -8,7 +8,7 @@ import { ProductDetails } from '../elements/product-details/product-details';
 const ProductPage = () => {
     const router = useRouter();
     const { id } = router.query;
-    console.log(id);
+
     const { data } = useGetProductQuery({
         variables: { id: id.toString() },
     });

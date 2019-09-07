@@ -3,7 +3,7 @@ services:
     graphql:
       image: maapteh.com:443/graphql-server
       build:
-        context: ./packages/graphql-server
+        context: ./packages/server
         dockerfile: Dockerfile
         args:
           node_env: development
@@ -12,14 +12,14 @@ services:
       ports:
         - 4000:4000
       volumes:
-        - ./packages/graphql-server:/usr/app
+        - ./packages/server:/usr/app
         - /usr/app/node_modules
       command: yarn dev
 
     web:
       image: maapteh.com:443/graphql-app
       build:
-        context: ./packages/graphql-app
+        context: ./packages/app
         dockerfile: Dockerfile
         args:
           node_env: development
@@ -30,7 +30,7 @@ services:
       ports:
         - 4001:4001
       volumes:
-        - ./packages/graphql-app:/usr/app
+        - ./packages/app:/usr/app
         - /usr/app/node_modules
       command: yarn dev
 

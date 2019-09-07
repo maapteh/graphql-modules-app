@@ -4,7 +4,6 @@
   "license": "UNLICENSED",
   "description": "Only used for local development",
   "main": "server.js",
-  "repository": "https://scm.ecom.ahold.nl/stash/scm/fe/ah-template.git",
   "scripts": {
     "start": "node server.js"
   },
