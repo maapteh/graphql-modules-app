@@ -2,11 +2,11 @@ import Link from 'next/link';
 import { useGetProductsQuery, Product } from '../../lib/_generated-types';
 import style from './products-list.scss';
 
+const categories = ['38904', '37890', '3136+4278337614'];
 export const ProductsList = () => {
     const { data, loading } = useGetProductsQuery({
         variables: {
-            // fixed category: PS4 games
-            id: '38904',
+            id: categories[Math.floor(Math.random() * categories.length)],
         },
         ssr: false,
     });

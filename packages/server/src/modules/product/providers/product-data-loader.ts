@@ -2,7 +2,7 @@ import nodeFetch, { Response } from 'node-fetch';
 const baseUrl = 'https://api.bol.com/catalog/v4';
 const credentials = `apikey=${process.env.BOL_API_KEY}`;
 
-export const productDataLoader = async (ids: number[]) => {
+export const productDataLoader = async (ids: string[]) => {
     const url = `${baseUrl}/products/${ids.join(
         ',',
     )}?offers=cheapest&includeAttributes=false&format=json&${credentials}`;

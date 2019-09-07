@@ -10,10 +10,9 @@ const resolvers: Resolvers = {
             { id },
             { injector }: ModuleContext<ApolloClientContext>,
         ) => {
-            const productId = parseInt(id, 10);
             return injector
                 .get<ProductProvider>(ProductProvider)
-                .getProducts(productId);
+                .getProducts(id);
         },
 
         getProduct: (
@@ -21,10 +20,9 @@ const resolvers: Resolvers = {
             { id },
             { injector }: ModuleContext<ApolloClientContext>,
         ) => {
-            const productId = parseInt(id, 10);
             return injector
                 .get<ProductProvider>(ProductProvider)
-                .getProduct(productId);
+                .getProduct(id);
         },
     },
 };

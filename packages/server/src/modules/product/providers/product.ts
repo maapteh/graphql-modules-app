@@ -25,13 +25,14 @@ export class ProductProvider {
     constructor() {
         this.baseUrl = 'https://api.bol.com/catalog/v4';
         this.credentials = `apikey=${process.env.BOL_API_KEY}`;
-        this.dataLoaderProducts = new dataloader<number, number[]>(keys =>
+        this.dataLoaderProducts = new dataloader<string, string[]>(keys =>
             productDataLoader(keys),
         );
     }
 
-    public async getProducts(id: number): Promise<Products> {
+    public async getProducts(id: string): Promise<Products> {
         const url = `${this.baseUrl}/lists/?ids=${id}&limit=12&format=json&${this.credentials}`;
+
         return nodeFetch(url, { headers: { ResourceVersion: 'v4' } })
             .then(this.checkStatus)
             .then((res: Response) => {
@@ -41,7 +42,7 @@ export class ProductProvider {
             });
     }
 
-    public async getProduct(id: number): Promise<Product> {
+    public async getProduct(id: string): Promise<Product> {
         return this.dataLoaderProducts.load(id);
     }
 }

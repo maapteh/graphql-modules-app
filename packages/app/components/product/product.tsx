@@ -4,7 +4,7 @@ import { useGetProductQuery } from '../../lib/_generated-types';
 
 export const Product = ({ id }: any) => {
     const { data } = useGetProductQuery({
-        variables: { id: id.toString() },
+        variables: { id: id },
     });
 
     return <ProductDetails data={data} />;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { GetProductQuery } from '../../lib/_generated-types';
 import style from './product-details.scss';
+import Link from 'next/link';
 
 interface Props {
     data: GetProductQuery;
@@ -8,29 +9,40 @@ interface Props {
 }
 
 export const ProductDetails = ({ data, short = false }: Props) => {
+    const product = data && data.getProduct;
     const image =
-        data &&
-        data.getProduct &&
-        data.getProduct.images &&
-        data.getProduct.images.filter((i: any) => i.key === 'L')[0].url;
-    const description =
-        (data && data.getProduct && data.getProduct.shortDescription) || '';
-    const desc = short ? `${description.substring(0, 720)} ...` : description;
+        product &&
+        product.images &&
+        product.images.filter((i: any) => i.key === 'L')[0].url;
+    const description = (product && product.shortDescription) || '';
+    const desc = short ? `${description.substring(0, 720)} ` : description;
 
-    return data && data.getProduct ? (
+    return product ? (
         <section className={style.root}>
             <div className={style.image}>
                 <img src={image} />
             </div>
             <h1>
-                {data.getProduct.title} ({data.getProduct.rating})
+                {product.title} ({product.rating})
             </h1>
-            <p>{desc}</p>
             <p>
-                <a href={data.getProduct.urls[0].value} target="_new">
-                    see @bol.com
-                </a>
+                {desc}
+                {short && (
+                    <Link
+                        href={`/product?id=${product.id}`}
+                        as={`/product/${product.id}`}
+                    >
+                        <a>...more</a>
+                    </Link>
+                )}
             </p>
+            {!short && (
+                <p>
+                    <a href={product.urls[0].value} target="_new">
+                        see @bol.com
+                    </a>
+                </p>
+            )}
         </section>
     ) : null;
 };
