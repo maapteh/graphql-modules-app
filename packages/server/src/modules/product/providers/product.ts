@@ -10,7 +10,7 @@ import { productDataLoader } from './product-data-loader';
 export class ProductProvider {
     private baseUrl: string;
     private credentials: string;
-    private dataLoaderProducts: any;
+    private dataLoaderProduct: any;
 
     // TODO: move to generic helper
     private checkStatus(res: any) {
@@ -25,7 +25,7 @@ export class ProductProvider {
     constructor() {
         this.baseUrl = 'https://api.bol.com/catalog/v4';
         this.credentials = `apikey=${process.env.BOL_API_KEY}`;
-        this.dataLoaderProducts = new dataloader<string, string[]>(keys =>
+        this.dataLoaderProduct = new dataloader<string, string[]>(keys =>
             productDataLoader(keys),
         );
     }
@@ -43,6 +43,6 @@ export class ProductProvider {
     }
 
     public async getProduct(id: string): Promise<Product> {
-        return this.dataLoaderProducts.load(id);
+        return this.dataLoaderProduct.load(id);
     }
 }
