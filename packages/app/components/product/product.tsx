@@ -7,5 +7,5 @@ export const Product = ({ id }: any) => {
         variables: { id: id.toString() },
     });
 
-    return data ? <ProductDetails data={data} /> : null;
+    return <ProductDetails data={data} />;
 };
