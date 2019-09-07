@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { Header } from './header/header';
-import './app.scss';
+import style from './app.scss';
 
 export const App = ({ children, title = 'GraphQL modules example' }: any) => (
     <div>
@@ -13,6 +13,6 @@ export const App = ({ children, title = 'GraphQL modules example' }: any) => (
             <link rel="shortcut icon" href="/static/favicon.png" />
         </Head>
         <Header />
-        <main className="content__section">{children}</main>
+        <main className={style.section}>{children}</main>
     </div>
 );

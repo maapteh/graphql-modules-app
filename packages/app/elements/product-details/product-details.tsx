@@ -1,6 +1,6 @@
 import React from 'react';
 import { GetProductQuery } from '../../lib/_generated-types';
-import './product.scss';
+import style from './product-details.scss';
 
 interface Props {
     data: GetProductQuery;
@@ -18,8 +18,8 @@ export const ProductDetails = ({ data, short = false }: Props) => {
     const desc = short ? `${description.substring(0, 720)} ...` : description;
 
     return data && data.getProduct ? (
-        <section className="root">
-            <div className="image">
+        <section className={style.root}>
+            <div className={style.image}>
                 <img src={image} />
             </div>
             <h1>

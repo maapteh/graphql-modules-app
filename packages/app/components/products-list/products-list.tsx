@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useGetProductsQuery, Product } from '../../lib/_generated-types';
+import style from './products-list.scss';
 
 export const ProductsList = () => {
     const { data, loading } = useGetProductsQuery({
@@ -19,7 +20,7 @@ export const ProductsList = () => {
                     data.getProducts.products &&
                     data.getProducts.products.map((product: Product) => {
                         return (
-                            <li key={`${product.id}`}>
+                            <li key={`${product.id}`} className={style.item}>
                                 <Link
                                     href={`/product?id=${product.id}`}
                                     as={`/product/${product.id}`}

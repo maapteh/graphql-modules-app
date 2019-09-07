@@ -1,24 +1,27 @@
 import React from 'react';
 import Link from 'next/link';
-
-import './header.scss';
+import style from './header.scss';
 
 export const Header = () => {
     return (
-        <header className="header">
+        <header className={style.header}>
             <Link href="/">
-                <a className="header__logo">
-                    <img src="/static/logo.svg" alt="Apollo GraphQL" />
+                <a className={style.headerLogo}>
+                    <img
+                        src="/static/logo.svg"
+                        alt="Apollo GraphQL"
+                        className={style.img}
+                    />
                 </a>
             </Link>
             <Link href="/products">
-                <a className="header__link">Products</a>
+                <a className={style.headerLink}>Products</a>
             </Link>
             <Link href="/example">
-                <a className="header__link">Example</a>
+                <a className={style.headerLink}>Example</a>
             </Link>
             <Link href="/about">
-                <a className="header__link">About</a>
+                <a className={style.headerLink}>About</a>
             </Link>
         </header>
     );

@@ -13,3 +13,5 @@ yarn-error.log
 
 .next
 .env
+
+*.scss.d.ts

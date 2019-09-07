@@ -1,3 +1,6 @@
+.img {
+    width: 90px;
+}
 .header {
     padding: 0 0 0 124px;
     margin-bottom: 24px;
@@ -18,19 +21,15 @@
         bottom: 0;
     }
 
-    &__logo {
+    &Logo {
         display: block;
         position: absolute;
         left: 24px;
         top: 18px;
         width: 90px;
-
-        img {
-            width: 90px;
-        }
     }
 
-    &__link {
+    &Link {
         display: inline-block;
         padding: 0 10px;
         font-size: 14px;
@@ -45,12 +44,12 @@
 @media only screen and (max-width: 600px) {
     .header {
         padding-left: 40px;
-        &__logo {
+        &Logo {
             left: 12px;
             width: 24px;
             overflow: hidden;
         }
-        &__link {
+        &Link {
             margin-right: 0;
         }
     }

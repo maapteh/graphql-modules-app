@@ -27,12 +27,12 @@ p {
   line-height: 24px;
 }
 
-.content__section {
+.section {
   padding: 0 40px;
 }
 
 @media only screen and (max-width: 600px) {
-  .content__section {
+  .section {
     padding: 0 12px;
   }
 }
