@@ -20,9 +20,6 @@ export const Header = () => {
             <Link href="/example">
                 <a className={style.headerLink}>Example</a>
             </Link>
-            <Link href="/about">
-                <a className={style.headerLink}>About</a>
-            </Link>
         </header>
     );
 };

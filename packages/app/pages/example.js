@@ -2,34 +2,57 @@ import { App } from '../components/App';
 import { withApollo } from '../lib/apollo';
 import { ProductComponent } from '../components/product/product-component';
 
-const Example = () => (
+const Index = () => (
     <App>
-        <h1>Example GraphQL</h1>
+        <h1>Showcase GraphQL</h1>
+
+        <h2>GraphQL server</h2>
+        <p>
+            This is why this sample has been setup. It's a showcase for having
+            real modules in your graphql server.
+        </p>
 
         <h2>React client</h2>
         <p>
-            Example with Batched/non-batched queries and non SSR option. On this
-            demonstration page the first product is rendered with SSR. The
-            second is rendered in the main client call and the third is
-            debatched so not in the main client call.
+            NextJS is used because it gives a setup in which it's esy to have an
+            isomorphic application without too much code. This way there is more
+            focus on the GraphQL part.
         </p>
         <p>
-            When you came from the 'products' page everything is retrieved from
-            the cache so nothing is retrieved. For the demonstration effect just
-            reload this page.
+            We only need to provide an Apollo client with the React application
+            . Now we are able to have control if component needs to be rendered
+            server or client side and also we can debatch the component (mostly
+            on components where the data can be utterly slow, for example
+            reservation airline).
         </p>
 
-        <ProductComponent id="9200000111963040" ssr={true} short />
+        <p>
+            <i>
+                TODO: add a non open api example so its easier to run the whole
+                application locally without first registering for an open api
+                key.
+            </i>
+        </p>
 
-        <ProductComponent id="9200000108695538" ssr={false} short />
+        <h3>Links</h3>
 
-        {/* debatch non ssr test, by default everything is batched but easy to debatch when you expect the server to be slow */}
-        <ProductComponent
-            id="9200000108974744"
-            ssr={false}
-            context={{ important: true }}
-            short
-        />
+        <ul>
+            <li>
+                <a href="https://github.com/maapteh/graphql-modules-app">
+                    github repo with all code for this application
+                </a>
+            </li>
+            <li>
+                <a href="https://graphql-server-schiphol.herokuapp.com/graphql">
+                    graphql playground is activated for demonstration purpose
+                </a>
+            </li>
+            <li>
+                <a href="https://graphql-modules.com/">
+                    server runs with graphql-modules.com
+                </a>
+            </li>
+        </ul>
 
         <p>
             <i>
@@ -42,4 +65,4 @@ const Example = () => (
     </App>
 );
 
-export default withApollo(Example);
+export default withApollo(Index);
