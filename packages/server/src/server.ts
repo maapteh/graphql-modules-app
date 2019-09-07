@@ -32,7 +32,7 @@ export async function bootstrap(appModule: GraphQLModule) {
     const server = new ApolloServer({
         schema,
         context: session => session,
-        introspection: true,
+        introspection: process.env.NODE_ENV === 'development',
         tracing: process.env.NODE_ENV === 'development', // tracing while in development
         playground: true, // ALERT: WE SHOW THE GRAPHQL PLAYGROUND ALSO IN PRODUCTION FOR THIS SAMPLE APP, REMOVE THIS LINE WHEN YOU ONLY WANT IT IN DEVELOPMENT,
         engine: {
