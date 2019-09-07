@@ -32,6 +32,7 @@
     "graphql-server": "file:packages/server"
   },
   "devDependencies": {
+    "@types/compression": "^1.0.1",
     "concurrently": "^4.1.0",
     "lerna": "^3.13.1",
     "lint-staged": "7.3.0",

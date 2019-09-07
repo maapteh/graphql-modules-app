@@ -41,6 +41,7 @@
     "@types/node-fetch": "2.1.6",
     "apollo-server": "2.9.3",
     "apollo-server-express": "2.9.3",
+    "compression": "1.7.4",
     "core-js": "2.6.5",
     "dataloader": "1.4.0",
     "dotenv": "8.1.0",
