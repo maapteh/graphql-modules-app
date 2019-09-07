@@ -1,8 +1,8 @@
 import express from 'express';
 import { GraphQLModule } from '@graphql-modules/core';
 import { ApolloServer } from 'apollo-server-express';
-
 import { allowedOrigins } from './allowed-origins';
+const compression = require('compression');
 
 export async function bootstrap(appModule: GraphQLModule) {
     const { schema } = appModule;
@@ -22,8 +22,16 @@ export async function bootstrap(appModule: GraphQLModule) {
         },
     });
 
-    const app = express();
+    const shouldCompress = (req: express.Request, res: express.Response) => {
+        if (req.headers['x-no-compression']) {
+            return false;
+        }
 
+        return compression.filter(req, res);
+    };
+
+    const app = express();
+    app.use(compression({ filter: shouldCompress }));
     // BUG: Apollo doesn't set allow-origin correctly ('*' instead of real allowed origin)
     app.use((req, res, next) => {
         const origin = req.get('origin');

@@ -18,7 +18,7 @@ export const ProductDetails = ({ data, short = false }: Props) => {
     const desc = short ? `${description.substring(0, 720)} ...` : description;
 
     return data && data.getProduct ? (
-        <section>
+        <section className="root">
             <div className="image">
                 <img src={image} />
             </div>
