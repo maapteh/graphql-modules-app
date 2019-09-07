@@ -1,5 +1,5 @@
 # GraphQL-Modules TypeScript Server & NextJS React application
-Demonstration application for showcase utilizing [graphql-modules](https://graphql-modules.com/) which is using data from BOL.com Open Api for the server. You will find a sample with products and dataloader.
+Demonstration application for showcase utilizing [Graphql-modules](https://graphql-modules.com/) which is using data from BOL.com Open Api for the server. You will find a sample with products and dataloader.
 The React web application is using [NextJS](https://nextjs.org/), [GraphQL Codegen by Dotan](https://graphql-code-generator.com) and [Apollo hooks](https://www.apollographql.com/docs/react/api/react-hooks/).
 
 ## PRE-REQUISITES
@@ -49,13 +49,13 @@ The React web application is using [NextJS](https://nextjs.org/), [GraphQL Codeg
 ### Configuration
 Environment vars for development (set them in CI for production).
 
-*Create an '.env' file inside './packages/graphql-server' with the following:*
+*Create an '.env' file inside './packages/server' with the following:*
 ```
 BOL_API_KEY=***
 ENGINE_KEY=apollo-engine-key-overhere-for-metrics-option-which-is-optional
 ALLOWED_ORIGIN=endpoint-your-app-will-run
 ```
-*Create an '.env' file inside './packages/graphql-app' with the following:*
+*Create an '.env' file inside './packages/app' with the following:*
 ```
 GRAPHQL_ENDPOINT=endpoint-your-graphql-server-will-run
 ```
@@ -64,11 +64,11 @@ GRAPHQL_ENDPOINT=endpoint-your-graphql-server-will-run
 *Now we can start the two applications running **`bash dev.sh`** or you can run them individually:*
 
 ### 1. GRAPHQL-SERVER
-- Goto './packages/graphql-server'
+- Goto './packages/server'
 - Run **`yarn dev`**
 
 ### 2. GRAPQL-APP
-- Goto './packages/graphql-app'
+- Goto './packages/app'
 - Run **`yarn dev`**
 
 ## PRODUCTION
