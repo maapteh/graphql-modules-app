@@ -7,9 +7,12 @@ The React web application is using [NextJS](https://nextjs.org/), [GraphQL Codeg
 - Facebook watchman (only for development) [optional]
 - Get your free API key from [bol.com/documentatie/open-api](https://partnerblog.bol.com/documentatie/open-api). This is for the 'products' part, working on another part too where no key is needed. [optional]
 
+## ONLINE DEMO
+*Both Heroku containers spin down when no activity, please be patient.*
+[graphql-schiphol.herokuapp.com/](https://graphql-schiphol.herokuapp.com/product/9200000108974744) which points to the graphql endpoint at [graphql-server](https://graphql-server-schiphol.herokuapp.com/graphql).
 
 ## Sample query 
-Here you will see detaloader taking care of eventually requesting two products from the API in one single call.
+[Here](https://graphql-server-schiphol.herokuapp.com/graphql) you will see detaloader taking care of eventually requesting two products from the API in one single call.
 ```
 {
   foo: getProduct(id:"9200000059381023") {
@@ -74,6 +77,7 @@ By default after install the build will take place and the start command is runn
 ## TODO
 1) Add more tooling, so no copy task of graphql schema's needed anymore (also things like storybook etc etc)
 2) Use https://github.com/kamilkisiela/graphql-inspector (edited)  in pipeline
+3) Find out why nextjs upgrade makes production build on Heroku not run really correctly
 
 ## Interesting reads
 - [WhatsApp-Clone-server](https://github.com/Urigo/WhatsApp-Clone-server), [WhatsApp-Clone-Client-React](https://github.com/Urigo/WhatsApp-Clone-Client-React) and [tutorial](https://tortilla.academy/tutorial/whatsapp-react/step/1)
