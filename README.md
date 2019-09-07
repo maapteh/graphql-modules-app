@@ -9,7 +9,7 @@ The React web application is using [NextJS](https://nextjs.org/), [GraphQL Codeg
 
 ## ONLINE DEMO
 *Both Heroku containers spin down when no activity, please be patient.*
-[graphql-schiphol.herokuapp.com/](https://graphql-schiphol.herokuapp.com/product/9200000108974744) which points to the graphql endpoint at [graphql-server](https://graphql-server-schiphol.herokuapp.com/graphql).
+[graphql-schiphol.herokuapp.com/](https://graphql-schiphol.herokuapp.com/products) which points to the graphql endpoint at [graphql-server](https://graphql-server-schiphol.herokuapp.com/graphql).
 
 ## Sample query 
 [Here](https://graphql-server-schiphol.herokuapp.com/graphql) you will see detaloader taking care of eventually requesting two products from the API in one single call.
