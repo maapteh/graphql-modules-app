@@ -1,5 +1,5 @@
 import { Injectable, ProviderScope } from '@graphql-modules/di';
-import DataLoader from 'dataloader';
+import dataloader from 'dataloader';
 import { Products, Product } from '../../../_graphql';
 import nodeFetch, { Response } from 'node-fetch';
 import { productDataLoader } from './product-data-loader';
@@ -25,7 +25,7 @@ export class ProductProvider {
     constructor() {
         this.baseUrl = 'https://api.bol.com/catalog/v4';
         this.credentials = `apikey=${process.env.BOL_API_KEY}`;
-        this.dataLoaderProducts = new DataLoader<number, number[]>(keys =>
+        this.dataLoaderProducts = new dataloader<number, number[]>(keys =>
             productDataLoader(keys),
         );
     }

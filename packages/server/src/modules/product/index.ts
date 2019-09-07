@@ -5,7 +5,7 @@ import { IResolvers } from 'graphql-tools';
 
 import { ProductProvider } from './providers/product';
 import { commonModule } from '../common';
-import resolvers from './resolvers/query';
+import resolvers from './resolvers/resolvers';
 
 export const productModule = new GraphQLModule({
     name: 'products',
