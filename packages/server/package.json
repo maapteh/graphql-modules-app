@@ -1,6 +1,6 @@
 {
   "name": "graphql-server",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Our awesome Apollo server",
   "main": "dist/index.js",
   "repository": {

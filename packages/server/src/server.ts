@@ -4,6 +4,25 @@ import { ApolloServer } from 'apollo-server-express';
 import { allowedOrigins } from './allowed-origins';
 const compression = require('compression');
 
+const shouldCompress = (req: express.Request, res: express.Response) => {
+    if (req.headers['x-no-compression']) {
+        return false;
+    }
+
+    return compression.filter(req, res);
+};
+
+const noCache = (
+    req: express.Request,
+    res: express.Response,
+    next: express.NextFunction,
+) => {
+    res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+    res.header('Expires', '-1');
+    res.header('Pragma', 'no-cache');
+    next();
+};
+
 export async function bootstrap(appModule: GraphQLModule) {
     const { schema } = appModule;
 
@@ -14,7 +33,6 @@ export async function bootstrap(appModule: GraphQLModule) {
         schema,
         context: session => session,
         introspection: true,
-        cacheControl: true,
         tracing: process.env.NODE_ENV === 'development', // tracing while in development
         playground: true, // ALERT: WE SHOW THE GRAPHQL PLAYGROUND ALSO IN PRODUCTION FOR THIS SAMPLE APP, REMOVE THIS LINE WHEN YOU ONLY WANT IT IN DEVELOPMENT,
         engine: {
@@ -22,16 +40,12 @@ export async function bootstrap(appModule: GraphQLModule) {
         },
     });
 
-    const shouldCompress = (req: express.Request, res: express.Response) => {
-        if (req.headers['x-no-compression']) {
-            return false;
-        }
-
-        return compression.filter(req, res);
-    };
-
     const app = express();
+
+    // ADD GZIP
     app.use(compression({ filter: shouldCompress }));
+    app.use(noCache);
+
     // BUG: Apollo doesn't set allow-origin correctly ('*' instead of real allowed origin)
     app.use((req, res, next) => {
         const origin = req.get('origin');
