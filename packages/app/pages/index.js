@@ -25,7 +25,7 @@ const Example = () => (
 
         {/* debatch non ssr test, by default everything is batched but easy to debatch when you expect the server to be slow */}
         <ProductComponent
-            id="9200000108974744"
+            id="9200000106140072"
             ssr={false}
             context={{ important: true }}
             short
