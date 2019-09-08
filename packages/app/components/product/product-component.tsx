@@ -17,14 +17,14 @@ export const ProductComponent = ({
 }: ProductProps) => {
     const { data, loading } = useGetProductQuery({
         variables: { id: id.toString() },
-        ssr: ssr,
-        context: context,
+        ssr,
+        context,
     });
 
     return (
-        <React.Fragment>
+        <>
             {loading && <div>loading product...</div>}
             {data ? <ProductDetails data={data} short={short} /> : null}
-        </React.Fragment>
+        </>
     );
 };

@@ -1,0 +1,30 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "extends": ["airbnb", "prettier", "prettier/react"],
+    "plugins": [
+        "react-hooks",
+        "prettier"
+    ],
+    "rules": {
+        "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "import/prefer-default-export": 0,
+        "react/require-default-props": 0,
+        "prettier/prettier": ["error"],
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+              "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        }
+    },
+    "globals": {
+        "React": "writable"
+    }
+}

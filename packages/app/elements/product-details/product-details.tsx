@@ -1,7 +1,7 @@
 import React from 'react';
+import Link from 'next/link';
 import { GetProductQuery } from '../../lib/_generated-types';
 import style from './product-details.scss';
-import Link from 'next/link';
 
 interface Props {
     data: GetProductQuery;
@@ -20,7 +20,7 @@ export const ProductDetails = ({ data, short = false }: Props) => {
     return product ? (
         <section className={style.root} lang="nl-NL">
             <div className={style.image}>
-                <img src={image} />
+                <img src={image} alt=" " />
             </div>
             <h1>
                 {product.title} ({product.rating})
@@ -32,7 +32,7 @@ export const ProductDetails = ({ data, short = false }: Props) => {
                         href={`/product?id=${product.id}`}
                         as={`/product/${product.id}`}
                     >
-                        <a>...more</a>
+                        <a href={`/product?id=${product.id}`}>...more</a>
                     </Link>
                 )}
             </p>

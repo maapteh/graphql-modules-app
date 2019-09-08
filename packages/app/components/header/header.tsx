@@ -6,7 +6,7 @@ export const Header = () => {
     return (
         <header className={style.header}>
             <Link href="/">
-                <a className={style.headerLogo}>
+                <a href="/" className={style.headerLogo}>
                     <img
                         src="/static/logo.svg"
                         alt="Apollo GraphQL"
@@ -15,10 +15,14 @@ export const Header = () => {
                 </a>
             </Link>
             <Link href="/products">
-                <a className={style.headerLink}>Products</a>
+                <a href="/products" className={style.headerLink}>
+                    Products
+                </a>
             </Link>
             <Link href="/example">
-                <a className={style.headerLink}>Info</a>
+                <a href="/example" className={style.headerLink}>
+                    Info
+                </a>
             </Link>
         </header>
     );

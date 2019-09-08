@@ -9,11 +9,10 @@ type Props = {
     id?: string;
 };
 
-export const ProductsList = ({ id }: Props) => {
-    const categoryId = id ? id : choosen;
+export const ProductsList = ({ id = choosen }: Props) => {
     const { data, loading } = useGetProductsQuery({
         variables: {
-            id: categoryId,
+            id,
         },
         ssr: false,
     });
@@ -32,7 +31,9 @@ export const ProductsList = ({ id }: Props) => {
                                     href={`/product?id=${product.id}`}
                                     as={`/product/${product.id}`}
                                 >
-                                    <a>{product.title}</a>
+                                    <a href={`/product?id=${product.id}`}>
+                                        {product.title}
+                                    </a>
                                 </Link>
                             </li>
                         );

@@ -19,7 +19,7 @@
     "test": "echo \"No tests yet\" && exit 0",
     "test:coverageNOTESTSYET": "jest --verbose --coverage",
     "test:ci": "yarn run coverage -- --ci --maxWorkers=2 --reporters=default --reporters=jest-junit",
-    "lint": "tslint -c \"../../config/tslint.json\" -p tsconfig.json src/*.ts",
+    "lint": "eslint './{components,elements,pages}/**/*.{ts,tsx}'",
     "lint-staged": "lint-staged",
     "clean": "find . -name \"node_modules\" -exec rm -rf '{}' + && find . -name \"dist\" -exec rm -rf '{}' +",
     "generate-components": "gql-gen"
@@ -45,7 +45,7 @@
     "lint-staged": "^8.1.4",
     "next": "9.0.5",
     "node-sass": "^4.9.3",
-    "prettier": "^1.16.4",
+    "prettier": "^1.18.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
@@ -60,14 +60,20 @@
     "@graphql-codegen/typescript-operations": "^1.7.0",
     "@graphql-codegen/typescript-react-apollo": "^1.7.0",
     "@types/graphql": "^14.5.0",
+    "babel-eslint": "^10.0.3",
     "dts-css-modules-loader": "^1.0.1",
-    "tslint": "^5.13.1",
-    "tslint-config-airbnb": "^5.11.1",
-    "tslint-config-prettier": "^1.18.0",
+    "eslint": "^6.3.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
     "webpack": "^4.29.6"
   },
   "lint-staged": {
-    "**/{components,pages}/**/*.{ts,tsx}": [
+    "**/{components,elements,pages}/**/*.{ts,tsx}": [
       "prettier --write",
       "git add"
     ]
