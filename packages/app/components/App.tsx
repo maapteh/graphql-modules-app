@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import { Header } from './header/header';
+import {Header} from './header/header';
 import style from './app.scss';
 
-export const App = ({ children, title = 'GraphQL modules example' }: any) => (
+export const App = ({children, title = 'GraphQL modules example'}: any) => (
     <div>
         <Head>
             <title>APOLLO GRAPHQL - {title}</title>

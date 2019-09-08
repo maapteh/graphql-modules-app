@@ -12,35 +12,15 @@
     "clean": "find . -name \"node_modules\" -exec rm -rf '{}' + && find . -name \"dist\" -exec rm -rf '{}' +",
     "test": "lerna run test",
     "test:coverage": "lerna run test:coverage",
-    "lint": "lerna run lint",
-    "lint:fix": "prettier --config .prettierrc --no-editorconfig --ignore-path \"./config/prettierignore\" --write \"packages/*/{src,tests,test,lib,components,pages}/**/*.{js,ts,tsx,graphql}\"",
-    "lint-staged": "lint-staged",
-    "------------": "------------",
-    "schema:check": "./packages/server/src/_schema.graphql"
+    "lint": "lerna run lint"
   },
-  "lint-staged": {
-    "*.ts*": [
-      "prettier --ignore-path \"./config/prettierignore\" --config .prettierrc --no-editorconfig --write",
-      "git add"
-    ],
-    "*.js*": [
-      "prettier --ignore-path \"./config/prettierignore\" --config .prettierrc --no-editorconfig --write",
-      "git add"
-    ]
-  },
-  "pre-commit": "lint-staged",
   "dependencies": {
     "graphql-app": "file:packages/app",
     "graphql-server": "file:packages/server"
   },
   "devDependencies": {
-    "@types/compression": "^1.0.1",
     "concurrently": "^4.1.0",
     "lerna": "^3.13.1",
-    "lint-staged": "7.3.0",
-    "pre-commit": "1.2.2",
-    "prettier": "^1.16.4",
-    "tslint": "^5.13.1",
     "typescript": "3.1.6"
   }
 }

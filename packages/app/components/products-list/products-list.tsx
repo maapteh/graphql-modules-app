@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useGetProductsQuery, Product } from '../../lib/_generated-types';
+import {useGetProductsQuery, Product} from '../../lib/_generated-types';
 import style from './products-list.scss';
 
 const categories = ['38904', '37890', '3136+4278337614'];
@@ -9,8 +9,8 @@ type Props = {
     id?: string;
 };
 
-export const ProductsList = ({ id = choosen }: Props) => {
-    const { data, loading } = useGetProductsQuery({
+export const ProductsList = ({id = choosen}: Props) => {
+    const {data, loading} = useGetProductsQuery({
         variables: {
             id,
         },

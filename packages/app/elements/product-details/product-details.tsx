@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { GetProductQuery } from '../../lib/_generated-types';
+import {GetProductQuery} from '../../lib/_generated-types';
 import style from './product-details.scss';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
     short?: boolean;
 }
 
-export const ProductDetails = ({ data, short = false }: Props) => {
+export const ProductDetails = ({data, short = false}: Props) => {
     const product = data && data.getProduct;
     const image =
         product &&
