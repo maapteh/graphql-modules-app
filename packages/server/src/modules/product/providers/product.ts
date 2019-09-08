@@ -1,47 +1,37 @@
 import { Injectable, ProviderScope } from '@graphql-modules/di';
 import dataloader from 'dataloader';
-import { Products, Product } from '../../../_graphql';
 import nodeFetch, { Response } from 'node-fetch';
+import { Products, Product } from '../../../_graphql';
+import { checkStatus } from '../../common/helpers/check-status';
+import { CREDENTIALS, BOL_API } from '../../common/constants';
 import { productDataLoader } from './product-data-loader';
 
 @Injectable({
     scope: ProviderScope.Session,
 })
 export class ProductProvider {
-    private baseUrl: string;
-    private credentials: string;
     private dataLoaderProduct: any;
 
-    // TODO: move to generic helper
-    private checkStatus(res: any) {
-        if (res.ok) {
-            // res.status >= 200 && res.status < 300
-            return res;
-        }
-        // TODO: throw error?
-        return null;
-    }
-
     constructor() {
-        this.baseUrl = 'https://api.bol.com/catalog/v4';
-        this.credentials = `apikey=${process.env.BOL_API_KEY}`;
         this.dataLoaderProduct = new dataloader<string, string[]>(keys =>
             productDataLoader(keys),
         );
     }
 
+    /**
+     * Example 1: not dataloader used while it should
+     */
     public async getProducts(id: string): Promise<Products> {
-        const url = `${this.baseUrl}/lists/?ids=${id}&limit=12&format=json&${this.credentials}`;
+        const url = `${BOL_API}/lists/?ids=${id}&limit=12&format=json&${CREDENTIALS}`;
 
         return nodeFetch(url, { headers: { ResourceVersion: 'v4' } })
-            .then(this.checkStatus)
-            .then((res: Response) => {
-                if (res) {
-                    return res.json();
-                }
-            });
+            .then(checkStatus)
+            .then((res: Response | null) => (res && res.json()) || null);
     }
 
+    /**
+     * Example 2: dataloader being used for individual product information
+     */
     public async getProduct(id: string): Promise<Product> {
         return this.dataLoaderProduct.load(id);
     }

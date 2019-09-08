@@ -13,7 +13,7 @@
     "declaration": true,
     "baseUrl": "./",
     "rootDir": "./src",
-    "types": ["reflect-metadata"],
+    "types": ["reflect-metadata", "jest"],
     "noImplicitAny": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,

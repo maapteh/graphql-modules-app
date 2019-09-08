@@ -1,26 +1,18 @@
 import nodeFetch, { Response } from 'node-fetch';
-const baseUrl = 'https://api.bol.com/catalog/v4';
-const credentials = `apikey=${process.env.BOL_API_KEY}`;
+import { checkStatus } from '../../common/helpers/check-status';
+import { CREDENTIALS, BOL_API } from '../../common/constants';
 
 export const productDataLoader = async (ids: string[]) => {
-    const url = `${baseUrl}/products/${ids.join(
+    const url = `${BOL_API}/products/${ids.join(
         ',',
-    )}?offers=cheapest&includeAttributes=false&format=json&${credentials}`;
+    )}?offers=cheapest&includeAttributes=false&format=json&${CREDENTIALS}`;
 
     const products = await nodeFetch(url, {
         headers: { ResourceVersion: 'v4' },
     })
-        .then((res: Response) => {
-            if (res) {
-                return res.json();
-            }
-        })
-        .then((res: any) => {
-            if (res) {
-                return res.products;
-            }
-            return null;
-        });
+        .then(checkStatus)
+        .then((res: Response | null) => res && res.json())
+        .then((res: any) => (res && res.products) || null);
 
     // TODO: when one/more products are not retrieved correctly give it back as null
     return products ? products : [null];
