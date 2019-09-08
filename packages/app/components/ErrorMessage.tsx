@@ -1,1 +1,1 @@
-export const ErrorMessage = ({message}: any) => <div>{message}</div>;
+export const ErrorMessage = ({ message }: any) => <div>{message}</div>;

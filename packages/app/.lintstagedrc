@@ -1,0 +1,3 @@
+{
+  "./{components,elements,pages}/**/*.{ts,tsx}": ["yarn lint --fix", "git add"]
+}

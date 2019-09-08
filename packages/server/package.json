@@ -25,8 +25,8 @@
     "SKIPstart": "node dist/index.js",
     "build": "echo \"Skip because of broken package for now\" && exit 0",
     "start": "ts-node src/index.ts",
-    "prettier": "prettier --write \"src/**/*.ts\"",
-    "lint": "tslint -c \"../../config/tslint.json\" -p tsconfig.json \"src/**/*.ts\" -e \"**/_generated-types.ts\"",
+    "lint:prettier": "prettier \"src/**/*.ts\"",
+    "lint": "tslint -c \"./tslint.json\" -p tsconfig.json \"src/**/*.ts\" -e \"**/_generated-types.ts\"",
     "------------------": "COPY AND AUTO GENERATE STUFF",
     "copy:schema": "cd src && find . -name '*.graphql' | xargs tar cvf - | (cd ../dist ; tar xfp -)",
     "generate-types": "gql-gen"
@@ -57,16 +57,6 @@
     "tslint-config-airbnb": "5.11.1",
     "typescript": "3.2.1"
   },
-  "lint-staged": {
-    "gitDir": "../",
-    "linters": {
-      "**/*.{ts,tsx}": [
-        "prettier --write",
-        "tslint --fix",
-        "git add"
-      ]
-    }
-  },
   "devDependencies": {
     "@babel/core": "7.3.4",
     "@graphql-codegen/add": "^1.7.0",
@@ -79,6 +69,7 @@
     "babel-jest": "24.1.0",
     "jest": "24.1.0",
     "jest-cli": "24.1.0",
+    "lint-staged": "9.2.5",
     "pm2": "3.3.1",
     "prettier": "1.16.4",
     "ts-jest": "24.0.0",
