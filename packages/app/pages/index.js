@@ -21,11 +21,11 @@ const Example = () => (
 
         <ProductComponent id="9200000111963040" ssr={true} short />
 
-        <ProductComponent id="9200000108695538" ssr={false} short />
+        <ProductComponent id="9200000113065845" ssr={false} short />
 
         {/* debatch non ssr test, by default everything is batched but easy to debatch when you expect the server to be slow */}
         <ProductComponent
-            id="9200000106140072"
+            id="9200000113944705"
             ssr={false}
             context={{ important: true }}
             short

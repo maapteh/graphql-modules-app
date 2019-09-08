@@ -1,6 +1,7 @@
+import { withApollo } from '../lib/apollo';
 import { App } from '../components/App';
 import { ProductsList } from '../components/products-list/products-list';
-import { withApollo } from '../lib/apollo';
+import { ProductComponent } from '../components/product/product-component';
 
 const Products = () => (
     <App title="Products from BOL.com">
@@ -12,6 +13,8 @@ const Products = () => (
         </p>
         <h1>Products list</h1>
         <ProductsList />
+
+        <ProductComponent id="9200000113065845" ssr={true} short />
     </App>
 );
 
