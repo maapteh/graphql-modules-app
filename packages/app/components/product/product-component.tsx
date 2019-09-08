@@ -3,7 +3,7 @@ import { ProductDetails } from '../../elements/product-details/product-details';
 import { useGetProductQuery } from '../../lib/_generated-types';
 
 export interface ProductProps extends React.HTMLAttributes<HTMLElement> {
-    id: any;
+    id: string;
     ssr: boolean;
     context: any;
     short?: boolean;
@@ -16,7 +16,7 @@ export const ProductComponent = ({
     short = false,
 }: ProductProps) => {
     const { data, loading } = useGetProductQuery({
-        variables: { id: id.toString() },
+        variables: { id },
         ssr,
         context,
     });
