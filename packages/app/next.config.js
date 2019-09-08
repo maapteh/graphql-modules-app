@@ -1,19 +1,16 @@
-/* const withSass = require('@zeit/next-sass');
-module.exports = withSass({
-    cssModules: true,
-    cssLoaderOptions: {
-        importLoaders: 1,
-        localIdentName: "[local]___[hash:base64:5]",
-    }
-}); */
 const webpack = require('webpack');
 const withSass = require('@zeit/next-sass');
+
+const localIdentName =
+    process.env.NODE_ENV === 'development'
+        ? '[local]__[hash:base64:5]'
+        : '__[hash:base64:5]';
 
 module.exports = withSass({
     cssModules: true,
     cssLoaderOptions: {
+        localIdentName,
         importLoaders: 1,
-        localIdentName: '__[hash:base64:5]', // '[local]__[hash:base64:5]'
     },
     webpack: config => {
         config.module.rules.map(item => {

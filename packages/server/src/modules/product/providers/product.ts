@@ -6,8 +6,6 @@ import { checkStatus } from '../../common/helpers/check-status';
 import { CREDENTIALS, BOL_API } from '../../common/constants';
 import { productDataLoader } from './product-data-loader';
 
-const foo = 'bar';
-
 @Injectable({
     scope: ProviderScope.Session,
 })
