@@ -4,9 +4,9 @@ import { ProductComponent } from '../components/product/product-component';
 
 const Example = () => (
     <App>
-        <h1>Example GraphQL</h1>
+        <h1>GraphQL Modules</h1>
 
-        <h2>React client</h2>
+        <h2>React client with auto generated Apollo Hooks</h2>
         <p>
             Example with Batched/non-batched queries and non SSR option. On this
             demonstration page the first product is rendered with SSR. The
