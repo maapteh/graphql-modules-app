@@ -1,6 +1,5 @@
 import { App } from '../components/App';
 import { withApollo } from '../lib/apollo';
-import { ProductComponent } from '../components/product/product-component';
 
 const Index = () => (
     <App>
@@ -8,15 +7,15 @@ const Index = () => (
 
         <h2>GraphQL server</h2>
         <p>
-            This is why this sample has been setup. It's a showcase for having
-            real modules in your graphql server.
+            This is why this sample has been setup. It&apos;s a showcase for
+            having real modules in your graphql server.
         </p>
 
         <h2>React client</h2>
         <p>
-            NextJS is used because it gives a setup in which it's esy to have an
-            isomorphic application without too much code. This way there is more
-            focus on the GraphQL part.
+            NextJS is used because it gives a setup in which it&apos;s esy to
+            have an isomorphic application without too much code. This way there
+            is more focus on the GraphQL part.
         </p>
         <p>
             We only need to provide an Apollo client with the React application
@@ -24,14 +23,6 @@ const Index = () => (
             server or client side and also we can debatch the component (mostly
             on components where the data can be utterly slow, for example
             reservation airline).
-        </p>
-
-        <p>
-            <i>
-                TODO: add a non open api example so its easier to run the whole
-                application locally without first registering for an open api
-                key.
-            </i>
         </p>
 
         <h3>Links</h3>
@@ -58,8 +49,8 @@ const Index = () => (
             <i>
                 This application is using the free open api of{' '}
                 <a href="https://bol.com">bol.com</a> at the moment for the
-                products part. Some other parts will have mocked data so without
-                a key you can still play arround.
+                products part. The development version can also be run in mock
+                mode, no keys required.
             </i>
         </p>
     </App>

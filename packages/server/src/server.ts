@@ -2,6 +2,7 @@ import express from 'express';
 import { GraphQLModule } from '@graphql-modules/core';
 import { ApolloServer } from 'apollo-server-express';
 import { allowedOrigins } from './allowed-origins';
+import { MOCKS } from './__mocks__/mock'
 const compression = require('compression');
 
 const shouldCompress = (req: express.Request, res: express.Response) => {
@@ -38,6 +39,7 @@ export async function bootstrap(appModule: GraphQLModule) {
         engine: {
             apiKey: process.env.ENGINE_KEY,
         },
+        mocks: process.env.NODE_ENV === 'production' ? false : process.env.MOCK_API && process.env.MOCK_API === 'ON' ? MOCKS : false
     });
 
     const app = express();
@@ -81,6 +83,7 @@ export async function bootstrap(appModule: GraphQLModule) {
         () => {
             console.log(
                 `🚀 APOLLO GRAPHQL at http://localhost:${port}${server.graphqlPath}`,
+                process.env.MOCK_API && process.env.MOCK_API === "ON" ? "Running with mocks on" : "",
             );
         },
     );

@@ -6,8 +6,8 @@
 
 ### Development
 - `yarn install` (once)
-- `yarn generate-types` (when you update something in schema) TODO: automate
-- `yarn dev` (also a debug version is avalailable running `yarn dev-debug`, and engine version with `ENGINE=on yarn dev`)
+- `generate:graphqlcodegen` (when you update something in schema) TODO: automate
+- `yarn dev` or `MOCK_API=ON yarn dev` (mock mode)
 - open: [http://localhost:4000/graphql](http://localhost:4000/graphql)
 
 ### Production

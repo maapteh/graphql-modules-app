@@ -5,7 +5,7 @@ import style from './app.scss';
 export const App = ({ children, title = 'GraphQL modules example' }: any) => (
     <div>
         <Head>
-            <title>APOLLO GRAPHQL - {title}</title>
+            <title>workshop GRAPHQL - {title}</title>
             <meta
                 name="viewport"
                 content="initial-scale=1.0, width=device-width"

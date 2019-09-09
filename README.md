@@ -46,16 +46,23 @@ The React web application is using [NextJS](https://nextjs.org/), [GraphQL Codeg
 - `yarn` (builds all packages)
 - `bash dev.sh`
 
-### Configuration
+## Configuration
 Environment vars for development (set them in CI for production).
 
-*Create an '.env' file inside './packages/server' with the following:*
+### Create an '.env' file inside './packages/server':
+
+*Important: You can set MOCK_API to ON in case you don't have access to bol.com api. Then the server will use stub data*
+
 ```
 BOL_API_KEY=***
-ENGINE_KEY=apollo-engine-key-overhere-for-metrics-option-which-is-optional
-ALLOWED_ORIGIN=endpoint-your-app-will-run
+NODE_ENV=development
+MOCK_API=ON|OFF
+ENGINE_KEY=optional-apollo-engine-key-overhere REMOVE WHEN NOT AVAILABLE
+ALLOWED_ORIGIN=optional-not-needed-dev-mode REMOVE
 ```
-*Create an '.env' file inside './packages/app' with the following:*
+
+### Create an '.env' file inside './packages/app'
+This file is optional, the dev setting is the default.
 ```
 GRAPHQL_ENDPOINT=endpoint-your-graphql-server-will-run
 ```
@@ -77,7 +84,6 @@ By default after install the build will take place and the start command is runn
 ## TODO
 1) Add more tooling, so no copy task of graphql schema's needed anymore (also things like storybook etc etc)
 2) Use https://github.com/kamilkisiela/graphql-inspector (edited)  in pipeline
-3) Find out why nextjs upgrade makes production build on Heroku not run really correctly
 
 ## Interesting reads
 - [WhatsApp-Clone-server](https://github.com/Urigo/WhatsApp-Clone-server), [WhatsApp-Clone-Client-React](https://github.com/Urigo/WhatsApp-Clone-Client-React) and [tutorial](https://tortilla.academy/tutorial/whatsapp-react/step/1)
