@@ -1,0 +1,49 @@
+// import React from 'react';
+// import { MockedProvider } from '@apollo/react-testing';
+// import { render, act } from '@testing-library/react';
+// import '@testing-library/jest-dom/extend-expect';
+// import { mockAllIsIntersecting } from 'react-intersection-observer/test-utils';
+// import { DATA_9200000111963040 } from '../../../server/src/__mocks__/stubs/product-9200000111963040';
+// import { Product } from './product';
+// import { GET_PRODUCT } from './get-product.graphql';
+/*
+const mocks = [
+    {
+        request: {
+            query: GET_PRODUCT,
+            variables: {
+                name: 'Buck',
+            },
+        },
+        result: {
+            data: {
+                getProduct: { ...DATA_9200000111963040 },
+            },
+        },
+    },
+];
+*/
+describe('Product', () => {
+    it('shows correctly', async () => {
+        /*
+        let wrapper;
+
+        await act(async () => {
+            wrapper = render(
+                <MockedProvider mocks={mocks} addTypename={false}>
+                    <Product />
+                </MockedProvider>
+            );
+        });
+
+        mockAllIsIntersecting(true);
+
+        // generic contract
+        expect(wrapper.container).toMatchSnapshot();
+
+        // specific expectations
+        expect(wrapper.container.querySelector('h1').innerHTML).toBe('Ghost Recon Breakpoint Auroa Edition - PS4 (0)');
+        */
+        expect(true).toBeTruthy();
+    });
+});

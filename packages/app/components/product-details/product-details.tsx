@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import Link from 'next/link';
 import { GetProductQuery } from '../../lib/_generated-types';
 import { Image } from '../../elements/image/image';

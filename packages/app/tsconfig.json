@@ -17,6 +17,7 @@
     "baseUrl": "./",
     "lib": [
       "dom",
+      "esnext",
       "es2016"
     ],
     "strict": false,

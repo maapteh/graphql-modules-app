@@ -1,3 +1,5 @@
 node_modules/*
 next.config.js
 *.d.ts
+*.spec.ts
+*.spec.tsx
