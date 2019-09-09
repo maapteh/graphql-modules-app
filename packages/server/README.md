@@ -2,19 +2,21 @@
 >based on GraphQL Modules https://github.com/Urigo/graphql-modules
 [docs](https://graphql-modules.com/docs/introduction/getting-started).
 
+## Pre requisites
+- `yarn install` (once)
+
 ## Introduction
 
 ### Development
-- `yarn install` (once)
-- `generate:graphqlcodegen` (when you update something in schema) TODO: automate
-- `yarn dev` or `MOCK_API=ON yarn dev` (mock mode)
-- open: [http://localhost:4000/graphql](http://localhost:4000/graphql)
+
+1. tab 1: `generate:graphqlcodegen -w`
+2. tab 2: `yarn dev` (no mock mode, bol open api key mandetory), or `MOCK_API=ON yarn dev` (mock mode)
+3. open: [http://localhost:4000/graphql](http://localhost:4000/graphql)
 
 ### Production
-- `yarn install` (once)
 - `yarn build`
 - `yarn start`
-- open: [http://localhost:4000/graphql](http://localhost:4000/graphql)
+now open: [http://localhost:4000/graphql](http://localhost:4000/graphql)
 
 ## Experimental
 1) `yarn dev:monitoring`, other tab `node_modules/.bin/pm2 monit` this is exposing metrics on production build locally
