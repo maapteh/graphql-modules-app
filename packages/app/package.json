@@ -22,7 +22,9 @@
     "test:ci": "yarn run coverage -- --ci --maxWorkers=2 --reporters=default --reporters=jest-junit",
     "lint": "eslint './{components,elements,pages}/**/*.{ts,tsx}'",
     "clean": "find . -name \"node_modules\" -exec rm -rf '{}' + && find . -name \"dist\" -exec rm -rf '{}' +",
-    "generate:graphqlcodegen": "gql-gen"
+    "generate:graphqlcodegen": "gql-gen",
+    "inspector:validate": "graphql-inspector validate lib/_generated-hooks.tsx lib/_generated-schema.graphql --require ts-node/register",
+    "inspector:coverage": "graphql-inspector coverage lib/_generated-hooks.tsx lib/_generated-schema.graphql --require ts-node/register"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.0",
@@ -57,9 +59,11 @@
     "@graphql-codegen/add": "^1.7.0",
     "@graphql-codegen/cli": "^1.7.0",
     "@graphql-codegen/fragment-matcher": "^1.7.0",
+    "@graphql-codegen/schema-ast": "1.7.0",
     "@graphql-codegen/time": "^1.7.0",
     "@graphql-codegen/typescript-operations": "^1.7.0",
     "@graphql-codegen/typescript-react-apollo": "^1.7.0",
+    "@graphql-inspector/cli": "^1.24.0",
     "@types/graphql": "^14.5.0",
     "babel-eslint": "^10.0.3",
     "dts-css-modules-loader": "^1.0.1",

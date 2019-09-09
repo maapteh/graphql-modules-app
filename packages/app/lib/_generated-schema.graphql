@@ -1,0 +1,99 @@
+""" auto generated """
+directive @cacheControl(maxAge: Int, scope: CacheControlScope) on OBJECT | FIELD_DEFINITION | INTERFACE
+
+enum CacheControlScope {
+  PUBLIC
+  PRIVATE
+}
+
+type Product {
+  id: String
+  ean: String
+  title: String
+  specsTag: String
+  summary: String
+  rating: Int
+  shortDescription: String
+  urls: [ProductUrls]
+  images: [ProductImages]
+
+  """weird, media is same as images"""
+  media: [ProductImages]
+  offerData: ProductOfferData
+  parentCategoryPaths: ProductParentCategoryPaths
+}
+
+type ProductImages {
+  type: String
+  key: String
+  url: String
+}
+
+type ProductOfferData {
+  bolCom: Int
+  nonProfessionalSellers: Int
+  professionalSellers: Int
+  offers: ProductOfferDataOffers
+}
+
+type ProductOfferDataOffers {
+  id: String
+  condition: String
+  price: Int
+  listPrice: Float
+  availabilityCode: String
+  availabilityDescription: String
+  comment: String
+  seller: ProductSeller
+  bestOffer: Boolean
+  releaseDate: String
+}
+
+type ProductParentCategory {
+  id: String
+  name: String
+}
+
+type ProductParentCategoryPaths {
+  parentCategories: ProductParentCategory
+}
+
+"""Products for a specific category, model is taken as is from bol.com"""
+type Products {
+  products: [Product]
+  schemaVersion: String
+  totalResultSize: Int
+  originalRequest: ProductsOriginalRequest
+}
+
+type ProductSeller {
+  id: String
+  sellerType: String
+  displayName: String
+  url: String
+  topSeller: Boolean
+  useWarrantyRepairConditions: Boolean
+}
+
+type ProductsOriginalRequest {
+  category: [ProductsOriginalRequestCategory]
+}
+
+type ProductsOriginalRequestCategory {
+  id: Int
+  name: String
+  productCount: Int
+}
+
+type ProductUrls {
+  key: String
+  value: String
+}
+
+type Query {
+  """Get all products for a specific list"""
+  getProducts(id: String!): Products
+
+  """Get single product"""
+  getProduct(id: String!): Product
+}

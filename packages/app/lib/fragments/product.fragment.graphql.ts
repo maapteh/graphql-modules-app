@@ -1,5 +1,7 @@
-query getProduct($id: String!) {
-    getProduct(id: $id) {
+import gql from 'graphql-tag';
+
+export const FRAGMENT_PRODUCT = gql`
+    fragment Product on Product {
         id
         title
         rating
@@ -13,4 +15,4 @@ query getProduct($id: String!) {
             value
         }
     }
-}
+`;
