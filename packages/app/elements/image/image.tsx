@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
 import style from './image.scss';
 
@@ -16,9 +17,11 @@ export const Image = ({ url }: Props) => {
         setImage(url);
     }
 
+    const css = classNames(style.root, image && `${style.appear}`);
+
     return (
-        <div ref={ref} className={style.image}>
-            {image && <img src={url} alt="" />}
+        <div ref={ref} className={css}>
+            {image && <img src={url} alt="" className={style.img} />}
         </div>
     );
 };
