@@ -1,5 +1,5 @@
-/* tslint:disable */
-/* auto generated do not edit */
+/** eslint-disable */
+/** AUTO GENERATED, DO NOT EDIT OVERHERE */
 import gql from 'graphql-tag';
 import * as ApolloReactCommon from '@apollo/react-common';
 import * as ApolloReactHooks from '@apollo/react-hooks';
@@ -30,10 +30,7 @@ export type Product = {
   shortDescription?: Maybe<Scalars['String']>,
   urls?: Maybe<Array<Maybe<ProductUrls>>>,
   images?: Maybe<Array<Maybe<ProductImages>>>,
-  /** 
- * "
-   * weird, media is same as images
- **/
+  /** weird, media is same as images */
   media?: Maybe<Array<Maybe<ProductImages>>>,
   offerData?: Maybe<ProductOfferData>,
   parentCategoryPaths?: Maybe<ProductParentCategoryPaths>,

@@ -1,8 +1,6 @@
-import gql from 'graphql-tag';
-
-export const GET_PRODUCT = gql`
-    query getProduct($id: String!) {
-        getProduct(id: $id) {
+query getProducts($id: String!) {
+    getProducts(id: $id) {
+        products {
             id
             title
             rating
@@ -17,4 +15,4 @@ export const GET_PRODUCT = gql`
             }
         }
     }
-`;
+}
