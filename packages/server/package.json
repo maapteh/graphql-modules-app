@@ -27,9 +27,9 @@
     "start": "ts-node src/index.ts",
     "lint:prettier": "prettier \"src/**/*.ts\"",
     "lint": "tslint -c \"./tslint.json\" -p tsconfig.json \"src/**/*.ts\" -e \"**/_generated-types.ts\"",
-    "--- graphql inspector --------": "WARNING: diff must be changed for ci now its not doing anything",    
+    "--- graphql inspector --------": "Inspector",    
     "inspector:similar":"graphql-inspector similar ./src/_schema.graphql",
-    "inspector:diff": "graphql-inspector diff http://localhost:4000/graphql ./src/_schema.graphql",
+    "inspector:diff": "graphql-inspector diff git:origin/master:packages/server/src/_schema.graphql ./src/_schema.graphql",
     "---- graphql autogen ---------": "COPY AND AUTO GENERATE STUFF",
     "copy:schema": "cd src && find . -name '*.graphql' | xargs tar cvf - | (cd ../dist ; tar xfp -)",
     "generate:graphqlcodegen": "gql-gen"
