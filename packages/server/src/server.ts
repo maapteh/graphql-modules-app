@@ -2,7 +2,8 @@ import express from 'express';
 import { GraphQLModule } from '@graphql-modules/core';
 import { ApolloServer } from 'apollo-server-express';
 import { allowedOrigins } from './allowed-origins';
-import { MOCKS } from './__mocks__/mock'
+import { MOCKS } from '../test/__mocks__/mock';
+
 const compression = require('compression');
 
 const shouldCompress = (req: express.Request, res: express.Response) => {

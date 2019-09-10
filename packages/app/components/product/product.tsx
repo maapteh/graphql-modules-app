@@ -7,5 +7,5 @@ export const Product = ({ id }: any) => {
         variables: { id },
     });
 
-    return <ProductDetails data={data} />;
+    return data ? <ProductDetails data={data} /> : null;
 };
