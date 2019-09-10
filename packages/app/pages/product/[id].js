@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useRouter } from 'next/router';
-import { withApollo } from '../../lib/apollo';
+import { withApollo } from '../../graphql/apollo';
 import { App } from '../../components/App';
 import { Product } from '../../components/product/product';
 

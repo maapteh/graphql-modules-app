@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
 export const FRAGMENT_PRODUCT = gql`
-    fragment Product on Product {
+    fragment product on Product {
         id
         title
         rating

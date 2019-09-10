@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useGetProductsQuery, Product } from '../../lib/_generated-hooks';
+import { useGetProductsQuery, Product } from '../../graphql/_generated-hooks';
 import style from './products-list.scss';
 
 const categories = ['38904', '37890', '3136+4278337614'];

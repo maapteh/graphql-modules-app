@@ -1,5 +1,5 @@
 import { App } from '../components/App';
-import { withApollo } from '../lib/apollo';
+import { withApollo } from '../graphql/apollo';
 import { ProductComponent } from '../components/product/product-component';
 
 const Example = () => (
@@ -14,12 +14,12 @@ const Example = () => (
             debatched so not in the main client call.
         </p>
         <p>
-            When you came from the 'products' page everything is retrieved from
-            the cache so nothing is retrieved. For the demonstration effect just
-            reload this page.
+            When you came from the &apos;products&apos; page everything is
+            retrieved from the cache so nothing is retrieved. For the
+            demonstration effect just reload this page.
         </p>
 
-        <ProductComponent id="9200000111963040" ssr={true} short />
+        <ProductComponent id="9200000111963040" ssr short />
 
         <ProductComponent id="9200000113065845" ssr={false} short />
 

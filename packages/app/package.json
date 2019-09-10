@@ -23,8 +23,8 @@
     "lint": "eslint './{components,elements,pages}/**/*.{ts,tsx}'",
     "clean": "find . -name \"node_modules\" -exec rm -rf '{}' + && find . -name \"dist\" -exec rm -rf '{}' +",
     "generate:graphqlcodegen": "gql-gen",
-    "inspector:validate": "graphql-inspector validate lib/_generated-hooks.tsx lib/_generated-schema.graphql --require ts-node/register",
-    "inspector:coverage": "graphql-inspector coverage lib/_generated-hooks.tsx lib/_generated-schema.graphql --require ts-node/register"
+    "inspector:validate": "graphql-inspector validate graphql/_generated-hooks.tsx graphql/_generated-schema.graphql --require ts-node/register",
+    "inspector:coverage": "graphql-inspector coverage graphql/_generated-hooks.tsx graphql/_generated-schema.graphql --require ts-node/register"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.0",

@@ -137,17 +137,9 @@ export type GetProductQueryVariables = {
 
 export type GetProductQuery = (
   { __typename?: 'Query' }
-  & { getProduct: Maybe<(
-    { __typename?: 'Product' }
-    & Pick<Product, 'id' | 'title' | 'rating' | 'shortDescription'>
-    & { images: Maybe<Array<Maybe<(
-      { __typename?: 'ProductImages' }
-      & Pick<ProductImages, 'key' | 'url'>
-    )>>>, urls: Maybe<Array<Maybe<(
-      { __typename?: 'ProductUrls' }
-      & Pick<ProductUrls, 'key' | 'value'>
-    )>>> }
-  )> }
+  & { getProduct: Maybe<{ __typename?: 'Product' }
+    & ProductFragment
+  > }
 );
 
 export type GetProductsQueryVariables = {
@@ -159,38 +151,46 @@ export type GetProductsQuery = (
   { __typename?: 'Query' }
   & { getProducts: Maybe<(
     { __typename?: 'Products' }
-    & { products: Maybe<Array<Maybe<(
-      { __typename?: 'Product' }
-      & Pick<Product, 'id' | 'title' | 'rating' | 'shortDescription'>
-      & { images: Maybe<Array<Maybe<(
-        { __typename?: 'ProductImages' }
-        & Pick<ProductImages, 'key' | 'url'>
-      )>>>, urls: Maybe<Array<Maybe<(
-        { __typename?: 'ProductUrls' }
-        & Pick<ProductUrls, 'key' | 'value'>
-      )>>> }
-    )>>> }
+    & { products: Maybe<Array<Maybe<{ __typename?: 'Product' }
+      & ProductFragment
+    >>> }
   )> }
 );
 
-export const GetProductDocument = gql`
-    query getProduct($id: String!) {
-  getProduct(id: $id) {
-    id
-    title
-    rating
-    shortDescription
-    images {
-      key
-      url
-    }
-    urls {
-      key
-      value
-    }
+export type ProductFragment = (
+  { __typename?: 'Product' }
+  & Pick<Product, 'id' | 'title' | 'rating' | 'shortDescription'>
+  & { images: Maybe<Array<Maybe<(
+    { __typename?: 'ProductImages' }
+    & Pick<ProductImages, 'key' | 'url'>
+  )>>>, urls: Maybe<Array<Maybe<(
+    { __typename?: 'ProductUrls' }
+    & Pick<ProductUrls, 'key' | 'value'>
+  )>>> }
+);
+export const ProductFragmentDoc = gql`
+    fragment product on Product {
+  id
+  title
+  rating
+  shortDescription
+  images {
+    key
+    url
+  }
+  urls {
+    key
+    value
   }
 }
     `;
+export const GetProductDocument = gql`
+    query getProduct($id: String!) {
+  getProduct(id: $id) {
+    ...product
+  }
+}
+    ${ProductFragmentDoc}`;
 
     export function useGetProductQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<GetProductQuery, GetProductQueryVariables>) {
       return ApolloReactHooks.useQuery<GetProductQuery, GetProductQueryVariables>(GetProductDocument, baseOptions);
@@ -205,22 +205,11 @@ export const GetProductsDocument = gql`
     query getProducts($id: String!) {
   getProducts(id: $id) {
     products {
-      id
-      title
-      rating
-      shortDescription
-      images {
-        key
-        url
-      }
-      urls {
-        key
-        value
-      }
+      ...product
     }
   }
 }
-    `;
+    ${ProductFragmentDoc}`;
 
     export function useGetProductsQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<GetProductsQuery, GetProductsQueryVariables>) {
       return ApolloReactHooks.useQuery<GetProductsQuery, GetProductsQueryVariables>(GetProductsDocument, baseOptions);

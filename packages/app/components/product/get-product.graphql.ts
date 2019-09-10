@@ -1,11 +1,11 @@
 import gql from 'graphql-tag';
-import { FRAGMENT_PRODUCT } from '../../lib/fragments/product.fragment.graphql';
+import { FRAGMENT_PRODUCT } from '../../graphql/fragments/product.fragment.graphql';
 
 export const GET_PRODUCT = gql`
     query getProduct($id: String!) {
         getProduct(id: $id) {
-            ...Product
+            ...product
         }
-        ${FRAGMENT_PRODUCT}
     }
+    ${FRAGMENT_PRODUCT}
 `;

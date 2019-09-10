@@ -1,4 +1,4 @@
-import { withApollo } from '../lib/apollo';
+import { withApollo } from '../graphql/apollo';
 import { App } from '../components/App';
 import { ProductsList } from '../components/products-list/products-list';
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Link from 'next/link';
-import { GetProductQuery } from '../../lib/_generated-types';
+import { GetProductQuery } from '../../graphql/_generated-types';
 import { Image } from '../../elements/image/image';
 import style from './product-details.scss';
 

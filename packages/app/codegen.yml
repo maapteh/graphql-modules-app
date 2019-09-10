@@ -1,18 +1,18 @@
 schema:
   - 'http://localhost:4000/graphql'
 overwrite: true
-documents: ['./components/**/*.graphql.ts']
+documents: ['./components/**/*.graphql.ts', './graphql/fragments/*.graphql.ts']
 config: {}
 generates:
-  lib/_generated-fragment-types.ts:
+  graphql/_generated-fragment-types.ts:
     plugins:
       - "fragment-matcher"
-  lib/_generated-types.ts:
+  graphql/_generated-types.ts:
     plugins:
       - add: "/** eslint-disable */\n/** AUTO GENERATED, DO NOT EDIT OVERHERE */"
       - typescript
       - typescript-operations
-  lib/_generated-hooks.tsx:
+  graphql/_generated-hooks.tsx:
     plugins:
       - add: "/** eslint-disable */\n/** AUTO GENERATED, DO NOT EDIT OVERHERE */"
       - typescript
@@ -24,7 +24,7 @@ generates:
       withComponent: false
       withHOC: false
       withHooks: true
-  lib/_generated-schema.graphql:
+  graphql/_generated-schema.graphql:
     plugins:
       - add: "\"\"\" auto generated \"\"\""
       - schema-ast

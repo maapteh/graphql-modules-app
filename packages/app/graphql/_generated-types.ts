@@ -134,17 +134,9 @@ export type GetProductQueryVariables = {
 
 export type GetProductQuery = (
   { __typename?: 'Query' }
-  & { getProduct: Maybe<(
-    { __typename?: 'Product' }
-    & Pick<Product, 'id' | 'title' | 'rating' | 'shortDescription'>
-    & { images: Maybe<Array<Maybe<(
-      { __typename?: 'ProductImages' }
-      & Pick<ProductImages, 'key' | 'url'>
-    )>>>, urls: Maybe<Array<Maybe<(
-      { __typename?: 'ProductUrls' }
-      & Pick<ProductUrls, 'key' | 'value'>
-    )>>> }
-  )> }
+  & { getProduct: Maybe<{ __typename?: 'Product' }
+    & ProductFragment
+  > }
 );
 
 export type GetProductsQueryVariables = {
@@ -156,16 +148,20 @@ export type GetProductsQuery = (
   { __typename?: 'Query' }
   & { getProducts: Maybe<(
     { __typename?: 'Products' }
-    & { products: Maybe<Array<Maybe<(
-      { __typename?: 'Product' }
-      & Pick<Product, 'id' | 'title' | 'rating' | 'shortDescription'>
-      & { images: Maybe<Array<Maybe<(
-        { __typename?: 'ProductImages' }
-        & Pick<ProductImages, 'key' | 'url'>
-      )>>>, urls: Maybe<Array<Maybe<(
-        { __typename?: 'ProductUrls' }
-        & Pick<ProductUrls, 'key' | 'value'>
-      )>>> }
-    )>>> }
+    & { products: Maybe<Array<Maybe<{ __typename?: 'Product' }
+      & ProductFragment
+    >>> }
   )> }
+);
+
+export type ProductFragment = (
+  { __typename?: 'Product' }
+  & Pick<Product, 'id' | 'title' | 'rating' | 'shortDescription'>
+  & { images: Maybe<Array<Maybe<(
+    { __typename?: 'ProductImages' }
+    & Pick<ProductImages, 'key' | 'url'>
+  )>>>, urls: Maybe<Array<Maybe<(
+    { __typename?: 'ProductUrls' }
+    & Pick<ProductUrls, 'key' | 'value'>
+  )>>> }
 );

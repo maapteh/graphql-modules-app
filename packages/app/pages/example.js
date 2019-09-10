@@ -1,5 +1,5 @@
 import { App } from '../components/App';
-import { withApollo } from '../lib/apollo';
+import { withApollo } from '../graphql/apollo';
 
 const Index = () => (
     <App>
