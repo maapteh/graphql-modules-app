@@ -12,7 +12,7 @@
     "sourceMap": true,
     "declaration": true,
     "baseUrl": "./",
-    "rootDir": "./src",
+    "rootDir": "./",
     "types": ["reflect-metadata", "jest"],
     "noImplicitAny": true,
     "esModuleInterop": true,
