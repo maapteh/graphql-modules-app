@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ProductDetails shows correctly 1`] = `
+exports[`ProductDetails shows the default correctly 1`] = `
 <div>
   <section
     class="root"
