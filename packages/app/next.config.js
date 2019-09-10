@@ -36,4 +36,5 @@ module.exports = withSass({
 
         return config;
     },
+    generateEtags: false,
 });

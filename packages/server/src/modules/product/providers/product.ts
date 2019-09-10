@@ -2,8 +2,8 @@ import { Injectable, ProviderScope } from '@graphql-modules/di';
 import dataloader from 'dataloader';
 import nodeFetch, { Response } from 'node-fetch';
 import { Products, Product } from '../../../_graphql';
-import { checkStatus } from '../../common/helpers/check-status';
-import { CREDENTIALS, BOL_API } from '../../common/constants';
+import { checkStatus } from '../../../helpers';
+import { CREDENTIALS, BOL_API } from '../../../constants';
 import { productDataLoader } from './product-data-loader';
 
 @Injectable({

@@ -3,3 +3,4 @@ next.config.js
 *.d.ts
 *.spec.ts
 *.spec.tsx
+src/graphql/_generated-*

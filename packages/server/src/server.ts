@@ -1,11 +1,16 @@
 import express from 'express';
 import { GraphQLModule } from '@graphql-modules/core';
 import { ApolloServer } from 'apollo-server-express';
-import { allowedOrigins } from './allowed-origins';
-import { MOCKS } from '../test/__mocks__/mock';
 
+import { MOCKS } from '../test/schema-mock';
+import { NO_CACHE } from './middleware/cache/no-cache';
+import { ALLOWED_ORIGIN } from './middleware/allowed-origin/allowed-origins';
+import { ORIGINS_LIST } from './middleware/allowed-origin/origins-list';
+
+/**
+ * COMPRESSION
+ */
 const compression = require('compression');
-
 const shouldCompress = (req: express.Request, res: express.Response) => {
     if (req.headers['x-no-compression']) {
         return false;
@@ -14,17 +19,13 @@ const shouldCompress = (req: express.Request, res: express.Response) => {
     return compression.filter(req, res);
 };
 
-const noCache = (
-    req: express.Request,
-    res: express.Response,
-    next: express.NextFunction,
-) => {
-    res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
-    res.header('Expires', '-1');
-    res.header('Pragma', 'no-cache');
-    next();
-};
 
+
+
+
+/**
+ * APOLLO SERVER
+ */
 export async function bootstrap(appModule: GraphQLModule) {
     const { schema } = appModule;
 
@@ -47,33 +48,18 @@ export async function bootstrap(appModule: GraphQLModule) {
 
     // ADD GZIP
     app.use(compression({ filter: shouldCompress }));
-    app.use(noCache);
+    app.use(NO_CACHE);
 
-    // BUG: Apollo doesn't set allow-origin correctly ('*' instead of real allowed origin)
-    app.use((req, res, next) => {
-        const origin = req.get('origin');
-
-        if (origin) {
-            const index = allowedOrigins.indexOf(origin);
-            if (index === -1) {
-                const msg =
-                    'The CORS policy does not allow access from the specified Origin.';
-                return next(new Error(msg));
-            }
-
-            res.header('Access-Control-Allow-Credentials', 'true');
-            res.header('Access-Control-Allow-Origin', allowedOrigins[index]);
-        }
-
-        next();
-    });
+    // FIXME: Apollo doesn't set allow-origin correctly ('*' instead of real allowed origin)
+    console.log(`allowed origins:\n${ORIGINS_LIST.join('\n')}`);
+    app.use(ALLOWED_ORIGIN);
 
     server.applyMiddleware({
         app,
         path,
         cors: {
             credentials: true,
-            origin: allowedOrigins,
+            origin: ORIGINS_LIST,
         },
     });
 
@@ -84,7 +70,7 @@ export async function bootstrap(appModule: GraphQLModule) {
         () => {
             console.log(
                 `🚀 APOLLO GRAPHQL at http://localhost:${port}${server.graphqlPath}`,
-                process.env.MOCK_API && process.env.MOCK_API === "ON" ? "Running with mocks on" : "",
+                process.env.MOCK_API && process.env.MOCK_API === "ON" ? "\n✨ Running Apollo server with mocks on" : "",
             );
         },
     );

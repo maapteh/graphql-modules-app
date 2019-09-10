@@ -1,7 +1,10 @@
 import * as React from 'react';
 import Link from 'next/link';
-import { GetProductQuery } from '../../graphql/_generated-types';
-import { Image } from '../../elements/image/image';
+import {
+    GetProductQuery,
+    ProductFragment,
+} from '../../../../graphql/_generated-types';
+import { Image } from '../../../../elements/image/image';
 import style from './product-details.scss';
 
 interface Props {
@@ -10,7 +13,7 @@ interface Props {
 }
 
 export const ProductDetails = ({ data, short = false }: Props) => {
-    const product = data && data.getProduct;
+    const product: ProductFragment = data && data.getProduct;
     const image =
         product &&
         product.images &&

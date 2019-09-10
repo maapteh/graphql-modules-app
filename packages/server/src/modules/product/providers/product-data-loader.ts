@@ -1,6 +1,6 @@
 import nodeFetch, { Response } from 'node-fetch';
-import { checkStatus } from '../../common/helpers/check-status';
-import { CREDENTIALS, BOL_API } from '../../common/constants';
+import { checkStatus } from '../../../helpers';
+import { CREDENTIALS, BOL_API } from '../../../constants';
 
 export const productDataLoader = async (ids: string[]) => {
     const url = `${BOL_API}/products/${ids.join(

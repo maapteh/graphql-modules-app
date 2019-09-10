@@ -12,7 +12,7 @@ import { BatchHttpLink } from 'apollo-link-batch-http';
 
 import { toIdValue } from 'apollo-utilities';
 import { fragmentMatcher } from './fragment-matcher';
-import { version } from '../package.json';
+import { version } from '../../package.json';
 
 let apolloClient = null;
 
@@ -39,14 +39,14 @@ const cache = new InMemoryCache({
 
 const batchHttpLink = new BatchHttpLink({
     uri,
-    credentials: 'include', //'same-origin'
+    credentials: 'include', // 'same-origin'
     headers: { batch: 'true ' },
 });
 
 // link to use if not batching
 const httpLink = new HttpLink({
     uri,
-    credentials: 'include', //'same-origin'
+    credentials: 'include', // 'same-origin'
 });
 
 // Polyfill fetch() on the server (used by apollo-client)
@@ -66,7 +66,7 @@ export function withApollo(PageComponent, { ssr = true } = {}) {
     const WithApollo = ({ apolloClient, apolloState, ...pageProps }) => {
         const client = useMemo(
             () => apolloClient || initApolloClient(apolloState),
-            [],
+            [apolloClient, apolloState],
         );
         return (
             <ApolloProvider client={client}>
@@ -193,6 +193,6 @@ function createApolloClient(initialState = {}) {
         ]),
         cache: cache.restore(initialState || {}),
         name: 'Sample application',
-        version: version,
+        version,
     });
 }

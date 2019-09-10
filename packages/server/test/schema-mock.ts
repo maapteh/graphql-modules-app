@@ -1,7 +1,7 @@
-import { DATA_9200000113065845 } from './stubs/product-9200000113065845';
-import { DATA_9200000111963040 } from './stubs/product-9200000111963040';
-import { DATA_9200000113944705 } from './stubs/product-9200000113944705';
-import { DATA_PRODUCTS } from './stubs/poducts';
+import { DATA_9200000113065845 } from './__mocks__/stubs/product-9200000113065845';
+import { DATA_9200000111963040 } from './__mocks__/stubs/product-9200000111963040';
+import { DATA_9200000113944705 } from './__mocks__/stubs/product-9200000113944705';
+import { DATA_PRODUCTS } from './__mocks__/stubs/poducts';
 
 /**
  * MOCKS PS4 games BOL.com open api

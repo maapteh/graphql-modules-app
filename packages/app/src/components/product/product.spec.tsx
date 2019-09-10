@@ -1,11 +1,9 @@
 import React from 'react';
 import { MockedProvider } from '@apollo/react-testing';
 import { renderHook } from '@testing-library/react-hooks';
-import { DATA_9200000111963040 } from '../../../server/test/__mocks__/stubs/product-9200000111963040';
+import { DATA_9200000111963040 } from '../../../../server/test/__mocks__/stubs/product-9200000111963040';
 import { useGetProductQuery } from '../../graphql/_generated-hooks';
-import { GET_PRODUCT } from './get-product.graphql';
-// FIXME: FIND OUT HOW TO MAKE IT WORK WITH FRAGMENTS
-
+import { GET_PRODUCT } from './graphql/get-product.graphql';
 
 /** MOCKS */
 const mocks = [

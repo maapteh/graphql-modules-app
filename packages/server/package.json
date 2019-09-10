@@ -15,14 +15,14 @@
   "scripts": {
     "prepare": "yarn run build",
     "precommit": "lint-staged",
-    "clean": "rm -rf coverage/* && rm -rf dist/*",
+    "audit": "yarn audit",
     "dev": "NODE_ENV=development ts-node-dev --respawn --transpileOnly ./src/index.ts",
     "dev:monitoring": "yarn build && pm2-runtime dist/index.js",
     "dev:debug": "ts-node-dev --inspect --debug-brk ./src/index.ts",
     "test": "jest --config=jest.config.js",
-    "test:coverage": "jest --config=jest.config.js --verbose --coverage",
-    "SKIPbuild": "yarn ggenerate:graphqlcodegen && tsc && yarn copy:schema",
-    "SKIPstart": "node dist/index.js",
+    "test:coverage": "yarn test --verbose --coverage",
+    "SKIPbuild": "yarn generate:graphqlcodegen && tsc",
+    "SKIPstart": "node --optimize_for_size --max_old_space_size=920 --gc_interval=100 dist/index.js",
     "build": "echo \"Skip because of broken package for now\" && exit 0",
     "start": "ts-node src/index.ts",
     "lint:prettier": "prettier \"src/**/*.ts\"",
@@ -30,8 +30,7 @@
     "--- graphql inspector --------": "Inspector",
     "inspector:similar": "graphql-inspector similar ./src/_schema.graphql",
     "inspector:diff": "graphql-inspector diff git:origin/master:packages/server/src/_schema.graphql ./src/_schema.graphql",
-    "---- graphql autogen ---------": "COPY AND AUTO GENERATE STUFF",
-    "copy:schema": "cd src && find . -name '*.graphql' | xargs tar cvf - | (cd ../dist ; tar xfp -)",
+    "---- graphql autogen ---------": "Graphql codegen",
     "generate:graphqlcodegen": "gql-gen"
   },
   "dependencies": {

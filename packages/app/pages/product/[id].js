@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useRouter } from 'next/router';
-import { withApollo } from '../../graphql/apollo';
-import { App } from '../../components/App';
-import { Product } from '../../components/product/product';
+import { withApollo } from '../../src/graphql/apollo';
+import { App } from '../../src/components/App';
+import { Product } from '../../src/components/product/product';
 
 const ProductPage = () => {
     const router = useRouter();

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProductDetails } from '../product-details/product-details';
+import { ProductDetails } from './elements/product-details/product-details';
 import { useGetProductQuery } from '../../graphql/_generated-hooks';
 
 export interface ProductProps extends React.HTMLAttributes<HTMLElement> {
@@ -9,6 +9,7 @@ export interface ProductProps extends React.HTMLAttributes<HTMLElement> {
     short?: boolean;
 }
 
+// TODO: HOC/with for Product
 export const ProductComponent = ({
     id,
     ssr,

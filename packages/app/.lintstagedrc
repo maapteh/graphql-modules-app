@@ -1,3 +1,4 @@
 {
-  "./{components,elements,pages}/**/*.{ts,tsx}": ["yarn lint --fix", "git add"]
+  "./{src|pages}/**/*.{ts,tsx}": ["yarn lint --fix", "git add"],
+  "./src/graphql/_generated-schema.graphql": ["yarn inspector:validate"]
 }

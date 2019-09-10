@@ -1,10 +1,11 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { mockAllIsIntersecting } from 'react-intersection-observer/test-utils'
-import { DATA_9200000111963040 } from '../../../server/test/__mocks__/stubs/product-9200000111963040';
+import { DATA_9200000111963040 } from '../../../../../../server/test/__mocks__/stubs/product-9200000111963040';
+
 import { ProductDetails } from './product-details';
 
-const mock: any = { getProduct: {...DATA_9200000111963040} };
+const mock: any = { getProduct: {...DATA_9200000111963040} }; // Types of property '__typename' are incompatible
 
 describe('ProductDetails', () => {
     it("shows correctly", async () => {
