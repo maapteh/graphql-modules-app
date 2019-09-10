@@ -5,6 +5,7 @@
 coverage
 node_modules
 .npm
+.nvmrc
 dist
 
 yarn.lock
@@ -15,4 +16,3 @@ yarn-error.log
 .env
 
 *.scss.d.ts
-#.nvmrc
