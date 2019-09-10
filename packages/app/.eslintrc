@@ -7,7 +7,8 @@
     "extends": ["airbnb", "prettier", "prettier/react"],
     "plugins": [
         "react-hooks",
-        "prettier"
+        "prettier",
+        "graphql"
     ],
     "rules": {
         "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
@@ -16,6 +17,9 @@
         "import/prefer-default-export": 0,
         "react/require-default-props": 0,
         "prettier/prettier": ["error"],
+        "graphql/template-strings": ["error", {
+            "env": "apollo",
+        }],
     },
     "settings": {
         "import/resolver": {
