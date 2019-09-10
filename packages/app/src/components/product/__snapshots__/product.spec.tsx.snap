@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product renders correctly 1`] = `
+<div>
+  <section
+    class="root"
+    lang="nl-NL"
+  >
+    <div
+      class="root"
+    />
+    <h1>
+      Ghost Recon Breakpoint Auroa Edition - PS4
+       (
+      0
+      )
+    </h1>
+    <p>
+      Pre-order nu en krijg toegang tot: •De Ghost Recon® Breakpoint-bèta; •Het Sentinel Corp. Pack met het Landscape MK.2 gepantserd voertuig, het “Valor”-aanvalsgeweer en de Sentinel MK.3 Heavy-set bestaande uit een helm, vest en broek. •Exclusief wapen: Vanitas Karambit De kogels vliegen je om de oren, jouw strijdmakker is net kermend van de pijn neergehaald. Net als je hem in veiligheid wil slepen, zie je vanuit je ooghoek een levensgevaarlijke drone rondcirkelen… en nog een. Alleen een echte Ghost kan deze oneerlijke strijd overleven. Welkom in Tom Clancy’s Ghost Recon® Breakpoint, het spectaculaire nieuwe deel uit de tactische militaire shooter-franchise. Na de weelderige jungle van Bolivia uit Tom Clancy's Ghost Recon® Wildlands heb je nu een compleet nieuwe open wereld te verkennen: die van de paradijselijke maar zeer verraderlijke Auroa-archipel. En ditmaal neem je het niet op tegen lokale drugsbaronnen, maar tegen de meest geduchte tegenstander ooit: oud-collega’s die naar de verkeerde kant zijn overgelopen. Ze noemen zich The Wolves en zijn net zulke getrainde killers als jij, alleen zijn ze in de meerderheid. De leider van The Wolves is een goede bekende van je: jouw oude militaire buddy Cole D. Walker. Ooit vertrouwde je hem jouw leven toe, nu is hij jouw ergste vijand. Als Kolonel Walker je bekend voorkomt, is dat geen toeval: Hollywood-acteur Jon Berthal (bekend van The Walking Dead en The Punisher) laat in Breakpoint zien dat hij ook gruwelijk goed een bad guy kan spelen. De missie Dit keer is er geen briefing. Jouw helikopters zijn neergehaald, alle communicatie van en met Auroa is verbroken en het enige dat je weet, is dat er op jou gejaagd wordt. De missie is dus: overleven. Auroa is een open wereld die afwisselend, geheimzinnig en bloedlink is. Het is de thuisbasis van Skell Technology, die nu in verkeerde handen is gevallen. Het is een mysterieuze plek waar architectonische hoogstandjes en ongerepte, woeste natuur hand in hand gaan. Je beste vriend wordt jouw ergste vijand Neem het op tegen de meest geduchte tegenstander ooit: een dodelijke militaire eenheid die bestaat uit ex-Ghosts. Daar komt nog eens bij dat ze het hightech wapentuig van Skell aan hun arsenaal hebben toegevoegd. Dit is pas survival Stel jouw overlevingsinstinct op de proef. Steile hellingen, blessures en vermoeidheid zijn nieuwe uitdagingen die je voor je kiezen krijgt. Zet een kamp op, beheer jouw uitrusting, klasse en wapens en verfijn jouw strategie. Als je in de strijd gewond raakt, dan zul je naar een veilige plek moeten kruipen om jezelf te genezen. Wordt een teamgenoot uitgeschakeld, breng hem in veiligheid om daar zijn of haar wonden te behandelen. Neem de volledige vrijheid Creëer jouw eigen personage en kies uit duizenden combinaties om dé perfecte Ghost samen te stellen. Eentje die je letterlijk en figuurlijk op het lijf is geschreven. Verzamel materialen uit de omgeving, fabriceer en verbeter jouw wapens en pas jouw uitrusting aan zodat jouw Ghost elke situatie en speelstijl aankan. Een sociale ervaring Wat voor speelstijl je ook kiest, je houdt altijd hetzelfde personage, inclusief aanpassingen, skills en wapens. Je houdt en verbetert jouw voortgang tijdens zowel de PvE als PvP-ervaringen. Ontmoet jouw vrienden in de Social HUB, speel samen de campagne, of betreed een PvP-arena voor een intense 4v4-match. Game over? Echt niet! De game krijgt regelmatig updates en wordt nog jaren na de release ondersteund, met nieuwe verhaallijnen, features en gameplay-opties, net als een fonkelnieuwe soort van endgame-content: Raids. Inhoud Auroa Edition: FYSIEKE INHOUD •De Tom Clancy’s Ghost Recon® Breakpoint-game. DIGITALE CONTENT •XP-boosters en Skell Credits-packs geven je een voorsprong aan het begin van je avontuur; •Het Sacred Land Pack met een extra missie en een mêleewapen.
+    </p>
+    <p>
+      <a
+        href="https://www.bol.com/nl/p/ghost-recon-breakpoint-auroa-edition-ps4/9200000111963040"
+        target="_new"
+      >
+        see @bol.com
+      </a>
+    </p>
+  </section>
+</div>
+`;

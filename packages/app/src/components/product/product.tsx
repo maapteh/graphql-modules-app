@@ -3,9 +3,14 @@ import { useGetProductQuery } from '../../graphql/_generated-hooks';
 import { ProductDetails } from './elements/product-details/product-details';
 
 export const Product = ({ id }: any) => {
-    const { data } = useGetProductQuery({
+    const { data, loading } = useGetProductQuery({
         variables: { id },
     });
 
-    return data ? <ProductDetails data={data} /> : null;
+    return (
+        <>
+            {loading && <span>loading...</span>}
+            {data && <ProductDetails data={data} />}
+        </>
+    );
 };
