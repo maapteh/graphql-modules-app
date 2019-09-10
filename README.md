@@ -22,10 +22,10 @@ The React web application is using [NextJS](https://nextjs.org/), [GraphQL Codeg
 ```
 
 ## DEVELOPMENT
-**Now run `bash dev.sh`. It will spin up the GraphQL server and the React application.**
+**Now when you followed the install part you can simply run `yarn start`. It will spin up the GraphQL server and the React application.** Please look at the VSC plugins below for editor happiness.
 
 ## PLAYGROUND
-At [local-server](http://localhost:400) or [demo-server](https://graphql-server-schiphol.herokuapp.com/graphql) you will see [dataloader](./packages/server/src/modules/product/providers/product-data-loader.ts) taking care of eventually requesting two products from the API in one single call. Use the following query:
+At [local-server](http://localhost:400) or [demo-server heroku](https://graphql-server-schiphol.herokuapp.com/graphql) you will see [dataloader](./packages/server/src/modules/product/providers/product-data-loader.ts) taking care of eventually requesting two products from the API in one single call. Using the following query:
 
 ```
 {
