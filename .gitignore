@@ -15,3 +15,4 @@ yarn-error.log
 .env
 
 *.scss.d.ts
+#.nvmrc

@@ -1,17 +1,9 @@
 module.exports = {
     transform: {
-        "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/ts-jest"
+        '^.+\\.tsx?$': 'ts-jest',
     },
-    testRegex: '(/src/.*(\\.|/)(test|spec))\\.(js?|ts?)$',
+    testRegex: '(/src/.*(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
     modulePathIgnorePatterns: ['dist'],
     collectCoverage: true,
-    globals: {
-      "ts-jest": {
-        "diagnostics": false
-      }
-    },
-    reporters: [
-      "default"
-    ]
 };
