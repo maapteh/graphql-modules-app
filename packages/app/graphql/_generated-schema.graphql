@@ -1,4 +1,5 @@
 """ auto generated """
+""" auto generated """
 directive @cacheControl(maxAge: Int, scope: CacheControlScope) on OBJECT | FIELD_DEFINITION | INTERFACE
 
 enum CacheControlScope {
