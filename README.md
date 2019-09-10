@@ -94,9 +94,9 @@ GRAPHQL_ENDPOINT=endpoint-your-graphql-server-will-run
 ```
 {
     "eslint.alwaysShowStatus": true,
-	  "eslint.workingDirectories": [
-		    "packages/app", "packages/server"
-	  ],
+	"eslint.workingDirectories": [
+	    "packages/app", "packages/server"
+	],
     "prettier.tabWidth": 4
 }
 ```
