@@ -87,4 +87,18 @@ GRAPHQL_ENDPOINT=endpoint-your-graphql-server-will-run
 [graphql-schiphol.herokuapp.com/](https://graphql-schiphol.herokuapp.com) which points to the graphql endpoint at [graphql-server](https://graphql-server-schiphol.herokuapp.com/graphql). 
 
 
+## VSC
+- [vscode-apollo](https://marketplace.visualstudio.com/items?itemName=apollographql.vscode-apollo) for autocomplete in app
+- [eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) including apollo linting, with vsc workspace settings for eslint:
+
+```
+{
+    "eslint.alwaysShowStatus": true,
+	  "eslint.workingDirectories": [
+		    "packages/app", "packages/server"
+	  ],
+    "prettier.tabWidth": 4
+}
+```
+
 [![Codeship Status for maapteh/graphql-modules-app](https://app.codeship.com/projects/3bf47d90-d61c-0136-0edf-1a5c0fb66462/status?branch=master)](https://graphql-schiphol.herokuapp.com)
