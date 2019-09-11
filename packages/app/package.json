@@ -26,7 +26,7 @@
     "generate:graphqlcodegen": "gql-gen",
     "inspector:validate": "graphql-inspector validate src/graphql/_generated-hooks.tsx src/graphql/_generated-schema.graphql --require ts-node/register",
     "inspector:coverage": "graphql-inspector coverage src/graphql/_generated-hooks.tsx src/graphql/_generated-schema.graphql --require ts-node/register",
-    "snapshots": "percy exec -- node snapshots.js"
+    "snapshots": "percy exec -- node test/visual-regression/index.js"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.0",
