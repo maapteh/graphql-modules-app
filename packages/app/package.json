@@ -25,7 +25,8 @@
     "clean": "find . -name \"node_modules\" -exec rm -rf '{}' + && find . -name \"dist\" -exec rm -rf '{}' +",
     "generate:graphqlcodegen": "gql-gen",
     "inspector:validate": "graphql-inspector validate src/graphql/_generated-hooks.tsx src/graphql/_generated-schema.graphql --require ts-node/register",
-    "inspector:coverage": "graphql-inspector coverage src/graphql/_generated-hooks.tsx src/graphql/_generated-schema.graphql --require ts-node/register"
+    "inspector:coverage": "graphql-inspector coverage src/graphql/_generated-hooks.tsx src/graphql/_generated-schema.graphql --require ts-node/register",
+    "snapshots": "percy exec -- node snapshots.js"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.0",
@@ -66,6 +67,7 @@
     "@graphql-codegen/typescript-operations": "^1.7.0",
     "@graphql-codegen/typescript-react-apollo": "^1.7.0",
     "@graphql-inspector/cli": "^1.24.0",
+    "@percy/script": "^1.0.0",
     "@testing-library/jest-dom": "^4.1.0",
     "@testing-library/react": "^9.1.4",
     "@testing-library/react-hooks": "^2.0.1",

@@ -21,9 +21,9 @@
     "dev:debug": "ts-node-dev --inspect --debug-brk ./src/index.ts",
     "test": "jest --config=jest.config.js",
     "test:coverage": "yarn test --verbose --coverage",
-    "SKIPbuild": "yarn generate:graphqlcodegen && tsc",
+    "SKIPbuild": "yarn generate:graphqlcodegen && tsc && yarn copy:schema",
     "SKIPstart": "node --optimize_for_size --max_old_space_size=920 --gc_interval=100 dist/index.js",
-    "build": "echo \"Skip because of broken package for now\" && exit 0",
+    "build": "yarn copy:schema && echo \"Skip because of broken package for now\" && exit 0",
     "start": "ts-node src/index.ts",
     "lint:prettier": "prettier \"src/**/*.ts\"",
     "lint": "tslint -c \"./tslint.json\" -p tsconfig.json \"src/**/*.ts\" -e \"**/_generated-types.ts\"",
@@ -31,7 +31,8 @@
     "inspector:similar": "graphql-inspector similar ./src/_schema.graphql",
     "inspector:diff": "graphql-inspector diff git:origin/master:packages/server/src/_schema.graphql ./src/_schema.graphql",
     "---- graphql autogen ---------": "Graphql codegen",
-    "generate:graphqlcodegen": "gql-gen"
+    "generate:graphqlcodegen": "gql-gen",
+    "copy:schema": "cd src && find . -name '*.graphql' | xargs tar cvf - | (cd ../dist ; tar xfp -)"
   },
   "dependencies": {
     "@graphql-modules/core": "0.7.11",

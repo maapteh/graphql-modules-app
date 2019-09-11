@@ -22,7 +22,11 @@ export const ProductDetails = ({ data, short = false }: Props) => {
     const desc = short ? `${description.substring(0, 720)} ` : description;
 
     return product ? (
-        <section className={style.root} lang="nl-NL">
+        <section
+            className={style.root}
+            lang="nl-NL"
+            data-testid="product-details"
+        >
             <Image url={image} />
             <h1>
                 {product.title} ({product.rating})

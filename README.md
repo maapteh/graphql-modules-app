@@ -101,4 +101,8 @@ GRAPHQL_ENDPOINT=endpoint-your-graphql-server-will-run
 }
 ```
 
+## WIP
+- https://percy.io added basic snapshot for homepage
+- added graphql validation from cli
+
 [![Codeship Status for maapteh/graphql-modules-app](https://app.codeship.com/projects/3bf47d90-d61c-0136-0edf-1a5c0fb66462/status?branch=master)](https://graphql-schiphol.herokuapp.com)

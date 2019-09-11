@@ -3,7 +3,7 @@
 [docs](https://graphql-modules.com/docs/introduction/getting-started).
 
 ## Pre requisites
-- `yarn install` (once)
+- `yarn` (not needed when you installed from root)
 
 ## Introduction
 

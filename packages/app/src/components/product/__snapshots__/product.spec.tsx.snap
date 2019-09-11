@@ -4,6 +4,7 @@ exports[`Product renders correctly 1`] = `
 <div>
   <section
     class="root"
+    data-testid="product-details"
     lang="nl-NL"
   >
     <div
