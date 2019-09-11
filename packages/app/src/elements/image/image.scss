@@ -1,9 +1,10 @@
 .root {
     float: left;
+    overflow: hidden;
+    box-sizing: content-box;
     width: 168px;
     height: 209px;
     padding: 0 18px 14px 0;
-    box-sizing: content-box;
     line-height: 0;
     opacity:0;
     transition: opacity 400ms ease-in;
