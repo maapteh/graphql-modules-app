@@ -106,3 +106,5 @@ GRAPHQL_ENDPOINT=endpoint-your-graphql-server-will-run
 - added graphql validation from cli
 
 [![Codeship Status for maapteh/graphql-modules-app](https://app.codeship.com/projects/3bf47d90-d61c-0136-0edf-1a5c0fb66462/status?branch=master)](https://graphql-schiphol.herokuapp.com)
+
+[![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/maas38/graphql-workshop)
