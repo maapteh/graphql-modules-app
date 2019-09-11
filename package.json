@@ -21,9 +21,17 @@
     "graphql-server": "file:packages/server"
   },
   "devDependencies": {
-    "concurrently": "^4.1.0",
-    "husky": "^3.0.5",
-    "lerna": "^3.13.1",
+    "@graphql-inspector/actions": "latest",
+    "concurrently": "4.1.0",
+    "husky": "3.0.5",
+    "lerna": "3.13.1",
     "typescript": "3.1.6"
+  }
+  "graphql-inspector": {
+    "diff": true,
+    "schema": {
+      "ref": "master",
+      "path": "packages/server/src/_schema.graphql"
+    }
   }
 }
