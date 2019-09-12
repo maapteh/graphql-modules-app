@@ -5,7 +5,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import { mockAllIsIntersecting } from 'react-intersection-observer/test-utils'
 import { DATA_9200000111963040 } from '../../../../server/test/__mocks__/stubs/product-9200000111963040';
 import { useGetProductQuery } from '../../graphql/_generated-hooks';
-import { GET_PRODUCT } from './graphql/get-product.query.graphql';
+import { GET_PRODUCT } from './graphql/get-product.graphql';
 import { Product } from './product';
 
 /** MOCKS */
