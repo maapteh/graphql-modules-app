@@ -1,11 +1,14 @@
 # fs
 .DS_Store
+.vscode
 !.vscode/settings.json
 
 coverage
 node_modules
 .npm
 .nvmrc
+# we are using yarn, when people update with npm exclude this
+package-lock.json
 dist
 
 yarn.lock
