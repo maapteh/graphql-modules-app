@@ -1,0 +1,7 @@
+{
+    "eslint.alwaysShowStatus": true,
+	"eslint.workingDirectories": [
+		"packages/app", "packages/server"
+	],
+    "prettier.tabWidth": 4
+}

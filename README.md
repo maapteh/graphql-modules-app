@@ -89,17 +89,8 @@ GRAPHQL_ENDPOINT=endpoint-your-graphql-server-will-run
 
 ## VSC
 - [vscode-apollo](https://marketplace.visualstudio.com/items?itemName=apollographql.vscode-apollo) for autocomplete in app
-- [eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) including apollo linting, with vsc workspace settings for eslint:
+- [eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) including apollo linting
 
-```
-{
-    "eslint.alwaysShowStatus": true,
-	"eslint.workingDirectories": [
-	    "packages/app", "packages/server"
-	],
-    "prettier.tabWidth": 4
-}
-```
 
 ## WIP
 - https://percy.io added basic snapshot for homepage
