@@ -7,23 +7,20 @@ enum CacheControlScope {
 }
 
 type Product {
-  id: String
+  id: String!
   ean: String
-  title: String
+  title: String!
   specsTag: String
   summary: String
   rating: Int
   shortDescription: String
   urls: [ProductUrls]
-  images: [ProductImages]
-
-  """weird, media is same as images"""
-  media: [ProductImages]
+  images: [ProductImage]
   offerData: ProductOfferData
   parentCategoryPaths: ProductParentCategoryPaths
 }
 
-type ProductImages {
+type ProductImage {
   type: String
   key: String
   url: String

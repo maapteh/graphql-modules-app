@@ -20,23 +20,21 @@ export enum CacheControlScope {
 
 export type Product = {
    __typename?: 'Product',
-  id?: Maybe<Scalars['String']>,
+  id: Scalars['String'],
   ean?: Maybe<Scalars['String']>,
-  title?: Maybe<Scalars['String']>,
+  title: Scalars['String'],
   specsTag?: Maybe<Scalars['String']>,
   summary?: Maybe<Scalars['String']>,
   rating?: Maybe<Scalars['Int']>,
   shortDescription?: Maybe<Scalars['String']>,
   urls?: Maybe<Array<Maybe<ProductUrls>>>,
-  images?: Maybe<Array<Maybe<ProductImages>>>,
-  /** weird, media is same as images */
-  media?: Maybe<Array<Maybe<ProductImages>>>,
+  images?: Maybe<Array<Maybe<ProductImage>>>,
   offerData?: Maybe<ProductOfferData>,
   parentCategoryPaths?: Maybe<ProductParentCategoryPaths>,
 };
 
-export type ProductImages = {
-   __typename?: 'ProductImages',
+export type ProductImage = {
+   __typename?: 'ProductImage',
   type?: Maybe<Scalars['String']>,
   key?: Maybe<Scalars['String']>,
   url?: Maybe<Scalars['String']>,
@@ -206,7 +204,7 @@ export type ResolversTypes = {
   Product: ResolverTypeWrapper<Product>,
   Int: ResolverTypeWrapper<Scalars['Int']>,
   ProductUrls: ResolverTypeWrapper<ProductUrls>,
-  ProductImages: ResolverTypeWrapper<ProductImages>,
+  ProductImage: ResolverTypeWrapper<ProductImage>,
   ProductOfferData: ResolverTypeWrapper<ProductOfferData>,
   ProductOfferDataOffers: ResolverTypeWrapper<ProductOfferDataOffers>,
   Float: ResolverTypeWrapper<Scalars['Float']>,
@@ -227,7 +225,7 @@ export type ResolversParentTypes = {
   Product: Product,
   Int: Scalars['Int'],
   ProductUrls: ProductUrls,
-  ProductImages: ProductImages,
+  ProductImage: ProductImage,
   ProductOfferData: ProductOfferData,
   ProductOfferDataOffers: ProductOfferDataOffers,
   Float: Scalars['Float'],
@@ -244,21 +242,20 @@ export type CacheControlDirectiveResolver<Result, Parent, ContextType = any, Arg
   scope?: Maybe<Maybe<CacheControlScope>> }> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
 export type ProductResolvers<ContextType = any, ParentType extends ResolversParentTypes['Product'] = ResolversParentTypes['Product']> = {
-  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>,
+  id?: Resolver<ResolversTypes['String'], ParentType, ContextType>,
   ean?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>,
-  title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>,
+  title?: Resolver<ResolversTypes['String'], ParentType, ContextType>,
   specsTag?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>,
   summary?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>,
   rating?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>,
   shortDescription?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>,
   urls?: Resolver<Maybe<Array<Maybe<ResolversTypes['ProductUrls']>>>, ParentType, ContextType>,
-  images?: Resolver<Maybe<Array<Maybe<ResolversTypes['ProductImages']>>>, ParentType, ContextType>,
-  media?: Resolver<Maybe<Array<Maybe<ResolversTypes['ProductImages']>>>, ParentType, ContextType>,
+  images?: Resolver<Maybe<Array<Maybe<ResolversTypes['ProductImage']>>>, ParentType, ContextType>,
   offerData?: Resolver<Maybe<ResolversTypes['ProductOfferData']>, ParentType, ContextType>,
   parentCategoryPaths?: Resolver<Maybe<ResolversTypes['ProductParentCategoryPaths']>, ParentType, ContextType>,
 };
 
-export type ProductImagesResolvers<ContextType = any, ParentType extends ResolversParentTypes['ProductImages'] = ResolversParentTypes['ProductImages']> = {
+export type ProductImageResolvers<ContextType = any, ParentType extends ResolversParentTypes['ProductImage'] = ResolversParentTypes['ProductImage']> = {
   type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>,
   key?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>,
   url?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>,
@@ -331,7 +328,7 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
 
 export type Resolvers<ContextType = any> = {
   Product?: ProductResolvers<ContextType>,
-  ProductImages?: ProductImagesResolvers<ContextType>,
+  ProductImage?: ProductImageResolvers<ContextType>,
   ProductOfferData?: ProductOfferDataResolvers<ContextType>,
   ProductOfferDataOffers?: ProductOfferDataOffersResolvers<ContextType>,
   ProductParentCategory?: ProductParentCategoryResolvers<ContextType>,

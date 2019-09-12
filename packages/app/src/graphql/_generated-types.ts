@@ -18,23 +18,21 @@ export enum CacheControlScope {
 
 export type Product = {
    __typename?: 'Product',
-  id?: Maybe<Scalars['String']>,
+  id: Scalars['String'],
   ean?: Maybe<Scalars['String']>,
-  title?: Maybe<Scalars['String']>,
+  title: Scalars['String'],
   specsTag?: Maybe<Scalars['String']>,
   summary?: Maybe<Scalars['String']>,
   rating?: Maybe<Scalars['Int']>,
   shortDescription?: Maybe<Scalars['String']>,
   urls?: Maybe<Array<Maybe<ProductUrls>>>,
-  images?: Maybe<Array<Maybe<ProductImages>>>,
-  /** weird, media is same as images */
-  media?: Maybe<Array<Maybe<ProductImages>>>,
+  images?: Maybe<Array<Maybe<ProductImage>>>,
   offerData?: Maybe<ProductOfferData>,
   parentCategoryPaths?: Maybe<ProductParentCategoryPaths>,
 };
 
-export type ProductImages = {
-   __typename?: 'ProductImages',
+export type ProductImage = {
+   __typename?: 'ProductImage',
   type?: Maybe<Scalars['String']>,
   key?: Maybe<Scalars['String']>,
   url?: Maybe<Scalars['String']>,
@@ -158,8 +156,8 @@ export type ProductFragment = (
   { __typename?: 'Product' }
   & Pick<Product, 'id' | 'title' | 'rating' | 'shortDescription'>
   & { images: Maybe<Array<Maybe<(
-    { __typename?: 'ProductImages' }
-    & Pick<ProductImages, 'key' | 'url'>
+    { __typename?: 'ProductImage' }
+    & Pick<ProductImage, 'key' | 'url'>
   )>>>, urls: Maybe<Array<Maybe<(
     { __typename?: 'ProductUrls' }
     & Pick<ProductUrls, 'key' | 'value'>
