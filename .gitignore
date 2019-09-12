@@ -19,3 +19,6 @@ yarn-error.log
 .env
 
 *.scss.d.ts
+
+# auto generated (leave schema and hooks in repo!)
+packages/app/src/graphql/_generated-types.ts
