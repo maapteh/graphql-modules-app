@@ -12,7 +12,7 @@
   },
   "scripts": {
     "precommit": "lint-staged",
-    "prepare": "yarn build",
+    "prepare": "yarn generate:graphqlcodegen && inspector:validate && yarn build",
     "audit": "yarn audit",
     "dev": "next -p 4001",
     "build": "next build",
