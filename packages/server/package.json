@@ -13,7 +13,7 @@
     "node": ">= 10.16.3"
   },
   "scripts": {
-    "prepare": "yarn run build",
+    "prepare": "yarn generate:graphqlcodegen && yarn inspector:validate && yarn build",
     "precommit": "lint-staged",
     "audit": "yarn audit",
     "dev": "NODE_ENV=development ts-node-dev --respawn --transpileOnly ./src/index.ts",
