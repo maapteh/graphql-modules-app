@@ -9,7 +9,7 @@
   "scripts": {
     "postinstall": "lerna exec -- yarn install && lerna run prepare",
     "audit": "lerna run audit",
-    "ci:generate": "lerna run ci:generate",
+    "ci:generate": "cd packages/server && yarn ci:generate && cd ../app && yarn ci:generate",
     "build": "lerna run build",
     "clean": "find . -name \"node_modules\" -exec rm -rf '{}' + && find . -name \"dist\" -exec rm -rf '{}' +",
     "test": "lerna run test",
