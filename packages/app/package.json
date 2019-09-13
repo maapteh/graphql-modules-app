@@ -24,7 +24,7 @@
     "test:ci": "yarn run coverage -- --ci --maxWorkers=2 --reporters=default --reporters=jest-junit",
     "lint": "eslint './{src,pages}/**/*.{ts,tsx}'",
     "clean": "find . -name \"node_modules\" -exec rm -rf '{}' + && find . -name \"dist\" -exec rm -rf '{}' +",
-    "generate:graphqlcodegen": "gql-gen",
+    "generate:graphqlcodegen": "graphql-codegen",
     "inspector:validate": "graphql-inspector validate src/graphql/_generated-hooks.tsx src/graphql/_generated-schema.graphql --require ts-node/register",
     "inspector:coverage": "graphql-inspector coverage src/graphql/_generated-hooks.tsx src/graphql/_generated-schema.graphql --require ts-node/register",
     "snapshots": "percy exec -- node test/visual-regression/index.js"

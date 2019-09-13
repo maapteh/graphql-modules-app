@@ -32,7 +32,7 @@
     "inspector:similar": "graphql-inspector similar ./src/_schema.graphql",
     "inspector:diff": "graphql-inspector diff git:origin/master:packages/server/src/_schema.graphql ./src/_schema.graphql",
     "---- graphql autogen ---------": "Graphql codegen",
-    "generate:graphqlcodegen": "gql-gen",
+    "generate:graphqlcodegen": "graphql-codegen",
     "copy:schema": "cd src && find . -name '*.graphql' | xargs tar cvf - | (cd ../dist ; tar xfp -)"
   },
   "dependencies": {
