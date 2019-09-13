@@ -12,8 +12,9 @@
   },
   "scripts": {
     "precommit": "lint-staged",
-    "prepare": "yarn generate:graphqlcodegen && yarn inspector:validate && yarn build",
+    "prepare": "yarn build",
     "audit": "yarn audit",
+    "ci:generate": "yarn generate:graphqlcodegen && yarn inspector:validate",
     "dev": "next -p 4001",
     "build": "next build",
     "start": "PORT=$PORT NODE_ENV=production node --optimize_for_size --max_old_space_size=920 --gc_interval=100 server.js",

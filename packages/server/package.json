@@ -16,6 +16,7 @@
     "prepare": "yarn generate:graphqlcodegen && yarn build",
     "precommit": "lint-staged",
     "audit": "yarn audit",
+    "ci:generate": "yarn generate:graphqlcodegen",
     "dev": "NODE_ENV=development ts-node-dev --respawn --transpileOnly ./src/index.ts",
     "dev:monitoring": "yarn build && pm2-runtime dist/index.js",
     "dev:debug": "ts-node-dev --inspect --debug-brk ./src/index.ts",

@@ -29,5 +29,6 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
+      - run: yarn ci:generate
       - run: yarn test
       - run: yarn lint
