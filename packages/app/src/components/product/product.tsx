@@ -2,7 +2,7 @@ import React from 'react';
 import { useGetProductQuery } from '../../graphql/_generated-hooks';
 import { ProductDetails } from './elements/product-details/product-details';
 
-export const Product = ({ id }: any) => {
+export const Product = ({ id }: string) => {
     const { data, loading } = useGetProductQuery({
         variables: { id },
     });
