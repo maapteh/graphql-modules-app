@@ -8,7 +8,7 @@
     "url": "maapteh/graphql-modules-app/packages/graphql-app"
   },
   "engines": {
-    "node": ">= 10.16.3"
+    "node": "^10.16.x"
   },
   "scripts": {
     "precommit": "lint-staged",

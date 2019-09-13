@@ -10,7 +10,7 @@
   "pre-commit": "lint-staged",
   "license": "MIT",
   "engines": {
-    "node": ">= 10.16.3"
+    "node": "^10.16.x"
   },
   "scripts": {
     "prepare": "yarn generate:graphqlcodegen && yarn build",
