@@ -33,7 +33,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - attach_workspace
+      - attach_workspace:
           at: ./
       - run: ls
       - run: yarn test
