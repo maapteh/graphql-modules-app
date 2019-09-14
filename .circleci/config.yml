@@ -11,24 +11,19 @@ jobs:
 
     steps:
       - checkout
+      - run: ls
       - restore_cache:
           keys:
-            - dependency-cache-{{ checksum "./yarn.lock" }}
-            - dependency-cache-{{ checksum "./packages/app/yarn.lock" }}
-            - dependency-cache-{{ checksum "./packages/server/yarn.lock" }}
+            - dependency-cache-{{ checksum "yarn.lock" }}
+            - dependency-cache-{{ checksum "packages/app/yarn.lock" }}
+            - dependency-cache-{{ checksum "packages/server/yarn.lock" }}
       - run: yarn
       - run: ls
       - save_cache:
           key: dependency-cache-{{ checksum "./yarn.lock" }}
           paths:
             - node_modules
-      - save_cache:
-          key: dependency-cache-{{ checksum "./packages/app/yarn.lock" }}
-          paths:
             - packages/app/node_modules
-      - save_cache:
-          key: dependency-cache-{{ checksum "./packages/server/yarn.lock" }}
-          paths:
             - packages/server/node_modules
       - persist_to_workspace:
           root: ./
@@ -37,6 +32,8 @@ jobs:
             - ./node_modules
             - ./packages/app
             - ./paclages/server
+      - run: yarn test
+      - run: yarn lint
 
   test:
     <<: *defaults
