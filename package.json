@@ -1,7 +1,7 @@
 {
   "name": "graphql-modules-typescript-sample-app",
   "version": "0.0.4",
-  "private": false,
+  "private": true,
   "license": "MIT",
   "engines": {
     "node": "^10.16.x"
@@ -26,7 +26,6 @@
     "graphql-server": "file:packages/server"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "1.7.0",
     "@graphql-inspector/actions": "latest",
     "concurrently": "4.1.0",
     "husky": "3.0.5",
