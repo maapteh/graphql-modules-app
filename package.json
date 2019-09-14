@@ -17,6 +17,10 @@
     "start": "./node_modules/.bin/concurrently --names 'REACT, react-autogen, GRAPHQL, graphql-autogen' -c 'blue.bold,gray,cyan.bold,gray' 'cd packages/app && yarn dev' 'cd packages/app && yarn generate:graphqlcodegen -w' 'cd packages/server && yarn dev' 'cd packages/server && yarn generate:graphqlcodegen -w'",
     "start:prod": "yarn build && ./node_modules/.bin/concurrently --names 'REACT, GRAPHQL' -c 'blue.bold,cyan.bold' 'cd packages/app && yarn start' 'cd packages/server && yarn start' "
   },
+  "workspaces": [
+    "packages/app",
+    "packages/server"
+  ],
   "dependencies": {
     "graphql-app": "file:packages/app",
     "graphql-server": "file:packages/server"

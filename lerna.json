@@ -1,9 +1,10 @@
 {
     "lerna": "0.0.4",
     "npmClient": "yarn",
+    "useWorkspaces": true,
     "packages": ["packages/*"],
     "version": "independent",
-    "hoist": true,
+    "hoist": false,
     "command": {
         "publish": {
             "ignoreChanges": ["ignored-file", "*.md"],
