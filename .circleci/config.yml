@@ -19,18 +19,15 @@ jobs:
       - run: yarn
       - run: ls
       - save_cache:
-          key:
-            - dependency-cache-{{ checksum "./yarn.lock" }}
+          key: dependency-cache-{{ checksum "./yarn.lock" }}
           paths:
             - node_modules
       - save_cache:
-          key:
-            - dependency-cache-{{ checksum "./packages/app/yarn.lock" }}
+          key: dependency-cache-{{ checksum "./packages/app/yarn.lock" }}
           paths:
             - packages/app/node_modules
       - save_cache:
-          key:
-            - dependency-cache-{{ checksum "./packages/server/yarn.lock" }}
+          key: dependency-cache-{{ checksum "./packages/server/yarn.lock" }}
           paths:
             - packages/server/node_modules
       - persist_to_workspace:
