@@ -1,7 +1,11 @@
 schema:
   - '../server/src/_schema.graphql'
 overwrite: true
-documents: ['./src/components/**/*.graphql.ts', './src/graphql/fragments/*.graphql.ts']
+documents: [
+    './src/modules/**/*.graphql.ts',
+    './src/components/**/*.graphql.ts',
+    './src/graphql/fragments/*.graphql.ts'
+  ]
 config: {}
 generates:
   src/graphql/_generated-fragment-types.ts:

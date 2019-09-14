@@ -22,10 +22,6 @@ jobs:
     - name: Install
       run: |
         yarn --ignore-scripts
-    
-    - name: Setup
-      run: |
-        yarn ci:generate
   
     - name: Build
       run: |

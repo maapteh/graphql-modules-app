@@ -11,8 +11,7 @@
     "node": "^10.16.x"
   },
   "scripts": {
-    "prepare": "yarn generate:graphqlcodegen && yarn build",
-    "ci:generate": "yarn generate:graphqlcodegen && yarn inspector:validate",
+    "prepare": "yarn build",
     "precommit": "lint-staged",
     "audit": "yarn audit",
     "dev": "next -p 4001",

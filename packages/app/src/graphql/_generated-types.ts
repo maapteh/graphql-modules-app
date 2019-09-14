@@ -1,8 +1,5 @@
 /** eslint-disable */
 /** AUTO GENERATED, DO NOT EDIT OVERHERE */
-import gql from 'graphql-tag';
-import * as ApolloReactCommon from '@apollo/react-common';
-import * as ApolloReactHooks from '@apollo/react-hooks';
 export type Maybe<T> = T | null;
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
@@ -166,55 +163,3 @@ export type GetProductsQuery = (
     >>> }
   )> }
 );
-export const ProductFragmentDoc = gql`
-    fragment product on Product {
-  id
-  title
-  rating
-  shortDescription
-  images {
-    key
-    url
-  }
-  urls {
-    key
-    value
-  }
-}
-    `;
-export const GetProductDocument = gql`
-    query getProduct($id: String!) {
-  getProduct(id: $id) {
-    ...product
-  }
-}
-    ${ProductFragmentDoc}`;
-
-    export function useGetProductQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<GetProductQuery, GetProductQueryVariables>) {
-      return ApolloReactHooks.useQuery<GetProductQuery, GetProductQueryVariables>(GetProductDocument, baseOptions);
-    }
-      export function useGetProductLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetProductQuery, GetProductQueryVariables>) {
-        return ApolloReactHooks.useLazyQuery<GetProductQuery, GetProductQueryVariables>(GetProductDocument, baseOptions);
-      }
-      
-export type GetProductQueryHookResult = ReturnType<typeof useGetProductQuery>;
-export type GetProductQueryResult = ApolloReactCommon.QueryResult<GetProductQuery, GetProductQueryVariables>;
-export const GetProductsDocument = gql`
-    query getProducts($id: String!) {
-  getProducts(id: $id) {
-    products {
-      ...product
-    }
-  }
-}
-    ${ProductFragmentDoc}`;
-
-    export function useGetProductsQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<GetProductsQuery, GetProductsQueryVariables>) {
-      return ApolloReactHooks.useQuery<GetProductsQuery, GetProductsQueryVariables>(GetProductsDocument, baseOptions);
-    }
-      export function useGetProductsLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetProductsQuery, GetProductsQueryVariables>) {
-        return ApolloReactHooks.useLazyQuery<GetProductsQuery, GetProductsQueryVariables>(GetProductsDocument, baseOptions);
-      }
-      
-export type GetProductsQueryHookResult = ReturnType<typeof useGetProductsQuery>;
-export type GetProductsQueryResult = ApolloReactCommon.QueryResult<GetProductsQuery, GetProductsQueryVariables>;

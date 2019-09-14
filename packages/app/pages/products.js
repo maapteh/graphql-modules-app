@@ -1,6 +1,6 @@
 import { withApollo } from '../src/graphql/apollo';
-import { App } from '../src/components/App';
-import { ProductsList } from '../src/components/products-list/products-list';
+import { App } from '../src/modules/App';
+import { ProductsList } from '../src/modules/products-list/products-list';
 
 const Products = () => (
     <App title="Products from BOL.com">
