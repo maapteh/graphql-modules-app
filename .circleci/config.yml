@@ -12,6 +12,7 @@ jobs:
     steps:
       - checkout
       - run: yarn
+      - run: ls
 
   test:
     <<: *defaults
@@ -19,6 +20,7 @@ jobs:
     working_directory: ~/repo
 
     steps:
+      - run: ls
       - run: yarn test
       - run: yarn lint
 
