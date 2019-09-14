@@ -22,15 +22,19 @@ jobs:
             - packages/app/node_modules
             - packages/server/node_modules
       - persist_to_workspace:
-          root: .
-            paths:
-              - node_modules
-              - packages/app
-              - paclages/server
+          root: ./
+          paths:
+            - ./.circleci
+            - ./node_modules
+            - ./packages/app
+            - ./paclages/server
 
   test:
     <<: *defaults
     steps:
+      - checkout
+      - attach_workspace
+          at: ./
       - run: ls
       - run: yarn test
       - run: yarn lint
