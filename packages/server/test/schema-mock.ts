@@ -8,9 +8,9 @@ import { DATA_PRODUCTS } from './__mocks__/stubs/poducts';
  */
 export const MOCKS = {
     Query: () => ({
-        getProduct: (_: any, {id}: any) => { 
+        getProduct: (_: any, {id}: any) => {
             switch(id) {
-                case '9200000111963040':
+                case '9200000113065845':
                     return DATA_9200000113065845;
                 case '9200000111963040':
                     return DATA_9200000111963040;

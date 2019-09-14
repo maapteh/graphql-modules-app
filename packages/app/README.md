@@ -21,5 +21,5 @@ This simple application is created to show the complete setup of our Apollo Grap
 - `yarn test`
 
 ## VISUAL VALIDATION
-
+- add '@percy/script' to the repo and try it out. Export your PERCY_TOKEN before running the command below
 - `yarn snapshots` with the PERCY_TOKEN it uploads the results
