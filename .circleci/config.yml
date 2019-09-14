@@ -25,15 +25,15 @@ jobs:
             - node_modules
             - packages/app/node_modules
             - packages/server/node_modules
-      - persist_to_workspace:
-          root: ./
-          paths:
-            - ./.circleci
-            - ./node_modules
-            - ./packages/app
-            - ./paclages/server
-      - run: yarn test
       - run: yarn lint
+      - run: yarn test
+      # Workflow not working at the moment
+      # - persist_to_workspace:
+      #    root: ./
+      #    paths:
+      #      - ./node_modules
+      #      - ./packages/app
+      #      - ./paclages/server
 
   test:
     <<: *defaults
@@ -41,7 +41,6 @@ jobs:
       - checkout
       - attach_workspace:
           at: ./
-      - run: ls
       - run: yarn test
       - run: yarn lint
 
@@ -50,6 +49,6 @@ workflows:
   build_and_release:
     jobs:
       - build
-      - test:
-          requires:
-            - build
+      # - test:
+      #    requires:
+      #      - build
