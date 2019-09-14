@@ -15,8 +15,10 @@ module.exports = {
     setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
     globals: {
         'ts-jest': {
+            diagnostics: false,
             babelConfig: '.babelrc',
-            tsConfig: 'jest.tsconfig.json',
+            tsConfig: './jest.tsconfig.json',
         },
     },
+    rootDir: process.cwd(),
 };
