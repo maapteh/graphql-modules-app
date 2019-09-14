@@ -1,0 +1,14 @@
+{
+  "name": "graphql-nginx",
+  "version": "0.0.1",
+  "license": "UNLICENSED",
+  "description": "Only used for local development",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "http-proxy-middleware": "^0.19.1"
+  }
+}

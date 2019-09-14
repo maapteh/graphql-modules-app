@@ -1,0 +1,35 @@
+schema:
+  - '../server/src/_schema.graphql'
+overwrite: true
+documents: [
+    './src/modules/**/*.graphql.ts',
+    './src/components/**/*.graphql.ts',
+    './src/graphql/fragments/*.graphql.ts'
+  ]
+config: {}
+generates:
+  src/graphql/_generated-fragment-types.ts:
+    plugins:
+      - "fragment-matcher"
+  src/graphql/_generated-types.ts:
+    plugins:
+      - add: "/** eslint-disable */\n/** AUTO GENERATED, DO NOT EDIT OVERHERE */"
+      - typescript
+      - typescript-operations
+  src/graphql/_generated-hooks.tsx:
+    plugins:
+      - add: "/** eslint-disable */\n/** AUTO GENERATED, DO NOT EDIT OVERHERE */"
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      reactApolloVersion: 3
+      reactApolloImportFrom: '@apollo/react-hooks'
+      withComponent: false
+      withHOC: false
+      withHooks: true
+  src/graphql/_generated-schema.graphql:
+    plugins:
+      - schema-ast
+require:
+  - "ts-node/register/transpile-only"

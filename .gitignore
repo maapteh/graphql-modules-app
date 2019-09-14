@@ -1,0 +1,23 @@
+# fs
+.DS_Store
+.vscode
+!.vscode/settings.json
+
+coverage
+node_modules
+.npm
+.nvmrc
+# we are using yarn, when people update with npm exclude this
+package-lock.json
+dist
+
+yarn-error.log
+.yarnclean
+
+.next
+.env
+
+*.scss.d.ts
+
+# auto generated (leave schema and hooks in repo!)
+# packages/app/src/graphql/_generated-types.ts

@@ -1,0 +1,18 @@
+.root {
+    float: left;
+    overflow: hidden;
+    box-sizing: content-box;
+    width: 168px;
+    height: 209px;
+    padding: 0 18px 14px 0;
+    line-height: 0;
+    opacity:0;
+    transition: opacity 400ms ease-in;
+}
+.img {
+    width: 100%;
+}
+
+.appear {
+    opacity: 1;
+}

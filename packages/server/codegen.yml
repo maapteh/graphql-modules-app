@@ -1,0 +1,18 @@
+schema:
+  - './src/modules/*/schema/*.graphql'
+overwrite: true
+documents: []
+config: {}
+generates:
+  src/_graphql.d.ts:
+    config: {}
+    plugins:
+      - add: "/* @ts-ignore */\n/* tslint:disable */"
+      - typescript
+      - typescript-resolvers
+  src/_schema.graphql:
+    plugins:
+      - add: "\"\"\" auto generated \"\"\""
+      - schema-ast
+require:
+  - "ts-node/register/transpile-only"

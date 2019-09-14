@@ -1,0 +1,46 @@
+{
+  "name": "sample-app",
+  "version": "0.0.4",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": "^10.16.x",
+    "yarn": ">= 1.17.3"
+  },
+  "scripts": {
+    "postinstall": "lerna exec -- yarn install && lerna run prepare",
+    "audit": "lerna run audit",
+    "start": "./node_modules/.bin/concurrently --names 'REACT, react-autogen, GRAPHQL, graphql-autogen' -c 'blue.bold,gray,cyan.bold,gray' 'cd packages/app && yarn dev' 'cd packages/app && yarn generate:graphqlcodegen -w' 'cd packages/server && yarn dev' 'cd packages/server && yarn generate:graphqlcodegen -w'",
+    "dev": "yarn start",
+    "build": "lerna run build",
+    "lint": "lerna run lint",
+    "test": "lerna run test",
+    "clean": "find . -name \"node_modules\" -exec rm -rf '{}' + && find . -name \"dist\" -exec rm -rf '{}' +",
+    "------ playground ------": "----------------------",
+    "start:mock-prod": "yarn build && ./node_modules/.bin/concurrently --names 'REACT, GRAPHQL' -c 'blue.bold,cyan.bold' 'NODE_ENV=production cd packages/app && yarn start' 'NODE_ENV=production MOCK_API=ON cd packages/server && yarn start' ",
+    "test:coverage": "lerna run test:coverage",
+    "outdated": "yarn outdated",
+    "upgrade": "yarn upgrade-interactive --latest"
+  },
+  "workspaces": [
+    "packages/app",
+    "packages/server"
+  ],
+  "resolutions": {
+    "graphql": "14.5.5"
+  },
+  "devDependencies": {
+    "@graphql-inspector/actions": "latest",
+    "concurrently": "4.1.0",
+    "husky": "3.0.5",
+    "lerna": "^3.13.1",
+    "typescript": "3.6.3"
+  },
+  "graphql-inspector": {
+    "diff": true,
+    "schema": {
+      "ref": "master",
+      "path": "packages/server/src/_schema.graphql"
+    }
+  }
+}

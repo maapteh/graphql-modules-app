@@ -1,0 +1,4 @@
+loglevel = warn
+cache=.npm/cache
+tmp=.npm/tmp
+save-exact = true

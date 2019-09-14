@@ -1,0 +1,31 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "target": "es2017",
+    "module": "commonjs",
+    "lib": ["es2017", "esnext.asynciterable"],
+    "skipLibCheck": true,
+    "strict": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "declaration": true,
+    "baseUrl": "./",
+    "rootDir": "./",
+    "types": ["reflect-metadata", "jest"],
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noEmitOnError": true
+  },
+  "include": ["src/**/*.ts"],
+  "files": ["src/index.ts"],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "src/**/__tests__/**/*",
+    "src/**/__mocks__/**/*",
+  ]
+}
