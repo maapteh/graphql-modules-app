@@ -11,14 +11,19 @@ jobs:
 
     steps:
       - checkout
+      - restore_cache:
+          keys: dependency-cache-{{ checksum "yarn.lock" }}
       - run: yarn
       - run: ls
+      - save_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+            - packages/app/node_modules
+            - packages/server/node_modules
 
   test:
     <<: *defaults
-
-    working_directory: ~/repo
-
     steps:
       - run: ls
       - run: yarn test
