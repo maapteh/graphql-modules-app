@@ -1,6 +1,17 @@
 {
-  "lerna": "2.0.0",
-  "packages": ["packages/*"],
-  "version": "independent",
-  "hoist": false
+    "lerna": "0.0.4",
+    "npmClient": "yarn",
+    "packages": ["packages/*"],
+    "version": "independent",
+    "hoist": true,
+    "command": {
+        "publish": {
+            "ignoreChanges": ["ignored-file", "*.md"],
+            "message": "chore(release): publish"
+        },
+        "bootstrap": {
+            "ignore": "component-*",
+            "npmClientArgs": ["--no-package-lock"]
+        }
+    }
 }

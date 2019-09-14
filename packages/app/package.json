@@ -11,12 +11,12 @@
     "node": "^10.16.x"
   },
   "scripts": {
+    "prepare": "yarn generate:graphqlcodegen && yarn build",
     "ci:generate": "yarn generate:graphqlcodegen && yarn inspector:validate",
     "precommit": "lint-staged",
-    "prepare": "yarn build",
     "audit": "yarn audit",
     "dev": "next -p 4001",
-    "build": "next build",
+    "build": "tsc -v && next build",
     "start": "PORT=$PORT NODE_ENV=production node --optimize_for_size --max_old_space_size=920 --gc_interval=100 server.js",
     "start:local": "NODE_ENV=production next start -p 4001",
     "test": "jest --config=jest.config.js",
@@ -56,8 +56,7 @@
     "react": "16.9.0",
     "react-dom": "16.9.0",
     "react-intersection-observer": "8.24.1",
-    "ts-node": "8.3.0",
-    "typescript": "3.2.1"
+    "ts-node": "8.3.0"
   },
   "devDependencies": {
     "@graphql-codegen/add": "1.7.0",

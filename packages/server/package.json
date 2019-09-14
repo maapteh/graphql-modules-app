@@ -13,8 +13,8 @@
     "node": "^10.16.x"
   },
   "scripts": {
-    "ci:generate": "yarn generate:graphqlcodegen",
     "prepare": "yarn generate:graphqlcodegen && yarn build",
+    "ci:generate": "yarn generate:graphqlcodegen",
     "precommit": "lint-staged",
     "audit": "yarn audit",
     "dev": "NODE_ENV=development ts-node-dev --respawn --transpileOnly ./src/index.ts",
@@ -22,8 +22,8 @@
     "dev:debug": "ts-node-dev --inspect --debug-brk ./src/index.ts",
     "test": "jest --config=jest.config.js",
     "test:coverage": "yarn test --verbose --coverage",
-    "build": "yarn generate:graphqlcodegen && tsc && yarn copy:schema",
-    "start": "node --optimize_for_size --max_old_space_size=920 --gc_interval=100 dist/index.js",
+    "build": "yarn generate:graphqlcodegen && tsc -v && tsc && yarn copy:schema",
+    "start": "node --optimize_for_size --max_old_space_size=920 --gc_interval=100 dist/src/index.js",
     "build:failover": "yarn copy:schema && echo \"Skip because of broken package for now\" && exit 0",
     "start:failover": "ts-node src/index.ts",
     "lint:prettier": "prettier \"src/**/*.ts\"",
@@ -33,7 +33,7 @@
     "inspector:diff": "graphql-inspector diff git:origin/master:packages/server/src/_schema.graphql ./src/_schema.graphql",
     "---- graphql autogen ---------": "Graphql codegen",
     "generate:graphqlcodegen": "graphql-codegen",
-    "copy:schema": "cd src && find . -name '*.graphql' | xargs tar cvf - | (cd ../dist ; tar xfp -)"
+    "copy:schema": "cd src && find . -name '*.graphql' | xargs tar cvf - | (cd ../dist/src ; tar xfp -)"
   },
   "dependencies": {
     "@graphql-modules/core": "0.7.12",
@@ -58,8 +58,7 @@
     "node-fetch": "2.6.0",
     "reflect-metadata": "0.1.13",
     "ts-node": "8.3.0",
-    "tslint-config-airbnb": "5.11.1",
-    "typescript": "3.6.3"
+    "tslint-config-airbnb": "5.11.1"
   },
   "devDependencies": {
     "@babel/core": "7.6.0",
