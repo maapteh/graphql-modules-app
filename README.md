@@ -46,6 +46,11 @@ At [local-server](http://localhost:400) or [demo-server heroku](https://graphql-
 }
 ```
 
+## CODE DEMONSTRATION
+product is explained in:
+- [graphql module](packages/server/src/modules/product) the injectable Product module
+- [frontend module](packages/app/src/modules/product) the client component
+
 ## PRODUCTION
 By default after install the build will take place and the start command is running this build.
 
