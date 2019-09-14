@@ -21,10 +21,6 @@
     "packages/app",
     "packages/server"
   ],
-  "dependencies": {
-    "graphql-app": "file:packages/app",
-    "graphql-server": "file:packages/server"
-  },
   "devDependencies": {
     "@graphql-inspector/actions": "latest",
     "concurrently": "4.1.0",

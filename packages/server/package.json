@@ -21,8 +21,10 @@
     "dev:debug": "ts-node-dev --inspect --debug-brk ./src/index.ts",
     "test": "jest --config=jest.config.js",
     "test:coverage": "yarn test --verbose --coverage",
-    "build": "yarn generate:graphqlcodegen && tsc -v && tsc && yarn copy:schema",
-    "start": "node --optimize_for_size --max_old_space_size=920 --gc_interval=100 dist/src/index.js",
+    "buildFIXME": "yarn generate:graphqlcodegen && tsc -v && tsc && yarn copy:schema",
+    "startFIXME": "node --optimize_for_size --max_old_space_size=920 --gc_interval=100 dist/src/index.js",
+    "build": "echo \"skipping build\" && exit 0",
+    "start": "NODE_ENV=development ts-node-dev --respawn --transpileOnly ./src/index.ts",
     "build:failover": "yarn copy:schema && echo \"Skip because of broken package for now\" && exit 0",
     "start:failover": "ts-node src/index.ts",
     "lint:prettier": "prettier \"src/**/*.ts\"",
@@ -50,13 +52,18 @@
     "dataloader": "1.4.0",
     "dotenv": "8.1.0",
     "express": "4.17.1",
-    "graphql": "14.5.4",
+    "graphql": "14.5.5",
     "graphql-depth-limit": "1.1.0",
     "graphql-tag": "2.10.1",
     "graphql-tag-pluck": "0.8.4",
+    "graphql-toolkit": "0.5.13",
     "node-fetch": "2.6.0",
     "reflect-metadata": "0.1.13",
-    "ts-node": "8.3.0"
+    "ts-node": "8.3.0",
+    "typescript": "3.2.1"
+  },
+  "resolutions": {
+    "graphql-toolkit": "0.5.13"
   },
   "devDependencies": {
     "@babel/core": "7.6.0",
