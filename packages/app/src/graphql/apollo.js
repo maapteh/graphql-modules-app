@@ -41,7 +41,7 @@ const batchHttpLink = new BatchHttpLink({
     uri,
     credentials: 'include', // 'same-origin'
     headers: { batch: 'true ' },
-    batchInterval: 20
+    batchInterval: 10
 });
 
 // link to use if not batching
