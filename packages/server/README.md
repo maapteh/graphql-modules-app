@@ -10,7 +10,7 @@
 ### Development
 
 1. tab 1: `generate:graphqlcodegen -w`
-2. tab 2: `yarn dev` (no mock mode, bol open api key mandetory), or `MOCK_API=ON yarn dev` (mock mode)
+2. tab 2: `yarn dev` (no mock mode, bol open api key mandetory), or `MOCK_API=on yarn dev` (mock mode)
 3. open: [http://localhost:4000/graphql](http://localhost:4000/graphql)
 
 ### Production

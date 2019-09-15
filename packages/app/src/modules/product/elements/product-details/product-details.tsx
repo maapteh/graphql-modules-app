@@ -14,10 +14,11 @@ interface Props {
 
 export const ProductDetails = ({ data, short = false }: Props) => {
     const product: ProductFragment = data && data.getProduct;
-    const image =
+    const foundImage =
         product &&
         product.images &&
-        product.images.filter((i: any) => i.key === 'L')[0].url;
+        product.images.filter((i: any) => i.key === 'L');
+    const image = foundImage && foundImage.length && foundImage[0].url;
     const description = (product && product.shortDescription) || '';
     const desc = short ? `${description.substring(0, 720)} ` : description;
 
@@ -27,7 +28,7 @@ export const ProductDetails = ({ data, short = false }: Props) => {
             lang="nl-NL"
             data-testid="product-details"
         >
-            <Image url={image} />
+            {Boolean(image) && <Image url={image} />}
             <h1>
                 {product.title} ({product.rating})
             </h1>

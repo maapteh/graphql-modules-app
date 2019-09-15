@@ -9,7 +9,7 @@ The React web application is using [NextJS](https://nextjs.org/), [GraphQL Codeg
 
 ## INSTALL
 1. `yarn`
-2. `bash setup.sh` sets correct local .env file with _mock mode as default_ (possible to set your bol.com api key there as well (then set MOCK_API=OFF), the only difference will be using a real datasource or not)
+2. `bash setup.sh` sets correct local .env file with _mock mode as default_ (possible to set your bol.com api key there as well (then set MOCK_API=off), the only difference will be using a real datasource or not)
 3. Apollo [vsc extension](https://marketplace.visualstudio.com/items?itemName=apollographql.vscode-apollo) (optional)
 
 ## STRUCTURE
@@ -26,7 +26,7 @@ The React web application is using [NextJS](https://nextjs.org/), [GraphQL Codeg
 **Now when you followed the install part (and looked at point 2) you can simply run `yarn start`. It will spin up the GraphQL server and the React application.**
 Please look at the VSC plugins below for editor happiness.
 
-It is also possible to just play with only the server part with `MOCK_API=ON yarn start:dev:server`, which spins up the graphql server in mocked mode.
+It is also possible to just play with only the server part with `MOCK_API=on yarn start:dev:server`, which spins up the graphql server in mocked mode.
 Or `BOL_API_KEY=*** yarn start:dev:server` which spins it up in non mocked mode when you have an open api bol.com key.
 
 ## PLAYGROUND
@@ -64,12 +64,12 @@ Environment vars for development (set them in CI for production).
 
 ### '.env' file inside './packages/server':
 
-*Important: You can set MOCK_API to ON in case you don't have access to bol.com api. Then the server will use stub data*
+*Important: You can set MOCK_API to 'on' in case you don't have access to bol.com api. Then the server will use stub data*
 
 ```
 BOL_API_KEY=***
 NODE_ENV=development
-MOCK_API=ON|OFF
+MOCK_API=on|off
 ENGINE_KEY=optional-apollo-engine-key-overhere REMOVE WHEN NOT AVAILABLE
 ALLOWED_ORIGIN=optional-not-needed-dev-mode REMOVE
 ```

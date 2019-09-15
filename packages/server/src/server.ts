@@ -41,7 +41,7 @@ export async function bootstrap(appModule: GraphQLModule) {
         engine: {
             apiKey: process.env.ENGINE_KEY,
         },
-        mocks: process.env.NODE_ENV === 'production' ? false : process.env.MOCK_API && process.env.MOCK_API === 'ON' ? MOCKS : false
+        mocks: process.env.NODE_ENV === 'production' ? false : process.env.MOCK_API && process.env.MOCK_API === 'on' ? MOCKS : false
     });
 
     const app = express();
@@ -70,7 +70,7 @@ export async function bootstrap(appModule: GraphQLModule) {
         () => {
             console.log(
                 `🚀 APOLLO GRAPHQL at http://localhost:${port}${server.graphqlPath}`,
-                process.env.MOCK_API && process.env.MOCK_API === "ON" ? "\n✨ Running Apollo server with mocks on" : "",
+                process.env.MOCK_API && process.env.MOCK_API === "on" ? "\n✨ Running Apollo server with mocks on" : "",
             );
         },
     );
