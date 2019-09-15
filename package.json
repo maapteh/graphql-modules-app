@@ -10,7 +10,7 @@
   "scripts": {
     "postinstall": "lerna exec -- yarn install && lerna run prepare",
     "audit": "lerna run audit",
-    "start": "./node_modules/.bin/concurrently --names 'REACT, react-autogen, GRAPHQL, graphql-autogen' -c 'blue.bold,gray,cyan.bold,gray' 'NODE_ENV=development yarn workspace graphql-app dev' 'cd packages/app && yarn generate:graphqlcodegen -w' 'NODE_ENV=development yarn workspace graphql-server start' 'cd packages/server && yarn generate:graphqlcodegen -w'",
+    "start": "./node_modules/.bin/concurrently --names 'REACT, react-autogen, GRAPHQL, graphql-autogen' -c 'blue.bold,gray,cyan.bold,gray' 'NODE_ENV=development yarn workspace graphql-app dev' 'yarn workspace graphql-app generate:graphqlcodegen -w' 'NODE_ENV=development yarn workspace graphql-server start' 'yarn workspace graphql-server generate:graphqlcodegen -w'",
     "dev": "yarn start",
     "build": "lerna run build",
     "lint": "lerna run lint",

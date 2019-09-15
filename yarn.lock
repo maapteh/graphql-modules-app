@@ -1272,15 +1272,6 @@
     graphql-tools "4.0.4"
     tslib "1.9.3"
 
-"@graphql-modules/sonar@0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@graphql-modules/sonar/-/sonar-0.4.0.tgz#ca657b3cfc4639a5f205aeacd7b041bb0a530067"
-  integrity sha512-4Kb69/6fRzGpmmVf7P38g2O+PnlkqpNx2vZ1vhh89Lxv18SAfN8ABkvaRLyuBglAmtwSCEGinn7NNvGSfRcc3Q==
-  dependencies:
-    "@types/glob" "7.1.1"
-    glob "7.1.3"
-    tslib "1.9.3"
-
 "@heroku-cli/color@^1.1.3":
   version "1.1.14"
   resolved "https://registry.yarnpkg.com/@heroku-cli/color/-/color-1.1.14.tgz#035ac4e48e564fcab37c3dc4bd09dbe596f2ad68"
@@ -7588,18 +7579,6 @@ glob-to-regexp@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/glob-to-regexp/-/glob-to-regexp-0.4.1.tgz#c75297087c851b9a578bd217dd59a92f59fe546e"
   integrity sha512-lkX1HJXwyMcprw/5YUZc2s7DrpAiHB21/V+E1rHUrVNokkvB6bqMzT0VfV6/86ZNabt1k14YOIaT7nDvOX3Iiw==
-
-glob@7.1.3:
-  version "7.1.3"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.3.tgz#3960832d3f1574108342dafd3a67b332c0969df1"
-  integrity sha512-vcfuiIxogLV4DlGBHIUOwI0IbrJ8HWPc4MU7HzviGeNho/UJDfi6B5p3sHeWIQ0KGIU0Jpxi5ZHxemQfLkkAwQ==
-  dependencies:
-    fs.realpath "^1.0.0"
-    inflight "^1.0.4"
-    inherits "2"
-    minimatch "^3.0.4"
-    once "^1.3.0"
-    path-is-absolute "^1.0.0"
 
 glob@7.1.4, glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, glob@~7.1.1:
   version "7.1.4"
