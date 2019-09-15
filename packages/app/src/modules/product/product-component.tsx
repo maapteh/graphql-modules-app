@@ -12,7 +12,7 @@ export interface ProductProps extends React.HTMLAttributes<HTMLElement> {
 // TODO: HOC/with for Product
 export const ProductComponent = ({
     id,
-    ssr,
+    ssr = false,
     context = {},
     short = false,
 }: ProductProps) => {

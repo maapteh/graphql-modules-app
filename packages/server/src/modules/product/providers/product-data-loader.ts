@@ -7,6 +7,8 @@ export const productDataLoader = async (ids: string[]) => {
         ',',
     )}?offers=cheapest&includeAttributes=false&format=json&${CREDENTIALS}`;
 
+    console.log(`dataloader: ${url.slice(0, -40)}`);
+
     const products = await nodeFetch(url, {
         headers: { ResourceVersion: 'v4' },
     })

@@ -1,5 +1,6 @@
 import { GraphQLModule } from '@graphql-modules/core';
 import { loadResolversFiles, loadSchemaFiles } from 'graphql-toolkit';
+
 import { ProductProvider } from './providers/product';
 import { commonModule } from '../common';
 
