@@ -20,7 +20,8 @@
     "start:mock-prod": "yarn build && ./node_modules/.bin/concurrently --names 'REACT, GRAPHQL' -c 'blue.bold,cyan.bold' 'NODE_ENV=production cd packages/app && yarn start' 'NODE_ENV=production MOCK_API=ON cd packages/server && yarn start' ",
     "test:coverage": "lerna run test:coverage",
     "outdated": "yarn outdated",
-    "upgrade": "yarn upgrade-interactive --latest"
+    "upgrade": "yarn upgrade-interactive --latest",
+    "start:dev:server": "yarn workspace graphql-server start"
   },
   "workspaces": [
     "packages/app",

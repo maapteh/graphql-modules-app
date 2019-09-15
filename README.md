@@ -9,7 +9,8 @@ The React web application is using [NextJS](https://nextjs.org/), [GraphQL Codeg
 
 ## INSTALL
 1. `yarn`
-2. `bash setup.sh` sets correct local .env file with mock mode as default
+2. `bash setup.sh` sets correct local .env file with _mock mode as default_ (possible to set your bol.com api key there as well (then set MOCK_API=OFF), the only difference will be using a real datasource or not)
+3. Apollo [vsc extension](https://marketplace.visualstudio.com/items?itemName=apollographql.vscode-apollo) (optional)
 
 ## STRUCTURE
 ```
@@ -22,7 +23,11 @@ The React web application is using [NextJS](https://nextjs.org/), [GraphQL Codeg
 ```
 
 ## DEVELOPMENT
-**Now when you followed the install part you can simply run `yarn start`. It will spin up the GraphQL server and the React application.** Please look at the VSC plugins below for editor happiness.
+**Now when you followed the install part (and looked at point 2) you can simply run `yarn start`. It will spin up the GraphQL server and the React application.**
+Please look at the VSC plugins below for editor happiness.
+
+It is also possible to just play with only the server part with `MOCK_API=ON yarn start:dev:server`, which spins up the graphql server in mocked mode.
+Or `BOL_API_KEY=*** yarn start:dev:server` which spins it up in non mocked mode when you have an open api bol.com key.
 
 ## PLAYGROUND
 At [local-server](http://localhost:400) or [demo-server heroku](https://graphql-server-schiphol.herokuapp.com/graphql) you will see [dataloader](./packages/server/src/modules/product/providers/product-data-loader.ts) taking care of eventually requesting two products from the API in one single call. Using the following query:
