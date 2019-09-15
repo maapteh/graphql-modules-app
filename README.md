@@ -1,16 +1,20 @@
 # GraphQL-Modules TypeScript Server & NextJS React application
-Demonstration application for showcase utilizing [Graphql-modules](https://graphql-modules.com/) which is using data from BOL.com Open Api for the server (also complete mocked version is available). You will find a sample with products and dataloader.
-The React web application is using [NextJS](https://nextjs.org/), [GraphQL Codegen by Dotan](https://graphql-code-generator.com) and [Apollo hooks](https://www.apollographql.com/docs/react/api/react-hooks/).
+> Demonstration application for showcase utilizing [Graphql-modules](https://graphql-modules.com/) which is using data from BOL.com Open Api for the server (also complete mocked version is available). You will find a sample with products and dataloader.
+The React web application is using [NextJS](https://nextjs.org/), [GraphQL Codegen by Dotan](https://graphql-code-generator.com) and [Apollo hooks](https://www.apollographql.com/docs/react/api/react-hooks/). _More background information about this app is in the [wiki](../../wiki)._ I would like to thank [The Guild](https://the-guild.dev) for their awesome GraphQL toolchain.
 
 ## PRE-REQUISITES
-- Node dubnium
-- Facebook watchman (only for development) [optional]
-- Get your free API key from [bol.com/documentatie/open-api](https://partnerblog.bol.com/documentatie/open-api). Its also possible to run it in mocked mode, no keys needed.
+- Node dubnium (required)
+- Facebook watchman (only for development) (optional)
+- Get your free API key from [open api bol.com](https://partnerblog.bol.com/documentatie/open-api) (optional)
 
 ## INSTALL
 1. `yarn`
-2. `bash setup.sh` sets correct local .env file with _mock mode as default_ (possible to set your bol.com api key there as well (then set MOCK_API=off), the only difference will be using a real datasource or not)
+2. `bash setup.sh` sets correct local .env file for server part with _mock mode as default_ (it is possible to set your bol.com api key there as well (then also set MOCK_API=off), the only difference will be using a real datasource or not!)
 3. Apollo [vsc extension](https://marketplace.visualstudio.com/items?itemName=apollographql.vscode-apollo) (optional)
+
+## ONLINE DEMO
+*Both Heroku containers spin down when no activity, please be patient.*
+[graphql-schiphol.herokuapp.com/](https://graphql-schiphol.herokuapp.com) which points to the graphql endpoint at [graphql-server](https://graphql-server-schiphol.herokuapp.com/graphql). 
 
 ## STRUCTURE
 ```
@@ -23,7 +27,7 @@ The React web application is using [NextJS](https://nextjs.org/), [GraphQL Codeg
 ```
 
 ## DEVELOPMENT
-**Now when you followed the install part (and looked at point 2) you can simply run `yarn start`. It will spin up the GraphQL server and the React application.**
+**Now when you followed the install part (and looked at point 2, its nicer with a real datasource) you can simply run `yarn start`. It will spin up the GraphQL server and the React application.**
 Please look at the VSC plugins below for editor happiness.
 
 It is also possible to just play with only the server part with `MOCK_API=on yarn start:dev:server`, which spins up the graphql server in mocked mode.
@@ -51,8 +55,10 @@ At [local-server](http://localhost:400) or [demo-server heroku](https://graphql-
 }
 ```
 
+You can find product and product category id's on the real bol.com website to play further.
+
 ## CODE DEMONSTRATION
-product is explained in:
+Product is explained in:
 - [graphql module](packages/server/src/modules/product) the injectable Product module
 - [frontend module](packages/app/src/modules/product) the client component
 
@@ -82,8 +88,7 @@ GRAPHQL_ENDPOINT=endpoint-your-graphql-server-will-run
 
 ## TODO
 1) Add more tooling (things like storybook etc etc)
-2) Use https://github.com/kamilkisiela/graphql-inspector (also in pipeline, now locally only)
-3) `yarn upgrade-interactive --latest`
+2) `yarn upgrade-interactive --latest`
 
 ## ARTICLES
 - [WhatsApp-Clone-server](https://github.com/Urigo/WhatsApp-Clone-server), [WhatsApp-Clone-Client-React](https://github.com/Urigo/WhatsApp-Clone-Client-React) and [tutorial](https://tortilla.academy/tutorial/whatsapp-react/step/1)
@@ -93,15 +98,9 @@ GRAPHQL_ENDPOINT=endpoint-your-graphql-server-will-run
 - [GraphQL HQ](https://blog.apollographql.com/)
 
 
-## ONLINE DEMO
-*Both Heroku containers spin down when no activity, please be patient.*
-[graphql-schiphol.herokuapp.com/](https://graphql-schiphol.herokuapp.com) which points to the graphql endpoint at [graphql-server](https://graphql-server-schiphol.herokuapp.com/graphql). 
-
-
-## VSC
+## VSC plugins
 - [vscode-apollo](https://marketplace.visualstudio.com/items?itemName=apollographql.vscode-apollo) for autocomplete in app
 - [eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) including apollo linting
-
 
 
 [![Codeship Status for maapteh/graphql-modules-app](https://app.codeship.com/projects/3bf47d90-d61c-0136-0edf-1a5c0fb66462/status?branch=master)](https://graphql-schiphol.herokuapp.com)
