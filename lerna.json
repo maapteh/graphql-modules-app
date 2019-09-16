@@ -4,7 +4,6 @@
     "useWorkspaces": true,
     "packages": ["packages/*"],
     "version": "independent",
-    "hoist": false,
     "command": {
         "publish": {
             "ignoreChanges": ["ignored-file", "*.md"],
