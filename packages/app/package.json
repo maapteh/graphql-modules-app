@@ -39,7 +39,6 @@
     "@types/react": "16.8.6",
     "@zeit/next-css": "1.0.1",
     "@zeit/next-sass": "1.0.1",
-    "apollo": "2.18.1",
     "apollo-cache-inmemory": "1.5.1",
     "apollo-client": "2.6.4",
     "apollo-link": "1.2.8",

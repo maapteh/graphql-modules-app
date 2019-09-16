@@ -20,6 +20,7 @@ export const ProductComponent = ({
         variables: { id },
         ssr,
         context,
+        fetchPolicy: 'cache-and-network',
     });
 
     return (
