@@ -16,17 +16,11 @@ export const ProductComponent = ({
     context = {},
     short = false,
 }: ProductProps) => {
-    const { data, loading } = useGetProductQuery({
+    const { data } = useGetProductQuery({
         variables: { id },
         ssr,
         context,
-        fetchPolicy: 'cache-and-network',
     });
 
-    return (
-        <>
-            {loading && <div>loading product...</div>}
-            {data ? <ProductDetails data={data} short={short} /> : null}
-        </>
-    );
+    return <>{data ? <ProductDetails data={data} short={short} /> : null}</>;
 };

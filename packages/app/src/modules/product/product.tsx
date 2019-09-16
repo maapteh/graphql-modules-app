@@ -7,14 +7,8 @@ type Props = {
 };
 
 export const Product = ({ id }: Props) => {
-    const { data, loading } = useGetProductQuery({
+    const { data } = useGetProductQuery({
         variables: { id },
     });
-
-    return (
-        <>
-            {loading && <span>loading...</span>}
-            {data && <ProductDetails data={data} />}
-        </>
-    );
+    return <>{data && <ProductDetails data={data} />}</>;
 };

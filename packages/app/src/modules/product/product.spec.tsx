@@ -66,8 +66,9 @@ describe('Product', () => {
 
     it('renders correctly', async () => {
         const id = '9200000111963040';
+        const testId = 'product-details';
 
-        const { container, findByText } = render(
+        const { container, queryByTestId, findByText } = render(
             <MockedProvider mocks={mocks} addTypename={true}>
                 <Product id={id} />
             </MockedProvider>
@@ -75,8 +76,9 @@ describe('Product', () => {
 
         mockAllIsIntersecting(true);
 
-        await findByText('loading...');
+        expect(queryByTestId(testId)).toBe(null);
         await findByText(/De Ghost Recon/);
+        expect(queryByTestId(testId)).toBeDefined();
 
         // generic contract
         expect(container).toMatchSnapshot();

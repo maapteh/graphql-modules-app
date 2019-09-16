@@ -22,7 +22,6 @@ const Example = () => (
 
         <ProductComponent id="9200000103388809" ssr={false} short />
 
-        
         {/* debatch non ssr test, by default everything is batched but easy to debatch when you expect the server to be slow */}
         <ProductComponent
             id="9200000113944705"
