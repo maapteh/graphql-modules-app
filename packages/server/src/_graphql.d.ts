@@ -18,6 +18,23 @@ export enum CacheControlScope {
   Private = 'PRIVATE'
 }
 
+export type Offer = {
+   __typename?: 'Offer',
+  id: Scalars['String'],
+  condition: Scalars['String'],
+  price: Scalars['Float'],
+  availabilityCode: Scalars['String'],
+  availabilityDescription: Scalars['String'],
+  seller: OfferSeller,
+};
+
+export type OfferSeller = {
+   __typename?: 'OfferSeller',
+  id: Scalars['String'],
+  sellerType: Scalars['String'],
+  displayName: Scalars['String'],
+};
+
 export type Product = {
    __typename?: 'Product',
   id: Scalars['String'],
@@ -31,6 +48,7 @@ export type Product = {
   images?: Maybe<Array<Maybe<ProductImage>>>,
   offerData?: Maybe<ProductOfferData>,
   parentCategoryPaths?: Maybe<ProductParentCategoryPaths>,
+  offer?: Maybe<Offer>,
 };
 
 export type ProductImage = {
@@ -112,10 +130,17 @@ export type ProductUrls = {
 
 export type Query = {
    __typename?: 'Query',
+  /** Get best offer for specific product */
+  getOffer?: Maybe<Offer>,
   /** Get all products for a specific list */
   getProducts?: Maybe<Products>,
   /** Get single product */
   getProduct?: Maybe<Product>,
+};
+
+
+export type QueryGetOfferArgs = {
+  id: Scalars['String']
 };
 
 
@@ -200,6 +225,9 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 export type ResolversTypes = {
   Query: ResolverTypeWrapper<{}>,
   String: ResolverTypeWrapper<Scalars['String']>,
+  Offer: ResolverTypeWrapper<Offer>,
+  Float: ResolverTypeWrapper<Scalars['Float']>,
+  OfferSeller: ResolverTypeWrapper<OfferSeller>,
   Products: ResolverTypeWrapper<Products>,
   Product: ResolverTypeWrapper<Product>,
   Int: ResolverTypeWrapper<Scalars['Int']>,
@@ -207,7 +235,6 @@ export type ResolversTypes = {
   ProductImage: ResolverTypeWrapper<ProductImage>,
   ProductOfferData: ResolverTypeWrapper<ProductOfferData>,
   ProductOfferDataOffers: ResolverTypeWrapper<ProductOfferDataOffers>,
-  Float: ResolverTypeWrapper<Scalars['Float']>,
   ProductSeller: ResolverTypeWrapper<ProductSeller>,
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>,
   ProductParentCategoryPaths: ResolverTypeWrapper<ProductParentCategoryPaths>,
@@ -221,6 +248,9 @@ export type ResolversTypes = {
 export type ResolversParentTypes = {
   Query: {},
   String: Scalars['String'],
+  Offer: Offer,
+  Float: Scalars['Float'],
+  OfferSeller: OfferSeller,
   Products: Products,
   Product: Product,
   Int: Scalars['Int'],
@@ -228,7 +258,6 @@ export type ResolversParentTypes = {
   ProductImage: ProductImage,
   ProductOfferData: ProductOfferData,
   ProductOfferDataOffers: ProductOfferDataOffers,
-  Float: Scalars['Float'],
   ProductSeller: ProductSeller,
   Boolean: Scalars['Boolean'],
   ProductParentCategoryPaths: ProductParentCategoryPaths,
@@ -240,6 +269,21 @@ export type ResolversParentTypes = {
 
 export type CacheControlDirectiveResolver<Result, Parent, ContextType = any, Args = {   maxAge?: Maybe<Maybe<Scalars['Int']>>,
   scope?: Maybe<Maybe<CacheControlScope>> }> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
+
+export type OfferResolvers<ContextType = any, ParentType extends ResolversParentTypes['Offer'] = ResolversParentTypes['Offer']> = {
+  id?: Resolver<ResolversTypes['String'], ParentType, ContextType>,
+  condition?: Resolver<ResolversTypes['String'], ParentType, ContextType>,
+  price?: Resolver<ResolversTypes['Float'], ParentType, ContextType>,
+  availabilityCode?: Resolver<ResolversTypes['String'], ParentType, ContextType>,
+  availabilityDescription?: Resolver<ResolversTypes['String'], ParentType, ContextType>,
+  seller?: Resolver<ResolversTypes['OfferSeller'], ParentType, ContextType>,
+};
+
+export type OfferSellerResolvers<ContextType = any, ParentType extends ResolversParentTypes['OfferSeller'] = ResolversParentTypes['OfferSeller']> = {
+  id?: Resolver<ResolversTypes['String'], ParentType, ContextType>,
+  sellerType?: Resolver<ResolversTypes['String'], ParentType, ContextType>,
+  displayName?: Resolver<ResolversTypes['String'], ParentType, ContextType>,
+};
 
 export type ProductResolvers<ContextType = any, ParentType extends ResolversParentTypes['Product'] = ResolversParentTypes['Product']> = {
   id?: Resolver<ResolversTypes['String'], ParentType, ContextType>,
@@ -253,6 +297,7 @@ export type ProductResolvers<ContextType = any, ParentType extends ResolversPare
   images?: Resolver<Maybe<Array<Maybe<ResolversTypes['ProductImage']>>>, ParentType, ContextType>,
   offerData?: Resolver<Maybe<ResolversTypes['ProductOfferData']>, ParentType, ContextType>,
   parentCategoryPaths?: Resolver<Maybe<ResolversTypes['ProductParentCategoryPaths']>, ParentType, ContextType>,
+  offer?: Resolver<Maybe<ResolversTypes['Offer']>, ParentType, ContextType>,
 };
 
 export type ProductImageResolvers<ContextType = any, ParentType extends ResolversParentTypes['ProductImage'] = ResolversParentTypes['ProductImage']> = {
@@ -322,11 +367,14 @@ export type ProductUrlsResolvers<ContextType = any, ParentType extends Resolvers
 };
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
+  getOffer?: Resolver<Maybe<ResolversTypes['Offer']>, ParentType, ContextType, RequireFields<QueryGetOfferArgs, 'id'>>,
   getProducts?: Resolver<Maybe<ResolversTypes['Products']>, ParentType, ContextType, RequireFields<QueryGetProductsArgs, 'id'>>,
   getProduct?: Resolver<Maybe<ResolversTypes['Product']>, ParentType, ContextType, RequireFields<QueryGetProductArgs, 'id'>>,
 };
 
 export type Resolvers<ContextType = any> = {
+  Offer?: OfferResolvers<ContextType>,
+  OfferSeller?: OfferSellerResolvers<ContextType>,
   Product?: ProductResolvers<ContextType>,
   ProductImage?: ProductImageResolvers<ContextType>,
   ProductOfferData?: ProductOfferDataResolvers<ContextType>,

@@ -1,5 +1,5 @@
 {
-  "name": "sample-app",
+  "name": "@sample/app",
   "version": "0.0.4",
   "private": true,
   "license": "MIT",
@@ -10,7 +10,7 @@
   "scripts": {
     "postinstall": "lerna exec -- yarn install && lerna run prepare",
     "audit": "lerna run audit",
-    "start": "./node_modules/.bin/concurrently --names 'REACT, react-autogen, GRAPHQL, graphql-autogen' -c 'blue.bold,gray,cyan.bold,gray' 'NODE_ENV=development yarn workspace graphql-app dev' 'yarn workspace graphql-app generate:graphqlcodegen -w' 'NODE_ENV=development yarn workspace graphql-server start' 'yarn workspace graphql-server generate:graphqlcodegen -w'",
+    "start": "./node_modules/.bin/concurrently --names 'REACT, react-autogen, GRAPHQL, graphql-autogen' -c 'blue.bold,gray,cyan.bold,gray' 'NODE_ENV=development yarn workspace @sample/app dev' 'yarn workspace @sample/app generate:graphqlcodegen -w' 'NODE_ENV=development yarn workspace @sample/server start' 'yarn workspace @sample/server generate:graphqlcodegen -w'",
     "dev": "yarn start",
     "build": "lerna run build",
     "lint": "lerna run lint",
@@ -21,7 +21,7 @@
     "test:coverage": "lerna run test:coverage",
     "outdated": "yarn outdated",
     "upgrade": "yarn upgrade-interactive --latest",
-    "start:dev:server": "yarn workspace graphql-server start"
+    "start:dev:server": "yarn workspace @sample/server start"
   },
   "workspaces": [
     "packages/app",

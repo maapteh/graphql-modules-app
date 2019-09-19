@@ -1,0 +1,14 @@
+type Offer {
+    id: String!
+    condition: String!
+    price: Float!
+    availabilityCode: String!
+    availabilityDescription: String!
+    seller: OfferSeller!
+}
+
+type OfferSeller {
+    id: String!
+    sellerType: String!
+    displayName: String!
+}

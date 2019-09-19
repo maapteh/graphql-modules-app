@@ -19,6 +19,23 @@ export enum CacheControlScope {
   Private = 'PRIVATE'
 }
 
+export type Offer = {
+   __typename?: 'Offer',
+  id: Scalars['String'],
+  condition: Scalars['String'],
+  price: Scalars['Float'],
+  availabilityCode: Scalars['String'],
+  availabilityDescription: Scalars['String'],
+  seller: OfferSeller,
+};
+
+export type OfferSeller = {
+   __typename?: 'OfferSeller',
+  id: Scalars['String'],
+  sellerType: Scalars['String'],
+  displayName: Scalars['String'],
+};
+
 export type Product = {
    __typename?: 'Product',
   id: Scalars['String'],
@@ -32,6 +49,7 @@ export type Product = {
   images?: Maybe<Array<Maybe<ProductImage>>>,
   offerData?: Maybe<ProductOfferData>,
   parentCategoryPaths?: Maybe<ProductParentCategoryPaths>,
+  offer?: Maybe<Offer>,
 };
 
 export type ProductImage = {
@@ -113,10 +131,17 @@ export type ProductUrls = {
 
 export type Query = {
    __typename?: 'Query',
+  /** Get best offer for specific product */
+  getOffer?: Maybe<Offer>,
   /** Get all products for a specific list */
   getProducts?: Maybe<Products>,
   /** Get single product */
   getProduct?: Maybe<Product>,
+};
+
+
+export type QueryGetOfferArgs = {
+  id: Scalars['String']
 };
 
 
@@ -138,6 +163,27 @@ export type ProductFragment = (
     { __typename?: 'ProductUrls' }
     & Pick<ProductUrls, 'key' | 'value'>
   )>>> }
+);
+
+export type GetProductOfferQueryVariables = {
+  id: Scalars['String']
+};
+
+
+export type GetProductOfferQuery = (
+  { __typename?: 'Query' }
+  & { getProduct: Maybe<(
+    { __typename?: 'Product' }
+    & Pick<Product, 'id'>
+    & { offer: Maybe<(
+      { __typename?: 'Offer' }
+      & Pick<Offer, 'price' | 'availabilityDescription'>
+      & { seller: (
+        { __typename?: 'OfferSeller' }
+        & Pick<OfferSeller, 'displayName'>
+      ) }
+    )> }
+  )> }
 );
 
 export type GetProductQueryVariables = {
@@ -182,6 +228,30 @@ export const ProductFragmentDoc = gql`
   }
 }
     `;
+export const GetProductOfferDocument = gql`
+    query getProductOffer($id: String!) {
+  getProduct(id: $id) {
+    id
+    offer {
+      price
+      availabilityDescription
+      seller {
+        displayName
+      }
+    }
+  }
+}
+    `;
+
+    export function useGetProductOfferQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<GetProductOfferQuery, GetProductOfferQueryVariables>) {
+      return ApolloReactHooks.useQuery<GetProductOfferQuery, GetProductOfferQueryVariables>(GetProductOfferDocument, baseOptions);
+    }
+      export function useGetProductOfferLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetProductOfferQuery, GetProductOfferQueryVariables>) {
+        return ApolloReactHooks.useLazyQuery<GetProductOfferQuery, GetProductOfferQueryVariables>(GetProductOfferDocument, baseOptions);
+      }
+      
+export type GetProductOfferQueryHookResult = ReturnType<typeof useGetProductOfferQuery>;
+export type GetProductOfferQueryResult = ApolloReactCommon.QueryResult<GetProductOfferQuery, GetProductOfferQueryVariables>;
 export const GetProductDocument = gql`
     query getProduct($id: String!) {
   getProduct(id: $id) {
