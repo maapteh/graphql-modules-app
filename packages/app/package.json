@@ -1,8 +1,9 @@
 {
-  "name": "graphql-app",
+  "name": "@sample/app",
   "version": "0.0.4",
   "author": "",
   "license": "MIT",
+  "main": "src/index.ts",
   "repository": {
     "type": "git",
     "url": "maapteh/graphql-modules-app/packages/graphql-app"

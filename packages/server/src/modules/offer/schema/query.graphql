@@ -1,0 +1,6 @@
+type Query {
+    """
+    Get best offer for specific product
+    """
+    getOffer(id: String!): Offer
+}

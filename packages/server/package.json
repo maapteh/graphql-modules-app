@@ -1,8 +1,8 @@
 {
-  "name": "graphql-server",
+  "name": "@sample/server",
   "version": "0.0.4",
   "description": "Our awesome Apollo server",
-  "main": "dist/index.js",
+  "main": "index.ts",
   "repository": {
     "type": "git",
     "url": "maapteh/graphql-modules-app/packages/graphql-server"

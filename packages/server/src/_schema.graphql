@@ -6,6 +6,21 @@ enum CacheControlScope {
   PRIVATE
 }
 
+type Offer {
+  id: String!
+  condition: String!
+  price: Float!
+  availabilityCode: String!
+  availabilityDescription: String!
+  seller: OfferSeller!
+}
+
+type OfferSeller {
+  id: String!
+  sellerType: String!
+  displayName: String!
+}
+
 type Product {
   id: String!
   ean: String
@@ -18,6 +33,7 @@ type Product {
   images: [ProductImage]
   offerData: ProductOfferData
   parentCategoryPaths: ProductParentCategoryPaths
+  offer: Offer
 }
 
 type ProductImage {
@@ -88,6 +104,9 @@ type ProductUrls {
 }
 
 type Query {
+  """Get best offer for specific product"""
+  getOffer(id: String!): Offer
+
   """Get all products for a specific list"""
   getProducts(id: String!): Products
 

@@ -19,6 +19,7 @@ export const ProductsList = ({ id = choosen }: Props) => {
             id,
         },
         ssr: false,
+        fetchPolicy: 'cache-first',
     });
 
     const products = data && data.getProducts && data.getProducts.products;

@@ -9,6 +9,7 @@ type Props = {
 export const Product = ({ id }: Props) => {
     const { data } = useGetProductQuery({
         variables: { id },
+        fetchPolicy: 'cache-first',
     });
     return <>{data && <ProductDetails data={data} />}</>;
 };
