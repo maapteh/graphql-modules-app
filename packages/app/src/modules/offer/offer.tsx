@@ -16,13 +16,19 @@ export const Offer = ({ id }: Props) => {
     if (!data) {
         return null;
     }
+    const { offer } = data.getProduct;
+
     return (
         <div className={style.root}>
-            <div>{data.getProduct.offer.availabilityDescription}</div>
+            {offer.availabilityDescription && (
+                <div>{offer.availabilityDescription}</div>
+            )}
             <div>
-                <strong>&euro; {data.getProduct.offer.price}</strong>
+                <strong>&euro; {offer.price}</strong>
             </div>
-            <div>{data.getProduct.offer.seller.displayName}</div>
+            <div>
+                <i>{offer.seller.displayName}</i>
+            </div>
         </div>
     );
 };
