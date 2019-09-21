@@ -38,6 +38,7 @@ export type OfferSeller = {
 
 export type Product = {
    __typename?: 'Product',
+  offer?: Maybe<Offer>,
   id: Scalars['String'],
   ean?: Maybe<Scalars['String']>,
   title: Scalars['String'],
@@ -49,7 +50,6 @@ export type Product = {
   images?: Maybe<Array<Maybe<ProductImage>>>,
   offerData?: Maybe<ProductOfferData>,
   parentCategoryPaths?: Maybe<ProductParentCategoryPaths>,
-  offer?: Maybe<Offer>,
 };
 
 export type ProductImage = {

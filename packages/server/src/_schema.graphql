@@ -22,6 +22,7 @@ type OfferSeller {
 }
 
 type Product {
+  offer: Offer
   id: String!
   ean: String
   title: String!
@@ -33,7 +34,6 @@ type Product {
   images: [ProductImage]
   offerData: ProductOfferData
   parentCategoryPaths: ProductParentCategoryPaths
-  offer: Offer
 }
 
 type ProductImage {

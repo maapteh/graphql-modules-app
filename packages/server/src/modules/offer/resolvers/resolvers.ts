@@ -16,6 +16,12 @@ const resolvers: Resolvers = {
                 .getOffer(id);
         },
     },
+
+    Product: {
+        offer: (product, args, { injector }: ModuleContext) => {
+            return injector.get(OfferProvider).getOffer(product.id);
+        }
+    }
 };
 
 export default resolvers;

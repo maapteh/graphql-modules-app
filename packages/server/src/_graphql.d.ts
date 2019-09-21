@@ -37,6 +37,7 @@ export type OfferSeller = {
 
 export type Product = {
    __typename?: 'Product',
+  offer?: Maybe<Offer>,
   id: Scalars['String'],
   ean?: Maybe<Scalars['String']>,
   title: Scalars['String'],
@@ -48,7 +49,6 @@ export type Product = {
   images?: Maybe<Array<Maybe<ProductImage>>>,
   offerData?: Maybe<ProductOfferData>,
   parentCategoryPaths?: Maybe<ProductParentCategoryPaths>,
-  offer?: Maybe<Offer>,
 };
 
 export type ProductImage = {
@@ -286,6 +286,7 @@ export type OfferSellerResolvers<ContextType = any, ParentType extends Resolvers
 };
 
 export type ProductResolvers<ContextType = any, ParentType extends ResolversParentTypes['Product'] = ResolversParentTypes['Product']> = {
+  offer?: Resolver<Maybe<ResolversTypes['Offer']>, ParentType, ContextType>,
   id?: Resolver<ResolversTypes['String'], ParentType, ContextType>,
   ean?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>,
   title?: Resolver<ResolversTypes['String'], ParentType, ContextType>,
@@ -297,7 +298,6 @@ export type ProductResolvers<ContextType = any, ParentType extends ResolversPare
   images?: Resolver<Maybe<Array<Maybe<ResolversTypes['ProductImage']>>>, ParentType, ContextType>,
   offerData?: Resolver<Maybe<ResolversTypes['ProductOfferData']>, ParentType, ContextType>,
   parentCategoryPaths?: Resolver<Maybe<ResolversTypes['ProductParentCategoryPaths']>, ParentType, ContextType>,
-  offer?: Resolver<Maybe<ResolversTypes['Offer']>, ParentType, ContextType>,
 };
 
 export type ProductImageResolvers<ContextType = any, ParentType extends ResolversParentTypes['ProductImage'] = ResolversParentTypes['ProductImage']> = {

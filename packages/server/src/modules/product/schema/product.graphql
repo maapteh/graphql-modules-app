@@ -30,8 +30,6 @@ type Product @cacheControl(maxAge: 2400) {
     images: [ProductImage]
     offerData: ProductOfferData
     parentCategoryPaths: ProductParentCategoryPaths
-    # Example with source from other domain
-    offer: Offer
 }
 
 type ProductUrls @cacheControl(maxAge: 2400) {

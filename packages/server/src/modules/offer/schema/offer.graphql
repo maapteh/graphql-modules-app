@@ -12,3 +12,7 @@ type OfferSeller {
     sellerType: String!
     displayName: String!
 }
+
+extend type Product {
+    offer: Offer
+}
