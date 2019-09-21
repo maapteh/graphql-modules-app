@@ -23,7 +23,7 @@ export class ProductProvider {
      */
     public async getProducts(id: string): Promise<Products> {
         const url = `${BOL_API}/lists/?ids=${id}&limit=12&format=json&${CREDENTIALS}`;
-
+        console.log(`[BAD] no dataloader: ${url.slice(0, -40)}`);
         return nodeFetch(url, { headers: { ResourceVersion: 'v4' } })
             .then(checkStatus)
             .then((res: Response | null) => (res && res.json()) || null);

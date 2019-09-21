@@ -1,5 +1,5 @@
 import React from 'react';
-import { useGetProductOfferQuery } from '../../graphql/_generated-hooks';
+import { useGetOfferQuery } from '../../graphql/_generated-hooks';
 import style from './offer.scss';
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
 };
 
 export const Offer = ({ id }: Props) => {
-    const { data } = useGetProductOfferQuery({
+    const { data } = useGetOfferQuery({
         variables: { id },
         ssr: false,
         fetchPolicy: 'cache-first',
@@ -16,7 +16,7 @@ export const Offer = ({ id }: Props) => {
     if (!data) {
         return null;
     }
-    const { offer } = data.getProduct;
+    const offer = data.getOffer;
 
     return (
         <div className={style.root}>

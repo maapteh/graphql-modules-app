@@ -162,24 +162,20 @@ export type ProductFragment = (
   )>>> }
 );
 
-export type GetProductOfferQueryVariables = {
+export type GetOfferQueryVariables = {
   id: Scalars['String']
 };
 
 
-export type GetProductOfferQuery = (
+export type GetOfferQuery = (
   { __typename?: 'Query' }
-  & { getProduct: Maybe<(
-    { __typename?: 'Product' }
-    & Pick<Product, 'id'>
-    & { offer: Maybe<(
-      { __typename?: 'Offer' }
-      & Pick<Offer, 'price' | 'availabilityDescription'>
-      & { seller: (
-        { __typename?: 'OfferSeller' }
-        & Pick<OfferSeller, 'displayName'>
-      ) }
-    )> }
+  & { getOffer: Maybe<(
+    { __typename?: 'Offer' }
+    & Pick<Offer, 'id' | 'price' | 'availabilityDescription'>
+    & { seller: (
+      { __typename?: 'OfferSeller' }
+      & Pick<OfferSeller, 'displayName'>
+    ) }
   )> }
 );
 

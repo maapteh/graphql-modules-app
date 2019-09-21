@@ -165,24 +165,20 @@ export type ProductFragment = (
   )>>> }
 );
 
-export type GetProductOfferQueryVariables = {
+export type GetOfferQueryVariables = {
   id: Scalars['String']
 };
 
 
-export type GetProductOfferQuery = (
+export type GetOfferQuery = (
   { __typename?: 'Query' }
-  & { getProduct: Maybe<(
-    { __typename?: 'Product' }
-    & Pick<Product, 'id'>
-    & { offer: Maybe<(
-      { __typename?: 'Offer' }
-      & Pick<Offer, 'price' | 'availabilityDescription'>
-      & { seller: (
-        { __typename?: 'OfferSeller' }
-        & Pick<OfferSeller, 'displayName'>
-      ) }
-    )> }
+  & { getOffer: Maybe<(
+    { __typename?: 'Offer' }
+    & Pick<Offer, 'id' | 'price' | 'availabilityDescription'>
+    & { seller: (
+      { __typename?: 'OfferSeller' }
+      & Pick<OfferSeller, 'displayName'>
+    ) }
   )> }
 );
 
@@ -228,30 +224,28 @@ export const ProductFragmentDoc = gql`
   }
 }
     `;
-export const GetProductOfferDocument = gql`
-    query getProductOffer($id: String!) {
-  getProduct(id: $id) {
+export const GetOfferDocument = gql`
+    query getOffer($id: String!) {
+  getOffer(id: $id) {
     id
-    offer {
-      price
-      availabilityDescription
-      seller {
-        displayName
-      }
+    price
+    availabilityDescription
+    seller {
+      displayName
     }
   }
 }
     `;
 
-    export function useGetProductOfferQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<GetProductOfferQuery, GetProductOfferQueryVariables>) {
-      return ApolloReactHooks.useQuery<GetProductOfferQuery, GetProductOfferQueryVariables>(GetProductOfferDocument, baseOptions);
+    export function useGetOfferQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<GetOfferQuery, GetOfferQueryVariables>) {
+      return ApolloReactHooks.useQuery<GetOfferQuery, GetOfferQueryVariables>(GetOfferDocument, baseOptions);
     }
-      export function useGetProductOfferLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetProductOfferQuery, GetProductOfferQueryVariables>) {
-        return ApolloReactHooks.useLazyQuery<GetProductOfferQuery, GetProductOfferQueryVariables>(GetProductOfferDocument, baseOptions);
+      export function useGetOfferLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetOfferQuery, GetOfferQueryVariables>) {
+        return ApolloReactHooks.useLazyQuery<GetOfferQuery, GetOfferQueryVariables>(GetOfferDocument, baseOptions);
       }
       
-export type GetProductOfferQueryHookResult = ReturnType<typeof useGetProductOfferQuery>;
-export type GetProductOfferQueryResult = ApolloReactCommon.QueryResult<GetProductOfferQuery, GetProductOfferQueryVariables>;
+export type GetOfferQueryHookResult = ReturnType<typeof useGetOfferQuery>;
+export type GetOfferQueryResult = ApolloReactCommon.QueryResult<GetOfferQuery, GetOfferQueryVariables>;
 export const GetProductDocument = gql`
     query getProduct($id: String!) {
   getProduct(id: $id) {
