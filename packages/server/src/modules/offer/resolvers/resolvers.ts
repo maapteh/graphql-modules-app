@@ -5,7 +5,6 @@ import { OfferProvider } from '../providers/offer';
 
 const resolvers: Resolvers = {
     Query: {
-
         getOffer: (
             _,
             { id },
@@ -18,7 +17,7 @@ const resolvers: Resolvers = {
     },
 
     Product: {
-        offer: (product, args, { injector }: ModuleContext) => {
+        offer: (product, _, { injector }: ModuleContext) => {
             return injector.get(OfferProvider).getOffer(product.id);
         }
     }

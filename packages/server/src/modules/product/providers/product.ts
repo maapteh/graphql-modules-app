@@ -33,7 +33,6 @@ export class ProductProvider {
      * Example 2: dataloader being used for individual product information
      */
     public async getProduct(id: string): Promise<Product> {
-        console.log(`getProduct ${id}`)
         return this.dataLoaderProduct.load(id);
     }
 }
