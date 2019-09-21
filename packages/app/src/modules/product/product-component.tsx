@@ -20,7 +20,6 @@ export const ProductComponent = ({
         variables: { id },
         ssr,
         context,
-        fetchPolicy: 'cache-and-network',
     });
 
     return <>{data ? <ProductDetails data={data} short={short} /> : null}</>;
