@@ -64,21 +64,22 @@ export type ProductOfferData = {
   bolCom?: Maybe<Scalars['Int']>,
   nonProfessionalSellers?: Maybe<Scalars['Int']>,
   professionalSellers?: Maybe<Scalars['Int']>,
-  offers?: Maybe<ProductOfferDataOffers>,
+  offers?: Maybe<Array<Maybe<ProductOfferDataOffer>>>,
 };
 
-export type ProductOfferDataOffers = {
-   __typename?: 'ProductOfferDataOffers',
-  id?: Maybe<Scalars['String']>,
-  condition?: Maybe<Scalars['String']>,
-  price?: Maybe<Scalars['Int']>,
+/** TODO: is this Offer? Schema usage validator should pick this up */
+export type ProductOfferDataOffer = {
+   __typename?: 'ProductOfferDataOffer',
+  id: Scalars['String'],
+  condition: Scalars['String'],
+  price: Scalars['Float'],
   listPrice?: Maybe<Scalars['Float']>,
-  availabilityCode?: Maybe<Scalars['String']>,
-  availabilityDescription?: Maybe<Scalars['String']>,
-  comment?: Maybe<Scalars['String']>,
-  seller?: Maybe<ProductSeller>,
-  bestOffer?: Maybe<Scalars['Boolean']>,
-  releaseDate?: Maybe<Scalars['String']>,
+  availabilityCode: Scalars['String'],
+  availabilityDescription: Scalars['String'],
+  comment: Scalars['String'],
+  seller: ProductSeller,
+  bestOffer: Scalars['Boolean'],
+  releaseDate: Scalars['String'],
 };
 
 export type ProductParentCategory = {
@@ -103,12 +104,12 @@ export type Products = {
 
 export type ProductSeller = {
    __typename?: 'ProductSeller',
-  id?: Maybe<Scalars['String']>,
-  sellerType?: Maybe<Scalars['String']>,
-  displayName?: Maybe<Scalars['String']>,
+  id: Scalars['String'],
+  sellerType: Scalars['String'],
+  displayName: Scalars['String'],
   url?: Maybe<Scalars['String']>,
-  topSeller?: Maybe<Scalars['Boolean']>,
-  useWarrantyRepairConditions?: Maybe<Scalars['Boolean']>,
+  topSeller: Scalars['Boolean'],
+  useWarrantyRepairConditions: Scalars['Boolean'],
 };
 
 export type ProductsOriginalRequest = {
@@ -235,7 +236,7 @@ export type ResolversTypes = {
   ProductUrls: ResolverTypeWrapper<ProductUrls>,
   ProductImage: ResolverTypeWrapper<ProductImage>,
   ProductOfferData: ResolverTypeWrapper<ProductOfferData>,
-  ProductOfferDataOffers: ResolverTypeWrapper<ProductOfferDataOffers>,
+  ProductOfferDataOffer: ResolverTypeWrapper<ProductOfferDataOffer>,
   ProductSeller: ResolverTypeWrapper<ProductSeller>,
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>,
   ProductParentCategoryPaths: ResolverTypeWrapper<ProductParentCategoryPaths>,
@@ -258,7 +259,7 @@ export type ResolversParentTypes = {
   ProductUrls: ProductUrls,
   ProductImage: ProductImage,
   ProductOfferData: ProductOfferData,
-  ProductOfferDataOffers: ProductOfferDataOffers,
+  ProductOfferDataOffer: ProductOfferDataOffer,
   ProductSeller: ProductSeller,
   Boolean: Scalars['Boolean'],
   ProductParentCategoryPaths: ProductParentCategoryPaths,
@@ -311,20 +312,20 @@ export type ProductOfferDataResolvers<ContextType = any, ParentType extends Reso
   bolCom?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>,
   nonProfessionalSellers?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>,
   professionalSellers?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>,
-  offers?: Resolver<Maybe<ResolversTypes['ProductOfferDataOffers']>, ParentType, ContextType>,
+  offers?: Resolver<Maybe<Array<Maybe<ResolversTypes['ProductOfferDataOffer']>>>, ParentType, ContextType>,
 };
 
-export type ProductOfferDataOffersResolvers<ContextType = any, ParentType extends ResolversParentTypes['ProductOfferDataOffers'] = ResolversParentTypes['ProductOfferDataOffers']> = {
-  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>,
-  condition?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>,
-  price?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>,
+export type ProductOfferDataOfferResolvers<ContextType = any, ParentType extends ResolversParentTypes['ProductOfferDataOffer'] = ResolversParentTypes['ProductOfferDataOffer']> = {
+  id?: Resolver<ResolversTypes['String'], ParentType, ContextType>,
+  condition?: Resolver<ResolversTypes['String'], ParentType, ContextType>,
+  price?: Resolver<ResolversTypes['Float'], ParentType, ContextType>,
   listPrice?: Resolver<Maybe<ResolversTypes['Float']>, ParentType, ContextType>,
-  availabilityCode?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>,
-  availabilityDescription?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>,
-  comment?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>,
-  seller?: Resolver<Maybe<ResolversTypes['ProductSeller']>, ParentType, ContextType>,
-  bestOffer?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>,
-  releaseDate?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>,
+  availabilityCode?: Resolver<ResolversTypes['String'], ParentType, ContextType>,
+  availabilityDescription?: Resolver<ResolversTypes['String'], ParentType, ContextType>,
+  comment?: Resolver<ResolversTypes['String'], ParentType, ContextType>,
+  seller?: Resolver<ResolversTypes['ProductSeller'], ParentType, ContextType>,
+  bestOffer?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>,
+  releaseDate?: Resolver<ResolversTypes['String'], ParentType, ContextType>,
 };
 
 export type ProductParentCategoryResolvers<ContextType = any, ParentType extends ResolversParentTypes['ProductParentCategory'] = ResolversParentTypes['ProductParentCategory']> = {
@@ -344,12 +345,12 @@ export type ProductsResolvers<ContextType = any, ParentType extends ResolversPar
 };
 
 export type ProductSellerResolvers<ContextType = any, ParentType extends ResolversParentTypes['ProductSeller'] = ResolversParentTypes['ProductSeller']> = {
-  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>,
-  sellerType?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>,
-  displayName?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>,
+  id?: Resolver<ResolversTypes['String'], ParentType, ContextType>,
+  sellerType?: Resolver<ResolversTypes['String'], ParentType, ContextType>,
+  displayName?: Resolver<ResolversTypes['String'], ParentType, ContextType>,
   url?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>,
-  topSeller?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>,
-  useWarrantyRepairConditions?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>,
+  topSeller?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>,
+  useWarrantyRepairConditions?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>,
 };
 
 export type ProductsOriginalRequestResolvers<ContextType = any, ParentType extends ResolversParentTypes['ProductsOriginalRequest'] = ResolversParentTypes['ProductsOriginalRequest']> = {
@@ -379,7 +380,7 @@ export type Resolvers<ContextType = any> = {
   Product?: ProductResolvers<ContextType>,
   ProductImage?: ProductImageResolvers<ContextType>,
   ProductOfferData?: ProductOfferDataResolvers<ContextType>,
-  ProductOfferDataOffers?: ProductOfferDataOffersResolvers<ContextType>,
+  ProductOfferDataOffer?: ProductOfferDataOfferResolvers<ContextType>,
   ProductParentCategory?: ProductParentCategoryResolvers<ContextType>,
   ProductParentCategoryPaths?: ProductParentCategoryPathsResolvers<ContextType>,
   Products?: ProductsResolvers<ContextType>,

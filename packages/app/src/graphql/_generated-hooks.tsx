@@ -65,21 +65,22 @@ export type ProductOfferData = {
   bolCom?: Maybe<Scalars['Int']>,
   nonProfessionalSellers?: Maybe<Scalars['Int']>,
   professionalSellers?: Maybe<Scalars['Int']>,
-  offers?: Maybe<ProductOfferDataOffers>,
+  offers?: Maybe<Array<Maybe<ProductOfferDataOffer>>>,
 };
 
-export type ProductOfferDataOffers = {
-   __typename?: 'ProductOfferDataOffers',
-  id?: Maybe<Scalars['String']>,
-  condition?: Maybe<Scalars['String']>,
-  price?: Maybe<Scalars['Int']>,
+/** TODO: is this Offer? Schema usage validator should pick this up */
+export type ProductOfferDataOffer = {
+   __typename?: 'ProductOfferDataOffer',
+  id: Scalars['String'],
+  condition: Scalars['String'],
+  price: Scalars['Float'],
   listPrice?: Maybe<Scalars['Float']>,
-  availabilityCode?: Maybe<Scalars['String']>,
-  availabilityDescription?: Maybe<Scalars['String']>,
-  comment?: Maybe<Scalars['String']>,
-  seller?: Maybe<ProductSeller>,
-  bestOffer?: Maybe<Scalars['Boolean']>,
-  releaseDate?: Maybe<Scalars['String']>,
+  availabilityCode: Scalars['String'],
+  availabilityDescription: Scalars['String'],
+  comment: Scalars['String'],
+  seller: ProductSeller,
+  bestOffer: Scalars['Boolean'],
+  releaseDate: Scalars['String'],
 };
 
 export type ProductParentCategory = {
@@ -104,12 +105,12 @@ export type Products = {
 
 export type ProductSeller = {
    __typename?: 'ProductSeller',
-  id?: Maybe<Scalars['String']>,
-  sellerType?: Maybe<Scalars['String']>,
-  displayName?: Maybe<Scalars['String']>,
+  id: Scalars['String'],
+  sellerType: Scalars['String'],
+  displayName: Scalars['String'],
   url?: Maybe<Scalars['String']>,
-  topSeller?: Maybe<Scalars['Boolean']>,
-  useWarrantyRepairConditions?: Maybe<Scalars['Boolean']>,
+  topSeller: Scalars['Boolean'],
+  useWarrantyRepairConditions: Scalars['Boolean'],
 };
 
 export type ProductsOriginalRequest = {

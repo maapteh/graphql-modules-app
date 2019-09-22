@@ -47,20 +47,21 @@ type ProductOfferData {
   bolCom: Int
   nonProfessionalSellers: Int
   professionalSellers: Int
-  offers: ProductOfferDataOffers
+  offers: [ProductOfferDataOffer]
 }
 
-type ProductOfferDataOffers {
-  id: String
-  condition: String
-  price: Int
+"""TODO: is this Offer? Schema usage validator should pick this up"""
+type ProductOfferDataOffer {
+  id: String!
+  condition: String!
+  price: Float!
   listPrice: Float
-  availabilityCode: String
-  availabilityDescription: String
-  comment: String
-  seller: ProductSeller
-  bestOffer: Boolean
-  releaseDate: String
+  availabilityCode: String!
+  availabilityDescription: String!
+  comment: String!
+  seller: ProductSeller!
+  bestOffer: Boolean!
+  releaseDate: String!
 }
 
 type ProductParentCategory {
@@ -81,12 +82,12 @@ type Products {
 }
 
 type ProductSeller {
-  id: String
-  sellerType: String
-  displayName: String
+  id: String!
+  sellerType: String!
+  displayName: String!
   url: String
-  topSeller: Boolean
-  useWarrantyRepairConditions: Boolean
+  topSeller: Boolean!
+  useWarrantyRepairConditions: Boolean!
 }
 
 type ProductsOriginalRequest {
