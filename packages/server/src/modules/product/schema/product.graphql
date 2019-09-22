@@ -28,6 +28,9 @@ type Product @cacheControl(maxAge: 2400) {
     shortDescription: String
     urls: [ProductUrls]
     images: [ProductImage]
+    """
+    TODO: question does 'offerData' belong here?
+    """
     offerData: ProductOfferData
     parentCategoryPaths: ProductParentCategoryPaths
 }
