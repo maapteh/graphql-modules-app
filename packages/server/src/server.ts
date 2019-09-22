@@ -45,7 +45,20 @@ export async function bootstrap(appModule: GraphQLModule) {
         engine: {
             apiKey: process.env.ENGINE_KEY,
         },
-        mocks: process.env.NODE_ENV === 'production' ? false : process.env.MOCK_API && process.env.MOCK_API === 'on' ? MOCKS : false
+        mocks: process.env.NODE_ENV === 'production' ? false : process.env.MOCK_API && process.env.MOCK_API === 'on' ? MOCKS : false,
+        formatError: (err) => {
+
+            // on production remove stacktrace
+            if (isProduction) {
+                // first sent it to own metrics
+
+                // now save to delete it for our clients
+                delete err.stack
+            }
+
+            return err;
+        },
+        debug: !isProduction,
     });
 
     const app = express();
