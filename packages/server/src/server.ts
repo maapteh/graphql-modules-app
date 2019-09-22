@@ -1,6 +1,7 @@
 import express from 'express';
 import { GraphQLModule } from '@graphql-modules/core';
 import { ApolloServer } from 'apollo-server-express';
+import { express as voyagerMiddleware } from 'graphql-voyager/middleware';
 
 import { MOCKS } from '../test/schema-mock';
 import { NO_CACHE } from './middleware/cache/no-cache';
@@ -32,12 +33,15 @@ export async function bootstrap(appModule: GraphQLModule) {
     const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 4000;
     const path = '/graphql';
 
+    // show all development tools on production too (for demonstration effect)
+    const isProduction = false; // (process.env.NODE_ENV === 'production'
+
     const server = new ApolloServer({
         schema,
         context: session => ({ session }),
-        introspection: true, // process.env.NODE_ENV === 'development',
-        tracing: process.env.NODE_ENV === 'development', // tracing while in development
-        playground: true, // ALERT: WE SHOW THE GRAPHQL PLAYGROUND ALSO IN PRODUCTION FOR THIS SAMPLE APP, REMOVE THIS LINE WHEN YOU ONLY WANT IT IN DEVELOPMENT,
+        introspection: !isProduction,
+        tracing: !isProduction,
+        playground: !isProduction,
         engine: {
             apiKey: process.env.ENGINE_KEY,
         },
@@ -49,6 +53,11 @@ export async function bootstrap(appModule: GraphQLModule) {
     // ADD GZIP
     app.use(compression({ filter: shouldCompress }));
     app.use(NO_CACHE);
+
+    // Add interactive graph in development mode
+    if (!isProduction) {
+        app.use('/voyager', voyagerMiddleware({ endpointUrl: path }));
+    }
 
     // FIXME: Apollo doesn't set allow-origin correctly ('*' instead of real allowed origin)
     console.log(`allowed origins:\n${ORIGINS_LIST.join('\n')}`);

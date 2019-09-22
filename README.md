@@ -14,7 +14,7 @@ The React web application is using [NextJS](https://nextjs.org/), [GraphQL Codeg
 
 ## ONLINE DEMO
 *Both Heroku containers spin down when no activity, please be patient.*
-[graphql-schiphol.herokuapp.com/](https://graphql-schiphol.herokuapp.com) which points to the graphql endpoint at [graphql-server](https://graphql-server-schiphol.herokuapp.com/graphql). 
+[graphql-schiphol.herokuapp.com/](https://graphql-schiphol.herokuapp.com) which points to the graphql endpoint at [graphql-server](https://graphql-server-schiphol.herokuapp.com/graphql) - [interactive graph](https://graphql-server-schiphol.herokuapp.com/voyager). 
 
 ## STRUCTURE
 ```
@@ -63,7 +63,8 @@ Product is explained in:
 - [frontend module](packages/app/src/modules/product) the client component
 
 ## PRODUCTION
-By default after install the build will take place and the start command is running this build.
+By default after install the build will take place.
+*Please look carefully at ./packages/server/src/server.ts#37 and put comment back when really deploying for production, then you need to turn off introspection and interactive graph, they are now only turned on for demonstration effect.*
 
 ## CONFIGURATION
 Environment vars for development (set them in CI for production).

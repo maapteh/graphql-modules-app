@@ -16,7 +16,9 @@
 ### Production
 - `yarn build`
 - `yarn start`
-now open: [http://localhost:4000/graphql](http://localhost:4000/graphql)
+
+**Now open: [http://localhost:4000/graphql](http://localhost:4000/graphql)**
+Or see the interactive graph: [http://localhost:4000/voyager](http://localhost:4000/voyager)
 
 ## Experimental
 1) `yarn dev:monitoring`, other tab `node_modules/.bin/pm2 monit` this is exposing metrics on production build locally
