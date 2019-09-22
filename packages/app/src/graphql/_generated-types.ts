@@ -16,6 +16,7 @@ export enum CacheControlScope {
   Private = 'PRIVATE'
 }
 
+/** Show Offer for a Product */
 export type Offer = {
    __typename?: 'Offer',
   id: Scalars['String'],

@@ -1,6 +1,6 @@
-###
+"""
 Show Offer for a Product
-###
+"""
 type Offer {
     id: String!
     condition: String!
