@@ -31,6 +31,9 @@ module.exports = withSass({
                 'process.env.GRAPHQL_ENDPOINT': JSON.stringify(
                     process.env.GRAPHQL_ENDPOINT,
                 ),
+                'process.env.npm_package_version': JSON.stringify(
+                    process.env.npm_package_version,
+                ),
             }),
         );
 
