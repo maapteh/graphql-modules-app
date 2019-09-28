@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import fetch from 'isomorphic-unfetch';
 import { ApolloProvider } from '@apollo/react-hooks';
@@ -13,8 +13,6 @@ import { BatchHttpLink } from 'apollo-link-batch-http';
 import { toIdValue } from 'apollo-utilities';
 import { fragmentMatcher } from './fragment-matcher';
 import { version } from '../../package.json';
-
-let clientApollo = null;
 
 const uri = process.env.GRAPHQL_ENDPOINT
     ? process.env.GRAPHQL_ENDPOINT
@@ -58,6 +56,8 @@ if (!process.browser) {
     global.fetch = fetch;
 }
 
+let apollo = null;
+
 /**
  * Creates and provides the apolloContext
  * to a next.js PageTree. Use it by wrapping
@@ -68,7 +68,7 @@ if (!process.browser) {
  */
 export function withApollo(PageComponent, { ssr = true } = {}) {
     const WithApollo = ({ apolloClient, apolloState, ...pageProps }) => {
-        const client = apolloClient || initApolloClient(apolloState);
+        const client = apolloClient || apollo || initApolloClient(apolloState);
         return (
             <ApolloProvider client={client}>
                 <PageComponent {...pageProps} />
@@ -87,13 +87,14 @@ export function withApollo(PageComponent, { ssr = true } = {}) {
 
         WithApollo.displayName = `withApollo(${displayName})`;
     }
+
     if (ssr || PageComponent.getInitialProps) {
         WithApollo.getInitialProps = async ctx => {
             const { AppTree } = ctx;
 
             // Initialize ApolloClient, add it to the ctx object so
             // we can use it in `PageComponent.getInitialProp`.
-            ctx.apolloClient = initApolloClient({});
+            apollo = ctx.apolloClient = initApolloClient();
 
             // Run wrapped getInitialProps methods
             let pageProps = {};
@@ -120,7 +121,7 @@ export function withApollo(PageComponent, { ssr = true } = {}) {
                             <AppTree
                                 pageProps={{
                                     ...pageProps,
-                                    apolloClient: ctx.apolloClient,
+                                    apollo,
                                 }}
                             />,
                         );
@@ -141,7 +142,7 @@ export function withApollo(PageComponent, { ssr = true } = {}) {
             }
 
             // Extract query data from the Apollo store
-            const apolloState = ctx.apolloClient.cache.extract();
+            const apolloState = apollo.cache.extract();
 
             return {
                 ...pageProps,
@@ -166,11 +167,11 @@ function initApolloClient(initialState) {
     }
 
     // Reuse client on the client-side
-    if (!clientApollo) {
-        clientApollo = createApolloClient(initialState);
+    if (!apollo) {
+        apollo = createApolloClient(initialState);
     }
 
-    return clientApollo;
+    return apollo;
 }
 
 /**
