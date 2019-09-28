@@ -68,10 +68,7 @@ if (!process.browser) {
  */
 export function withApollo(PageComponent, { ssr = true } = {}) {
     const WithApollo = ({ apolloClient, apolloState, ...pageProps }) => {
-        const client = useMemo(
-            () => apolloClient || initApolloClient(apolloState),
-            [apolloClient, apolloState],
-        );
+        const client = apolloClient || initApolloClient(apolloState);
         return (
             <ApolloProvider client={client}>
                 <PageComponent {...pageProps} />

@@ -28,6 +28,7 @@
     "start": "NODE_ENV=development ts-node-dev --respawn --transpileOnly ./src/index.ts",
     "build:failover": "yarn copy:schema && echo \"Skip because of broken package for now\" && exit 0",
     "start:failover": "ts-node src/index.ts",
+    "clean": "rm -rf 'dist'",
     "lint:prettier": "prettier \"src/**/*.ts\"",
     "lint": "tslint -c \"./tslint.json\" -p tsconfig.json \"./src/**/*.ts\" -e \"**/_generated-types.ts\"",
     "--- graphql inspector --------": "Inspector",
