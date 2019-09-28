@@ -39,7 +39,6 @@ export type OfferSeller = {
 
 export type Product = {
    __typename?: 'Product',
-  offer?: Maybe<Offer>,
   id: Scalars['String'],
   ean?: Maybe<Scalars['String']>,
   title: Scalars['String'],
@@ -49,8 +48,10 @@ export type Product = {
   shortDescription?: Maybe<Scalars['String']>,
   urls?: Maybe<Array<Maybe<ProductUrls>>>,
   images?: Maybe<Array<Maybe<ProductImage>>>,
+  /** TODO: question does 'offerData' belong here? */
   offerData?: Maybe<ProductOfferData>,
   parentCategoryPaths?: Maybe<ProductParentCategoryPaths>,
+  offer?: Maybe<Offer>,
 };
 
 export type ProductImage = {
@@ -133,17 +134,12 @@ export type ProductUrls = {
 
 export type Query = {
    __typename?: 'Query',
-  /** Get best offer for specific product */
-  getOffer?: Maybe<Offer>,
   /** Get all products for a specific list */
   getProducts?: Maybe<Products>,
   /** Get single product */
   getProduct?: Maybe<Product>,
-};
-
-
-export type QueryGetOfferArgs = {
-  id: Scalars['String']
+  /** Get best offer for specific product */
+  getOffer?: Maybe<Offer>,
 };
 
 
@@ -153,6 +149,11 @@ export type QueryGetProductsArgs = {
 
 
 export type QueryGetProductArgs = {
+  id: Scalars['String']
+};
+
+
+export type QueryGetOfferArgs = {
   id: Scalars['String']
 };
 export type ProductFragment = (

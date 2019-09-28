@@ -48,6 +48,7 @@ export type Product = {
   shortDescription?: Maybe<Scalars['String']>,
   urls?: Maybe<Array<Maybe<ProductUrls>>>,
   images?: Maybe<Array<Maybe<ProductImage>>>,
+  /** TODO: question does 'offerData' belong here? */
   offerData?: Maybe<ProductOfferData>,
   parentCategoryPaths?: Maybe<ProductParentCategoryPaths>,
 };

@@ -23,7 +23,6 @@ type OfferSeller {
 }
 
 type Product {
-  offer: Offer
   id: String!
   ean: String
   title: String!
@@ -33,8 +32,11 @@ type Product {
   shortDescription: String
   urls: [ProductUrls]
   images: [ProductImage]
+
+  """TODO: question does 'offerData' belong here?"""
   offerData: ProductOfferData
   parentCategoryPaths: ProductParentCategoryPaths
+  offer: Offer
 }
 
 type ProductImage {
@@ -106,12 +108,12 @@ type ProductUrls {
 }
 
 type Query {
-  """Get best offer for specific product"""
-  getOffer(id: String!): Offer
-
   """Get all products for a specific list"""
   getProducts(id: String!): Products
 
   """Get single product"""
   getProduct(id: String!): Product
+
+  """Get best offer for specific product"""
+  getOffer(id: String!): Offer
 }
