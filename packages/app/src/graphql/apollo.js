@@ -67,18 +67,13 @@ let apollo = null;
  * @param {Boolean} [config.ssr=true]
  */
 export function withApollo(PageComponent, { ssr = true } = {}) {
-    const WithApollo = ({
-        apolloClient,
-        apolloState,
-        ssrComplete,
-        ...pageProps
-    }) => {
-        const client = apolloClient || initApolloClient(apolloState);
-        return typeof window !== 'undefined' || (ssr && !ssrComplete) ? (
+    const WithApollo = ({ apolloClient, apolloState, ...pageProps }) => {
+        const client = apolloClient || apollo || initApolloClient(apolloState);
+        return (
             <ApolloProvider client={client}>
                 <PageComponent {...pageProps} />
             </ApolloProvider>
-        ) : null;
+        );
     };
 
     // Set the correct displayName in development
@@ -99,7 +94,7 @@ export function withApollo(PageComponent, { ssr = true } = {}) {
 
             // Initialize ApolloClient, add it to the ctx object so
             // we can use it in `PageComponent.getInitialProp`.
-            const apolloClient = (ctx.apolloClient = initApolloClient());
+            apollo = ctx.apolloClient = initApolloClient();
 
             // Run wrapped getInitialProps methods
             let pageProps = {};
@@ -147,12 +142,11 @@ export function withApollo(PageComponent, { ssr = true } = {}) {
             }
 
             // Extract query data from the Apollo store
-            const apolloState = apolloClient.cache.extract();
+            const apolloState = apollo.cache.extract();
 
             return {
                 ...pageProps,
                 apolloState,
-                ssrComplete: true,
             };
         };
     }
