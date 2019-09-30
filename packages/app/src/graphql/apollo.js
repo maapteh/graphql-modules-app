@@ -67,13 +67,18 @@ let apollo = null;
  * @param {Boolean} [config.ssr=true]
  */
 export function withApollo(PageComponent, { ssr = true } = {}) {
-    const WithApollo = ({ apolloClient, apolloState, ...pageProps }) => {
+    const WithApollo = ({
+        apolloClient,
+        apolloState,
+        ssrComplete,
+        ...pageProps
+    }) => {
         const client = apolloClient || apollo || initApolloClient(apolloState);
-        return (
+        return typeof window !== 'undefined' || (ssr && !ssrComplete) ? (
             <ApolloProvider client={client}>
                 <PageComponent {...pageProps} />
             </ApolloProvider>
-        );
+        ) : null;
     };
 
     // Set the correct displayName in development
@@ -94,7 +99,7 @@ export function withApollo(PageComponent, { ssr = true } = {}) {
 
             // Initialize ApolloClient, add it to the ctx object so
             // we can use it in `PageComponent.getInitialProp`.
-            apollo = ctx.apolloClient = initApolloClient();
+            const apolloClient = (ctx.apolloClient = initApolloClient());
 
             // Run wrapped getInitialProps methods
             let pageProps = {};
@@ -121,7 +126,7 @@ export function withApollo(PageComponent, { ssr = true } = {}) {
                             <AppTree
                                 pageProps={{
                                     ...pageProps,
-                                    apollo,
+                                    apolloClient,
                                 }}
                             />,
                         );
@@ -142,11 +147,12 @@ export function withApollo(PageComponent, { ssr = true } = {}) {
             }
 
             // Extract query data from the Apollo store
-            const apolloState = apollo.cache.extract();
+            const apolloState = apolloClient.cache.extract();
 
             return {
                 ...pageProps,
                 apolloState,
+                ssrComplete: true,
             };
         };
     }
