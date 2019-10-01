@@ -56,7 +56,7 @@ if (!process.browser) {
     global.fetch = fetch;
 }
 
-let apollo = null;
+let apolloClient = null;
 
 /**
  * Creates and provides the apolloContext
@@ -73,12 +73,19 @@ export function withApollo(PageComponent, { ssr = true } = {}) {
         ssrComplete,
         ...pageProps
     }) => {
-        const client = apolloClient || apollo || initApolloClient(apolloState);
+        const client = apolloClient || initApolloClient(apolloState);
+        /*
         return typeof window !== 'undefined' || (ssr && !ssrComplete) ? (
             <ApolloProvider client={client}>
                 <PageComponent {...pageProps} />
             </ApolloProvider>
         ) : null;
+        */
+        return (
+            <ApolloProvider client={client}>
+                <PageComponent {...pageProps} />
+            </ApolloProvider>
+        );
     };
 
     // Set the correct displayName in development
@@ -99,7 +106,7 @@ export function withApollo(PageComponent, { ssr = true } = {}) {
 
             // Initialize ApolloClient, add it to the ctx object so
             // we can use it in `PageComponent.getInitialProp`.
-            const apolloClient = (ctx.apolloClient = initApolloClient());
+            ctx.apolloClient = initApolloClient();
 
             // Run wrapped getInitialProps methods
             let pageProps = {};
@@ -126,7 +133,7 @@ export function withApollo(PageComponent, { ssr = true } = {}) {
                             <AppTree
                                 pageProps={{
                                     ...pageProps,
-                                    apolloClient,
+                                    apolloClient: ctx.apolloClient,
                                 }}
                             />,
                         );
@@ -147,12 +154,12 @@ export function withApollo(PageComponent, { ssr = true } = {}) {
             }
 
             // Extract query data from the Apollo store
-            const apolloState = apolloClient.cache.extract();
+            const apolloState = ctx.apolloClient.cache.extract();
 
             return {
                 ...pageProps,
                 apolloState,
-                ssrComplete: true,
+                // ssrComplete: true,
             };
         };
     }
@@ -173,11 +180,11 @@ function initApolloClient(initialState) {
     }
 
     // Reuse client on the client-side
-    if (!apollo) {
-        apollo = createApolloClient(initialState);
+    if (!apolloClient) {
+        apolloClient = createApolloClient(initialState);
     }
 
-    return apollo;
+    return apolloClient;
 }
 
 /**

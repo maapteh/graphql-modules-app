@@ -27,39 +27,39 @@
   dependencies:
     "@ampproject/toolbox-core" "^1.0.1"
 
-"@apollo/react-common@^3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@apollo/react-common/-/react-common-3.1.1.tgz#540619d8276d750ce4f381c9cf8f51a6f657f75d"
-  integrity sha512-lMiczOm4sD16eI9Ai+AUY+Jl3C/FNm4IpoZiAbe35TqMuD7HpZ4OJmXAbT3CzfrAqsKK8+rHgRvTiPI2kQjIWg==
+"@apollo/react-common@^3.1.2-beta.1":
+  version "3.1.2-beta.1"
+  resolved "https://registry.yarnpkg.com/@apollo/react-common/-/react-common-3.1.2-beta.1.tgz#dd13f371de71c80afc40f75c8820c236884c84ae"
+  integrity sha512-WQnH9K0COZgIwiDtsnvxVKVQjUX7MMFwacswDfHyV359gfOMf+tuMvl+O2z3xpGqvoOy8x+JSLpuQ9sukxrlqg==
   dependencies:
     ts-invariant "^0.4.4"
     tslib "^1.10.0"
 
-"@apollo/react-hooks@3.1.1", "@apollo/react-hooks@^3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@apollo/react-hooks/-/react-hooks-3.1.1.tgz#8e5a0f281a9778aaf17496ad38a178d23375077c"
-  integrity sha512-LwE4olNlKwqh1hl6iHr/igSDGRVs7c6Ik5MYZm9TzGj01f+ebhM1+Pn+UBNLsb3uRuytZsUOsEDBEXMABzC9Tw==
+"@apollo/react-hooks@3.1.2-beta.1", "@apollo/react-hooks@^3.1.2-beta.1":
+  version "3.1.2-beta.1"
+  resolved "https://registry.yarnpkg.com/@apollo/react-hooks/-/react-hooks-3.1.2-beta.1.tgz#a3f476a06915c8df1589c01eedad237f3523e283"
+  integrity sha512-GqIu5YlewB4XsazzFpp30xp4YazgUHlUvYGBCsdQjUVKyVOac8CEO0op0rjMZQj4hLTJXgedHBN6cYXDfGas5Q==
   dependencies:
-    "@apollo/react-common" "^3.1.1"
+    "@apollo/react-common" "^3.1.2-beta.1"
     "@wry/equality" "^0.1.9"
     ts-invariant "^0.4.4"
     tslib "^1.10.0"
 
-"@apollo/react-ssr@3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@apollo/react-ssr/-/react-ssr-3.1.1.tgz#4952c02c4131334edaaa4af1c2668801ac656471"
-  integrity sha512-Jbh3bpkqmp5k5KGZNcKgpGiChlUB3kVkFxzuqC4Tzx5u1gg47dPuS950j3LeMLD6ZRFhwryMnMtBsLu8iceE/Q==
+"@apollo/react-ssr@3.1.2-beta.1":
+  version "3.1.2-beta.1"
+  resolved "https://registry.yarnpkg.com/@apollo/react-ssr/-/react-ssr-3.1.2-beta.1.tgz#44ef4d134777d01a9a8d84584db1d44b989be7b6"
+  integrity sha512-VoNlI62YFoMG9kExyUfXtSlCRKipXoOpMmTCkmvDiQC6aWpdUl2hBrVR33qdxBX5eSBLhAG9UAKkQPalzHFfxA==
   dependencies:
-    "@apollo/react-common" "^3.1.1"
-    "@apollo/react-hooks" "^3.1.1"
+    "@apollo/react-common" "^3.1.2-beta.1"
+    "@apollo/react-hooks" "^3.1.2-beta.1"
     tslib "^1.10.0"
 
-"@apollo/react-testing@3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@apollo/react-testing/-/react-testing-3.1.1.tgz#27a8fb268604f785cf7c1d284a734acfbe039e05"
-  integrity sha512-tjZ5zQ8WRSu4gXCfhNWDt3rgsunFZ7QapyDNp9ykVIuC/JrusUdbGieq9PajZsmLZUMOfQUEEoWBNRWNAsXlJw==
+"@apollo/react-testing@3.1.2-beta.1":
+  version "3.1.2-beta.1"
+  resolved "https://registry.yarnpkg.com/@apollo/react-testing/-/react-testing-3.1.2-beta.1.tgz#a648721e2f7b04e3e3eebef46cdc21760ba2b057"
+  integrity sha512-ndq7PFvKAoUVPlRZfhOpA0J0y0s1qmR+ZL25xHycGeJDBHdq5Xz3n5UMNG0rHeXT1CO+2JzKeolVW0PtUs4b/g==
   dependencies:
-    "@apollo/react-common" "^3.1.1"
+    "@apollo/react-common" "^3.1.2-beta.1"
     fast-json-stable-stringify "^2.0.0"
     tslib "^1.10.0"
 
