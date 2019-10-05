@@ -1,4 +1,5 @@
 """ auto generated """
+
 directive @cacheControl(maxAge: Int, scope: CacheControlScope) on OBJECT | FIELD_DEFINITION | INTERFACE
 
 enum CacheControlScope {
@@ -23,6 +24,7 @@ type OfferSeller {
 }
 
 type Product {
+  offer: Offer
   id: String!
   ean: String
   title: String!
@@ -36,7 +38,6 @@ type Product {
   """TODO: question does 'offerData' belong here?"""
   offerData: ProductOfferData
   parentCategoryPaths: ProductParentCategoryPaths
-  offer: Offer
 }
 
 type ProductImage {
@@ -108,12 +109,12 @@ type ProductUrls {
 }
 
 type Query {
+  """Get best offer for specific product"""
+  getOffer(id: String!): Offer
+
   """Get all products for a specific list"""
   getProducts(id: String!): Products
 
   """Get single product"""
   getProduct(id: String!): Product
-
-  """Get best offer for specific product"""
-  getOffer(id: String!): Offer
 }

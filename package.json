@@ -29,12 +29,12 @@
     "packages/server"
   ],
   "resolutions": {
-    "graphql": "14.5.5"
+    "graphql": "14.5.8"
   },
   "devDependencies": {
-    "@graphql-inspector/actions": "latest",
-    "concurrently": "4.1.0",
-    "husky": "3.0.5",
+    "@graphql-inspector/actions": "1.25.0",
+    "concurrently": "4.1.2",
+    "husky": "3.0.8",
     "lerna": "^3.13.1",
     "typescript": "3.6.3"
   },
