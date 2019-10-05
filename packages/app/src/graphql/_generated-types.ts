@@ -1,6 +1,7 @@
 /** eslint-disable */
 /** AUTO GENERATED, DO NOT EDIT OVERHERE */
 export type Maybe<T> = T | null;
+
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string,
@@ -153,6 +154,7 @@ export type QueryGetProductsArgs = {
 export type QueryGetProductArgs = {
   id: Scalars['String']
 };
+
 export type ProductFragment = (
   { __typename?: 'Product' }
   & Pick<Product, 'id' | 'title' | 'rating' | 'shortDescription'>
@@ -189,9 +191,10 @@ export type GetProductQueryVariables = {
 
 export type GetProductQuery = (
   { __typename?: 'Query' }
-  & { getProduct: Maybe<{ __typename?: 'Product' }
+  & { getProduct: Maybe<(
+    { __typename?: 'Product' }
     & ProductFragment
-  > }
+  )> }
 );
 
 export type GetProductsQueryVariables = {
@@ -203,8 +206,9 @@ export type GetProductsQuery = (
   { __typename?: 'Query' }
   & { getProducts: Maybe<(
     { __typename?: 'Products' }
-    & { products: Maybe<Array<Maybe<{ __typename?: 'Product' }
+    & { products: Maybe<Array<Maybe<(
+      { __typename?: 'Product' }
       & ProductFragment
-    >>> }
+    )>>> }
   )> }
 );
