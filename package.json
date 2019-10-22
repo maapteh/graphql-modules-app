@@ -1,48 +1,48 @@
 {
-  "name": "@sample/app",
-  "version": "0.0.4",
-  "private": true,
-  "license": "MIT",
-  "engines": {
-    "node": "^10.16.x",
-    "yarn": ">= 1.17.3"
-  },
-  "scripts": {
-    "postinstall": "lerna exec -- yarn install && lerna run prepare",
-    "audit": "lerna run audit",
-    "start": "./node_modules/.bin/concurrently --names 'REACT, react-autogen, GRAPHQL, graphql-autogen' -c 'blue.bold,gray,cyan.bold,gray' 'NODE_ENV=development yarn workspace @sample/app dev' 'yarn workspace @sample/app generate:graphqlcodegen -w' 'NODE_ENV=development yarn workspace @sample/server start' 'yarn workspace @sample/server generate:graphqlcodegen -w'",
-    "dev": "yarn start",
-    "build": "lerna run build",
-    "lint": "lerna run lint",
-    "test": "lerna run test",
-    "clean": "lerna run clean",
-    "------ playground ------": "----------------------",
-    "start:mock-prod": "yarn build && ./node_modules/.bin/concurrently --names 'REACT, GRAPHQL' -c 'blue.bold,cyan.bold' 'NODE_ENV=production cd packages/app && yarn start' 'NODE_ENV=production MOCK_API=on cd packages/server && yarn start' ",
-    "start:prod": "./node_modules/.bin/concurrently --names 'REACT, GRAPHQL' -c 'blue.bold,cyan.bold' 'yarn workspace @sample/app clean && NODE_ENV=production yarn workspace @sample/app build && NODE_ENV=production yarn workspace @sample/app start' 'NODE_ENV=production yarn workspace @sample/server start'",
-    "test:coverage": "lerna run test:coverage",
-    "outdated": "yarn outdated",
-    "upgrade": "yarn upgrade-interactive --latest",
-    "start:dev:server": "yarn workspace @sample/server start"
-  },
-  "workspaces": [
-    "packages/app",
-    "packages/server"
-  ],
-  "resolutions": {
-    "graphql": "14.5.8"
-  },
-  "devDependencies": {
-    "@graphql-inspector/actions": "1.25.0",
-    "concurrently": "4.1.2",
-    "husky": "3.0.8",
-    "lerna": "^3.13.1",
-    "typescript": "3.6.3"
-  },
-  "graphql-inspector": {
-    "diff": true,
-    "schema": {
-      "ref": "master",
-      "path": "packages/server/src/_schema.graphql"
+    "name": "@sample/app",
+    "version": "0.0.4",
+    "private": true,
+    "license": "MIT",
+    "engines": {
+        "node": "^10.16.x",
+        "yarn": ">= 1.17.3"
+    },
+    "scripts": {
+        "postinstall": "lerna exec -- yarn install && lerna run prepare",
+        "audit": "lerna run audit",
+        "start": "./node_modules/.bin/concurrently --names 'REACT, react-autogen, GRAPHQL, graphql-autogen' -c 'blue.bold,gray,cyan.bold,gray' 'NODE_ENV=development yarn workspace @sample/app dev' 'yarn workspace @sample/app generate:graphqlcodegen -w' 'NODE_ENV=development yarn workspace @sample/server dev' 'yarn workspace @sample/server generate:graphqlcodegen -w'",
+        "dev": "yarn start",
+        "build": "lerna run build",
+        "lint": "lerna run lint",
+        "test": "lerna run test",
+        "clean": "lerna run clean",
+        "------ playground ------": "----------------------",
+        "start:mock-prod": "yarn build && ./node_modules/.bin/concurrently --names 'REACT, GRAPHQL' -c 'blue.bold,cyan.bold' 'NODE_ENV=production cd packages/app && yarn start' 'NODE_ENV=production MOCK_API=on cd packages/server && yarn start' ",
+        "start:prod": "./node_modules/.bin/concurrently --names 'REACT, GRAPHQL' -c 'blue.bold,cyan.bold' 'yarn workspace @sample/app clean && NODE_ENV=production yarn workspace @sample/app build && NODE_ENV=production yarn workspace @sample/app start' 'NODE_ENV=production yarn workspace @sample/server start'",
+        "test:coverage": "lerna run test:coverage",
+        "outdated": "yarn outdated",
+        "upgrade": "yarn upgrade-interactive --latest",
+        "start:dev:server": "yarn workspace @sample/server start"
+    },
+    "workspaces": [
+        "packages/app",
+        "packages/server"
+    ],
+    "resolutions": {
+        "graphql": "14.5.8"
+    },
+    "devDependencies": {
+        "@graphql-inspector/actions": "1.25.0",
+        "concurrently": "4.1.2",
+        "husky": "3.0.8",
+        "lerna": "^3.13.1",
+        "typescript": "3.6.3"
+    },
+    "graphql-inspector": {
+        "diff": true,
+        "schema": {
+            "ref": "master",
+            "path": "packages/server/src/_schema.graphql"
+        }
     }
-  }
 }
