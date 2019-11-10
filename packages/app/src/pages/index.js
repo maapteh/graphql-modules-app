@@ -1,6 +1,6 @@
-import { App } from '../src/modules/App';
-import { withApollo } from '../src/graphql/apollo';
-import { ProductComponent } from '../src/modules/product/product-component';
+import { App } from '../modules/App';
+import { withApollo } from '../graphql/apollo';
+import { ProductComponent } from '../modules/product/product-component';
 
 const Example = () => (
     <App>

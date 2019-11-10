@@ -90,6 +90,7 @@ GRAPHQL_ENDPOINT=endpoint-your-graphql-server-will-run
 ## TODO
 1) Add more tooling (things like storybook etc etc)
 2) `yarn upgrade-interactive --latest`
+3) ask apollo team if graphiql can be offline too now loads resources like 'https://cdn.jsdelivr.net/npm/@apollographql/graphql-playground-react@1.7.31/build/static/js/middleware.js'
 
 ## ARTICLES
 - [WhatsApp-Clone-server](https://github.com/Urigo/WhatsApp-Clone-server), [WhatsApp-Clone-Client-React](https://github.com/Urigo/WhatsApp-Clone-Client-React) and [tutorial](https://tortilla.academy/tutorial/whatsapp-react/step/1)

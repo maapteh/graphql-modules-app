@@ -32,11 +32,11 @@
         "graphql": "14.5.8"
     },
     "devDependencies": {
-        "@graphql-inspector/actions": "1.25.0",
-        "concurrently": "4.1.2",
-        "husky": "3.0.8",
-        "lerna": "^3.13.1",
-        "typescript": "3.6.3"
+        "@graphql-inspector/actions": "1.26.0",
+        "concurrently": "5.0.0",
+        "husky": "3.0.9",
+        "lerna": "^3.18.4",
+        "typescript": "3.7.2"
     },
     "graphql-inspector": {
         "diff": true,

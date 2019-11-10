@@ -39,7 +39,7 @@ export const ProductDetails = ({ data, short = false }: Props) => {
                         href={`/product?id=${product.id}`}
                         as={`/product/${product.id}`}
                     >
-                        <a href={`/product/${product.id}`}>...more</a>
+                        <a href={`/product?id=${product.id}`}>...more</a>
                     </Link>
                 )}
             </p>
