@@ -74,18 +74,12 @@ export function withApollo(PageComponent, { ssr = true } = {}) {
         ...pageProps
     }) => {
         const client = apolloClient || initApolloClient(apolloState);
-        /*
+
         return typeof window !== 'undefined' || (ssr && !ssrComplete) ? (
             <ApolloProvider client={client}>
                 <PageComponent {...pageProps} />
             </ApolloProvider>
         ) : null;
-        */
-        return (
-            <ApolloProvider client={client}>
-                <PageComponent {...pageProps} />
-            </ApolloProvider>
-        );
     };
 
     // Set the correct displayName in development
@@ -159,7 +153,7 @@ export function withApollo(PageComponent, { ssr = true } = {}) {
             return {
                 ...pageProps,
                 apolloState,
-                // ssrComplete: true,
+                ssrComplete: true,
             };
         };
     }

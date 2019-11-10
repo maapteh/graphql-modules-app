@@ -19,7 +19,8 @@ export const MOCKS = {
                 default:
                     const dummy = {...DATA_9200000113065845};
                     dummy.title = 'Dummy product';
-                    dummy.rating = 9000;
+                    dummy.shortDescription = 'Foo bar';
+                    dummy.rating = 2600;
                     return dummy;
             }
 
