@@ -9,8 +9,8 @@
     "url": "maapteh/graphql-modules-app/packages/graphql-app"
   },
   "engines": {
-    "node": "^10.16.x",
-    "yarn": ">= 1.17.3"
+    "node": ">= 10.16.x",
+    "yarn": ">= 1.16.0"
   },
   "scripts": {
     "prepare": "yarn build",
@@ -91,6 +91,7 @@
     "identity-obj-proxy": "3.0.0",
     "jest": "24.9.0",
     "lint-staged": "9.4.2",
+    "mq-polyfill": "1.1.8",
     "react-test-renderer": "16.11.0",
     "ts-jest": "24.1.0"
   }

@@ -1,7 +1,8 @@
 # fs
 .DS_Store
-.vscode
+#.vscode
 !.vscode/settings.json
+!.vscode/launch.json
 
 coverage
 node_modules

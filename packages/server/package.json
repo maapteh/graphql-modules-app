@@ -10,14 +10,14 @@
   "pre-commit": "lint-staged",
   "license": "MIT",
   "engines": {
-    "node": "^10.16.x",
-    "yarn": ">= 1.17.3"
+    "node": ">= 10.16.x",
+    "yarn": ">= 1.16.0"
   },
   "scripts": {
     "prepare": "yarn build",
     "precommit": "lint-staged",
     "audit": "yarn audit",
-    "dev": "NODE_ENV=development ts-node-dev --respawn --transpileOnly ./src/index.ts",
+    "dev": "NODE_ENV=development ts-node-dev --respawn --inspect=7001 --transpileOnly ./src/index.ts",
     "dev:monitoring": "yarn build && pm2-runtime dist/index.js",
     "dev:debug": "ts-node-dev --inspect --debug-brk ./src/index.ts",
     "test": "jest --config=jest.config.js",
