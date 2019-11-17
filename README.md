@@ -3,7 +3,7 @@
 The React web application is using [NextJS](https://nextjs.org/), [GraphQL Codegen by Dotan](https://graphql-code-generator.com) and [Apollo hooks](https://www.apollographql.com/docs/react/api/react-hooks/). _More background information about this app is in the [wiki](../../wiki)._ I would like to thank [The Guild](https://the-guild.dev) for their awesome GraphQL toolchain.
 
 ## PRE-REQUISITES
-- Node dubnium (required)
+- Node dubnium (required) or higher
 - Facebook watchman (only for development) (optional)
 - Get your free API key from [open api bol.com](https://partnerblog.bol.com/documentatie/open-api) (optional)
 
