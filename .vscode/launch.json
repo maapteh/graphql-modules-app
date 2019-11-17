@@ -7,14 +7,14 @@
         {
             "type": "node",
             "request": "attach",
-            "name": "API",
+            "name": "GRAPHQL server",
             "protocol": "inspector",
             "port": 7001,
             "restart": true,
             "localRoot": "${workspaceRoot}",
             "remoteRoot": "."
         },
-        {
+        /*{
             "type": "node",
             "request": "attach",
             "name": "WEB",
@@ -23,6 +23,16 @@
             "restart": true,
             "localRoot": "${workspaceRoot}",
             "remoteRoot": "."
+        }*/
+    ],
+    // run `yarn start` in vscode console, then attach this one
+    // still problems running nextjs correctly with inspect flag, it keeps re-attaching
+    "compounds": [
+        {
+            "name": "Full",
+            "configurations": [
+                "GRAPHQL server"
+            ]
         }
     ]
 }
