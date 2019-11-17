@@ -28,10 +28,12 @@ The React web application is using [NextJS](https://nextjs.org/), [GraphQL Codeg
 
 ## DEVELOPMENT
 **Now when you followed the install part (and looked at point 2, its nicer with a real datasource) you can simply run `yarn start`. It will spin up the GraphQL server and the React application.**
-Please look at the VSC plugins below for editor happiness.
+Please look at the Vscode plugins below for editor happiness.
 
 It is also possible to just play with only the server part with `MOCK_API=on yarn start:dev:server`, which spins up the graphql server in mocked mode.
-Or `BOL_API_KEY=*** yarn start:dev:server` which spins it up in non mocked mode when you have an open api bol.com key.
+Or `BOL_API_KEY=*** yarn start:dev:server` which spins it up in non-mocked mode when you have an open api bol.com key.
+
+For Vscode you can attach `GRAPHQL server` to the debug panel which will make it possible to have breakpoints while running the whole application. For other editors just whatch port 7001 for inspection results.
 
 ## PLAYGROUND
 At [local-server](http://localhost:400) or [demo-server heroku](https://graphql-server-schiphol.herokuapp.com/graphql) you will see [dataloader](./packages/server/src/modules/product/providers/product-data-loader.ts) taking care of eventually requesting two products from the API in one single call. Using the following query:
@@ -55,7 +57,7 @@ At [local-server](http://localhost:400) or [demo-server heroku](https://graphql-
 }
 ```
 
-You can find product and product category id's on the real bol.com website to play further.
+You can find product and product category id's on the real [bol.com](https://bol.com) website to play further.
 
 ## CODE DEMONSTRATION
 Product is explained in:
@@ -64,7 +66,7 @@ Product is explained in:
 
 ## PRODUCTION
 By default after install the build will take place.
-*Please look carefully at ./packages/server/src/server.ts#37 and put comment back when really deploying for production, then you need to turn off introspection and interactive graph, they are now only turned on for demonstration effect.*
+*Please look carefully at ./packages/server/src/server.ts#37 and put comment back when really deploying for production, then you need to turn off introspection and interactive graph, they are now only turned on for the demonstration effect.*
 
 ## CONFIGURATION
 Environment vars for development (set them in CI for production).
@@ -90,7 +92,7 @@ GRAPHQL_ENDPOINT=endpoint-your-graphql-server-will-run
 ## TODO
 1) Add more tooling (things like storybook etc etc)
 2) `yarn upgrade-interactive --latest`
-3) ask apollo team if graphiql can be offline too now loads resources like 'https://cdn.jsdelivr.net/npm/@apollographql/graphql-playground-react@1.7.31/build/static/js/middleware.js'
+3) ask apollo team if graphiql can be offline too, now it loads resources from cdn.jsdelivr.net
 
 ## ARTICLES
 - [WhatsApp-Clone-server](https://github.com/Urigo/WhatsApp-Clone-server), [WhatsApp-Clone-Client-React](https://github.com/Urigo/WhatsApp-Clone-Client-React) and [tutorial](https://tortilla.academy/tutorial/whatsapp-react/step/1)
