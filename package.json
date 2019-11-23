@@ -19,6 +19,7 @@
         "------ playground ------": "----------------------",
         "start:mock-prod": "yarn build && ./node_modules/.bin/concurrently --names 'REACT, GRAPHQL' -c 'blue.bold,cyan.bold' 'NODE_ENV=production cd packages/app && yarn start' 'NODE_ENV=production MOCK_API=on cd packages/server && yarn start' ",
         "start:prod": "./node_modules/.bin/concurrently --names 'REACT, GRAPHQL' -c 'blue.bold,cyan.bold' 'yarn workspace @sample/app clean && NODE_ENV=production yarn workspace @sample/app build && NODE_ENV=production yarn workspace @sample/app start' 'NODE_ENV=production yarn workspace @sample/server start'",
+        "start:clinic": "./node_modules/.bin/concurrently --names 'REACT, GRAPHQL' -c 'blue.bold,cyan.bold' 'NODE_ENV=development yarn workspace @sample/app dev' 'NODE_ENV=production yarn workspace @sample/server start:clinic'",
         "test:coverage": "lerna run test:coverage",
         "outdated": "yarn outdated",
         "upgrade": "yarn upgrade-interactive --latest",

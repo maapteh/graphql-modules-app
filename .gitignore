@@ -8,6 +8,7 @@ coverage
 node_modules
 .npm
 .nvmrc
+.clinic
 # we are using yarn, when people update with npm exclude this
 package-lock.json
 dist

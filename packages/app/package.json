@@ -37,6 +37,7 @@
     "@apollo/react-hooks": "3.1.3",
     "@apollo/react-ssr": "3.1.3",
     "@apollo/react-testing": "3.1.3",
+    "@mpth/react-no-ssr": "0.0.7",
     "@types/react": "16.9.11",
     "@zeit/next-css": "1.0.1",
     "@zeit/next-sass": "1.0.1",
