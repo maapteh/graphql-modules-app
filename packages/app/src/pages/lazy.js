@@ -2,7 +2,7 @@ import InView from '@mpth/react-in-view';
 import { App } from '../modules/App';
 import { withApollo } from '../graphql/apollo';
 import { ProductComponent } from '../modules/product/product-component';
-import style from './lazy.module.scss';
+import style from '../modules/lazy.module.scss';
 
 const Lazy = () => (
     <App>
