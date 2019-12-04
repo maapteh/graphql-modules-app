@@ -25,3 +25,5 @@ lerna-debug.log
 
 # auto generated (leave schema and hooks in repo!)
 # packages/app/src/graphql/_generated-types.ts
+
+node_trace.*
