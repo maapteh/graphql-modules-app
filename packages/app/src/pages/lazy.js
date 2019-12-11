@@ -2,6 +2,7 @@ import InView from '@mpth/react-in-view';
 import { App } from '../modules/App';
 import { withApollo } from '../graphql/apollo';
 import { ProductComponent } from '../modules/product/product-component';
+import { ProductPlaceholder } from '../modules/product/elements/product-details/product-placeholder';
 import style from '../modules/lazy.module.scss';
 
 const Lazy = () => (
@@ -27,20 +28,21 @@ const Lazy = () => (
         <ProductComponent id="9200000113944705" ssr short />
 
         {/* non ssr component, render only when in view */}
-        <InView className={style.root}>
-            <p>1</p>
-            <ProductComponent id="9200000113065845" ssr={false} />
+        <InView fallback={ProductPlaceholder}>
+            <ProductComponent id="9200000113065845" ssr={false} short />
         </InView>
 
+        <div className={style.root} />
+
         {/* non ssr component, render only when in view */}
-        <InView className={style.root}>
-            <p>2</p>
+        <InView fallback={ProductPlaceholder}>
             <ProductComponent id="9200000111963040" ssr={false} short />
         </InView>
 
+        <div className={style.root} />
+
         {/* non ssr component, render only when in view */}
-        <InView className={style.root}>
-            <p>3</p>
+        <InView fallback={ProductPlaceholder}>
             <ProductComponent id="9200000103388809" ssr={false} short />
         </InView>
     </App>
