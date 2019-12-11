@@ -25,6 +25,12 @@ const Index = () => (
             reservation airline).
         </p>
 
+        <p>
+            <a href="/lazy">
+                Start loading data when component comes into the viewport
+            </a>
+        </p>
+
         <h3>Links</h3>
 
         <ul>
