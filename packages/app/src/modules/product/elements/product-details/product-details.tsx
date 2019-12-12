@@ -10,9 +10,14 @@ import style from './product-details.scss';
 interface Props {
     data: GetProductQuery;
     short?: boolean;
+    instantImage?: boolean;
 }
 
-export const ProductDetails = ({ data, short = false }: Props) => {
+export const ProductDetails = ({
+    data,
+    short = false,
+    instantImage = false,
+}: Props) => {
     const product: ProductFragment = data && data.getProduct;
     const foundImage =
         product &&
@@ -28,7 +33,9 @@ export const ProductDetails = ({ data, short = false }: Props) => {
             lang="nl-NL"
             data-testid="product-details"
         >
-            {Boolean(image) && <Image url={image} />}
+            {Boolean(image) && (
+                <Image url={image} instantImage={instantImage} />
+            )}
             <h1>
                 {product.title} ({product.rating})
             </h1>

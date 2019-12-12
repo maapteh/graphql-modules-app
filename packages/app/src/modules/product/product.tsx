@@ -5,16 +5,17 @@ import { ProductPlaceholder } from './elements/product-details/product-placehold
 
 type Props = {
     id: string;
+    instantImage?: boolean;
 };
 
-export const Product = ({ id }: Props) => {
+export const Product = ({ id, instantImage = false }: Props) => {
     const { data, loading } = useGetProductQuery({
         variables: { id },
     });
     return (
         <>
             {loading && <ProductPlaceholder />}
-            {data && <ProductDetails data={data} />}
+            {data && <ProductDetails data={data} instantImage={instantImage} />}
         </>
     );
 };

@@ -1,4 +1,4 @@
-.root {
+.block {
     float: left;
     overflow: hidden;
     box-sizing: content-box;
@@ -6,9 +6,13 @@
     height: 209px;
     padding: 0 18px 14px 0;
     line-height: 0;
+}
+
+.hide {
     opacity:0;
     transition: opacity 200ms ease-in;
 }
+
 .img {
     width: 100%;
 }

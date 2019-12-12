@@ -9,9 +9,15 @@ type Props = {
     url: string;
     title?: string;
     rootMargin?: string;
+    instantImage?: boolean;
 };
 
-export const Image = ({ url, title = '', rootMargin }: Props) => {
+export const Image = ({
+    url,
+    title = '',
+    rootMargin,
+    instantImage = false,
+}: Props) => {
     // This set of values serves to grow or shrink each side of the root element's bounding box before computing intersections
     const margin =
         rootMargin && /((((.\d*)?(px))){4})/.test(rootMargin)
@@ -23,15 +29,20 @@ export const Image = ({ url, title = '', rootMargin }: Props) => {
         rootMargin: margin,
     });
 
+    const css = classNames(style.block, style.hide, image && `${style.appear}`);
+    const imageComponent = <img src={url} alt={title} className={style.img} />;
+
+    if (instantImage) {
+        return <div className={style.block}>{imageComponent}</div>;
+    }
+
     if (inView && !image) {
         setImage(url);
     }
 
-    const css = classNames(style.root, image && `${style.appear}`);
-
     return (
         <div ref={ref} className={css}>
-            {image && <img src={url} alt={title} className={style.img} />}
+            {image && imageComponent}
         </div>
     );
 };

@@ -28,21 +28,21 @@ const Lazy = () => (
         <ProductComponent id="9200000113944705" ssr short />
 
         {/* non ssr component, render only when in view */}
-        <InView fallback={ProductPlaceholder}>
+        <InView fallback={<ProductPlaceholder />}>
             <ProductComponent id="9200000113065845" ssr={false} short />
         </InView>
 
         <div className={style.root} />
 
         {/* non ssr component, render only when in view */}
-        <InView fallback={ProductPlaceholder}>
+        <InView fallback={<ProductPlaceholder />}>
             <ProductComponent id="9200000111963040" ssr={false} short />
         </InView>
 
         <div className={style.root} />
 
         {/* non ssr component, render only when in view */}
-        <InView fallback={ProductPlaceholder}>
+        <InView fallback={<ProductPlaceholder />}>
             <ProductComponent id="9200000103388809" ssr={false} short />
         </InView>
     </App>

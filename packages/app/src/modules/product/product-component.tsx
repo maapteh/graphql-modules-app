@@ -1,6 +1,7 @@
 import React from 'react';
 import { ProductDetails } from './elements/product-details/product-details';
 import { useGetProductQuery } from '../../graphql/_generated-hooks';
+import { ProductPlaceholder } from './elements/product-details/product-placeholder';
 
 export interface ProductProps extends React.HTMLAttributes<HTMLElement> {
     id: string;
@@ -16,11 +17,18 @@ export const ProductComponent = ({
     context = {},
     short = false,
 }: ProductProps) => {
-    const { data } = useGetProductQuery({
+    const { data, loading } = useGetProductQuery({
         variables: { id },
         ssr,
         context,
     });
 
-    return <>{data ? <ProductDetails data={data} short={short} /> : null}</>;
+    return (
+        <>
+            {loading && <ProductPlaceholder />}
+            {data ? (
+                <ProductDetails data={data} short={short} instantImage={ssr} />
+            ) : null}
+        </>
+    );
 };
