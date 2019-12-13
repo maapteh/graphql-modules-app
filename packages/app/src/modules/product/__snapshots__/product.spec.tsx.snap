@@ -8,7 +8,7 @@ exports[`Product renders correctly 1`] = `
     lang="nl-NL"
   >
     <div
-      class="root"
+      class="block hide"
     />
     <h1>
       Ghost Recon Breakpoint Auroa Edition - PS4

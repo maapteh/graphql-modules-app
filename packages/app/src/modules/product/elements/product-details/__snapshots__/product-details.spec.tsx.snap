@@ -8,7 +8,7 @@ exports[`ProductDetails shows the default correctly 1`] = `
     lang="nl-NL"
   >
     <div
-      class="root appear"
+      class="block hide appear"
     >
       <img
         alt=""
