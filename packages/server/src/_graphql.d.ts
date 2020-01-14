@@ -80,8 +80,8 @@ export type ProductOfferDataOffer = {
   availabilityDescription: Scalars['String'],
   comment: Scalars['String'],
   seller: ProductSeller,
-  bestOffer: Scalars['Boolean'],
-  releaseDate: Scalars['String'],
+  bestOffer?: Maybe<Scalars['Boolean']>,
+  releaseDate?: Maybe<Scalars['String']>,
 };
 
 export type ProductParentCategory = {
@@ -327,8 +327,8 @@ export type ProductOfferDataOfferResolvers<ContextType = any, ParentType extends
   availabilityDescription?: Resolver<ResolversTypes['String'], ParentType, ContextType>,
   comment?: Resolver<ResolversTypes['String'], ParentType, ContextType>,
   seller?: Resolver<ResolversTypes['ProductSeller'], ParentType, ContextType>,
-  bestOffer?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>,
-  releaseDate?: Resolver<ResolversTypes['String'], ParentType, ContextType>,
+  bestOffer?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>,
+  releaseDate?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>,
 };
 
 export type ProductParentCategoryResolvers<ContextType = any, ParentType extends ResolversParentTypes['ProductParentCategory'] = ResolversParentTypes['ProductParentCategory']> = {
