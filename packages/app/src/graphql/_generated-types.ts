@@ -78,8 +78,8 @@ export type ProductOfferDataOffer = {
   availabilityDescription: Scalars['String'],
   comment: Scalars['String'],
   seller: ProductSeller,
-  bestOffer: Scalars['Boolean'],
-  releaseDate: Scalars['String'],
+  bestOffer?: Maybe<Scalars['Boolean']>,
+  releaseDate?: Maybe<Scalars['String']>,
 };
 
 export type ProductParentCategory = {

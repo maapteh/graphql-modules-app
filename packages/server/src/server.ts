@@ -1,4 +1,5 @@
 import express from 'express';
+import { useSofa, OpenAPI } from 'sofa-api';
 import { GraphQLModule } from '@graphql-modules/core';
 import { ApolloServer } from 'apollo-server-express';
 import { express as voyagerMiddleware } from 'graphql-voyager/middleware';
@@ -62,6 +63,29 @@ export async function bootstrap(appModule: GraphQLModule) {
     });
 
     const app = express();
+
+    // FOR NON-BELIEVERS provide old rest endpoints
+    const openApi = OpenAPI({
+        schema,
+        info: {
+          title: 'Example API',
+          version: '3.0.0',
+        },
+    });
+
+    app.use(
+        '/api',
+        useSofa({
+            schema,
+            onRoute(info) {
+                openApi.addRoute(info, {
+                  basePath: '/api',
+                });
+              },
+        })
+    );
+
+    openApi.save('./swagger.yml');
 
     // ADD GZIP
     app.use(compression({ filter: shouldCompress }));

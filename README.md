@@ -103,6 +103,15 @@ GRAPHQL_ENDPOINT=endpoint-your-graphql-server-will-run
 - [GraphQL HQ](https://blog.apollographql.com/)
 
 
+## NON-BELIEVERS
+There are always teams resistent to pickup "new" technologies. If they want they are still able to consume us as rest endpoints with the same codebase behind it.
+
+For example our application also gives the following endpoint:
+http://localhost:4000/api/get-product/9200000111963040
+
+See [open-api](./packages/server/swagger.yml) its auto generated with help of [SOFA](https://github.com/Urigo/SOFA)
+
+
 ## VSC plugins
 - [vscode-apollo](https://marketplace.visualstudio.com/items?itemName=apollographql.vscode-apollo) for autocomplete in app
 - [eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) including apollo linting

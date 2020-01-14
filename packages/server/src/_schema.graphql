@@ -63,8 +63,8 @@ type ProductOfferDataOffer {
   availabilityDescription: String!
   comment: String!
   seller: ProductSeller!
-  bestOffer: Boolean!
-  releaseDate: String!
+  bestOffer: Boolean
+  releaseDate: String
 }
 
 type ProductParentCategory {

@@ -1,0 +1,277 @@
+openapi: 3.0.0
+info:
+    title: 'Example API'
+    version: 3.0.0
+paths:
+    '/api/get-products/{id}':
+        get:
+            operationId: getProductsQuery
+            parameters:
+                -
+                    in: path
+                    name: id
+                    required: true
+                    schema:
+                        type: string
+            responses:
+                '200':
+                    description: 'Get all products for a specific list'
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Products'
+    '/api/get-product/{id}':
+        get:
+            operationId: getProductQuery
+            parameters:
+                -
+                    in: path
+                    name: id
+                    required: true
+                    schema:
+                        type: string
+            responses:
+                '200':
+                    description: 'Get single product'
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Product'
+    '/api/get-offer/{id}':
+        get:
+            operationId: getOfferQuery
+            parameters:
+                -
+                    in: path
+                    name: id
+                    required: true
+                    schema:
+                        type: string
+            responses:
+                '200':
+                    description: 'Get best offer for specific product'
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Offer'
+components:
+    schemas:
+        Query:
+            type: object
+            properties:
+                getProducts:
+                    $ref: '#/components/schemas/Products'
+                    description: 'Get all products for a specific list'
+                getProduct:
+                    $ref: '#/components/schemas/Product'
+                    description: 'Get single product'
+                getOffer:
+                    $ref: '#/components/schemas/Offer'
+                    description: 'Get best offer for specific product'
+        Products:
+            type: object
+            properties:
+                products:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Product'
+                schemaVersion:
+                    type: string
+                totalResultSize:
+                    type: integer
+                    format: int32
+                originalRequest:
+                    $ref: '#/components/schemas/ProductsOriginalRequest'
+            description: 'Products for a specific category, model is taken as is from bol.com'
+        Product:
+            type: object
+            required:
+                - id
+                - title
+            properties:
+                id:
+                    type: string
+                ean:
+                    type: string
+                title:
+                    type: string
+                specsTag:
+                    type: string
+                summary:
+                    type: string
+                rating:
+                    type: integer
+                    format: int32
+                shortDescription:
+                    type: string
+                urls:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/ProductUrls'
+                images:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/ProductImage'
+                offerData:
+                    $ref: '#/components/schemas/ProductOfferData'
+                    description: 'TODO: question does ''offerData'' belong here?'
+                parentCategoryPaths:
+                    $ref: '#/components/schemas/ProductParentCategoryPaths'
+                offer:
+                    $ref: '#/components/schemas/Offer'
+        ProductUrls:
+            type: object
+            properties:
+                key:
+                    type: string
+                value:
+                    type: string
+        ProductImage:
+            type: object
+            properties:
+                type:
+                    type: string
+                key:
+                    type: string
+                url:
+                    type: string
+        ProductOfferData:
+            type: object
+            properties:
+                bolCom:
+                    type: integer
+                    format: int32
+                nonProfessionalSellers:
+                    type: integer
+                    format: int32
+                professionalSellers:
+                    type: integer
+                    format: int32
+                offers:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/ProductOfferDataOffer'
+        ProductOfferDataOffer:
+            type: object
+            required:
+                - id
+                - condition
+                - price
+                - availabilityCode
+                - availabilityDescription
+                - comment
+                - seller
+            properties:
+                id:
+                    type: string
+                condition:
+                    type: string
+                price:
+                    type: number
+                    format: float
+                listPrice:
+                    type: number
+                    format: float
+                availabilityCode:
+                    type: string
+                availabilityDescription:
+                    type: string
+                comment:
+                    type: string
+                seller:
+                    $ref: '#/components/schemas/ProductSeller'
+                bestOffer:
+                    type: boolean
+                releaseDate:
+                    type: string
+            description: 'TODO: is this Offer? Schema usage validator should pick this up'
+        ProductSeller:
+            type: object
+            required:
+                - id
+                - sellerType
+                - displayName
+                - topSeller
+                - useWarrantyRepairConditions
+            properties:
+                id:
+                    type: string
+                sellerType:
+                    type: string
+                displayName:
+                    type: string
+                url:
+                    type: string
+                topSeller:
+                    type: boolean
+                useWarrantyRepairConditions:
+                    type: boolean
+        ProductParentCategoryPaths:
+            type: object
+            properties:
+                parentCategories:
+                    $ref: '#/components/schemas/ProductParentCategory'
+        ProductParentCategory:
+            type: object
+            properties:
+                id:
+                    type: string
+                name:
+                    type: string
+        Offer:
+            type: object
+            required:
+                - id
+                - condition
+                - price
+                - availabilityCode
+                - availabilityDescription
+                - seller
+            properties:
+                id:
+                    type: string
+                condition:
+                    type: string
+                price:
+                    type: number
+                    format: float
+                availabilityCode:
+                    type: string
+                availabilityDescription:
+                    type: string
+                seller:
+                    $ref: '#/components/schemas/OfferSeller'
+            description: 'Show Offer for a Product'
+        OfferSeller:
+            type: object
+            required:
+                - id
+                - sellerType
+                - displayName
+            properties:
+                id:
+                    type: string
+                sellerType:
+                    type: string
+                displayName:
+                    type: string
+        ProductsOriginalRequest:
+            type: object
+            properties:
+                category:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/ProductsOriginalRequestCategory'
+        ProductsOriginalRequestCategory:
+            type: object
+            properties:
+                id:
+                    type: integer
+                    format: int32
+                name:
+                    type: string
+                productCount:
+                    type: integer
+                    format: int32
+        ID:
+            type: string
