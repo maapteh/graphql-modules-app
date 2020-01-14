@@ -95,9 +95,10 @@ GRAPHQL_ENDPOINT=endpoint-your-graphql-server-will-run
 3) ask apollo team if graphiql can be offline too, now it loads resources from cdn.jsdelivr.net
 
 ## ARTICLES
-- [WhatsApp-Clone-server](https://github.com/Urigo/WhatsApp-Clone-server), [WhatsApp-Clone-Client-React](https://github.com/Urigo/WhatsApp-Clone-Client-React) and [tutorial](https://tortilla.academy/tutorial/whatsapp-react/step/1)
+- [Graphql explained high level](https://www.youtube.com/watch?v=Oh5oC98ztvI)
 - [Paypal Graphql](https://medium.com/paypal-engineering/graphql-a-success-story-for-paypal-checkout-3482f724fb53)
 - [Airbnb luxery homes](https://medium.com/airbnb-engineering/how-airbnb-is-moving-10x-faster-at-scale-with-graphql-and-apollo-aa4ec92d69e2)
+- [WhatsApp-Clone-server](https://github.com/Urigo/WhatsApp-Clone-server), [WhatsApp-Clone-Client-React](https://github.com/Urigo/WhatsApp-Clone-Client-React) and [tutorial](https://tortilla.academy/tutorial/whatsapp-react/step/1)
 - [https://www.graphqlweekly.com/](https://www.graphqlweekly.com/)
 - [GraphQL HQ](https://blog.apollographql.com/)
 
