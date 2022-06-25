@@ -1592,6 +1592,15 @@
     tslib "^1.9.3"
     valid-url "1.0.9"
 
+"@graphql-toolkit/file-loading@0.7.4":
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/@graphql-toolkit/file-loading/-/file-loading-0.7.4.tgz#70a5d5adba13f196a7cad545eaaff1930671f20a"
+  integrity sha512-9enAlgt6c9GcVUent8+9jcsPX2Rypbi4UFpa2NUpZg5QdNMTeBeLho2DE2x4fEnu4cAn4ot1ylIytoB57M4xdQ==
+  dependencies:
+    "@graphql-toolkit/common" "0.7.4"
+    "@kamilkisiela/graphql-tools" "4.0.6"
+    globby "10.0.1"
+
 "@graphql-toolkit/git-loader@0.6.6":
   version "0.6.6"
   resolved "https://registry.yarnpkg.com/@graphql-toolkit/git-loader/-/git-loader-0.6.6.tgz#aac55d190d1347e3d878530f0203f8b53815e22f"
@@ -9038,7 +9047,7 @@ graphql-tag@2.10.1, graphql-tag@^2.9.2:
   resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.10.1.tgz#10aa41f1cd8fae5373eaf11f1f67260a3cad5e02"
   integrity sha512-jApXqWBzNXQ8jYa/HLkZJaVw9jgwNqZkywa2zfFn16Iv1Zb7ELNHkJaXHR7Quvd5SIGsy6Ny7SUKATgnu05uEg==
 
-graphql-toolkit@0.5.16, graphql-toolkit@0.7.4:
+graphql-toolkit@0.5.16:
   version "0.5.16"
   resolved "https://registry.yarnpkg.com/graphql-toolkit/-/graphql-toolkit-0.5.16.tgz#7673364e4458a6e6bc561eb3b87b2bb0e8360059"
   integrity sha512-J3rAlsO7A/TJTZ7kLcFYy4/sIvB2AxiosxXFQICdsXf8R9b//fy7jmXnNo38ml1mm//915V0U5HMuAvo/hYiWQ==
@@ -9056,6 +9065,20 @@ graphql-toolkit@0.5.16, graphql-toolkit@0.7.4:
     lodash "4.17.15"
     tslib "^1.9.3"
     valid-url "1.0.9"
+
+graphql-toolkit@0.7.4:
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/graphql-toolkit/-/graphql-toolkit-0.7.4.tgz#cfc77ff5a1e7974dfa0ef32a77b3cb72f60a322b"
+  integrity sha512-/xiqOTAYQvEHy95/Le/01zNxpQ1PDKvGjq0wU3PM2bb/KaRpWJBMN9CVW32xbAa9Tasw94x4IoofafysV/o0Yg==
+  dependencies:
+    "@graphql-toolkit/code-file-loader" "0.7.4"
+    "@graphql-toolkit/common" "0.7.4"
+    "@graphql-toolkit/core" "0.7.4"
+    "@graphql-toolkit/file-loading" "0.7.4"
+    "@graphql-toolkit/graphql-file-loader" "0.7.4"
+    "@graphql-toolkit/json-file-loader" "0.7.4"
+    "@graphql-toolkit/schema-merging" "0.7.4"
+    "@graphql-toolkit/url-loader" "0.7.4"
 
 graphql-tools@4.0.4:
   version "4.0.4"
@@ -12443,10 +12466,17 @@ node-fetch@2.1.2, node-fetch@~2.1.2:
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.1.2.tgz#ab884e8e7e57e38a944753cec706f788d1768bb5"
   integrity sha1-q4hOjn5X44qUR1POxwb3iNF2i7U=
 
-node-fetch@2.6.0, node-fetch@^2.1.2, node-fetch@^2.2.0, node-fetch@^2.3.0, node-fetch@^2.5.0:
+node-fetch@2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
   integrity sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
+
+node-fetch@2.6.7, node-fetch@^2.1.2, node-fetch@^2.2.0, node-fetch@^2.3.0, node-fetch@^2.5.0:
+  version "2.6.7"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.7.tgz#24de9fba827e3b4ae44dc8b20256a379160052ad"
+  integrity sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==
+  dependencies:
+    whatwg-url "^5.0.0"
 
 node-fetch@^1.0.1:
   version "1.7.3"
@@ -16951,6 +16981,11 @@ tr46@^1.0.1:
   dependencies:
     punycode "^2.1.0"
 
+tr46@~0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/tr46/-/tr46-0.0.3.tgz#8184fd347dac9cdc185992f3a6622e14b9d9ab6a"
+  integrity sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==
+
 transform-ast@^2.4.0:
   version "2.4.4"
   resolved "https://registry.yarnpkg.com/transform-ast/-/transform-ast-2.4.4.tgz#bebf494e2e73f024746f76348bc86a5992851d00"
@@ -17745,6 +17780,11 @@ webfontloader@^1.6.28:
   resolved "https://registry.yarnpkg.com/webfontloader/-/webfontloader-1.6.28.tgz#db786129253cb6e8eae54c2fb05f870af6675bae"
   integrity sha1-23hhKSU8tujq5UwvsF+HCvZnW64=
 
+webidl-conversions@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-3.0.1.tgz#24534275e2a7bc6be7bc86611cc16ae0a5654871"
+  integrity sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==
+
 webidl-conversions@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
@@ -17884,6 +17924,14 @@ whatwg-mimetype@^2.1.0, whatwg-mimetype@^2.2.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/whatwg-mimetype/-/whatwg-mimetype-2.3.0.tgz#3d4b1e0312d2079879f826aff18dbeeca5960fbf"
   integrity sha512-M4yMwr6mAnQz76TbJm914+gPpB/nCwvZbJU28cUD6dR004SAxDLOOSUaB1JDRqLtaOV/vi0IC5lEAGFgrjGv/g==
+
+whatwg-url@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/whatwg-url/-/whatwg-url-5.0.0.tgz#966454e8765462e37644d3626f6742ce8b70965d"
+  integrity sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==
+  dependencies:
+    tr46 "~0.0.3"
+    webidl-conversions "^3.0.0"
 
 whatwg-url@^6.4.1:
   version "6.5.0"
